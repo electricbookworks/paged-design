@@ -1,0 +1,11 @@
+// _page-title-page.scss
+
+#{$page-half-title-page} {
+    page: half-title-page;
+    break-before: recto;
+}
+
+#{$page-title-page} {
+    page: title-page;
+    break-before: recto;
+}

@@ -1,0 +1,26 @@
+// _cover.scss
+
+// Cover-page styling.
+// Creates a single-page low-res cover for screen PDFs.
+
+@page #{cover} {
+    margin: 0;
+}
+body.#{cover}, div.#{cover} {
+    margin: 0;
+    padding: 0;
+}
+p.#{cover} {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+}
+img.#{cover} {
+    height: 100%;
+    width: 100%;
+}
+
+// Add extra verso to retain correct folios
+body.#{cover} {
+    break-after: verso;
+}

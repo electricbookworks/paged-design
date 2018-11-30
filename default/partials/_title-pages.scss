@@ -1,0 +1,62 @@
+// _title-pages.scss
+
+// Half-title and title pages
+
+#{$page-half-title-page}, 
+#{$page-title-page} {
+    margin: $start-depth auto 0 auto;
+    text-align: center;
+    p {
+        text-indent: 0;
+        hyphens: none;
+        text-align: center;
+    }
+    #{$half-title-page-title}, 
+    #{$title-page-title} {
+        font-weight: bold;
+        font-family: $font-display-main;
+        font-size: $font-size-default * $font-size-larger;
+        line-height: $line-height-default * $font-size-larger;
+        margin: 0;
+        string-set: book-title content();
+    }
+    #{$title-page-subtitle} {
+        font-family: $font-display-main;
+        font-size: $font-size-default * $font-size-larger;
+        line-height: $line-height-default * $font-size-larger;
+        margin: $line-height-default 0 0 0;
+        string-set: book-subtitle content();
+    }
+    #{$title-page-author} {
+        font-size: $font-size-default * $font-size-larger;
+        line-height: $line-height-default * $font-size-larger;
+        margin: ($line-height-default * 4) 0;
+        string-set: book-author content();
+    }
+    #{$title-page-contributors} {
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        margin: ($line-height-default * 4) 0 $line-height-default 0;
+    }
+    #{$title-page-publisher} {
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        text-indent: 0;
+        transform: translateX(-50%);
+        margin-left: 50%;
+    }
+    #{$title-page-logo} {
+        width: $page-width * 0.2;
+        position: absolute;
+        text-align: center;
+        bottom: 0;
+        transform: translateX(-50%);
+        margin-left: 50%;
+        // In case the class is applied to the image, not the paragraph
+        display: block;
+        img {
+            width: 100%;
+        }
+    }
+}

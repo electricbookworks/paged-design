@@ -1,0 +1,50 @@
+// main.scss
+
+// This file collects variables and imports partials.
+// You shouldn't need to edit it. Create your custom design
+// by editing the files in the 'custom' folder.
+
+
+// ---------------------------------------------------
+// Encoding
+// ---------------------------------------------------
+
+// First, let's set character encoding. Don't change this.
+@charset "utf-8";
+
+
+// ---------------------------------------------------
+// Variables
+// ---------------------------------------------------
+
+// Import the default variables.
+@import 'default/variables';
+// Import any custom variables, which override defaults.
+@import 'custom/variables';
+
+
+// ---------------------------------------------------
+// Selector aliases
+// ---------------------------------------------------
+
+// Import the default CSS selectors.
+@import 'default/selectors';
+// Import custom selectors, which override the defaults.
+@import 'custom/selectors';
+
+
+// ---------------------------------------------------
+// Partials
+// ---------------------------------------------------
+
+// Import all our default styles.
+@import 'default/styles';
+// Import custom CSS, which may override the defaults.
+@import 'custom/styles';
+
+// ---------------------------------------------------
+
+// Debugging
+@page {
+    box-shadow: 0px 0px 1px lightblue;
+}

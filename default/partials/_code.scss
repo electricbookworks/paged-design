@@ -1,0 +1,26 @@
+// _code.scss
+
+// Preformatted text and code
+// In our HTML, we assume that inline code is in <code> tags
+// and blocks of <code> are in <pre> tags.
+
+code, #{code} {
+    font-family: $font-code;
+    line-height: $line-height-default;
+    white-space: pre-wrap;
+    background-color: $color-light;
+    padding: 0.1em 0.3em;
+    border-radius: $border-radius;
+}
+pre {
+    background-color: $color-light;
+    border-radius: $border-radius;
+    margin: $line-height-default 0;
+    padding: $line-height-default / 2;
+    code {
+        padding: 0;
+    }
+    & + p {
+       text-indent: 0;
+    }
+}

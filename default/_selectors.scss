@@ -1,0 +1,42 @@
+// default/_selectors.scss
+
+
+// Page types
+
+$cover: '.cover' !default;
+$page-chapter: '.chapter' !default;
+$page-copyright: '.copyright-page' !default;
+$page-dedication: '.dedication-page' !default;
+$page-endmatter: '.endmatter' !default;
+$page-epigraph: '.epigraph-page' !default;
+$page-frontispiece: '.frontispiece-page' !default;
+$page-frontmatter: '.frontmatter' !default;
+$page-half-title-page: '.half-title-page' !default;
+$page-part: '.part-page' !default;
+$page-previous-publications: '.previous-publications-page' !default;
+$page-title-page: '.title-page' !default;
+$page-toc: '.contents-page' !default;
+
+
+// Features
+
+$bibliography: '.bibliography' !default; // applies to a list
+$box: '.box' !default; // applies to a div or blockquote
+$code: '.code' !default; // applies to an inline element
+$cross-reference: '.cross-reference' !default; // applies to a link <a class="cross-reference">
+$dedication: '.dedication' !default; // applies to a paragraph
+$dialogue: '.dialogue' !default; // applies to a definition-list
+$epigraph: '.epigraph' !default; // applies to a paragraph and a following one with class containing 'source'
+$figure: 'figure, .figure' !default; // applies to a figure element or a div.figure
+$glossary: '.glossary' !default; // applies to a list
+$hyphenated: 'p, ul, ol, dl' !default; // elements that should be hyphenated
+$margin-box: '.margin-box' !default; // applies to any element
+$half-title-page-title: '.title-page-title' !default; // applies to a block element
+$title-page-title: '.title-page-title' !default; // applies to a block element
+$title-page-subtitle: '.title-page-subtitle' !default; // applies to a block element
+$title-page-author: '.title-page-author' !default; // applies to a block element
+$title-page-contributors: '.title-page-contributors' !default; // applies to a block element
+$title-page-publisher: '.title-page-publisher' !default; // applies to a block element
+$title-page-logo: '.title-page-logo' !default; // applies to an image or block element
+$toc: '.toc' !default; // applies to a list
+$toc-frontmatter-reference: '.frontmatter-reference' !default; // applies to a list item

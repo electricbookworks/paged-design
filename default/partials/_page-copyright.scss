@@ -1,0 +1,17 @@
+// _page-copyright.scss
+
+#{$page-copyright} {
+    page: copyright;
+    break-before: verso;
+    font-size: $font-size-default * 0.8;
+    line-height: $line-height-default * 0.8;
+    position: absolute;
+    bottom: 0;
+    p {
+        text-align: initial;
+        margin-bottom: $line-height-default;
+        & + p {
+            text-indent: 0;
+        }
+    }
+}

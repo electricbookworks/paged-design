@@ -1,0 +1,42 @@
+// custom/_selectors.scss
+
+// Since people use different class names for similar things,
+// you can override the defaults with your own CSS selectors.
+// Your output CSS will use your selectors.
+// Use commas to separate selectors, as you would in CSS,
+// and wrap the whole list in quotes.
+// E.g. $epigraph: '.epigraph-page .epigraph, .opener .ep';
+
+// Page types
+
+$cover: '.cover';
+$page-chapter: '.chapter';
+$page-copyright: '.copyright-page';
+$page-dedication: '.dedication-page';
+$page-endmatter: '.endmatter';
+$page-epigraph: '.epigraph-page';
+$page-frontispiece: '.frontispiece-page';
+$page-frontmatter: '.frontmatter';
+$page-part: '.part-page';
+$page-previous-publications: '.previous-publications-page';
+$page-title-page: '.title-page';
+$page-half-title-page: '.half-title-page';
+
+
+// Features
+
+$bibliography: '.bibliography'; // applies to a list
+$box: '.box'; // applies to a div or blockquote
+$code: '.code'; // applies to an inline element
+$cross-reference: '.cross-reference'; // applies to an inline element, especially links
+$dedication: '.dedication'; // applies to a paragraph
+$dialogue: '.dialogue'; // applies to a definition-list
+$epigraph: '.epigraph'; // applies to a paragraph and a following one with class containing 'source'
+$figure: 'figure, .figure'; // applies to a figure element or a div.figure
+$glossary: '.glossary'; // applies to a list
+$margin-box: '.margin-box'; // applies to any element
+$title-page-title: '.title-page-title'; // applies to a paragraph
+$title-page-subtitle: '.title-page-subtitle'; // applies to a paragraph
+$title-page-author: '.title-page-author'; // applies to a paragraph
+$title-page-contributors: '.title-page-contributors'; // applies to a paragraph
+$toc: '.toc'; // applies to a list

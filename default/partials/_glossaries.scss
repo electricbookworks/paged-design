@@ -1,0 +1,17 @@
+// _glossaries.scss
+
+// Glossaries as definition lists
+// Note dl rules are also defined in base-typography
+
+#{$glossary} {
+    &, dl {
+        color: inherit;
+    }
+    dt {
+        float: left;
+        color: inherit;
+        &:after {
+            content: ":\00a0";
+        }
+    }
+}

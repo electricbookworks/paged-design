@@ -1,0 +1,11 @@
+// _page-chapter.scss
+
+#{$page-chapter} {
+    page: chapter;
+    @if $chapters-start-on == 'recto' {
+        break-before: recto;
+    }
+    @if $chapters-start-on == 'verso' {
+        break-before: verso;
+    }
+}

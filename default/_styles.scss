@@ -1,0 +1,42 @@
+// default/_styles.scss
+
+// This section imports CSS snippets for various
+// aspects of book design.
+
+// Do not delete or comment these out
+@import 'partials/reset';
+@import 'partials/base-typography';
+
+// Loads page-setup rules for paged.js
+@import 'partials/paged-page-setup';
+
+// Loads page models
+@import 'partials/page-chapter';
+@import 'partials/page-copyright';
+@import 'partials/page-dedication';
+@import 'partials/page-endmatter';
+@import 'partials/page-epigraph';
+@import 'partials/page-frontispiece';
+@import 'partials/page-frontmatter';
+@import 'partials/page-margin-boxes';
+@import 'partials/page-part';
+@import 'partials/page-previous-publications';
+@import 'partials/page-title-page';
+@import 'partials/page-toc';
+
+// If performance matters, you can delete or comment out
+// the partials here that your book definitely doesn't need.
+@import 'partials/bibliographies';
+@import 'partials/boxes';
+@import 'partials/code';
+@import 'partials/cover';
+@import 'partials/cross-references';
+@import 'partials/dedications';
+@import 'partials/dialogue';
+@import 'partials/epigraphs';
+@import 'partials/figures';
+@import 'partials/glossaries';
+@import 'partials/hyphenation';
+@import 'partials/tables';
+@import 'partials/title-pages';
+@import 'partials/toc';

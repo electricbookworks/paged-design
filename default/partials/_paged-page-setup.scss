@@ -1,0 +1,21 @@
+// _paged-structure.scss
+
+@page { 
+    size: $page-width $page-height;
+    margin-top: $margin-top;
+    margin-bottom: $margin-bottom;
+    padding: 0;
+    marks: $crop-marks;
+    // Not yet supported:
+    // bleed: $bleed;
+    // trim: $trim;
+    // pdf-page-colorspace: $colorspace;
+}
+@page :left {
+    margin-left: $margin-outside;
+    margin-right: $margin-inside;
+}
+@page :right {
+    margin-left: $margin-inside;
+    margin-right: $margin-outside;
+}

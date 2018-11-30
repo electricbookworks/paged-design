@@ -1,0 +1,39 @@
+// _figures.scss
+
+// Figures
+// By default all figures float to the bottoms of their pages.
+
+#{figure} {
+    clear: both;
+    float: bottom;
+    margin: $line-height-default 0 0 0;
+    break-inside: avoid;
+    background-color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    p {
+        clear: both;
+        page-break-inside: avoid;
+        page-break-before: avoid;
+        text-align: center;
+        text-indent: 0;
+        font-size: $font-size-default * $font-size-smaller;
+    }
+    img, p img {
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto 0 auto;
+        // Prevent image from expanding below
+        // a parent p set to a specific height
+        max-height: 100%;
+    }
+    // Paragraphs that follow figures should
+    // have an indent when following floated figures.
+    & + p {
+        text-indent: $line-height-default;
+    }
+}

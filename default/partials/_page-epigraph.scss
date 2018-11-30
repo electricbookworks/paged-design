@@ -1,0 +1,7 @@
+// _page-epigraph.scss
+
+#{$page-epigraph} {
+    page: epigraph;
+    break-before: page;
+    margin-top: $start-depth;
+}

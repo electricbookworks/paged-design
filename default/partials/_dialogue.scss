@@ -1,0 +1,20 @@
+// _dialogue.scss
+
+// Dialogue
+// Using definition list element, dl
+
+#{dialogue} {
+    dt {
+        clear: inside; // lets sidebar elements float beside
+        float: left;
+        min-width: $line-height-default * 2;
+        padding-right: ($line-height-default * 0.25);
+        &:after {
+            content: ": "
+        }
+    }
+    dd {
+        // match width + padding of dt
+        margin: 0 0 0 ($line-height-default * 2.25);
+    }
+}

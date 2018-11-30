@@ -1,0 +1,32 @@
+// _toc.scss
+
+// Table of Contents pages
+
+// Regarding classes for frontmatter entries in TOCs:
+// a.frontmatter-reference is legacy, we now prefer
+// li.frontmatter-entry a
+
+#{$toc} {
+    list-style-type: none;
+    text-align: left; // overrides possible justify applied in Sass configs
+    ul, ol {
+        margin-left: $line-height-default;
+    }
+    li {
+        margin: 0;
+        a {
+            .toc-entry-text {
+                display: inline-block;
+                max-width: 90%;
+            }
+        }
+        a::after {
+            content: leader(" ") target-counter(attr(href), page);
+        }
+        &.frontmatter-reference {
+            a::after {
+                content: leader(" ") target-counter(attr(href), page, $frontmatter-reference-style);
+            }
+        }
+    }
+}

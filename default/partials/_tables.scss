@@ -1,0 +1,29 @@
+// _tables.scss
+
+// Tables
+
+table {
+    border-collapse: collapse;
+    margin: $line-height-default 0;
+    font-size: $font-size-default * $font-size-smaller;
+    width: 100%;
+    max-width: $page-width - $margin-inside - $margin-outside;
+}
+thead, th {
+    font-weight: bold;
+    page-break-after: avoid;
+}
+th, td {
+    border-top: $rule-thickness solid $color-mid;
+    border-bottom: $rule-thickness solid $color-mid;
+    border-left: 0;
+    border-right: 0;
+    padding: ($line-height-default * 0.1) ($line-height-default * 0.2);
+    vertical-align: top;
+    page-break-inside: avoid;
+    p, ul, ol, dl {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+}

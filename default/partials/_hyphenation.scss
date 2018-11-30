@@ -1,0 +1,15 @@
+// _hyphenation.scss
+
+// Hyphenation
+// We only use hyphenation for certain elements,
+// which are defined in _selectors.
+
+#{hyphenated} {
+    hyphens: $hyphenation;
+    // Minimum letters on new line after hyphen
+    hyphenate-after: $hyphenate-after;
+    // Minimum letters at end of line before hyphen
+    hyphenate-before: $hyphenate-before;
+    // Maximum number of consecutive lines ending with hyphens
+    hyphenate-lines: $hyphenate-lines;
+}

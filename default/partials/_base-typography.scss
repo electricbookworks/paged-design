@@ -1,0 +1,122 @@
+// _elements.scss
+
+// This file sets styles for basic HTML elements.
+// Tables are styled separately in _tables.scss.
+
+// Defaults
+
+body {
+    font-family: $font-text-main;
+    font-size: $font-size-default;
+    line-height: $line-height-default;
+}
+
+// Headings
+
+@mixin h1() {
+    font-size: $font-size-default * 4;
+    line-height: $line-height-default * 3;
+    margin: ($line-height-default * 2) 0 $line-height-default 0;
+    break-after: avoid;
+    break-inside: avoid;
+    // The opening heading in a chapter
+    #{$page-chapter} > &:first-of-type {
+        margin-bottom: $line-height-default * 5;
+    }
+}
+@mixin h2() {
+    font-size: $font-size-default * 2.5;
+    line-height: $line-height-default * 2;
+    margin: ($line-height-default * 2) 0 $line-height-default 0;
+    break-after: avoid;
+    break-inside: avoid;
+    // The opening heading in a chapter
+    #{$page-chapter} > &:first-of-type {
+        margin-bottom: $line-height-default * 5;
+    }
+}
+@mixin h3() {
+    font-size: $font-size-default * 1.4;
+    margin: $line-height-default 0 0 0;
+    break-after: avoid;
+    break-inside: avoid;
+    // The opening heading in a chapter
+    #{$page-chapter} > &:first-of-type {
+        margin-bottom: $line-height-default * 5;
+    }
+}
+@mixin h4() {
+    font-weight: bold;
+    margin: $line-height-default 0 0 0;
+    break-after: avoid;
+    break-inside: avoid;
+}
+@mixin h5() {
+    font-style: italic;
+    margin: $line-height-default 0 0 0;
+    break-after: avoid;
+    break-inside: avoid;
+}
+@mixin h6() {
+    margin: $line-height-default 0 0 0;
+    break-after: avoid;
+    break-inside: avoid;
+}
+h1 {
+    @include h1();
+}
+h2 {
+    @include h2();
+}
+h3 {
+    @include h3();
+}
+h4 {
+    @include h4();
+}
+h5 {
+    @include h5();
+}
+h6 {
+    @include h6();
+}
+
+// Paragraphs
+@mixin p() {
+    margin: 0;
+    text-align: justify;
+    // Indent all paragraphs that follow paragraphs
+    & + & {
+        text-indent: $line-height-default;
+    }
+}
+p {
+    @include p();
+}
+
+// Lists
+@mixin ol() {
+    list-style: decimal;
+    // Move markers into text area
+    margin-left: 1em;
+}
+@mixin ul() {
+    list-style: disc;
+    // Move markers into text area
+    margin-left: 1em;
+}
+ol {
+    @include ol();
+}
+ul {
+    @include ul();
+}
+
+// Links
+@mixin links() {
+    text-decoration: none;
+    color: $color-links;
+}
+a {
+    @include links();
+}

@@ -1,0 +1,24 @@
+// _boxes.scss
+
+#{box} {
+    border: $rule-thickness solid $color-accent;
+    margin: $line-height-default 0;
+    padding: $line-height-default;
+    text-indent: 0;
+    // No text-indent on paragraphs after boxes
+    & + p {
+        text-indent: 0;
+    }
+    // No margin above the first headings in a box
+    h1:first-of-type, 
+    h2:first-of-type, 
+    h3:first-of-type, 
+    h4:first-of-type, 
+    h5:first-of-type, 
+    h6:first-of-type {
+        margin-top: 0;
+    }
+    *:last-child {
+        margin-bottom: 0;
+    }
+}

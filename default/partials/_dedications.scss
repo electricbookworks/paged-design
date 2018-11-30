@@ -1,0 +1,13 @@
+// _dedications.scss
+
+// Dedications
+
+#{dedication} {
+    text-indent: 0;
+    text-align: center;
+    // Paragraphs after dedications
+    & + p {
+        text-indent: 0;
+        margin-top: $line-height-default;
+    }
+}
