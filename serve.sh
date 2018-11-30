@@ -5,13 +5,11 @@ cd -- "$(dirname "$0")"
 # Don't echo these commands:
 set +v
 
-# NOTE: This script is untested
-
 echo "-------------------------------------------"
 echo "Starting webserver...echo Starting webserver at http://127.0.0.1:5000"
 echo "Press Ctrl+C to stop"
 echo "-------------------------------------------"
 
-google-chrome "http://127.0.0.1:5000/"
-
+awhile=2
+sleep $awhile && google-chrome "http://127.0.0.1:5000/" &
 ruby -run -e httpd . -p 5000
