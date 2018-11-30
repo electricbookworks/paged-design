@@ -9,5 +9,5 @@ echo -------------------------------------------
 echo Starting webserver...echo Starting webserver at http://127.0.0.1:5000
 echo Press Ctrl+C to stop
 echo -------------------------------------------
-start chrome "http://127.0.0.1:5000/content/"
+start chrome "http://127.0.0.1:5000/"
 call ruby -run -e httpd . -p 5000
