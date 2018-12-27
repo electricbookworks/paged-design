@@ -19,10 +19,6 @@ body {
     margin: ($line-height-default * 2) 0 $line-height-default 0;
     break-after: avoid;
     break-inside: avoid;
-    // The opening heading in a chapter
-    #{$page-chapter} > &:first-of-type {
-        margin-bottom: $line-height-default * 5;
-    }
 }
 @mixin h2() {
     font-size: $font-size-default * 2.5;
@@ -30,20 +26,12 @@ body {
     margin: ($line-height-default * 2) 0 $line-height-default 0;
     break-after: avoid;
     break-inside: avoid;
-    // The opening heading in a chapter
-    #{$page-chapter} > &:first-of-type {
-        margin-bottom: $line-height-default * 5;
-    }
 }
 @mixin h3() {
     font-size: $font-size-default * 1.4;
     margin: $line-height-default 0 0 0;
     break-after: avoid;
     break-inside: avoid;
-    // The opening heading in a chapter
-    #{$page-chapter} > &:first-of-type {
-        margin-bottom: $line-height-default * 5;
-    }
 }
 @mixin h4() {
     font-weight: bold;
@@ -95,21 +83,50 @@ p {
 }
 
 // Lists
-@mixin ol() {
-    list-style: decimal;
+@mixin list() {
+    margin-top: $line-height-default;
+    margin-bottom: $line-height-default;
     // Move markers into text area
-    margin-left: 1em;
+    margin-left: $line-height-default;
+}
+@mixin ol() {
+    @include list;
+    list-style: decimal;
 }
 @mixin ul() {
+    @include list;
     list-style: disc;
-    // Move markers into text area
-    margin-left: 1em;
 }
 ol {
     @include ol();
 }
 ul {
     @include ul();
+}
+
+// Definition lists
+@mixin definition-list() {
+    margin: $line-height-default 0;
+    dt {
+        display: inline-block;
+        float: left;
+        font-weight: bold;
+        margin-right: $font-size-default / 2;
+    }
+}
+dl {
+    @include definition-list;
+}
+
+// Blockquotes
+@mixin blockquote() {
+    padding: $line-height-default;
+    & + blockquote {
+        padding-top: 0;
+    }
+}
+blockquote {
+    @include blockquote();
 }
 
 // Links
@@ -119,4 +136,34 @@ ul {
 }
 a {
     @include links();
+}
+
+// Emphasis
+em {
+    font-style: italic;
+}
+strong {
+    font-weight: bold;
+}
+
+// Super- and subscript
+sup, sub {
+    line-height: 0; // prevent increasing line height in print output
+    font-size: 1em * $font-size-smaller;
+}
+sup {
+    vertical-align: super;
+}
+sub {
+    vertical-align: sub;
+}
+
+// Horizontal rules
+// Using <hr> as a text divider
+hr {
+    content: $text-divider;
+    border: 0;
+    font-family: $font-display-main;
+    text-align: center;
+    margin: $line-height-default 0;
 }

@@ -4,13 +4,14 @@
 // In our HTML, we assume that inline code is in <code> tags
 // and blocks of <code> are in <pre> tags.
 
-code, #{code} {
+code, #{$code} {
     font-family: $font-code;
     line-height: $line-height-default;
     white-space: pre-wrap;
     background-color: $color-light;
     padding: 0.1em 0.3em;
     border-radius: $border-radius;
+    font-size: $font-size-default * $font-size-smaller; // monospace fonts are usually too big
 }
 pre {
     background-color: $color-light;

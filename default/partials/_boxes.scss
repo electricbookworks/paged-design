@@ -1,6 +1,6 @@
 // _boxes.scss
 
-#{box} {
+#{$box} {
     border: $rule-thickness solid $color-accent;
     margin: $line-height-default 0;
     padding: $line-height-default;

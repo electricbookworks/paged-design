@@ -26,17 +26,26 @@ $code: '.code' !default; // applies to an inline element
 $cross-reference: '.cross-reference' !default; // applies to a link <a class="cross-reference">
 $dedication: '.dedication' !default; // applies to a paragraph
 $dialogue: '.dialogue' !default; // applies to a definition-list
+$endnotes: '.footnotes' !default; // the block element that contains endnotes
 $epigraph: '.epigraph' !default; // applies to a paragraph and a following one with class containing 'source'
 $figure: 'figure, .figure' !default; // applies to a figure element or a div.figure
+$footnote-reference: '.footnote' !default; // the usually superscript reference in the text
+$footnotes-backlink: '.reversefootnote' !default; // the link from the note back to the text
 $glossary: '.glossary' !default; // applies to a list
-$hyphenated: 'p, ul, ol, dl' !default; // elements that should be hyphenated
-$margin-box: '.margin-box' !default; // applies to any element
 $half-title-page-title: '.title-page-title' !default; // applies to a block element
-$title-page-title: '.title-page-title' !default; // applies to a block element
-$title-page-subtitle: '.title-page-subtitle' !default; // applies to a block element
+$hyphenated: 'p, ul, ol, dl' !default; // elements that should be hyphenated
+$index: '.index, .reference-index' !default; // a list
+$margin-box: '.margin-box' !default; // applies to any element
+$pullquote: '.pullquote' !default; // applies to a block element, especially a blockquote
+$show-url: '.show-url' !default; // links after which their URL should appear in brackets
+$sidenote: '.sidenote' !default; // block or inline element
+$source: '.source' !default; // applies to block or inline elements, especially in or after blockquotes
+$table-caption: '.table-caption' !default; // applies to a block, especially a paragraph
 $title-page-author: '.title-page-author' !default; // applies to a block element
 $title-page-contributors: '.title-page-contributors' !default; // applies to a block element
-$title-page-publisher: '.title-page-publisher' !default; // applies to a block element
 $title-page-logo: '.title-page-logo' !default; // applies to an image or block element
-$toc: '.toc' !default; // applies to a list
+$title-page-publisher: '.title-page-publisher' !default; // applies to a block element
+$title-page-subtitle: '.title-page-subtitle' !default; // applies to a block element
+$title-page-title: '.title-page-title' !default; // applies to a block element
 $toc-frontmatter-reference: '.frontmatter-reference' !default; // applies to a list item
+$toc: '.toc-list, #markdown-toc' !default; // applies to a list

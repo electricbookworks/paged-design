@@ -8,7 +8,10 @@
 @import 'partials/base-typography';
 
 // Loads page-setup rules for paged.js
-@import 'partials/paged-page-setup';
+@import 'partials/page-setup';
+
+// Loads @font-face rules
+@import 'partials/font-faces';
 
 // Loads page models
 @import 'partials/page-chapter';
@@ -37,6 +40,9 @@
 @import 'partials/figures';
 @import 'partials/glossaries';
 @import 'partials/hyphenation';
+@import 'partials/indexes';
+@import 'partials/notes';
+@import 'partials/quotes';
 @import 'partials/tables';
 @import 'partials/title-pages';
 @import 'partials/toc';

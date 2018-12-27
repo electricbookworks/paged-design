@@ -1,4 +1,4 @@
-// _paged-structure.scss
+// _page-setup.scss
 
 @page { 
     size: $page-width $page-height;
@@ -6,10 +6,10 @@
     margin-bottom: $margin-bottom;
     padding: 0;
     marks: $crop-marks;
-    // Not yet supported:
-    // bleed: $bleed;
-    // trim: $trim;
-    // pdf-page-colorspace: $colorspace;
+    // Not yet supported in paged.js:
+    bleed: $bleed; // https://gitlab.pagedmedia.org/tools/pagedjs/issues/82
+    trim: $trim;
+    pdf-page-colorspace: $colorspace;
 }
 @page :left {
     margin-left: $margin-outside;

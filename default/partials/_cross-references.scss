@@ -1,10 +1,16 @@
 // _cross-references.scss
 
 // Cross-references that include a page number
-
 #{$cross-reference} {
     &:after {
-        // Currently throws an exception in PagedJS:
+        // Currently not supported in paged.js
         // content: " (#{$locales-page} " target-counter(attr(href), page ) ")";
+    }
+}
+
+// Show a link's URL
+#{$show-url} {
+    &:after {
+        content: " (" attr(href) ")";
     }
 }

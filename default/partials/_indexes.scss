@@ -1,0 +1,29 @@
+// _indexes.scss
+
+// Indexes
+
+#{$index} {
+    columns: 2;
+    font-size: $font-size-default * $font-size-smaller;
+    margin: $line-height-default 0 0 0;
+    ul, ol {
+        margin: 0;
+    }
+    li {
+        list-style-type: none;
+        margin: 0 0 0 ($line-height-default * 1);
+        text-indent: $line-height-default * (-1);
+        li {
+            margin: 0 0 0 ($line-height-default / 2);
+        }
+    }
+    a {
+        content: target-counter(attr(href), page);
+        &:after {
+            content: ", ";
+        }
+        &:last-of-type:after {
+            content: "";
+        }
+    }
+}

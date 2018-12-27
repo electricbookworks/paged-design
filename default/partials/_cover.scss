@@ -3,24 +3,29 @@
 // Cover-page styling.
 // Creates a single-page low-res cover for screen PDFs.
 
-@page #{cover} {
+@page #{$cover} {
     margin: 0;
 }
-body.#{cover}, div.#{cover} {
-    margin: 0;
-    padding: 0;
-}
-p.#{cover} {
+#{$cover} {
     margin: 0;
     padding: 0;
-    text-indent: 0;
-}
-img.#{cover} {
-    height: 100%;
-    width: 100%;
-}
-
-// Add extra verso to retain correct folios
-body.#{cover} {
-    break-after: verso;
+    position: absolute;
+    top: -($margin-top + $bleed + $trim);
+    right: -($margin-outside + $bleed + $trim);
+    bottom: -($margin-bottom + $bleed + $trim);
+    left: -($margin-inside + $bleed + $trim);
+    break-after: verso; // Add extra verso to retain correct folios
+    // Reset those rules for potential .#{cover} elements inside .#{cover}
+    #{$cover} {
+        position: relative;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        break-after: none;
+    }
+    img {
+        height: 100%;
+        width: 100%;
+    }
 }

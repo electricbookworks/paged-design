@@ -14,4 +14,10 @@
             text-indent: 0;
         }
     }
+    // Don't show the heading 'Copyright', which
+    // we might still want in the PDF bookmarks
+    // and in other outputs.
+    h1[id="copyright"] {
+        display: none;
+    }
 }

@@ -227,3 +227,13 @@ h6 {
     @bottom-left-corner { content: normal; }
     @bottom-right-corner { content: normal; }
 }
+
+// Reset page numbers with 'page-n' classes,
+// where n is the page number you want to start at.
+// Note: setting the integer is not yet supported in paged.js,
+// so there this currently only resets the page number to 1.
+@for $i from 1 through 1000 {
+    .page-#{$i} {
+        counter-reset: page $i;
+    }
+}

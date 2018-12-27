@@ -2,10 +2,13 @@
 
 // Figures
 // By default all figures float to the bottoms of their pages.
+// Figures might be created as divs, blockquotes, or <figure> elements,
+// so we try to take those into account here with rules
+// that might apply to those elements elsewhere.
 
-#{figure} {
+#{$figure} {
     clear: both;
-    float: bottom;
+    float: bottom; // not yet supported by paged.js
     margin: $line-height-default 0 0 0;
     break-inside: avoid;
     background-color: inherit;

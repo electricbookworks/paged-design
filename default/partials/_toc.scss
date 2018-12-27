@@ -1,14 +1,14 @@
 // _toc.scss
 
-// Table of Contents pages
-
-// Regarding classes for frontmatter entries in TOCs:
-// a.frontmatter-reference is legacy, we now prefer
-// li.frontmatter-entry a
+// Table of Contents list
+// For the TOC page, see _page-toc.scss.
 
 #{$toc} {
     list-style-type: none;
-    text-align: left; // overrides possible justify applied in Sass configs
+    text-align: left; // overrides any potential 'justify' applied in Sass configs
+    padding: 0;
+    margin: 0;
+    // indent nested lists
     ul, ol {
         margin-left: $line-height-default;
     }
@@ -21,12 +21,23 @@
             }
         }
         a::after {
-            content: leader(" ") target-counter(attr(href), page);
+            // leader(" ") is not yet supported in paged.js
+            content: target-counter(attr(href), page);
+            float: right;
         }
-        &.frontmatter-reference {
+        &.frontmatter-entry {
             a::after {
-                content: leader(" ") target-counter(attr(href), page, $frontmatter-reference-style);
+                content: target-counter(attr(href), page, $frontmatter-page-numbers);
+                float: right;
             }
         }
+    }
+    // If a TOC list appears after a paragraph,
+    // or is followed by one, add space
+    p + & {
+        margin-top: $line-height-default;
+    }
+    & + p {
+        margin-top: $line-height-default;
     }
 }

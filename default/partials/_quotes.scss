@@ -1,0 +1,39 @@
+// _quotes.scss
+
+// Blockquotes
+// The blockquote element is defined in base-typography.
+// These styles are for related book features.
+
+// Blockquote sources
+// The source of a quotation, e.g. a name or book title, that appears after the quote
+
+@mixin source() {
+    font-style: italic;
+    text-indent: 0;
+    page-break-before: avoid;
+    em {
+        font-style: normal;
+    }
+}
+
+blockquote + #{$source} {
+    @include blockquote;
+    @include source;
+    padding-top: 0;
+    + p {
+        text-indent: 0;
+    }
+}
+blockquote > #{$source} {
+    @include blockquote;
+    @include source;
+    padding: 0;
+}
+
+// Pullquotes
+
+#{$pullquote} {
+    padding: $line-height-default;
+    font-size: $font-size-default * 2.2;
+    line-height: $line-height-default * 2;
+}

@@ -1,0 +1,315 @@
+// _font-faces.scss
+
+// This file is largely a placeholder for your own font-face rules,
+// and for local development. Install the actual font files
+// on your machine, or save the files listed here to /fonts.
+// In production, it's important that everyone one your team
+// (include future you) use the same font files, to avoid
+// pages reflowing after you've carefully refined their layout.
+
+/* Crimson Pro https://github.com/Fonthausen/CrimsonPro */
+
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../fonts/CrimsonPro-ExtraLight.ttf);
+    font-weight: 200;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../fonts/CrimsonPro-ExtraLightItalic.ttf);
+    font-weight: 200;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../fonts/CrimsonPro-Light.ttf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../fonts/CrimsonPro-LightItalic.ttf);
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../fonts/CrimsonPro-Regular.ttf);
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../fonts/CrimsonPro-Italic.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../fonts/CrimsonPro-Medium.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../fonts/CrimsonPro-MediumItalic.ttf);
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../fonts/CrimsonPro-SemiBold.ttf);
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../fonts/CrimsonPro-SemiBoldItalic.ttf);
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../fonts/CrimsonPro-Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../fonts/CrimsonPro-BoldItalic.ttf);
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../fonts/CrimsonPro-ExtraBold.ttf);
+    font-weight: 800;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../fonts/CrimsonPro-ExtraBoldItalic.ttf);
+    font-weight: 800;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../fonts/CrimsonPro-Black.ttf);
+    font-weight: 900;
+}
+@font-face {
+    font-family: "Crimson Pro";
+    src: url(../fonts/CrimsonPro-BlackItalic.ttf);
+    font-weight: 900;
+    font-style: italic;
+}
+
+
+/* Lato https://fonts.google.com/specimen/Lato
+Download from http://www.latofonts.com/lato-free-fonts/#download
+or https://github.com/google/fonts/tree/master/ofl/lato
+*/
+
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-Hairline.ttf);
+    font-weight: 100;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-HairlineItalic.ttf);
+    font-weight: 100;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-Thin.ttf);
+    font-weight: 200;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-ThinItalic.ttf);
+    font-weight: 100;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-Light.ttf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-LightItalic.ttf);
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-Regular.ttf);
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-Italic.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-Medium.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-MediumItalic.ttf);
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-Semibold.ttf);
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-SemiboldItalic.ttf);
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-BoldItalic.ttf);
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-Heavy.ttf);
+    font-weight: 800;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-HeavyItalic.ttf);
+    font-weight: 800;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-Black.ttf);
+    font-weight: 900;
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-BlackItalic.ttf);
+    font-weight: 900;
+    font-style: italic;
+}
+
+
+/* Barlow Semi Condensed https://github.com/jpt/barlow 
+                         https://fonts.google.com/specimen/Barlow+Semi+Condensed */
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-Thin.otf);
+    font-weight: 100;
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-ThinItalic.otf);
+    font-weight: 100;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-ExtraLight.otf);
+    font-weight: 200;
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-ExtraLightItalic.otf);
+    font-weight: 200;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-Light.otf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-LightItalic.otf);
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-Regular.otf);
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-Italic.otf);
+    font-style: italic;
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-Medium.otf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-MediumItalic.otf);
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-SemiBold.otf);
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-SemiBoldItalic.otf);
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-Bold.otf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-BoldItalic.otf);
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-ExtraBold.otf);
+    font-weight: 800;
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-ExtraBoldItalic.otf);
+    font-weight: 800;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-Black.otf);
+    font-weight: 900;
+}
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(../fonts/BarlowSemiCondensed-BlackItalic.otf);
+    font-weight: 900;
+    font-style: italic;
+}
+
+
+/* Inconsolata https://fonts.google.com/specimen/Inconsolata
+               https://github.com/google/fonts/tree/master/ofl/inconsolata */
+@font-face {
+    font-family: "Inconsolata", monospace;
+    src: url(../fonts/Inconsolata-Regular.ttf);
+}
+@font-face {
+    font-family: "Inconsolata", monospace;
+    src: url(../fonts/Inconsolata-Bold.ttf);
+    font-weight: bold;
+}

@@ -27,19 +27,24 @@ $margin-top: 45pt !default;
 $margin-bottom: 60pt !default;
 $margin-outside: 15mm !default;
 $margin-inside: 15mm !default;
-$bleed: 3mm !default;
-$trim: 3mm !default;
+$bleed: 0 !default;
+$trim: 0 !default;
 $crop-marks: crop !default; // crop | none
 
 
 // Type
 // ----
 
-$font-text-main: 'Spectral' !default;
-$font-text-secondary: 'Roboto' !default;
-$font-display-main: 'Roboto' !default;
-$font-display-secondary: 'Spectral' !default;
-$font-code: monospace;
+// To avoid your pages reflowing between team members,
+// we recommend saving font files to your project
+// and only linking to those. Don't use online fonts and
+// generic keyword fallbacks (e.g.g 'serif'). We do that here
+// for demo purposes only, and would not do so in production.
+$font-text-main: "Crimson Pro", serif !default;
+$font-text-secondary: "Lato", sans-serif !default;
+$font-display-main: "Lato", sans-serif !default;
+$font-display-secondary: "Lato", sans-serif !default;
+$font-code: "Inconsolata", monospace;
 $font-size-default: 11pt !default;
 $line-height-default: 15pt !default;
 
@@ -63,7 +68,7 @@ $chapters-start-on: recto;
 // ---------------------------
 
 // Style of page numbers on frontmatter pages: e.g. lower-roman, decimal
-$frontmatter-reference-style: decimal !default;
+$frontmatter-page-numbers: lower-roman !default;
 
 // Set the content of headers and footers.
 // * For no content: normal
@@ -73,7 +78,7 @@ $frontmatter-reference-style: decimal !default;
 // * For other special characters, see CSS (ISO) at
 //   https://brajeshwar.github.io/entities/
 
-// Not yet supported by PagedJS (https://gitlab.pagedmedia.org/tools/pagedjs/issues/44):
+// Not yet supported by paged.js (https://gitlab.pagedmedia.org/tools/pagedjs/issues/44):
 // * For the title attribute of the last h1: string(h1-title, last)
 //   (increment to h2, h3, h4, h5, h6 as needed)
 //   By default, this uses the heading text, unless you
@@ -112,7 +117,7 @@ $verso-top-left-frontmatter: normal !default;
 $verso-top-right-frontmatter: normal !default;
 $verso-top-left-corner-frontmatter: normal !default;
 $verso-top-right-corner-frontmatter: normal !default;
-$verso-bottom-frontmatter: counter(page, $frontmatter-reference-style) !default;
+$verso-bottom-frontmatter: counter(page, $frontmatter-page-numbers) !default;
 $verso-bottom-left-frontmatter: normal !default;
 $verso-bottom-right-frontmatter: normal !default;
 $verso-bottom-left-corner-frontmatter: normal !default;
@@ -124,7 +129,7 @@ $recto-top-left-frontmatter: normal !default;
 $recto-top-right-frontmatter: normal !default;
 $recto-top-left-corner-frontmatter: normal !default;
 $recto-top-right-corner-frontmatter: normal !default;
-$recto-bottom-frontmatter: counter(page, $frontmatter-reference-style) !default;
+$recto-bottom-frontmatter: counter(page, $frontmatter-page-numbers) !default;
 $recto-bottom-left-frontmatter: normal !default;
 $recto-bottom-right-frontmatter: normal !default;
 $recto-bottom-left-corner-frontmatter: normal !default;
@@ -133,6 +138,9 @@ $recto-bottom-right-corner-frontmatter: normal !default;
 
 // Design
 // ------
+
+// Colour space (rgb, cmyk, gray)
+$colorspace: rgb;
 
 // Colours
 $color-text-main: black !default;
@@ -151,6 +159,8 @@ $border-radius: 0.1em !default;
 // Consistent thickness of rules
 $rule-thickness: 0.5pt !default;
 
+// Text divider as generated content, e.g. in hr:after
+$text-divider: "" !default;
 
 // Localisation
 // ------------

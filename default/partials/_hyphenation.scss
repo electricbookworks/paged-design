@@ -4,7 +4,7 @@
 // We only use hyphenation for certain elements,
 // which are defined in _selectors.
 
-#{hyphenated} {
+#{$hyphenated} {
     hyphens: $hyphenation;
     // Minimum letters on new line after hyphen
     hyphenate-after: $hyphenate-after;

@@ -8,7 +8,34 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../css/main.css">
-    <script src="https://s3.amazonaws.com/pagedmedia/pagedjs/dist/paged.polyfill.js"></script>
+
+    <!-- Only load paged.js when MathJax is done
+    (Thanks https://www.pagedmedia.org/paginating-math/) -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js'></script>
+    <script>
+        MathJax.Hub.Config({
+            jax: ["input/TeX","output/SVG", "output/PreviewHTML"],
+            extensions: ["tex2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
+            TeX: {
+                extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+            },
+            SVG: {
+                font: "Gyre-Pagella",
+                blacker: 0
+            }
+        });
+    </script>
+    <script>
+        window.PagedConfig = {
+            auto: false
+        };
+    </script>
+    <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+    <script>
+        MathJax.Hub.Queue(function () {
+            window.PagedPolyfill.preview();
+        });
+    </script>
 </head>
 
 <body>
@@ -45,7 +72,7 @@
     <div class="samples title-page" data-header="Title page" data-header-left="Title page" data-header-right="Title page" data-page-info="Samples: Title page • 00-03-title-page • 30 Nov 2018, 16:35">
         <div>
             <div>
-                <p class="title-page-title">Samples</p>
+                <p class="title-page-title" id="title-page-title">Samples</p>
                 <p class="title-page-subtitle">Sample content for Electric Book print, epub and web output</p>
                 <p class="title-page-author">Arthur Attwell</p>
                 <p class="title-page-publisher">Electric Book Works</p>
@@ -73,47 +100,42 @@
                 <h1 id="contents">Contents</h1>
                 <ol class="toc-list ">
                     <li class="toc-entry-title frontmatter-entry">
-                        <a href="00-01-halftitle-page.html">
-                <span class="toc-entry-text">Half title page</span>
-            </a>
-                    </li>
-                    <li class="toc-entry-title frontmatter-entry">
-                        <a href="00-02-previous-publications-page.html">
+                        <a href="#also-by-the-author">
                 <span class="toc-entry-text">Previous publications</span>
             </a>
                     </li>
                     <li class="toc-entry-title frontmatter-entry">
-                        <a href="00-03-title-page.html">
+                        <a href="#title-page-title">
                 <span class="toc-entry-text">Title page</span>
             </a>
                     </li>
                     <li class="toc-entry-title frontmatter-entry">
-                        <a href="00-04-copyright-page.html">
+                        <a href="#copyright">
                 <span class="toc-entry-text">Copyright</span>
             </a>
                     </li>
                     <li class="toc-entry-title active frontmatter-entry">
-                        <a href="00-05-contents-page.html" class="active">
+                        <a href="#contents" class="active">
                 <span class="toc-entry-text">Contents</span>
             </a>
                     </li>
                     <li class="toc-entry-title frontmatter-entry">
-                        <a href="00-06-dedication-page.html">
+                        <a href="#dedication">
                 <span class="toc-entry-text">Dedication</span>
             </a>
                     </li>
                     <li class="toc-entry-title frontmatter-entry">
-                        <a href="00-07-epigraph-page.html">
+                        <a href="#epigraph">
                 <span class="toc-entry-text">Epigraph</span>
             </a>
                     </li>
                     <li class="toc-entry-title frontmatter-entry">
-                        <a href="00-08-frontispiece-page.html">
+                        <a href="#frontispiece">
                 <span class="toc-entry-text">Frontispiece</span>
             </a>
                     </li>
                     <li class="toc-entry-title frontmatter-entry">
-                        <a href="00-09-frontmatter.html">
+                        <a href="#other-frontmatter">
                 <span class="toc-entry-text">Other frontmatter</span>
             </a>
                     </li>
@@ -121,92 +143,82 @@
                         <span class="toc-entry-text">Text</span>
                         <ol class="toc-list ">
                             <li class="toc-entry-title">
-                                <a href="01-01-plain-text.html#plain-text">
+                                <a href="#plain-text">
                 <span class="toc-entry-text">Plain text</span>
             </a>
                             </li>
                             <li class="toc-entry-title">
-                                <a href="01-02-headings.html#headings">
+                                <a href="#headings">
                 <span class="toc-entry-text">Headings</span>
             </a>
                             </li>
                             <li class="toc-entry-title">
-                                <a href="01-03-quotes.html#quotes">
+                                <a href="#quotes">
                 <span class="toc-entry-text">Quotes</span>
             </a>
                                 <ol class="toc-list ">
                                     <li class="toc-entry-title">
-                                        <a href="01-03-quotes.html#blockquotes">
+                                        <a href="#blockquotes">
                 <span class="toc-entry-text">Blockquotes</span>
             </a>
                                     </li>
                                     <li class="toc-entry-title">
-                                        <a href="01-03-quotes.html#pullquotes">
+                                        <a href="#pullquotes">
                 <span class="toc-entry-text">Pullquotes</span>
             </a>
                                     </li>
                                     <li class="toc-entry-title">
-                                        <a href="01-03-quotes.html#quote-sources">
+                                        <a href="#quote-sources">
                 <span class="toc-entry-text">Quote sources</span>
             </a>
                                     </li>
                                 </ol>
                             </li>
                             <li class="toc-entry-title">
-                                <a href="01-04-lists.html#lists">
+                                <a href="#lists">
                 <span class="toc-entry-text">Lists</span>
             </a>
                                 <ol class="toc-list ">
                                     <li class="toc-entry-title">
-                                        <a href="01-04-lists.html#simple-lists">
+                                        <a href="#simple-lists">
                 <span class="toc-entry-text">Simple lists</span>
             </a>
                                     </li>
                                     <li class="toc-entry-title">
-                                        <a href="01-04-lists.html#chapter-contents">
+                                        <a href="#chapter-contents">
                 <span class="toc-entry-text">Chapter tables of contents</span>
             </a>
                                     </li>
                                     <li class="toc-entry-title">
-                                        <a href="01-04-lists.html#bibliographies">
+                                        <a href="#bibliographies">
                 <span class="toc-entry-text">Bibliographies</span>
             </a>
                                     </li>
                                     <li class="toc-entry-title">
-                                        <a href="01-04-lists.html#definitions-and-glossaries">
+                                        <a href="#definitions-and-glossaries">
                 <span class="toc-entry-text">Definitions and glossaries</span>
             </a>
                                     </li>
                                 </ol>
                             </li>
                             <li class="toc-entry-title">
-                                <a href="01-05-tables.html#tables">
+                                <a href="#tables">
                 <span class="toc-entry-text">Tables</span>
             </a>
                             </li>
                             <li class="toc-entry-title">
-                                <a href="01-06-boxes.html#boxes">
+                                <a href="#boxes">
                 <span class="toc-entry-text">Boxes</span>
             </a>
                             </li>
                             <li class="toc-entry-title">
-                                <a href="01-07-notes.html#notes">
+                                <a href="#notes">
                 <span class="toc-entry-text">Notes</span>
             </a>
                             </li>
                             <li class="toc-entry-title">
-                                <a href="01-08-dividers.html#dividers">
+                                <a href="#dividers">
                 <span class="toc-entry-text">Dividers</span>
-            </a>
-                            </li>
-                            <li class="toc-entry-title">
-                                <a href="01-09-poetry.html#poetry">
-                <span class="toc-entry-text">Poetry</span>
-            </a>
-                            </li>
-                            <li class="toc-entry-title">
-                                <a href="01-10-questions.html#questions-and-quizzes">
-                <span class="toc-entry-text">Questions and quizzes</span>
             </a>
                             </li>
                         </ol>
@@ -215,12 +227,12 @@
                         <span class="toc-entry-text">Images</span>
                         <ol class="toc-list ">
                             <li class="toc-entry-title">
-                                <a href="02-01-plain-images.html#plain-images">
+                                <a href="#plain-images">
                 <span class="toc-entry-text">Plain images</span>
             </a>
                             </li>
                             <li class="toc-entry-title">
-                                <a href="02-02-figures.html#figures">
+                                <a href="#figures">
                 <span class="toc-entry-text">Figures</span>
             </a>
                             </li>
@@ -230,12 +242,12 @@
                         <span class="toc-entry-text">Code and mathematics</span>
                         <ol class="toc-list ">
                             <li class="toc-entry-title">
-                                <a href="03-01-code.html#code">
+                                <a href="#code">
                 <span class="toc-entry-text">Code</span>
             </a>
                             </li>
                             <li class="toc-entry-title">
-                                <a href="03-02-maths.html#mathematics">
+                                <a href="#mathematics">
                 <span class="toc-entry-text">Mathematics</span>
             </a>
                             </li>
@@ -245,23 +257,8 @@
                         <span class="toc-entry-text">Interactivity</span>
                         <ol class="toc-list ">
                             <li class="toc-entry-title">
-                                <a href="04-01-links-buttons.html#links-and-buttons">
-                <span class="toc-entry-text">Links and buttons</span>
-            </a>
-                            </li>
-                            <li class="toc-entry-title">
-                                <a href="04-02-video.html#video">
-                <span class="toc-entry-text">Video</span>
-            </a>
-                            </li>
-                            <li class="toc-entry-title">
-                                <a href="04-03-audio.html#audio">
-                <span class="toc-entry-text">Audio</span>
-            </a>
-                            </li>
-                            <li class="toc-entry-title">
-                                <a href="04-04-iframes.html#iframes">
-                <span class="toc-entry-text">iFrames</span>
+                                <a href="#links">
+                <span class="toc-entry-text">Links</span>
             </a>
                             </li>
                         </ol>
@@ -270,12 +267,12 @@
                         <span class="toc-entry-text">Indexes</span>
                         <ol class="toc-list ">
                             <li class="toc-entry-title">
-                                <a href="10-01-traditional-index.html#traditional-index">
+                                <a href="#traditional-index">
                 <span class="toc-entry-text">Traditional index</span>
             </a>
                             </li>
                             <li class="toc-entry-title">
-                                <a href="10-02-dynamic-index.html#dynamic-index">
+                                <a href="#dynamic-index">
                 <span class="toc-entry-text">Dynamic index</span>
             </a>
                             </li>
@@ -290,7 +287,7 @@
     <div class="samples dedication-page" data-header="Dedication" data-header-left="Dedication" data-header-right="Dedication" data-page-info="Samples: Dedication • 00-06-dedication-page • 30 Nov 2018, 16:35">
         <div>
             <div>
-                <p class="dedication">To Ms Sleep, who said I could be a writer.<br />
+                <p class="dedication" id="dedication">To Ms Sleep, who said I could be a writer.<br />
                     You were right, though much of it’s in <code class="highlighter-rouge">code</code>.</p>
             </div>
             <!--#content-->
@@ -300,7 +297,7 @@
     <div class="samples epigraph-page" data-header="Epigraph" data-header-left="Epigraph" data-header-right="Epigraph" data-page-info="Samples: Epigraph • 00-07-epigraph-page • 30 Nov 2018, 16:35">
         <div>
             <div>
-                <p class="epigraph">In a good bookroom you feel in some mysterious way that you are absorbing the wisdom contained in all the books through your skin, without even opening them.</p>
+                <p class="epigraph" id="epigraph">In a good bookroom you feel in some mysterious way that you are absorbing the wisdom contained in all the books through your skin, without even opening them.</p>
                 <p class="epigraph-source">Mark Twain</p>
             </div>
             <!--#content-->
@@ -310,9 +307,9 @@
     <div class="samples frontispiece-page" data-header="Frontispiece" data-header-left="Frontispiece" data-header-right="Frontispiece" data-page-info="Samples: Frontispiece • 00-08-frontispiece-page • 30 Nov 2018, 16:35">
         <div>
             <div>
-                <blockquote class="figure large">
+                <blockquote class="figure large" id="frontispiece">
                     <p><img src="images/count-of-monte-christo-1.jpg" alt="An image for a sample frontispiece." /></p>
-                        <p>Look at this lovely picture from <a href="10-02-dynamic-index.html#count-1" class="indexed" id="count-1"><em>The Count of Monte Christo</em></a> for the frontispiece of our book of typography.</p>
+                        <p>Look at this lovely picture from <a href="#count-1" class="indexed" id="count-1"><em>The Count of Monte Christo</em></a> for the frontispiece of our book of typography.</p>
                 </blockquote>
             </div>
             <!--#content-->
@@ -337,7 +334,7 @@
         </div>
         <!--#wrapper-->
     </div>
-    <div class="samples part-page" data-header="Text" data-header-left="Text" data-header-right="Text" data-page-info="Samples: Text • 01-00-text • 30 Nov 2018, 16:35">
+    <div class="samples part-page page-130" data-header="Text" data-header-left="Text" data-header-right="Text" data-page-info="Samples: Text • 01-00-text • 30 Nov 2018, 16:35">
         <div>
             <div>
                 <h1 id="text">Text</h1>
@@ -351,7 +348,7 @@
             <div>
                 <h2 id="plain-text">Plain text</h2>
                 <p>Most books comprise pages and pages of running text. A good design makes them lovely to look at and easy to read. The heart of a design is how it handles both plain text and special forms like letters. There is a <a href="#letter" class="show-page-number">letter towards the end of this chapter</a>.</p>
-                <p>The text for this chapter is taken from Sir Arthur Conan Doyle’s <a href="10-02-dynamic-index.html#sherlock-1" class="indexed" id="sherlock-1"><em>Adventures of Sherlock Holmes</em></a>.</p>
+                <p>The text for this chapter is taken from Sir Arthur Conan Doyle’s <a href="#sherlock-1" class="indexed" id="sherlock-1"><em>Adventures of Sherlock Holmes</em></a>.</p>
                 <h3 id="a-scandal-in-bohemia">A Scandal in Bohemia</h3>
                 <h4 id="i">I.</h4>
                 <p>To Sherlock Holmes she is always THE woman. I have seldom heard him mention her under any other name. In his eyes she eclipses and predominates the whole of her sex. It was not that he felt any emotion akin to love for Irene Adler. All emotions, and that one particularly, were abhorrent to his cold, precise but admirably balanced mind. He was, I take it, the most perfect reasoning and observing machine that the world has seen, but as a lover he would have placed himself in a false position. He never spoke of the softer passions, save with a gibe and a sneer. They were admirable things for the observer–excellent for drawing the veil from men’s motives and actions. But for the trained reasoner to admit such intrusions into his own delicate and finely adjusted temperament was to introduce a distracting factor which might throw a doubt upon all his mental results. Grit in a sensitive instrument, or a crack in one of his own high-power lenses, would not be more disturbing than a strong emotion in a nature such as his. And yet there was but one woman to him, and that woman was the late Irene Adler, of dubious and questionable memory.</p>
@@ -720,11 +717,16 @@
                 </blockquote>
                 <p>Some publications use pullquotes as part of the flowing text, rather than phrases extracted from the body. That may or may not be a good idea.</p>
                 <h3 id="quote-sources">Quote sources</h3>
-                <p>Sometimes the source of a quote is included with the quote, and needs to be styled specially. For that, we use a <code class="highlighter-rouge">source</code> class. That might be applied to an inline or a block element. Here as a paragraph class (block element):</p>
+                <p>Sometimes the source of a quote is included with the quote, and needs to be styled specially. For that, we use a <code class="highlighter-rouge">source</code> class. That might be applied to an inline or a block element. Here as a paragraph after a blockquote:</p>
                 <blockquote>
                     <p>Collecting quotations is an insidious, even embarrassing habit, like ragpicking or hoarding rocks or trying on other people’s laundry. I got into it originally while trying to break an addiction to candy. I kicked candy and now seem to be stuck with quotations, which are attacking my brain instead of my teeth.</p>
                 </blockquote>
                 <p class="source">Robert Byrne, ‘Sources, References, and Notes’ in <em>The Other 637 Best Things Anybody Ever Said</em>, 1984</p>
+                <p>And here as a paragraph inside the blockquote:</p>
+                <blockquote>
+                    <p>Collecting quotations is an insidious, even embarrassing habit, like ragpicking or hoarding rocks or trying on other people’s laundry. I got into it originally while trying to break an addiction to candy. I kicked candy and now seem to be stuck with quotations, which are attacking my brain instead of my teeth.</p>
+                    <p class="source">Robert Byrne, ‘Sources, References, and Notes’ in <em>The Other 637 Best Things Anybody Ever Said</em>, 1984</p>
+                </blockquote>
                 <p>And here as an inline <code class="highlighter-rouge">&lt;em&gt;</code> element:</p>
                 <blockquote>
                     <p>The multiplicity of facts and writings is become so great that every thing must soon be reduced to extracts and dictionaries. <em class="source">Voltaire</em></p>
@@ -824,14 +826,13 @@
                     <li>In the midst of them, the hangman, ever busy and ever worse than useless, was in constant requisition; now, stringing up long rows of miscellaneous criminals; now, hanging a housebreaker on Saturday who had been taken on Tuesday; now, burning people in the hand at Newgate by the dozen, and now burning pamphlets at the door of Westminster Hall; to-day, taking the life of an atrocious murderer, and to-morrow of a wretched pilferer who had robbed a farmer’s boy of sixpence.</li>
                 </ol>
                 <h3 id="chapter-contents">Chapter contents</h3>
-                <p>In kramdown, you can get a list of all the headings in a file by adding the tag <code class="highlighter-rouge">{:toc}</code> after a single list item. They automatically get a class of <code class="highlighter-rouge">markdown-toc</code>. How does this theme handle those in-chapter tables of contents?</p>
+                <p>In kramdown, you can get a list of all the headings in a file by adding the tag <code class="highlighter-rouge">{:toc}</code> after a single list item. They automatically get an id of <code class="highlighter-rouge">markdown-toc</code>. How does this theme handle those in-chapter tables of contents?</p>
                 <ul id="markdown-toc">
                     <li><a href="#simple-lists" id="markdown-toc-simple-lists">Simple lists</a></li>
                     <li><a href="#chapter-contents" id="markdown-toc-chapter-contents">Chapter contents</a></li>
                     <li><a href="#bibliographies" id="markdown-toc-bibliographies">Bibliographies</a></li>
                     <li><a href="#definitions-and-glossaries" id="markdown-toc-definitions-and-glossaries">Definitions and glossaries</a></li>
                 </ul>
-                <p>You can exclude a heading from that in-chapter TOC by giving it a <code class="highlighter-rouge">no_toc</code> class, which we’ve done to the first ‘Lists’ heading in this chapter.</p>
                 <h3 id="bibliographies">Bibliographies</h3>
                 <p>In book-publishing convention, lists of references – known as bibliographies – usually have a particular layout. Most often, they have no marker (bullet or number) and a hanging indent, making it easy to scan their initial words, which are usually the surnames of the authors. We mark up bibliographies by giving a list the class <code class="highlighter-rouge">bibliography</code>. How does this theme handle a bibliography? Here are Maria Popova’s <a href="https://www.brainpickings.org/2011/08/01/10-essential-books-on-typography/">ten essential books on typography</a>.</p>
                 <ul class="bibliography">
@@ -1136,28 +1137,10 @@
     <div class="samples chapter" data-header="Notes" data-header-left="Notes" data-header-right="Notes" data-page-info="Samples: Notes • 01-07-notes • 30 Nov 2018, 16:35">
         <div>
             <div>
-                <h1 id="notes">Notes</h1>
-                <p>In Electric Book themes, we aim to support three kinds of notes: footnotes, sidenotes, and (what we call) footer notes.</p>
-                <ul>
-                    <li><strong>Footnotes</strong>, which appear at the end of a document (web page or book chapter). In book parlance, they are therefore actually endnotes, but we call them footnotes because that’s what kramdown calls them. To create them in markdown, follow the <a href="http://kramdown.gettalong.org/syntax.html#footnotes">kramdown syntax for footnotes</a>:
-                        <ul>
-                            <li>put a <code class="highlighter-rouge">[^1]</code> where the footnote reference should appear (the <code class="highlighter-rouge">1</code> there can be any numbers or letters, and should be different for each footnote in a document);</li>
-                            <li>anywhere in the document (we recommend after the paragraph containing the footnote reference), put <code class="highlighter-rouge">[^1]: Your footnote text here.</code>.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Sidenotes</strong> appear in a box to the right of the text. On wide screens, they might float far right of the text. On narrower screens, the text might wrap around them. In print, the text might wrap around them, too, or they might appear in an otherwise empty sidebar space. To create a sidenote, put a <code class="highlighter-rouge">*</code> at the start of the sidenote text and <code class="highlighter-rouge">*{:.sidenote}</code> at the end (with no spaces). (Technically, you’re creating an <code class="highlighter-rouge">&lt;em&gt;</code> span with a kramdown IAL.)</li>
-                    <li>
-                        <p><strong>Footer notes</strong>, which in print are sidenotes at the bottom of the page. By adding <code class="highlighter-rouge">.bottom</code> to the <code class="highlighter-rouge">{:.sidenote}</code> tag, your sidenote should sit at the bottom of the page rather than on the right with text wrap, replicating a traditional footnote. So the markdown looks like this:</p>
-                        <blockquote>
-                            <p><code class="highlighter-rouge">*This is a sidenote at the bottom of the page in print.*{:.sidenote .bottom}</code>.</p>
-                        </blockquote>
-                        <p>On screen, these might just be regular sidenotes.</p>
-                    </li>
-                </ul>
+                <h2 id="notes">Notes</h2>
                 <p>To show notes in action, we need a lot of text with a bunch of notes. For that, we’ll use ‘Principles of Network Architecture Emerging from Comparisons of the Cerebral Cortex in Large and Small Brains’ by Barbara L. Finlay, which is <a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002556">on PLOS</a>, licenced CC BY.</p>
-                <h2 title="Principles of Network Architecture" id="principles-of-network-architecture-emerging-from-comparisons-of-the-cerebral-cortex-in-large-and-small-brains">Principles of Network Architecture Emerging from Comparisons of the Cerebral Cortex in Large and Small Brains</h2>
+                <h3 title="Principles of Network Architecture" id="principles-of-network-architecture-emerging-from-comparisons-of-the-cerebral-cortex-in-large-and-small-brains">Principles of Network Architecture Emerging from Comparisons of the Cerebral Cortex in Large and Small Brains</h3>
                 <p class="sidenote">Citation: Finlay BL (2016) Principles of Network Architecture Emerging from Comparisons of the Cerebral Cortex in Large and Small Brains. PLoS Biol 14(9): e1002556. doi:10.1371/journal.pbio.1002556</p>
-                <p class="sidenote bottom">Copyright: © 2016 Barbara L. Finlay. This is an open access article distributed under the terms of the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</a>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</p>
                 <p>How do you scale up a computing device? The mammalian brain has been presented a massive challenge: to retain its basic divisions and connectivity, despite brain volumes ranging from less than a gram in the smallest shrew to over 8,000 grams in the largest whale. In the cerebral cortex alone (isocortex or cortex), the problem is amplified, as the isocortex scales in volume disproportionately with respect to the rest of the brain, especially in primates.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> Understanding how a computing device might scale would obviously be easier if its computational function were known. The computations the cortex performs are not definitively known, however, though there is no shortage of theories on this subject. Because of the bootstrapping nature of research on evolution, a description of how the brain adapts its connectivity to massive increases in numbers of neurons, however, may shed light on its essential computational role. The organizational features the cortex has defended over several hundred million years and massive size differences are important clues to its essential computations.</p>
                 <p>The isocortex in mammals is a layered sheet of neurons that, according to one view, offers considerable uniformity. Within any particular cortex, and across species, the same essential organization of layers can be seen, with each layer of neurons characterized by particular axonal inputs and outputs and identifiable neuron types. For example, the outermost two cell layers of the cortex, layers 2 and 3, are composed principally of asymmetric neurons called pyramidal cells, whose axons make long-distance interarea and short-distance local recurrent connections within the cortex itself. The larger pyramidal cells of layer 5 get axonal input from the cortex but send projections outside the cortex to diverse regions such as the midbrain, the basal ganglia of the forebrain, and the spinal cord. Computational theories that focus on overall cortex uniformity have offered detailed conjectures on the “canonical computation” enacted by the cortex over its whole surface.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> <sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
                 <p>On the other hand, the cortex also presents a striking mosaic of variability: the entire surface is tiled into a number of “areas,” with each area containing sensory, motor, cognitive, or other computed dimensions laid out in an orderly topographic manner (such as the primary motor or visual cortex, common to all species) as well as the sensory and motor specializations particular to each, ranging from electroreception in the platypus to trunks in elephants.<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> Systematic regional differences related to sensory versus motor processing requirements<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> or neuroembryological gradients that progressively reorganize brains of different sizes in a predictable manner have also been proposed.<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup></p>
@@ -1176,7 +1159,7 @@
                 <p>Notable deviations from an all-inclusive, distance-based rule of connectivity appear in both species as well—“association” areas are more likely to have reciprocal interconnections than “canonical” primary sensory and motor areas, independent of how closely they neighbor each other. This feature is less pronounced in the mouse but still present. Much variation remains to be explained, particularly that which might be produced by evolutionarily specified or experientially-stabilized connections. For example, if coactivation of particular modalities serves to preferentially stabilize the long-distance connections serving them (Hebbian “fire-together, wire together”), as in the case of auditory-vocal-visual coactivation in animals capable of vocal learning, the probability of connections between them would be greater than that given by a fundamental distance rule scaffolding alone.</p>
                 <p>The authors point out that the low probability of long-distance connections may make those connections particularly vulnerable in large brains, citing evidence of this kind in both autism and Alzheimer’s disease. This example, while well taken, brings up the caution that not every problem caused by connectivity (or any particular process) should be expected to be solved by connectivity, as multiple alterations in axon caliber and myelination varying with brain size have been described as partial solutions to this problem.<sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup> <sup id="fnref:16"><a href="#fn:16" class="footnote">16</a></sup></p>
                 <p>Finally, how a computational device scales may take advantage of how it is made (or, be constrained by how it is made). The exponential distance rule points to a potential simple source of developmental scaffolding for cortical connections in the initial outgrowth of intracortical axons. Initial axon outgrowth, moreover, has some distinct features within and between species that should be investigated for their role in later network architecture. The frontal cortex is the first to send out axons as the cortex develops:<sup id="fnref:6:1"><a href="#fn:6" class="footnote">6</a></sup> does this cause its position in “cliques” of cortical connectivity and its core status? Is the duration of development, though much longer in monkeys than mice, the effective limiting factor that determines how far intracortical axons have time to extend?<sup id="fnref:17"><a href="#fn:17" class="footnote">17</a></sup> Evolution has likely filtered from the original range of developmental rules organizing the cortex those rules generating computational architectures robust to common challenges. Variation in the sizes of animals and all their parts is certainly one of those repeated challenges.</p>
-                <h3 id="endnotes">Endnotes</h3>
+                <h4 id="endnotes">Endnotes</h4>
                 <div class="footnotes">
                     <ol>
                         <li id="fn:1">
@@ -1259,235 +1242,6 @@
                 <hr />
                 <p>The author has on his desk at the moment of writing these lines half a dozen good books, each containing a set of rules for spelling. From these it would be easy to compile a set of fairly good rules. Each of these rules, however, has exceptions, in some cases quite numerous. To remember these rules with their exceptions would be a considerable mental task and to apply them would be cumbrous and time consuming. The effort would probably resolve itself into an actual learning of the words which present difficulties. The best way to become a good speller is to form the habit of careful reading, observing the form of every word as it passes before the eye and so unconsciously fixing it in the memory. The dictionary should be consulted whenever there is any doubt.</p>
                 <p>If you are to write a word, call up a mental picture of it, and if the picture is not perfectly clear go to the dictionary and fix a correct image of it in your mind. Be careful to pronounce every word you use as correctly as possible and you will get all the aid pronunciation can give you. Careless speaking and careless reading are the two great sources of incorrect spelling.</p>
-            </div>
-            <!--#content-->
-        </div>
-        <!--#wrapper-->
-    </div>
-    <div class="samples chapter" data-header="Poetry" data-header-left="Poetry" data-header-right="Poetry" data-page-info="Samples: Poetry • 01-09-poetry • 30 Nov 2018, 16:35">
-        <div>
-            <div>
-                <h2 id="poetry">Poetry</h2>
-                <p>First, a bit of background about how we like to mark up poetry. This will help you understand what you’re looking at when we get to the samples below.</p>
-                <p>Also see the official <a href="https://electricbookworks.github.io/electric-book/docs/editing/poetry.html">docs on poetry</a>.</p>
-                <p>Encoding poetry can be tricky. Usually, poetry in HTML is structured by tagging each stanza as a paragraph, with line breaks after each line. You can do this by adding markdown line breaks (with double spaces or <code class="highlighter-rouge">\\</code> at the end of each line) and tagging the paragraph with <code class="highlighter-rouge">{:.verse}</code>. However, this structure makes it impossible to have browsers, ereaders and PDF engines correctly indent runover lines (because there is no <a href="https://css-tricks.com/a-call-for-nth-everything/"><code class="highlighter-rouge">nth-line</code> selector</a> in CSS, unless you resort to <a href="https://github.com/davatron5000/Lettering.js#letters-words-lines-and-more">a Javascript method</a> that will bloat your code and won’t run on many ereaders).</p>
-                <blockquote class="box">
-                    <p>Tech note: Some text and code editors (e.g. Atom) strip out spaces at the ends of lines automatically. So use <code class="highlighter-rouge">\\</code> for line breaks, not double-spaces.</p>
-                </blockquote>
-                <p>We prefer another approach: the poem is an unordered list (<code class="highlighter-rouge">ul</code>) and each line (including each blank line between stanzas) is a list item (<code class="highlighter-rouge">li</code>). We just hide any list markers (bullets) with <code class="highlighter-rouge">list-style-type: none</code>. This way, we can control indents on runover lines. This is a non-semantic use of HTML, since a poem is technically not a list. But it’s a healthy hack with universal browser and ereader support.</p>
-                <p>Our convention is to mark each line of a stanza with a hyphen <code class="highlighter-rouge">-</code>, and tag the list with <code class="highlighter-rouge">{:.verse}</code>:</p>
-                <div class="highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code>-   I wandered lonely as a cloud
--   That floats on high o'er vales and hills,
--   When all at once I saw a crowd,
--   A host, of golden daffodils;
--   Beside the lake, beneath the trees,
--   Fluttering and dancing in the breeze.
-{:.verse}
-</code></pre>
-                    </div>
-                </div>
-                <p>This gives us:</p>
-                <ul class="verse">
-                    <li>I wandered lonely as a cloud</li>
-                    <li>That floats on high o’er vales and hills,</li>
-                    <li>When all at once I saw a crowd,</li>
-                    <li>A host, of golden daffodils;</li>
-                    <li>Beside the lake, beneath the trees,</li>
-                    <li>Fluttering and dancing in the breeze.</li>
-                </ul>
-                <p>We can also indent individual lines, where the poet wanted indents, by tagging individual list items.</p>
-                <div class="highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code>-   Alas for man! day after day may rise,
--   {:.indent-3}Night may shade his thankless head,
--   He sees no God in the bright, morning skies
--   {:.indent-3}He sings no praises from his guarded bed.
-{:.verse}
-</code></pre>
-                    </div>
-                </div>
-                <p>The <code class="highlighter-rouge">2</code> in <code class="highlighter-rouge">{:.indent-2}</code> refers to the number of em spaces to indent by. Our CSS allows for indents from 1 (<code class="highlighter-rouge">{:.indent-1}</code>) to 30 (<code class="highlighter-rouge">{:.indent-30}</code>).</p>
-                <p>This gives us:</p>
-                <ul class="verse">
-                    <li>Alas for man! day after day may rise,</li>
-                    <li class="indent-3">Night may shade his thankless head,</li>
-                    <li>He sees no God in the bright, morning skies</li>
-                    <li class="indent-3">He sings no praises from his guarded bed.</li>
-                </ul>
-                <p>Big gaps between words in a line must be created with spaces or space entities like <code class="highlighter-rouge">&amp;emsp;</code> in the poem text.</p>
-                <h2 id="centering-poems">Centering poems</h2>
-                <p>But wait, there’s more! Best practice for poetry layout is that – in print – a poem should be centered on its longest line. That is <em>not</em> centering the lines of poetry, but placing the left-justified poem in the horizontal middle of the page. Put another way, the poem should be indented till its longest line is centered on the page.</p>
-                <p>To achieve this, put the entire poem, including its title, in a blockquote, by adding <code class="highlighter-rouge">&gt; </code> to the start of each line. Tag the whole blockquote as <code class="highlighter-rouge">{:.verse}</code>, too. Finally, decide how wide you want the poem to as a percentage of the page width. That is, if you reckon this poem’s longest line reaches across 90 per cent of the page, use <code class="highlighter-rouge">.width-90</code>.</p>
-                <div class="highlighter-rouge">
-                    <div class="highlight"><pre class="highlight"><code>&gt; - ### To One Who Has Been Long in City Pent
-&gt; - To one who has been long in city pent,
-&gt; - {:.indent-2}'Tis very sweet to look into the fair
-&gt; - {:.indent-2}And open face of heaven,—to breathe a prayer
-&gt; - Full in the smile of the blue firmament.
-&gt; - Who is more happy, when, with heart's content,
-&gt; - {:.indent-2}Fatigued he sinks into some pleasant lair
-&gt; - {:.indent-2}Of wavy grass, and reads a debonair
-&gt; - And gentle tale of love and languishment?
-&gt; -    
-&gt; - Returning home at evening, with an ear
-&gt; - {:.indent-2}Catching the notes of Philomel,—an eye
-&gt; - Watching the sailing cloudlet's bright career,
-&gt; - {:.indent-2}He mourns that day so soon has glided by:
-&gt; - E'en like the passage of an angel's tear
-&gt; - {:.indent-2}That falls through the clear ether silently.
-&gt; {:.verse}
-{:.verse .width-80}
-</code></pre>
-                    </div>
-                </div>
-                <p>In verse structured as a list like this, our CSS preserves white space. That is, if you type, say, three spaces you get three spaces. Normally, HTML collapses multiple spaces into one – which is great <em>except</em> when you want to deliberately use extra spaces, as some poets do. However, this doesn’t work at the start of lines, where markdown strips leading spaces. There you must use HTML space entities (like <code class="highlighter-rouge">&amp;emsp;</code>) or our indent tags explained above.</p>
-                <p><strong>However</strong>, the <code class="highlighter-rouge">whitespace: pre-wrap</code> CSS we use for this is not currently supported on Kindle. If that’s important, it’s best to stick to using HTML space entities like <code class="highlighter-rouge">&amp;emsp;</code>.</p>
-                <p>Here’s that poem rendered:</p>
-                <blockquote class="verse width-80">
-                    <ul class="verse">
-                        <li>
-                            <h4 id="to-one-who-has-been-long-in-city-pent">To One Who Has Been Long in City Pent</h4>
-                        </li>
-                        <li>To one who has been long in city pent,</li>
-                        <li class="indent-2">‘Tis very sweet to look into the fair</li>
-                        <li class="indent-2">And open face of heaven,—to breathe a prayer</li>
-                        <li>Full in the smile of the blue firmament.</li>
-                        <li>Who is more happy, when, with heart’s content,</li>
-                        <li class="indent-2">Fatigued he sinks into some pleasant lair</li>
-                        <li class="indent-2">Of wavy grass, and reads a debonair</li>
-                        <li>And gentle tale of love and languishment?</li>
-                        <li></li>
-                        <li>Returning home at evening, with an ear</li>
-                        <li class="indent-2">Catching the notes of Philomel,—an eye</li>
-                        <li>Watching the sailing cloudlet’s bright career,</li>
-                        <li class="indent-2">He mourns that day so soon has glided by:</li>
-                        <li>E’en like the passage of an angel’s tear</li>
-                        <li class="indent-2">That falls through the clear ether silently.</li>
-                    </ul>
-                </blockquote>
-                <p>Here’s a long poetry example.</p>
-                <blockquote class="verse">
-                    <ul class="verse">
-                        <li>
-                            <h4 id="gerontion">Gerontion</h4>
-                        </li>
-                        <li class="indent-1">Thou hast nor youth nor age</li>
-                        <li class="indent-1">But as it were an after dinner sleep</li>
-                        <li class="indent-1">Dreaming of both.</li>
-                        <li></li>
-                        <li>Here I am, an old man in a dry month,</li>
-                        <li>Being read to by a boy, waiting for rain.</li>
-                        <li>I was neither at the hot gates</li>
-                        <li>Nor fought in the warm rain</li>
-                        <li>Nor knee deep in the salt marsh, heaving a cutlass,</li>
-                        <li>Bitten by flies, fought.</li>
-                        <li>My house is a decayed house,</li>
-                        <li>And the jew squats on the window sill, the owner,</li>
-                        <li>Spawned in some estaminet of Antwerp,</li>
-                        <li>Blistered in Brussels, patched and peeled in London.</li>
-                        <li>The goat coughs at night in the field overhead;</li>
-                        <li>Rocks, moss, stonecrop, iron, merds.</li>
-                        <li>The woman keeps the kitchen, makes tea,</li>
-                        <li>Sneezes at evening, poking the peevish gutter.</li>
-                        <li></li>
-                        <li class="indent-8">I an old man,</li>
-                        <li>A dull head among windy spaces.</li>
-                        <li></li>
-                        <li>Signs are taken for wonders. “We would see a sign”:</li>
-                        <li>The word within a word, unable to speak a word,</li>
-                        <li>Swaddled with darkness. In the juvescence of the year</li>
-                        <li>Came Christ the tiger</li>
-                        <li></li>
-                        <li>In depraved May, dogwood and chestnut, flowering Judas,</li>
-                        <li>To be eaten, to be divided, to be drunk</li>
-                        <li>Among whispers; by Mr. Silvero</li>
-                        <li>With caressing hands, at Limoges</li>
-                        <li>Who walked all night in the next room;</li>
-                        <li>By Hakagawa, bowing among the Titians;</li>
-                        <li>By Madame de Tornquist, in the dark room</li>
-                        <li>Shifting the candles; Fraulein von Kulp</li>
-                        <li>Who turned in the hall, one hand on the door. Vacant shuttles</li>
-                        <li>Weave the wind. I have no ghosts,</li>
-                        <li>An old man in a draughty house</li>
-                        <li>Under a windy knob.</li>
-                        <li></li>
-                        <li>After such knowledge, what forgiveness? Think now</li>
-                        <li>History has many cunning passages, contrived corridors</li>
-                        <li>And issues, deceives with whispering ambitions,</li>
-                        <li>Guides us by vanities. Think now</li>
-                        <li>She gives when our attention is distracted</li>
-                        <li>And what she gives, gives with such supple confusions</li>
-                        <li>That the giving famishes the craving. Gives too late</li>
-                        <li>What’s not believed in, or if still believed,</li>
-                        <li>In memory only, reconsidered passion. Gives too soon</li>
-                        <li>Into weak hands, what’s thought can be dispensed with</li>
-                        <li>Till the refusal propagates a fear. Think</li>
-                        <li>Neither fear nor courage saves us. Unnatural vices</li>
-                        <li>Are fathered by our heroism. Virtues</li>
-                        <li>Are forced upon us by our impudent crimes.</li>
-                        <li>These tears are shaken from the wrath-bearing tree.</li>
-                        <li></li>
-                        <li>The tiger springs in the new year. Us he devours. Think at last</li>
-                        <li>We have not reached conclusion, when I</li>
-                        <li>Stiffen in a rented house. Think at last</li>
-                        <li>I have not made this show purposelessly</li>
-                        <li>And it is not by any concitation</li>
-                        <li>Of the backward devils.</li>
-                        <li>I would meet you upon this honestly.</li>
-                        <li>I that was near your heart was removed therefrom</li>
-                        <li>To lose beauty in terror, terror in inquisition.</li>
-                        <li>I have lost my passion: why should I need to keep it</li>
-                        <li>Since what is kept must be adulterated?</li>
-                        <li>I have lost my sight, smell, hearing, taste and touch:</li>
-                        <li>How should I use it for your closer contact?</li>
-                        <li></li>
-                        <li>These with a thousand small deliberations</li>
-                        <li>Protract the profit of their chilled delirium,</li>
-                        <li>Excite the membrane, when the sense has cooled,</li>
-                        <li>With pungent sauces, multiply variety</li>
-                        <li>In a wilderness of mirrors. What will the spider do,</li>
-                        <li>Suspend its operations, will the weevil</li>
-                        <li>Delay? De Bailhache, Fresca, Mrs. Cammel, whirled</li>
-                        <li>Beyond the circuit of the shuddering Bear</li>
-                        <li>In fractured atoms. Gull against the wind, in the windy straits</li>
-                        <li>Of Belle Isle, or running on the Horn,</li>
-                        <li>White feathers in the snow, the Gulf claims,</li>
-                        <li>And an old man driven by the Trades</li>
-                        <li>To a sleepy corner.</li>
-                        <li></li>
-                        <li class="indent-8">Tenants of the house,</li>
-                        <li>Thoughts of a dry brain in a dry season.</li>
-                    </ul>
-                </blockquote>
-            </div>
-            <!--#content-->
-        </div>
-        <!--#wrapper-->
-    </div>
-    <div class="samples chapter" data-header="Questions and quizzes" data-header-left="Questions and quizzes" data-header-right="Questions and quizzes" data-page-info="Samples: Questions and qui... • 01-10-questions • 30 Nov 2018, 16:35">
-        <div>
-            <div>
-                <h2 id="questions-and-quizzes">Questions and quizzes</h2>
-                <p>You can add questions to your book like this one.</p>
-                <div class="mcq question" data-question="question-01" data-question-code="17eziaeejtqly237ka1jpkea99kt90b2tu0oyk3pc2">
-                    <div class="question-content">
-                        <h3 id="a-question-title">A question title</h3>
-                        <p>Which of the following is true?</p>
-                        <ul class="mcq-options">
-                            <li>You should not pick a fight with a Wookiee.</li>
-                            <li>Picking fights with Wookiees is safe.</li>
-                            <li>Wookiees love being laughed at.</li>
-                            <li>Wookiees make loyal companions.</li>
-                        </ul>
-                        <ul class="mcq-feedback">
-                            <li>Wookiees can tear your arm off.</li>
-                            <li>Wookiees don’t shy away from a fight.</li>
-                            <li>Wookiees are proud and sensitive.</li>
-                            <li>Wookiees have been known to stick by their friends even in the worst circumstances.</li>
-                        </ul>
-                    </div>
-                </div>
-                <p>See the docs for how to add quizzes and create exams.</p>
             </div>
             <!--#content-->
         </div>
@@ -1657,7 +1411,7 @@
                     <li>a div with a <code class="highlighter-rouge">figure</code> class containing both an image and its caption, created with our <code class="highlighter-rouge">figure</code> include.</li>
                 </ul>
                 <p>Old versions of the Electric Book template used a <code class="highlighter-rouge">blockquote</code> instead of a <code class="highlighter-rouge">div</code> for the figure, since a blockquote can be created with markdown <code class="highlighter-rouge">&gt;</code> syntax.</p>
-                <p>To show figures in context, here is an article from <em>The Comics Grid: Journal of comics scholarship</em> by <a href="10-02-dynamic-index.html#fradkin-1" class="indexed" id="fradkin-1">Chris Fradkin</a>. The abstract, if you’re curious:</p>
+                <p>To show figures in context, here is an article from <em>The Comics Grid: Journal of comics scholarship</em> by <a href="#fradkin-1" class="indexed" id="fradkin-1">Chris Fradkin</a>. The abstract, if you’re curious:</p>
                 <blockquote>
                     <p>This note explores the notion of comic superheroes as tools for the empowerment of children. The author details interventions in Rwanda and Brazil, and their different usages of superheroes. With a focus on the superhero’s pre-cloak stage—the stage prior to their employing superpowers—the author offers glimpses of current work in progress to help therapists empower orphaned children. While this area of research is at an early stage, its potential among health professionals is growing. Thus the comic superhero may be more than celluloid, as health professionals learn to use his superpowers.</p>
                 </blockquote>
@@ -1807,7 +1561,12 @@
                 <div>
                     <h2 id="mathematics">Mathematics</h2>
                     <p>Jekyll uses <a href="http://docs.mathjax.org/en/latest/">MathJax</a>, which the Electric Book workflow supports.</p>
-                    <p>In this repo, MathJax is not enabled at the moment. Enable it in <code class="highlighter-rouge">_config.yml</code> to see a mathematics sample here.</p>
+                    <p>LaTeX-style maths via MathJax can be inline (<script type="math/tex">E = mc^2</script>) or displayed:</p>
+                    <script type="math/tex; mode=display">P_{t+1} - P_t=\frac{b+d}{s}(P_t-\overline{P})</script>
+                    <p>The maths above and below is borrowed from <a href="https://core-econ.org/the-economy/book/text/leibniz-11-08-01.html"><em>The Economy</em></a> by CORE.</p>
+                    <script type="math/tex; mode=display">P_{t+2} - P_{t+1}=\frac{b+d}{s}(P_{t+1}-\overline{P})</script>
+                    <p>It follows from <script type="math/tex">P_{t} = \overset{\overline{}}{P} - \frac{s}{b + d}E_{t}</script> , <script type="math/tex">E_{t} = P_{t + 1} - P_{t}</script> and the equation above that</p>
+                    <script type="math/tex; mode=display">\frac{P_{t+2} - P_{t+1}}{P_{t+1} - P_{t}}=\frac{P_{t+1}-\overline{P}}{ P_{t}-\overline{P}}=R</script>
                 </div>
                 <!--#content-->
             </div>
@@ -1822,63 +1581,11 @@
             </div>
             <!--#wrapper-->
         </div>
-        <div class="samples chapter" data-header="Links and buttons" data-header-left="Links and buttons" data-header-right="Links and buttons" data-page-info="Samples: Links and buttons • 04-01-links-buttons • 30 Nov 2018, 16:35">
+        <div class="samples chapter" data-header="Links" data-header-left="Links" data-header-right="Links" data-page-info="Samples: Links • 04-01-links-buttons • 30 Nov 2018, 16:35">
             <div>
                 <div>
-                    <h2 id="links-and-buttons">Links and buttons</h2>
-                    <p>Links are pretty straightforward. How does <a href="http://electricbook.works">this link</a> to the Electric Book website look? That link probably shouldn’t show in the PDF version for print, or it should show in a useful way (like including the link in plain text).</p>
-                    <p>Buttons are trickier. Basically, buttons should be defined by adding a <code class="highlighter-rouge">.button</code> class to any element. Ideally the theme allows for <a href="http://example.com" class="button">inline buttons</a> and block-level buttons:</p>
-                    <p class="button"><a href="http://example.com">Example</a></p>
-                    <p>Again, the print version should have a way to deal with these. Alternatively, the book author can hide buttons in the print version. For instance, themes may support adding a <code class="highlighter-rouge">.non-printing</code> class to the element. Or the author can use Liquid control-flow tags, like <code class="highlighter-rouge">{% if site.output == "print-pdf" %}</code>, to control whether and how buttons appear in print.</p>
-                </div>
-                <!--#content-->
-            </div>
-            <!--#wrapper-->
-        </div>
-        <div class="samples chapter" data-header="Video" data-header-left="Video" data-header-right="Video" data-page-info="Samples: Video • 04-02-video • 30 Nov 2018, 16:35">
-            <div>
-                <div>
-                    <h2 id="video">Video</h2>
-                    <p>The Electric Book template includes an include tag for easily inserting videos from YouTube and Vimeo. <a href="https://electricbookworks.github.io/electric-book/docs/editing/video.html">See the docs for more</a>.</p>
-                    <p>In this example, we have a YouTube video.</p>
-                    <div class="video youtube" id="OJWJE0x7T4Q" data-video-id="OJWJE0x7T4Q" data-video-language="en">
-                        <div class="video-wrapper">
-                            <a class="video-link" href="https://www.youtube.com/watch?v=OJWJE0x7T4Q">
-                <img src="https://i1.ytimg.com/vi/OJWJE0x7T4Q/hqdefault.jpg" />
-        </a>
-                        </div>
-                    </div>
-                    <p>And a Vimeo one.</p>
-                    <div class="video vimeo" id="113933422" data-video-id="113933422" data-video-language="en">
-                        <div class="video-wrapper video-no-image">
-                            <a class="video-link" href="https://www.vimeo.com/113933422">
-        </a>
-                        </div>
-                        <p class="video-description">
-                            <a href="https://www.vimeo.com/113933422">The Hey Duggee series trailer</a>
-                        </p>
-                    </div>
-                </div>
-                <!--#content-->
-            </div>
-            <!--#wrapper-->
-        </div>
-        <div class="samples chapter" data-header="Audio" data-header-left="Audio" data-header-right="Audio" data-page-info="Samples: Audio • 04-03-audio • 30 Nov 2018, 16:35">
-            <div>
-                <div>
-                    <h2 id="audio">Audio</h2>
-                    <p>We don’t yet provide an easy include tag for audio. Instead, you can manually embed audio using HTML.</p>
-                </div>
-                <!--#content-->
-            </div>
-            <!--#wrapper-->
-        </div>
-        <div class="samples chapter" data-header="iFrames" data-header-left="iFrames" data-header-right="iFrames" data-page-info="Samples: iFrames • 04-04-iframes • 30 Nov 2018, 16:35">
-            <div>
-                <div>
-                    <h2 id="iframes">iFrames</h2>
-                    <p>You can embed an iFrame in a book, for instance an embeddable quiz like <a href="https://github.com/electricbookworks/betterquiz">Betterquiz</a>.</p>
-                    <p>At this stage, it’s best to use Liquid control flow tags to show text-only alternatives in PDF and epub, and embedded iFrames only in web output.</p>
+                    <h2 id="links">Links</h2>
+                    <p>In print output, the URL to <a href="http://electricbook.works" class="show-url">this link</a> to the Electric Book website is shown in brackets automatically.</p>
                 </div>
                 <!--#content-->
             </div>
@@ -3809,13 +3516,13 @@
                     <p>Also see the <a href="https://electricbookworks.github.io/electric-book/docs/editing/indexes.html">docs on indexing</a>.</p>
                     <p>A dynamic index uses hyperlinks to the points in the text that it indexes, so that in print the page numbers are always accurate even if the text reflows, and online links to text are clickable. Here is a very short sample.</p>
                     <ul class="reference-index">
-                        <li><em>Count of Monte Christo, The</em>  
-                            <a href="00-08-frontispiece-page.html#count-1" id="count-1">1</a>
-                            <a href="02-01-plain-images.html#count-2" id="count-2">2</a></li>
-                        <li><em>Adventures of Sherlock Holmes, The</em>  
-                            <a href="01-01-plain-text.html#sherlock-1" id="sherlock-1">1</a></li>
-                        <li>Fradkin, Chris  
-                            <a href="02-02-figures.html#fradkin-1" id="fradkin-1">1</a></li>
+                        <li><em>Count of Monte Christo, The</em> 
+                            <a href="#count-1" id="count-1">1</a>
+                            <a href="#count-2" id="count-2">2</a></li>
+                        <li><em>Adventures of Sherlock Holmes, The</em> 
+                            <a href="#sherlock-1" id="sherlock-1">1</a></li>
+                        <li>Fradkin, Chris 
+                            <a href="#fradkin-1" id="fradkin-1">1</a></li>
                     </ul>
                 </div>
                 <!--#content-->
