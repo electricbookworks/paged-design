@@ -5,6 +5,10 @@ cd -- "$(dirname "$0")"
 # Don't echo these commands:
 set +v
 
+# Build the CSS
+sass --watch main.scss:css/main.css --style compressed --sourcemap=none
+
+# Serve the page so that paged.js can fetch over http
 echo "-------------------------------------------"
 echo "Starting webserver...echo Starting webserver at http://127.0.0.1:5000"
 echo "Press Ctrl+C to stop"

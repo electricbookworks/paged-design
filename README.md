@@ -12,7 +12,7 @@ This project is a work in progress. We're aiming to:
 ## Usage
 
 1. Edit the files in `custom`, if you like.
-1. Run `./build.sh`.
+1. Run `./run.sh` on Mac and Linux or `run.bat` on Windows. (This builds and watches for Sass changes, and serves index.html so that the page can fetch paged.js.)
 1. Use `css/main.css` in your book.
 
 More on [our approach](#the-approach) below.
@@ -26,10 +26,8 @@ This repo contains (or will contain):
 - `custom/`: add your own custom selectors, variables and styles here.
 - `main.scss`: the file that imports variables and partials.
 - `css/`: the output folder, where finished CSS lands.
-- `build.sh`: run this on Mac and Linux to build your ready-to-use CSS.
-- `build.bat`: run this on Windows to build your ready-to-use CSS.
-- `serve.sh`: run this on Mac and Linux to serve the content in a browser.
-- `serve.bat`: run this on Windows to serve the content in a browser.
+- `run.sh`: run this on Mac and Linux to build your ready-to-use CSS and serve the book content in your browser.
+- `run.bat`: run this on Windows to build your ready-to-use CSS and serve the book content in your browser.
 - `LICENSE`: an MIT license.
 - `README.md`: this guidance.
 
