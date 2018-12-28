@@ -1,0 +1,24 @@
+// _images.scss
+
+// Initial styles for the img element are set in _base-typography.scss
+// These styles modify that for images as book-features.
+
+// These styles are experimental.
+// kramdown puts images in a paragraph, which means
+// they inherit a text-indent. This should fix that.
+// We must take into account that paged.js splits up
+// paras into divs for pagination, which breaks selectors
+// like > and + when they span pages.
+@mixin image-spacing() {
+    margin-top: $line-height-default;
+    margin-left: -($line-height-default);
+    margin-bottom: $line-height-default;
+    max-width: ($page-width - $margin-inside - $margin-outside);
+}
+p > img:only-child {
+    @include image-spacing;
+    margin-left: 0;
+}
+p + p > img:first-child {
+    @include image-spacing;
+}

@@ -38,6 +38,7 @@ $index: '.index, .reference-index' !default; // a list
 $margin-box: '.margin-box' !default; // applies to any element
 $pullquote: '.pullquote' !default; // applies to a block element, especially a blockquote
 $show-url: '.show-url' !default; // links after which their URL should appear in brackets
+$show-page-number: '.show-page-number' !default; // links after which a page number should appear in brackets
 $sidenote: '.sidenote' !default; // block or inline element
 $source: '.source' !default; // applies to block or inline elements, especially in or after blockquotes
 $table-caption: '.table-caption' !default; // applies to a block, especially a paragraph

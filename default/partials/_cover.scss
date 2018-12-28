@@ -24,8 +24,12 @@
         left: 0;
         break-after: none;
     }
-    img {
+    // Have to target only-child to override general img styles
+    // set in _images.scss
+    img, img:only-child {
         height: 100%;
+        margin: 0;
+        max-width: 100%;
         width: 100%;
     }
 }

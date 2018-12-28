@@ -15,15 +15,15 @@
     #{$title-page-title} {
         font-weight: bold;
         font-family: $font-display-main;
-        font-size: $font-size-default * $font-size-larger;
-        line-height: $line-height-default * $font-size-larger;
+        font-size: $font-size-default * $font-size-larger * $font-size-larger;
+        line-height: 1.1;
         margin: 0;
         string-set: book-title content();
     }
     #{$title-page-subtitle} {
         font-family: $font-display-main;
         font-size: $font-size-default * $font-size-larger;
-        line-height: $line-height-default * $font-size-larger;
+        line-height: 1.1;
         margin: $line-height-default 0 0 0;
         string-set: book-subtitle content();
     }

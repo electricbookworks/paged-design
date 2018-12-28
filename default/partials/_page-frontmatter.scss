@@ -2,5 +2,10 @@
 
 #{$page-frontmatter} {
     page: frontmatter;
-    break-before: page;
+    @if $chapters-start-on == 'recto' {
+        break-before: recto;
+    }
+    @if $chapters-start-on == 'verso' {
+        break-before: verso;
+    }
 }

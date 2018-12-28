@@ -22,6 +22,7 @@
         }
         a::after {
             // leader(" ") is not yet supported in paged.js
+            // See https://gitlab.pagedmedia.org/tools/pagedjs/wikis/Support-of-specifications
             content: target-counter(attr(href), page);
             float: right;
         }

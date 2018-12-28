@@ -9,7 +9,7 @@
 #{$figure} {
     clear: both;
     float: bottom; // not yet supported by paged.js
-    margin: $line-height-default 0 0 0;
+    margin: $line-height-default 0;
     break-inside: avoid;
     background-color: inherit;
     font-size: inherit;
@@ -36,7 +36,10 @@
     }
     // Paragraphs that follow figures should
     // have an indent when following floated figures.
+    // But while float: bottom and float: top are not
+    // supported in paged.js, we set the indent to 0.
     & + p {
-        text-indent: $line-height-default;
+        text-indent: $line-height-default; // only if figures are floated
+        text-indent: 0;
     }
 }

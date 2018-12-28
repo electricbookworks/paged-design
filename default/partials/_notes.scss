@@ -58,18 +58,19 @@
 }
 
 // Hide the text linking back to the reference from the note text,
-// and show a page number in its place. Not yet supported in paged.js,
-// so page-reference rule commented out.
+// and show a page number in its place. A bit of a hack.
 #{$footnotes-backlink} {
     visibility: hidden;
-    &:after {
+    &::after {
+        content: "(#{$locales-page} " target-counter(attr(href), page ) ")";
+        margin-left: -0.8em; // move into space occupied by reversefootnote
         visibility: visible;
-        // content: "(" target-counter(attr(href), page ) ")";
     }
 }
 
 // The page-footnotes area
 // Not yet supported in paged.js
+// See https://gitlab.pagedmedia.org/tools/pagedjs/wikis/Support-of-specifications
 @page {
     @footnotes {
         margin-top: $line-height-default / 2;
