@@ -74,3 +74,15 @@ And if you want your dedications to look like epigraphs:
     @include epigraph();
 }
 ```
+
+## Troubleshooting
+
+Some existing roadmap items and issues in `paged.js` that are relevant here:
+
+- We can't yet reset a page number to a specific number, e.g. `.page-20 (counter-reset: page 20)}` only resets to 1, not to 20. (See [issue 91](https://gitlab.pagedmedia.org/tools/pagedjs/issues/91).)
+- We can't yet `float: top` and `float: bottom`. (See [issue 90](https://gitlab.pagedmedia.org/tools/pagedjs/issues/90).)
+- Bleed and trim are not yet supported. (See [issue 82](https://gitlab.pagedmedia.org/tools/pagedjs/issues/82).)
+- Setting a `leader(" ")` in `a::after` for TOCs is not yet supported. This is [noted on the specs roadmap](https://gitlab.pagedmedia.org/tools/pagedjs/wikis/Support-of-specifications).
+- We can't use `string-set` yet. (See [issue 44](https://gitlab.pagedmedia.org/tools/pagedjs/issues/44).)
+
+When writing CSS, also note that the divs that `paged.js` introduces (in order to manage pagination) break some CSS child selectors like `>`. This is probably not avoidable, but it does make design work more challenging, and is important to keep in mind.
