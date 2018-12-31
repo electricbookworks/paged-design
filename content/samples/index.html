@@ -7,9 +7,8 @@
     </title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../../css/main.css">
-    <!-- Only load paged.js when MathJax is done
-    (Thanks https://www.pagedmedia.org/paginating-math/) -->
+
+    <!-- Load Mathjax -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js'></script>
     <script>
         MathJax.Hub.Config({
@@ -24,17 +23,10 @@
             }
         });
     </script>
-    <script>
-        window.PagedConfig = {
-            auto: false
-        };
-    </script>
-    <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
-    <script>
-        MathJax.Hub.Queue(function () {
-            window.PagedPolyfill.preview();
-        });
-    </script>
+
+    <!-- Load pager, which waits for MathJax before loading pageed.js
+    and adding the theme-switching selection list. -->
+    <script src="../../js/pager.js"></script>
 </head>
 
 <body>

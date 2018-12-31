@@ -6,7 +6,7 @@ cd -- "$(dirname "$0")"
 set +v
 
 # Build the CSS
-sass --watch main.scss:css/main.css --style compressed --sourcemap=none
+sass sass --watch default/main.scss:css/default/main.css themes/template/main.scss:css/themes/template/main.css --style compressed --sourcemap=none
 
 # Serve the page so that paged.js can fetch over http
 echo "-------------------------------------------"
