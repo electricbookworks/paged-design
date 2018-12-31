@@ -7,6 +7,7 @@
 var pagerThemes = {
     default: 'Default',
     template: 'Template',
+    wip: "Work in progress",
     comingsoon: 'Themes coming soon'
 };
 

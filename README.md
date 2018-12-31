@@ -33,6 +33,8 @@ So your HTML `head` will include these two tags:
 
    This builds and watches for Sass changes, and serves `index.html` so that the page can fetch `paged.js` over HTTP.
 
+1. Add your theme to the `run` script's `sass` command, and to the `pagerThemes` object in `js/pager.js`.
+
 Note that in order to demo stylesheets in this project, we load stylesheets and `paged.js` with `js/pager.js`. For your content, you'll probably use the finished CSS as described in 'Use an existing stylesheet' above.
 
 ## Repo structure

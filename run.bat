@@ -14,4 +14,4 @@ start chrome "http://127.0.0.1:5000/"
 start ruby -run -e httpd . -p 5000
 
 :: Build the CSS
-start sass --watch default/main.scss:css/themes/default/main.css themes/template/main.scss:css/themes/template/main.css --style compressed --sourcemap=none
+start sass --watch default/main.scss:css/themes/default/main.css themes/template/main.scss:css/themes/template/main.css themes/wip/main.scss:css/themes/wip/main.css --style compressed --sourcemap=none
