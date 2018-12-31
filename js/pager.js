@@ -7,7 +7,7 @@
 var pagerThemes = {
     default: 'Default',
     template: 'Template',
-    foo: 'Bar'
+    comingsoon: 'Themes coming soon'
 };
 
 // Check for mathjax
@@ -41,10 +41,10 @@ function pagerAddTheme(theme) {
     // Create a link element pointing to the new stylesheet
     var themeStylesheetLink = document.createElement('link');
     themeStylesheetLink.setAttribute('rel', 'stylesheet');
-    themeStylesheetLink.setAttribute('href', '/css/themes/' + theme + '/main.css');
+    themeStylesheetLink.setAttribute('href', '../../css/themes/' + theme + '/main.css');
 
     // If there is a stylesheet, remove it
-    var stylesheet = document.querySelector('link[href^="/css/themes/"]');
+    var stylesheet = document.querySelector('link[href^="../../css/themes/"]');
     if (stylesheet) {
         stylesheet.remove();
     }
