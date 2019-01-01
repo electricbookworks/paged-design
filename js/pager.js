@@ -74,7 +74,7 @@ function pagerLoadTheme(theme) {
 // Listen for switch
 function pagerListenForSwitch(selectList) {
     'use strict';
-    selectList.onchange = function () {
+    selectList.onchange = function (event) {
         pagerLoadTheme(event.target.value);
     };
 }
