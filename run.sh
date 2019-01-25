@@ -22,7 +22,11 @@ echo "-------------------------------------------"
 
 # Start Chrome, but wait three secs for the server to start
 awhile=3
-sleep $awhile && google-chrome "http://127.0.0.1:5000/" &
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	sleep $awhile && open -a "Google Chrome" "http://127.0.0.1:5000/" &
+else
+	sleep $awhile && google-chrome "http://127.0.0.1:5000/" &
+fi
 
 # Run a webserver at 127.0.0.1:5000
 ruby -run -e httpd . -p 5000 &&
