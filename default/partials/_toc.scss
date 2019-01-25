@@ -10,6 +10,7 @@
     margin: 0;
     // indent nested lists
     ul, ol {
+        list-style-type: none;
         margin-left: $line-height-default;
     }
     li {
