@@ -103,6 +103,16 @@ function pagerShowThemeSelectionList(listObject) {
     selectList.style.right = '1em';
     document.body.insertAdjacentElement('afterbegin', selectList);
 
+    // Hide the select list in actual print output,
+    // i.e. when hitting Ctrl/Cmd+P in Chrome
+    var mediaQuery = window.matchMedia('print');
+    mediaQuery.addListener(function (query) {
+        if (query.matches) {
+            console.log('Printing...');
+            selectList.style.display = 'none';
+        }
+    });
+
     // Listen for changes
     pagerListenForSwitch(selectList);
 }
