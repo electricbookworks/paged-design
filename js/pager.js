@@ -6,9 +6,7 @@
 // foldername: 'Theme name'
 var pagerThemes = {
     default: 'Default',
-    template: 'Template',
-    wip: "Work in progress",
-    comingsoon: 'Themes coming soon'
+    wip: "Work in progress"
 };
 
 // Check for mathjax
@@ -98,7 +96,7 @@ function pagerShowThemeSelectionList(listObject) {
     );
 
     // Insert and position the list
-    selectList.style.position = 'absolute';
+    selectList.style.position = 'fixed';
     selectList.style.top = '1em';
     selectList.style.right = '1em';
     document.body.insertAdjacentElement('afterbegin', selectList);
