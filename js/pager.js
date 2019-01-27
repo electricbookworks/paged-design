@@ -5,8 +5,8 @@
 // Available themes, listed as
 // foldername: 'Theme name'
 var pagerThemes = {
-    default: 'Default',
-    wip: "Work in progress"
+    template: 'Template',
+    wip: "New theme in progress"
 };
 
 // Check for mathjax
