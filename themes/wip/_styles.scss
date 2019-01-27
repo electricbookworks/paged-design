@@ -5,3 +5,134 @@
 // They will be included by main.scss,
 // after default/_styles.scss
 
+// Title page
+#{$page-title-page} {
+    margin-top: ($page-height - $margin-top - $margin-bottom) / 2;
+    transform: translateY(-50%);
+    #{$title-page-title} {
+        letter-spacing: 0.05em;
+        font-size: $line-height-default * 3;
+        line-height: $line-height-default * 3;
+        text-shadow: 0.1em 0.15em $color-light;
+    }
+    #{$title-page-subtitle} {
+        font-family: $font-text-main;
+        font-size: $font-size-default;
+        max-width: 12em;
+        text-align: center;
+        margin: ($line-height-default * 3) auto 0 auto;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 300;
+    }
+    #{$title-page-author} {
+        font-weight: 300;
+        font-size: $font-size-default;
+        border-top: $rule-thickness solid $color-text-main;
+        margin: $line-height-default auto;
+        padding-top: $font-size-default;
+        display: inline-block;
+    }
+    #{$title-page-publisher} {
+        font-weight: 300;
+        font-size: $font-size-default;
+    }
+}
+
+// Copyright page
+#{$page-copyright} {
+    position: initial;
+    margin-top: ($page-height - $margin-top - $margin-bottom) / 2;
+    transform: translateY(-50%);
+    max-width: 40em;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300;
+    p, * {
+        text-align: center;
+    }
+}
+
+// Dedication
+#{$dedication} {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+}
+
+// Chapter openers
+#{$page-frontmatter}, #{$page-chapter} {
+    columns: 2;
+    h1:first-child, h2:first-child {
+        column-span: all;
+        max-width: 90%;
+        @include h1();
+        & + p {
+            width: 30em;
+            column-span: all;
+            font-size: $font-size-default * 1.1;
+            margin-top: $line-height-default * 3;
+            margin-bottom: $line-height-default * 3;
+            font-weight: normal;
+            & + p {
+                text-indent: 0;
+            }
+        }
+    }
+}
+#{$chapter-number} {
+    font-family: $font-display-secondary;
+    display: block;
+    float: left;
+    font-size: $line-height-default * 7;
+    margin-top: $line-height-default * 3;
+    margin-right: $line-height-default / 2;
+    margin-bottom: $line-height-default / 2;
+    margin-left: -($line-height-default * 2);
+    height: $line-height-default * 2.5;
+    line-height: 0;
+}
+
+// Notes
+#{$endnotes} {
+    columns: 2;
+}
+
+// Typography
+
+p, ul, ol, dl, table {
+    font-weight: 300;
+}
+
+hr {
+    margin: $line-height-default * 2;
+    font-family: $font-display-main;
+    font-size: $line-height-default * 2;
+    column-span: all;
+    // This is not supported in paged.js yet
+    & + p::first-letter {
+        font-family: $font-display-secondary;
+    }
+}
+
+blockquote {
+    p:first-of-type {
+        &:before {
+            content: "\201c";
+            float: left;
+            font-family: $font-display-main;
+            font-size: $line-height-default;
+            height: 0;
+            margin-left: -$line-height-default;
+        }
+    }
+}
+
+// Margin boxes
+
+@page {
+    @bottom {
+        font-family: $font-display-main;
+    }
+}

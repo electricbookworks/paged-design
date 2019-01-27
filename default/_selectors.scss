@@ -22,6 +22,7 @@ $page-toc: '.contents-page' !default;
 
 $bibliography: '.bibliography' !default; // applies to a list
 $box: '.box' !default; // applies to a div or blockquote
+$chapter-number: '.chapter-number, h1 strong:first-of-type, h2 strong:first-of-type' !default; // any element
 $code: '.code' !default; // applies to an inline element
 $cross-reference: '.cross-reference' !default; // applies to a link <a class="cross-reference">
 $dedication: '.dedication' !default; // applies to a paragraph
