@@ -6,7 +6,7 @@
 // foldername: 'Theme name'
 var pagerThemes = {
     template: 'Template',
-    wip: "New theme in progress"
+    density: 'Density'
 };
 
 // Check for mathjax
@@ -20,12 +20,24 @@ function pagerMathjax() {
     }
 }
 
+// Check that a theme exists
+function pagerCheckThemeExists(theme) {
+    'use strict';
+    if (Object.keys(pagerThemes).indexOf(theme) > -1) {
+        console.log(theme + ' exists');
+        return true;
+    } else {
+        console.log(theme + ' does not exist');
+        return false;
+    }
+}
+
 // Get current theme
 function pagerCurrentTheme() {
     'use strict';
     var matchParam = window.location.href.match(/theme=([^&]*)/);
     var theme;
-    if (matchParam) {
+    if (matchParam && pagerCheckThemeExists(matchParam[1])) {
         theme = matchParam[1];
     } else {
         theme = 'default';
@@ -77,11 +89,31 @@ function pagerListenForSwitch(selectList) {
     };
 }
 
+// Create a link to the home page
+function pagerHomePageLink() {
+    'use strict';
+    var link = document.createElement('div');
+    link.id = 'pagerGoHome';
+    link.innerHTML = '<a href="../../">Home</a>';
+    return link;
+}
+
 // Create a theme-switcher dropdown
 function pagerShowThemeSelectionList(listObject) {
     'use strict';
+
+    // Create a div for the list
+    var controls = document.createElement('div');
+    controls.id = 'pagerControls';
+    controls.style.position = 'fixed';
+    controls.style.top = '1em';
+    controls.style.right = '1em';
+    controls.style.textAlign = 'right';
+    document.body.insertAdjacentElement('afterbegin', controls);
+
     var selectList = document.createElement('select');
     selectList.id = 'pagerSelectList';
+    selectList.style.fontFamily = 'inherit';
 
     // Add the themes as options
     var selected = "";
@@ -96,18 +128,25 @@ function pagerShowThemeSelectionList(listObject) {
     );
 
     // Insert and position the list
-    selectList.style.position = 'fixed';
-    selectList.style.top = '1em';
-    selectList.style.right = '1em';
-    document.body.insertAdjacentElement('afterbegin', selectList);
+    controls.insertAdjacentElement('afterbegin', selectList);
+
+    // Insert a home-page link
+    controls.insertAdjacentElement('afterbegin', pagerHomePageLink());
 
     // Hide the select list in actual print output,
     // i.e. when hitting Ctrl/Cmd+P in Chrome
-    var mediaQuery = window.matchMedia('print');
-    mediaQuery.addListener(function (query) {
+    var mediaQueryPrint = window.matchMedia('print');
+    var mediaQueryScreen = window.matchMedia('screen');
+    mediaQueryPrint.addListener(function (query) {
         if (query.matches) {
             console.log('Printing...');
-            selectList.style.display = 'none';
+            controls.style.display = 'none';
+        }
+    });
+    // ... and put it back when done.
+    mediaQueryScreen.addListener(function (query) {
+        if (query.matches) {
+            controls.style.display = 'block';
         }
     });
 

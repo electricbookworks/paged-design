@@ -11,7 +11,7 @@ set +v
 sass --watch --style compressed --sourcemap=none \
 	default/main.scss:css/themes/default/main.css \
 	themes/template/main.scss:css/themes/template/main.css \
-	themes/wip/main.scss:css/themes/wip/main.css \
+	themes/density/main.scss:css/themes/density/main.css \
 	&
 
 # User guidance
