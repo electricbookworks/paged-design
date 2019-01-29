@@ -53,6 +53,28 @@
     }
 }
 
+// Contents page
+#{$toc} {
+    li {
+        text-transform: uppercase;
+        font-size: $font-size-default * 0.8;
+        letter-spacing: 0.1em;
+        margin-top: $line-height-default;
+        font-weight: bold;
+        li {
+            font-size: $font-size-default;
+            letter-spacing: 0;
+            text-transform: none;
+            margin-top: 0;
+            font-weight: normal;
+        }
+    }
+    // Page numbers
+    a::after {
+        font-weight: normal;
+    }
+}
+
 // Dedication
 #{$dedication} {
     position: absolute;
