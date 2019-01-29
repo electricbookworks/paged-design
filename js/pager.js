@@ -6,7 +6,8 @@
 // foldername: 'Theme name'
 var pagerThemes = {
     template: 'Template',
-    density: 'Density'
+    density: 'Density',
+    beatrix: 'Beatrix'
 };
 
 // Check for mathjax
