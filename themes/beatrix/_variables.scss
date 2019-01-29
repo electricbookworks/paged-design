@@ -1,0 +1,191 @@
+// _variables.scss
+
+// Set your own variables here. These override
+// the defaults in partials/defaults.scss.
+// For brevity, we don't repeat all supported variables here.
+// Copy the ones you want to change from defaults.scss
+// to here, and remove `!default` from each one.
+
+// Edition suffix
+// --------------
+
+// Identifies this edition in classes
+// that might apply to one edition of a book, but not another.
+// For instance, a .tighten class in HTML might apply
+// to a trade edition, but not a large-print edition.
+// A suffix '-large-print' would mean that only classes
+// with that suffix would apply to that edition, e.g. `.keep-together-large-print`
+// If you're only planning one edition, leave this as `null`.
+$edition-suffix: null;
+
+
+// Page setup
+// ----------
+
+$page-width: 111mm;
+$page-height: 178mm;
+$margin-top: 45pt;
+$margin-bottom: 60pt;
+$margin-outside: 15mm;
+$margin-inside: 15mm;
+$bleed: 0;
+$trim: 0;
+$crop-marks: crop; // crop | none
+
+
+// Type
+// ----
+
+// To avoid your pages reflowing between team members,
+// we recommend saving font files to your project
+// and only linking to those. Don't use online fonts and
+// generic keyword fallbacks (e.g.g 'serif'). We do that here
+// for demo purposes only, and would not do so in production.
+
+ @import url('https://fonts.googleapis.com/css?family=Courgette|Fondamento:400,400i|Merienda:400,700|Miniver|Pinyon+Script|Vollkorn:400,400i,700,700i&subset=latin-ext');
+
+$font-text-main: "Vollkorn", serif;
+$font-text-secondary: "Vollkorn", sans-serif;
+$font-display-main: "Fondamento", sans-serif;
+$font-display-secondary: "Vollkorn", sans-serif;
+$font-code: "Inconsolata", monospace;
+$font-size-default: 10pt;
+$line-height-default: 15pt;
+$text-align-default: justify;
+
+// Ratio for making text smaller
+$font-size-smaller: 0.8;
+// Ratio for making text larger
+$font-size-larger: 1.4;
+
+
+// Page breaks
+// -----------
+
+// Start new chapters on right?
+// - auto: starts on next page, left or right
+// - recto: starts on next right-hand-page
+// - verso: starts on next left-hand-page (not recommended)
+$chapters-start-on: recto;
+
+
+// Running headers and footers
+// ---------------------------
+
+// Style of page numbers on frontmatter pages: e.g. lower-roman, decimal
+$frontmatter-page-numbers: lower-roman;
+
+// Set the content of headers and footers.
+// * For no content: normal
+// * For a page number: counter(page)
+// * For a phrase: "Any phrase in quotes"
+// * For an em space: "\2003"
+// * For other special characters, see CSS (ISO) at
+//   https://brajeshwar.github.io/entities/
+
+// Not yet supported by paged.js (https://gitlab.pagedmedia.org/tools/pagedjs/issues/44):
+// * For the title attribute of the last h1: string(h1-title, last)
+//   (increment to h2, h3, h4, h5, h6 as needed)
+//   By default, this uses the heading text, unless you
+//   manually set a title attribute for a given heading.
+// * For the last h1 (increment to h2, h3, h4, h5, h6 as needed): string(h1-text, last)
+//   Instead of last (last on page) you can also use
+//   first (first on page) or start (string set on previous page).
+
+// Verso (left-hand-page)
+$verso-top: normal;
+$verso-top-left: normal;
+$verso-top-right: normal;
+$verso-top-left-corner: normal;
+$verso-top-right-corner: normal;
+$verso-bottom: counter(page);
+$verso-bottom-left: normal;
+$verso-bottom-right: normal;
+$verso-bottom-left-corner: normal;
+$verso-bottom-right-corner: normal;
+
+// Recto (right-hand-page)
+$recto-top: normal;
+$recto-top-left: normal;
+$recto-top-right: normal;
+$recto-top-left-corner: normal;
+$recto-top-right-corner: normal;
+$recto-bottom: counter(page);
+$recto-bottom-left: normal;
+$recto-bottom-right: normal;
+$recto-bottom-left-corner: normal;
+$recto-bottom-right-corner: normal;
+
+// Verso (left-hand-page) for .frontmatter pages (`style: frontmatter`)
+$verso-top-frontmatter: normal;
+$verso-top-left-frontmatter: normal;
+$verso-top-right-frontmatter: normal;
+$verso-top-left-corner-frontmatter: normal;
+$verso-top-right-corner-frontmatter: normal;
+$verso-bottom-frontmatter: counter(page, $frontmatter-page-numbers);
+$verso-bottom-left-frontmatter: normal;
+$verso-bottom-right-frontmatter: normal;
+$verso-bottom-left-corner-frontmatter: normal;
+$verso-bottom-right-corner-frontmatter: normal;
+
+// Recto (right-hand-page) for .frontmatter pages (`style: frontmatter`)
+$recto-top-frontmatter: normal;
+$recto-top-left-frontmatter: normal;
+$recto-top-right-frontmatter: normal;
+$recto-top-left-corner-frontmatter: normal;
+$recto-top-right-corner-frontmatter: normal;
+$recto-bottom-frontmatter: counter(page, $frontmatter-page-numbers);
+$recto-bottom-left-frontmatter: normal;
+$recto-bottom-right-frontmatter: normal;
+$recto-bottom-left-corner-frontmatter: normal;
+$recto-bottom-right-corner-frontmatter: normal;
+
+
+// Design
+// ------
+
+// Colour space (rgb, cmyk, gray)
+$colorspace: rgb;
+
+// Colours
+$color-text-main: black;
+$color-text-secondary: darkgrey;
+$color-light: #eee;
+$color-mid: grey;
+$color-accent: #C74F32;
+$color-links: inherit;
+
+// How deep to start text on certain opening and standalone pages
+$start-depth: $line-height-default * 5;
+
+// Consistent rounding of corners
+$border-radius: 0.1em;
+
+// Consistent thickness of rules
+$rule-thickness: 0.5pt;
+
+// Text divider as generated content, e.g. in hr:after
+$text-divider: "";
+
+// Localisation
+// ------------
+// These are CSS-generated phrases that you might
+// want to edit or translate for your book.
+$locales-page: "page";
+
+
+// Hyphenation
+// -----------
+
+// Can be auto, none, or manual
+// (manual only breaks on hyphens and soft hyphens)
+$hyphenation: manual;
+
+// Minimum letters on new line after hyphen
+$hyphenate-after: 3;
+
+// Minimum letters at end of line before hyphen
+$hyphenate-before: 3;
+
+// Preferred maximum number of consecutive lines ending with hyphens
+$hyphenate-lines: 2;

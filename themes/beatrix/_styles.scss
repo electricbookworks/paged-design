@@ -1,0 +1,50 @@
+// _styles.scss
+
+// Add your own custom CSS or Sass styles here,
+// or import your own partials.
+// They will be included by main.scss,
+// after default/_styles.scss
+
+#{$page-title-page} {
+    #{$title-page-title} {
+        font-size: $font-size-default * 3;
+        &::after {
+            content: "\2014";
+            display: block;
+        }
+    }
+    #{$title-page-author} {
+        margin-top: $line-height-default;
+    }
+}
+
+#{$page-chapter}, #{$page-frontmatter} {
+    h1 {
+        font-size: $font-size-default * 1.2;
+        text-align: center;
+        margin-bottom: $line-height-default * 5;
+    }
+    h2 {
+        font-size: $font-size-default;
+        text-align: center;
+        margin-bottom: $line-height-default;
+    }
+}
+
+#{$chapter-number} {
+    font-family: $font-display-main;
+    font-weight: bold;
+    line-height: 1;
+    &::after{
+        content: "\2014";
+        display: block;
+        line-height: 0;
+        margin-bottom: ($line-height-default - 1);
+    }
+}
+
+#{$page-copyright} {
+    p {
+        margin-bottom: $line-height-default / 2;
+    }
+}

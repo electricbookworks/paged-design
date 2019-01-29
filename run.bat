@@ -17,4 +17,5 @@ start ruby -run -e httpd . -p 5000
 start sass --watch --style compressed --sourcemap=none^
            default/main.scss:css/themes/default/main.css^
            themes/template/main.scss:css/themes/template/main.css^
-           themes/density/main.scss:css/themes/density/main.css
+           themes/density/main.scss:css/themes/density/main.css^
+           themes/beatrix/main.scss:css/themes/beatrix/main.css
