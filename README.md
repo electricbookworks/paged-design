@@ -29,7 +29,7 @@ So your HTML `head` will include these two tags:
 1. Clone this repo.
 1. In `themes`, make a copy of `themes/template` or another theme you want to adapt.
 1. Edit and add to its `_selectors.scss`, `_styles.scss`, and `_variables.scss`, which add to and override the defaults when they're imported by the theme's `main.scss` file. See [Creating new styles](#creating-new-styles) below for more detail.
-1. Run `./run.sh` on Mac and Linux or `run.bat` on Windows.
+1. Run `./run.sh` on Mac and Linux or `run.bat` on Windows. (The first time you run this on Mac or Linux, you must give the script permission to run with `chmod +x run.sh`.)
 
    This builds and watches for Sass changes, and serves `index.html` so that the page can fetch `paged.js` over HTTP.
 
