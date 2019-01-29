@@ -24,10 +24,8 @@ function pagerMathjax() {
 function pagerCheckThemeExists(theme) {
     'use strict';
     if (Object.keys(pagerThemes).indexOf(theme) > -1) {
-        console.log(theme + ' exists');
         return true;
     } else {
-        console.log(theme + ' does not exist');
         return false;
     }
 }
@@ -35,7 +33,7 @@ function pagerCheckThemeExists(theme) {
 // Get current theme
 function pagerCurrentTheme() {
     'use strict';
-    var matchParam = window.location.href.match(/theme=([^&]*)/);
+    var matchParam = window.location.href.match(/theme=([^&#]*)/);
     var theme;
     if (matchParam && pagerCheckThemeExists(matchParam[1])) {
         theme = matchParam[1];
