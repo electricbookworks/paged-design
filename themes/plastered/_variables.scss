@@ -1,0 +1,106 @@
+// _variables.scss
+
+// Set your own variables here. These override
+// the defaults in partials/defaults.scss.
+// For brevity, we don't repeat all supported variables here.
+// Copy the ones you want to change from defaults.scss
+// to here, and remove `!default` from each one.
+
+// Page setup
+// ----------
+
+$page-width: 129mm;
+$page-height: 198mm;
+$margin-top: 42pt;
+$margin-bottom: 49pt;
+$margin-outside: 24mm;
+$margin-inside: 15mm;
+$bleed: 0;
+$trim: 0;
+$crop-marks: crop; // crop | none
+
+
+// Type
+// ----
+
+// To avoid your pages reflowing between team members,
+// we recommend saving font files to your project
+// and only linking to those. Don't use online fonts and
+// generic keyword fallbacks (e.g.g 'serif'). We do that here
+// for demo purposes only, and would not do so in production.
+
+ @import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i|ZCOOL+KuaiLe|Zilla+Slab:300&subset=latin-ext');
+
+$font-text-main: "PT Serif", serif;
+$font-text-secondary: "Zilla Slab", serif;
+$font-display-main: "ZCOOL KuaiLe", sans-serif;
+$font-display-secondary: "PT Serif", serif;
+
+$font-size-default: 9pt;
+$line-height-default: 14pt;
+$text-align-default: justify;
+
+// Page breaks
+// -----------
+
+// Start new chapters on right?
+// - auto: starts on next page, left or right
+// - recto: starts on next right-hand-page
+// - verso: starts on next left-hand-page (not recommended)
+$chapters-start-on: auto;
+
+
+// Running headers and footers
+// ---------------------------
+
+// Style of page numbers on frontmatter pages: e.g. lower-roman, decimal
+$frontmatter-page-numbers: decimal;
+
+// Set the content of headers and footers.
+// * For no content: normal
+// * For a page number: counter(page)
+// * For a phrase: "Any phrase in quotes"
+// * For an em space: "\2003"
+// * For other special characters, see CSS (ISO) at
+//   https://brajeshwar.github.io/entities/
+
+// Not yet supported by paged.js (https://gitlab.pagedmedia.org/tools/pagedjs/issues/44):
+// * For the title attribute of the last h1: string(h1-title, last)
+//   (increment to h2, h3, h4, h5, h6 as needed)
+//   By default, this uses the heading text, unless you
+//   manually set a title attribute for a given heading.
+// * For the last h1 (increment to h2, h3, h4, h5, h6 as needed): string(h1-text, last)
+//   Instead of last (last on page) you can also use
+//   first (first on page) or start (string set on previous page).
+
+// Verso (left-hand-page)
+$verso-bottom: normal;
+
+// Recto (right-hand-page)
+$recto-bottom: normal;
+
+// Verso (left-hand-page) for .frontmatter pages (`style: frontmatter`)
+$verso-bottom-frontmatter: normal;
+
+// Recto (right-hand-page) for .frontmatter pages (`style: frontmatter`)
+$recto-bottom-frontmatter: normal;
+
+// Design
+// ------
+
+// Colour space (rgb, cmyk, gray)
+$colorspace: rgb;
+
+// Colours
+$color-text-main: black;
+$color-text-secondary: darkgrey;
+$color-light: white;
+$color-mid: grey;
+$color-accent: #3299FF;
+$color-links: inherit;
+
+// How deep to start text on certain opening and standalone pages
+$start-depth: $line-height-default * 10;
+
+// Consistent rounding of corners
+$border-radius: 0 !default;

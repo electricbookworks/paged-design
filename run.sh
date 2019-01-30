@@ -13,6 +13,7 @@ sass --watch --style compressed --sourcemap=none \
 	themes/template/main.scss:css/themes/template/main.css \
 	themes/density/main.scss:css/themes/density/main.css \
     themes/beatrix/main.scss:css/themes/beatrix/main.css \
+    themes/plastered/main.scss:css/themes/plastered/main.css \
 	&
 
 # User guidance

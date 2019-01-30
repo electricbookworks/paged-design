@@ -1,0 +1,182 @@
+// _styles.scss
+
+// Add your own custom CSS or Sass styles here,
+// or import your own partials.
+// They will be included by main.scss,
+// after default/_styles.scss
+
+// Page setup
+
+@mixin page-numbers() {
+    font-family: $font-text-secondary;
+    color: $color-mid;
+    margin-bottom: ($line-height-default * 2.75);
+    font-feature-settings: "onum";
+}
+
+@page frontmatter:left {
+    @left-bottom {
+        content: counter(page, $frontmatter-page-numbers);
+        @include page-numbers();
+    }
+}
+@page frontmatter:right {
+    @right-bottom {
+        content: counter(page, $frontmatter-page-numbers);
+        @include page-numbers();
+    }
+}
+@page chapter:left {
+    @left-bottom {
+        content: counter(page);
+        @include page-numbers();
+    }
+}
+@page chapter:right {
+    @right-bottom {
+        content: counter(page);
+        @include page-numbers();
+    }
+}
+
+// Title page
+
+#{$page-title-page} {
+    #{$title-page-title} {
+        color: $color-light;
+        font-size: $font-size-default * 5;
+        &:before {
+            content: "";
+            display: block;
+            background: $color-accent;
+            width: $page-width + ($bleed * 2);
+            position: absolute;
+            top: -($bleed + ($page-height / 6));
+            left: -($margin-inside + $bleed);
+            right: -($bleed);
+            bottom: $line-height-default * 5;
+            transform: skewY(-10deg);
+            z-index: -1;
+        }
+    }
+    #{$title-page-subtitle} {
+        position: absolute;
+        top: $line-height-default * 3;
+        color: $color-light;
+        width: $line-height-default * 10;
+        font-size: $font-size-default;
+        margin: 0 0 0 50%;
+        transform: translateX(-50%);
+    }
+    #{$title-page-author} {
+        font-family: $font-display-main;
+        transform: rotate(-7deg);
+        color: $color-text-main;
+        background-color: $color-light;
+        width: $page-width + ($bleed * 2) + 5mm; // the 2mm makes up for width we lose when we rotate
+        margin-left: -($margin-inside + $bleed) - 2.5mm;
+        &:after {
+            content: "";
+            display: block;
+            width: inherit;
+            height: $line-height-default * 1.5;
+            position: absolute;
+            transform: rotate(7deg);
+            background-color: inherit;
+            top: -$line-height-default;
+            z-index: -1;
+        }
+    }
+}
+
+// Copyright
+
+#{$page-copyright} {
+    transform: rotate(-7deg);
+}
+
+// Dedication
+
+$heart-curves: $line-height-default / 2;
+#{$dedication} {
+    // Create 'heart' shape
+    &:before {
+        content: "";
+        display: block;
+        height: $line-height-default * 2;
+        width: $line-height-default * 3;
+        transform: translateX(-$line-height-default) rotate(-36deg);
+        background-color: $color-accent;
+        position: absolute;
+        top: $line-height-default * 5;
+        margin-left: 50%;
+        border-radius: $heart-curves $heart-curves $heart-curves 0;
+    }
+    &:after {
+        content: "";
+        display: block;
+        height: $line-height-default * 2;
+        width: $line-height-default * 3;
+        transform: translateX(-$line-height-default * 2) rotate(50deg);
+        background-color: $color-accent;
+        position: absolute;
+        top: $line-height-default * 5;
+        margin-left: 50%;
+        border-radius: $heart-curves 0 0 $heart-curves;
+    }
+}
+
+// Chapter openers
+
+#{$page-chapter}, #{$page-frontmatter},
+#{$page-toc} {
+    #{$chapter-number} {
+        display: inline-block;
+        opacity: 0.5;
+    }
+    #{$chapter-heading} {
+        font-family: $font-display-main;
+        font-size: $font-size-default * 2;
+        color: $color-light;
+        margin-bottom: $line-height-default * 15;
+        transform: rotate(-10deg);
+        background-color: $color-accent;
+        margin-left: -($line-height-default * 6);
+        padding-left: $line-height-default * 6;
+        margin-right: -($line-height-default * 6);
+        padding-right: $line-height-default * 6;
+        padding-top: $line-height-default;
+        padding-bottom: $line-height-default;
+        &:after {
+            content: "";
+            display: block;
+            width: $page-width + ($bleed * 2) + 20mm; // 20mm makes up for width lost when we rotate
+            height: $line-height-default * 1.5;
+            position: absolute;
+            transform: rotate(23deg) translateX(-20%);
+            background-color: $color-accent;
+            top: $line-height-default * 2.5;
+            z-index: -1;
+        }
+    & + p, & + blockquote p:first-child {
+        text-indent: -($line-height-default / 2);
+        &::first-letter {
+            display: inline-block;
+            background-color: $color-text-main;
+            color: $color-light;
+            font-family: $font-display-main;
+            font-size: $line-height-default;
+            font-weight: bold;
+            line-height: 1;
+            padding: 0 ($line-height-default / 4);
+            margin-right: 1pt;
+        }    
+    }
+    }
+}
+
+blockquote {
+    p, ul, ol {
+        text-align: left;
+    }
+}

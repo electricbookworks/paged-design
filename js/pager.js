@@ -7,7 +7,8 @@
 var pagerThemes = {
     template: 'Template',
     density: 'Density',
-    beatrix: 'Beatrix'
+    beatrix: 'Beatrix',
+    plastered: 'Plastered'
 };
 
 // Check for mathjax
