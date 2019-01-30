@@ -132,7 +132,8 @@ hr {
     font-family: $font-display-main;
     font-size: $line-height-default * 2;
     column-span: all;
-    // This is not supported in paged.js yet
+    // This is not properly supported in paged.js yet
+    // It works on the first instance, maybe.
     & + p::first-letter {
         font-family: $font-display-secondary;
     }
