@@ -14,6 +14,8 @@ Next, we're working on add-on styles that add opinionated styles to the defaults
 
 ### Use an existing stylesheet
 
+This assumes your HTML happens to use the same selectors ours does. That's unlikely, but you can try!
+
 1. Copy a CSS file from one of the theme folders in `css/themes/`, and link to it in your book's HTML files.
 2. Link to the `paged.js` script.
 
@@ -26,16 +28,22 @@ So your HTML `head` will include these two tags:
 
 ### Create your own stylesheet
 
+You'll need to have Ruby and Sass installed first.
+
 1. Clone this repo.
 1. In `themes`, make a copy of `themes/template` or another theme you want to adapt.
 1. Edit and add to its `_selectors.scss`, `_styles.scss`, and `_variables.scss`, which add to and override the defaults when they're imported by the theme's `main.scss` file. See [Creating new styles](#creating-new-styles) below for more detail.
+1. Add your theme to the `run-` scripts' `sass` commands, and to the `pagerThemes` object in `js/pager.js`.
 1. Run `./run.sh` on Mac and Linux or `run.bat` on Windows. (The first time you run this on Mac or Linux, you must give the script permission to run with `chmod +x run.sh`.)
 
    This builds and watches for Sass changes, and serves `index.html` so that the page can fetch `paged.js` over HTTP.
 
-1. Add your theme to the `run` script's `sass` command, and to the `pagerThemes` object in `js/pager.js`.
+Note that in order to demo stylesheets in this project, we load stylesheets and `paged.js` with `js/pager.js`. The `pager.js` script adds the theme selector and waits for any MathJax to load on the page. In your finished books, you won't do this. You'll most likely just add this to your HTML:
 
-Note that in order to demo stylesheets in this project, we load stylesheets and `paged.js` with `js/pager.js`. For your content, you'll probably use the finished CSS as described in 'Use an existing stylesheet' above.
+```html
+<link rel="stylesheet" type="text/css" href="path/to/main.css">
+<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+```
 
 ## Repo structure
 
