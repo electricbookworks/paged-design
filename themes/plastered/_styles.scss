@@ -56,7 +56,7 @@
             right: -($bleed);
             bottom: $line-height-default * 5;
             transform: skewY(-10deg);
-            z-index: -1;
+            z-index: -1; // see note below on pagedjs_page
         }
     }
     #{$title-page-subtitle} {
@@ -87,6 +87,12 @@
             z-index: -1;
         }
     }
+}
+// z-index on title above requires adjusting
+// z-index of pagedjs_page, whihc unfortunately
+// makes direct inspecting elements with the mouse impossible
+.pagedjs_title-page_page {
+    z-index: -1; // only necessary per-theme if theme uses z-indexes
 }
 
 // Copyright
