@@ -42,10 +42,10 @@ $crop-marks: crop; // crop | none
 // generic keyword fallbacks (e.g.g 'serif'). We do that here
 // for demo purposes only, and would not do so in production.
 
- @import url('https://fonts.googleapis.com/css?family=Courgette|Fondamento:400,400i|Merienda:400,700|Miniver|Pinyon+Script|Vollkorn:400,400i,700,700i&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Fondamento:400,400i|Neuton:400,400i,700|Vollkorn:400,400i,700,700i&subset=latin-ext');
 
 $font-text-main: "Vollkorn", serif;
-$font-text-secondary: "Vollkorn", sans-serif;
+$font-text-secondary: "Neuton", sans-serif;
 $font-display-main: "Fondamento", sans-serif;
 $font-display-secondary: "Vollkorn", sans-serif;
 $font-code: "Inconsolata", monospace;

@@ -5,6 +5,8 @@
 // They will be included by main.scss,
 // after default/_styles.scss
 
+// Title page
+
 #{$page-title-page} {
     #{$title-page-title} {
         font-size: $font-size-default * 3;
@@ -19,17 +21,31 @@
 }
 
 #{$page-chapter}, #{$page-frontmatter} {
-    h1 {
-        font-size: $font-size-default * 1.2;
-        text-align: center;
-        margin-bottom: $line-height-default * 5;
+    #{$chapter-number} {
+        font-family: $font-text-secondary; // font with lining figures
     }
-    h2 {
-        font-size: $font-size-default;
+    #{$chapter-heading} {
+        font-family: $font-text-secondary; // font with lining figures
+        font-size: $font-size-default * 1.8;
         text-align: center;
-        margin-bottom: $line-height-default;
+        margin-bottom: $line-height-default * 7;
+        letter-spacing: 0.1em;
+        font-variant: all-small-caps;
+        // Backup in case all-small-caps is not supported
+        text-transform: uppercase;
+        font-feature-settings: "c2sc", "smcp", "onum";
     }
 }
+
+// Copyright page
+
+#{$page-copyright} {
+    p {
+        margin-bottom: $line-height-default / 2;
+    }
+}
+
+// Chapter openers
 
 #{$chapter-number} {
     font-family: $font-display-main;
@@ -43,8 +59,72 @@
     }
 }
 
-#{$page-copyright} {
+// Headings
+
+@mixin heading-defaults() {
+    font-size: $font-size-default;
+    text-align: center;
+    margin-bottom: 0;
+    font-weight: normal;
+    font-style: normal;
+    margin: $line-height-default 0 0 0;
+}
+
+// Headings
+
+h1, h2, h3, h4, h5, h6 {
+    @include heading-defaults() 
+}
+h1 {
+    font-size: $font-size-default * 1.5;
+    letter-spacing: 0.1em;
+    font-variant: all-small-caps;
+    text-transform: uppercase;
+    font-feature-settings: "c2sc", "smcp", "onum";
+}
+h2 {
+    margin-top: $line-height-default * 2;
+    margin-bottom: $line-height-default;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-feature-settings: "c2sc", "smcp", "onum";
+}
+h3 {
+    margin-top: $line-height-default * 2;
+    margin-bottom: $line-height-default;
+    font-size: $font-size-default * 1.2;
+}
+h4 {
+    font-style: italic;
+}
+
+// Blockquotes
+
+blockquote {
     p {
-        margin-bottom: $line-height-default / 2;
+        text-align: left;
+    }
+}
+
+// Notes
+
+// No space for default text-wrap sidenotes,
+// so we make sidenotes full-width
+#{$sidenote} {
+    width: auto;
+    text-align: left;
+    font-size: $font-size-default * 0.9;
+    &::before {
+        content: "";
+        display: block;
+        height: $line-height-default;
+        border-bottom: $rule-thickness dotted $color-light;
+        margin-right: $line-height-default;
+    }
+}
+#{$endnotes} {
+    font-size: $font-size-default * 0.9;
+    p, ul, ol, dl {
+        text-align: left;
     }
 }
