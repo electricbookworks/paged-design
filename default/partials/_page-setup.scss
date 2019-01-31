@@ -33,7 +33,6 @@
         background-color: $color-paper;
         box-shadow: 0px 0px 0.1px lightblue;
         margin-bottom: $line-height-default;
-        z-index: -1;
     }
     // Show single pages or spreads
     @if $paged-display == "spreads" {
