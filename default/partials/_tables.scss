@@ -7,7 +7,7 @@ table {
     margin: $line-height-default 0;
     font-size: $font-size-default * $font-size-smaller;
     width: 100%;
-    max-width: $page-width - $margin-inside - $margin-outside;
+    max-width: 100%; // Not set as absolute width for multi-column layouts
     ul, ol {
         list-style-position: inside;
     }
