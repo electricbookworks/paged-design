@@ -13,7 +13,7 @@
     margin-top: $line-height-default;
     margin-left: -($line-height-default);
     margin-bottom: $line-height-default;
-    max-width: ($page-width - $margin-inside - $margin-outside);
+    max-width: 100%; // allows for max width even in multi-column layouts
 }
 p > img:only-child {
     @include image-spacing;
