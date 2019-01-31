@@ -117,8 +117,18 @@
 }
 
 // Notes
-#{$endnotes} {
-    columns: 2;
+
+// No space for default text-wrap sidenotes,
+// so we make sidenotes full-width
+#{$sidenote} {
+    width: auto;
+    &::before {
+        content: "";
+        display: block;
+        height: $line-height-default;
+        border-bottom: $rule-thickness dotted $color-light;
+        margin-right: $line-height-default;
+    }
 }
 
 // Typography
