@@ -4,7 +4,7 @@
 
 // Available themes, listed as
 // foldername: 'Theme name'
-var pagerThemes = {
+var themes = {
     template: 'Template',
     density: 'Density',
     beatrix: 'Beatrix',
@@ -25,7 +25,7 @@ function pagerMathjax() {
 // Check that a theme exists
 function pagerCheckThemeExists(theme) {
     'use strict';
-    if (Object.keys(pagerThemes).indexOf(theme) > -1) {
+    if (Object.keys(themes).indexOf(theme) > -1) {
         return true;
     } else {
         return false;
@@ -179,7 +179,7 @@ function pagerLoadPagedJS() {
             console.log('Waiting for paged.js to load ...');
             if (window.PagedPolyfill.preview()) {
                 console.log('... paged.js loaded.');
-                pagerShowThemeSelectionList(pagerThemes);
+                pagerShowThemeSelectionList(themes);
                 clearInterval(check);
             }
         }, 1000);

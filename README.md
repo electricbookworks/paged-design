@@ -1,6 +1,6 @@
 # Book designs for paged.js
 
-Customisable designs for books created with [`paged.js`](https://gitlab.pagedmedia.org/tools/pagedjs).
+Customisable book designs created with [`paged.js`](https://gitlab.pagedmedia.org/tools/pagedjs).
 
 ## Project aims
 
@@ -30,15 +30,21 @@ So, this means your HTML `head` will include these two tags:
 
 ### Create your own stylesheet
 
-You'll need to have Ruby and Sass installed first.
+#### Initial setup
 
-1. Clone this repo.
+1. Install [Node](https://nodejs.org).
+2. Clone this repo.
+3. At the command line in this folder, run `npm install`.
+4. To run the site locally and build CSS as you make changes, run `npm start` and open your browser at [http://localhost:5000](http://localhost:5000).
+
+#### Creating new styles
+
 1. In `themes`, make a copy of `themes/template` or another theme you want to adapt.
 1. Edit and add to your theme's `_selectors.scss`, `_styles.scss`, and `_variables.scss`. These simply override the defaults when they're imported by the theme's `main.scss` file. See [Creating new styles](#creating-new-styles) below for more detail.
-1. Add your theme to the `run-` scripts' `sass` commands, and to the `pagerThemes` object in `js/pager.js`.
-1. Run `./run.sh` on Mac and Linux or `run.bat` on Windows. (The first time you run this on Mac or Linux, you must give the script permission to run with `chmod +x run.sh`.)
+1. Add your theme to the `themes` in `index.js` and in `js/pager.js`.
+1. To run the site locally and build CSS as you make changes, run `npm start` at the command line. Open Chrome at [http://localhost:5000](http://localhost:5000).
 
-   This builds and watches for Sass changes, and serves `index.html` in Chrome so that the page can fetch `paged.js` over HTTP.
+   This builds and watches for Sass changes, and serves `index.html` so that the page can fetch `paged.js` over HTTP.
 
 Note that in order to demo stylesheets in this project, we load stylesheets and `paged.js` with `js/pager.js`. Our `pager.js` script adds the theme selector and waits for any MathJax to load on the page. In your finished books, you wouldn't do this. You'd most likely just add this to your HTML `head`:
 
@@ -60,11 +66,12 @@ This repo contains:
     - `default/_variables.scss`: defines a wide range of variables that affect your book design.
 - `themes/`: opinionated variations on the `default` styles, where you can create custom themes by defining your own selectors, variables and styles. Each theme subfolder follows the same structure as `default/`.
 - `css/`: the output folder, where finished CSS lands.
-- `run.sh`: run this on Mac and Linux to build your ready-to-use CSS and serve the book content in Chrome.
-- `run.bat`: run this on Windows to build your ready-to-use CSS and serve the book content in Chrome.
-- `LICENSE`: an MIT license.
+- `index.js`: the Node script that builds CSS from Sass and watches for changes there.
+- `LICENSE`: a CC0 license.
 - `README.md`: this guidance.
 - `index.html`: a landing page for the sample content in this repo.
+
+And a few other files for the build tools.
 
 ## The approach
 
