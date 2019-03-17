@@ -45,16 +45,18 @@
     #{$title-page-title} {
         color: $color-light;
         font-size: $font-size-default * 5;
+        position: relative;
+        z-index: 1;
         &:before {
             content: "";
             display: block;
             background: $color-accent;
             width: $page-width + ($bleed * 2);
             position: absolute;
-            top: -($bleed + ($page-height / 6));
+            top: -($bleed + ($page-height / 2));
             left: -($margin-inside + $bleed);
             right: -($bleed);
-            bottom: $line-height-default * 5;
+            bottom: -($line-height-default * 10);
             transform: skewY(-10deg);
             z-index: -1; // see note below on pagedjs_page
         }
@@ -67,6 +69,7 @@
         font-size: $font-size-default;
         margin: 0 0 0 50%;
         transform: translateX(-50%);
+        z-index: 1;
     }
     #{$title-page-author} {
         font-family: $font-display-main;
@@ -75,7 +78,9 @@
         background-color: $color-light;
         width: $page-width + ($bleed * 2) + 5mm; // the 2mm makes up for width we lose when we rotate
         margin-left: -($margin-inside + $bleed) - 2.5mm;
-        &:after {
+        position: relative;
+        z-index: 1;
+        &:before {
             content: "";
             display: block;
             width: inherit;
@@ -87,12 +92,6 @@
             z-index: -1;
         }
     }
-}
-// z-index on title above requires adjusting
-// z-index of pagedjs_page, whihc unfortunately
-// makes direct inspecting elements with the mouse impossible
-.pagedjs_title-page_page {
-    z-index: -1; // only necessary per-theme if theme uses z-indexes
 }
 
 // Copyright

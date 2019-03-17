@@ -187,7 +187,8 @@ img {
     margin-left: 129mm; } }
 
 .chapter {
-  page: chapter; }
+  page: chapter;
+  break-before: recto; }
 
 .copyright-page {
   page: copyright;
@@ -222,7 +223,8 @@ img {
   break-before: page; }
 
 .frontmatter {
-  page: frontmatter; }
+  page: frontmatter;
+  break-before: recto; }
 
 h1 {
   string-set: h1-text content(), h2-text content(), h1-title attr(title), h2-title attr(title); }
@@ -3399,7 +3401,8 @@ h6 {
   counter-reset: page 1000; }
 
 .part-page {
-  page: part; }
+  page: part;
+  break-before: recto; }
 
 .previous-publications-page {
   page: previous-publications;
@@ -4151,17 +4154,19 @@ th, td {
 
 .title-page .title-page-title {
   color: white;
-  font-size: 45pt; }
+  font-size: 45pt;
+  position: relative;
+  z-index: 1; }
   .title-page .title-page-title:before {
     content: "";
     display: block;
     background: #3299FF;
     width: 129mm;
     position: absolute;
-    top: -33mm;
+    top: -99mm;
     left: -15mm;
     right: 0;
-    bottom: 70pt;
+    bottom: -140pt;
     transform: skewY(-10deg);
     z-index: -1; }
 
@@ -4172,7 +4177,8 @@ th, td {
   width: 140pt;
   font-size: 9pt;
   margin: 0 0 0 50%;
-  transform: translateX(-50%); }
+  transform: translateX(-50%);
+  z-index: 1; }
 
 .title-page .title-page-author {
   font-family: "ZCOOL KuaiLe", sans-serif;
@@ -4180,8 +4186,10 @@ th, td {
   color: black;
   background-color: white;
   width: 134mm;
-  margin-left: -17.5mm; }
-  .title-page .title-page-author:after {
+  margin-left: -17.5mm;
+  position: relative;
+  z-index: 1; }
+  .title-page .title-page-author:before {
     content: "";
     display: block;
     width: inherit;
@@ -4191,9 +4199,6 @@ th, td {
     background-color: inherit;
     top: -14pt;
     z-index: -1; }
-
-.pagedjs_title-page_page {
-  z-index: -1; }
 
 .copyright-page {
   transform: rotate(-7deg); }

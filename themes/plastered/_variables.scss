@@ -47,7 +47,7 @@ $text-align-default: justify;
 // - auto: starts on next page, left or right
 // - recto: starts on next right-hand-page
 // - verso: starts on next left-hand-page (not recommended)
-$chapters-start-on: auto;
+$chapters-start-on: recto;
 
 
 // Running headers and footers
