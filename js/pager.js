@@ -105,15 +105,27 @@ function pagerShowThemeSelectionList(listObject) {
     // Create a div for the list
     var controls = document.createElement('div');
     controls.id = 'pagerControls';
-    controls.style.position = 'fixed';
-    controls.style.top = '1em';
-    controls.style.right = '1em';
-    controls.style.textAlign = 'right';
+
+    // ... and style it
+    var controlsCSS = 'position: fixed;';
+    controlsCSS += 'top: 1em;';
+    controlsCSS += 'right: 1em;';
+    controlsCSS += 'text-align: right;';
+    controlsCSS += 'z-index: 1;';
+    controlsCSS += 'font-size: 1.1em;';
+    controlsCSS += 'font-family: "Source Sans Pro", "Helvetica", sans-serif;';
+    controls.style.cssText = controlsCSS;
     document.body.insertAdjacentElement('afterbegin', controls);
 
+    // Create the dropdown
     var selectList = document.createElement('select');
     selectList.id = 'pagerSelectList';
-    selectList.style.fontFamily = 'inherit';
+
+    // ... and style it
+    var selectListCSS = 'font-family: inherit;';
+    selectListCSS += 'padding: 0.3em;';
+    selectListCSS += '';
+    selectList.style.cssText = selectListCSS;
 
     // Add the themes as options
     var selected = "";
