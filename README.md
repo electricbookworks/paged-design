@@ -35,7 +35,7 @@ So, this means your HTML `head` will include these two tags:
 1. Install [Node](https://nodejs.org).
 2. Clone this repo.
 3. At the command line in this folder, run `npm install`.
-4. To run the site locally and build CSS as you make changes, run `npm start` and open your browser at [http://localhost:5000](http://localhost:5000).
+4. To run the site locally and build CSS as you make changes, run `npm start` and open Chrome at [http://localhost:5000](http://localhost:5000).
 
 #### Creating new styles
 
