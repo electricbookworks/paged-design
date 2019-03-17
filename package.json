@@ -1,0 +1,28 @@
+{
+  "name": "book-css",
+  "version": "0.1.0",
+  "description": "Customisable book designs created with Paged.js",
+  "main": "index.js",
+  "devDependencies": {
+    "chokidar": "^2.1.2",
+    "http-server": "^0.11.1",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "scripts": {
+    "buildcss": "node index.js",
+    "runserver": "http-server -p 5000",
+    "start": "npm-run-all --parallel buildcss runserver",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electricbookworks/book-css.git"
+  },
+  "author": "Arthur Attwell",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/electricbookworks/book-css/issues"
+  },
+  "homepage": "https://github.com/electricbookworks/book-css#readme"
+}
