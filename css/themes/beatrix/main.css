@@ -186,7 +186,7 @@ img {
   .pagedjs_first_page {
     margin-left: 111mm; } }
 
-.paged-wp {
+.chapter {
   page: chapter;
   break-before: recto; }
 
@@ -4129,10 +4129,10 @@ th, td {
 .title-page .title-page-author {
   margin-top: 15pt; }
 
-.paged-wp .chapter-number, .paged-wp h1 strong:first-of-type, .paged-wp h2 strong:first-of-type, .frontmatter .chapter-number, .frontmatter h1 strong:first-of-type, .frontmatter h2 strong:first-of-type {
+.chapter .chapter-number, .chapter h1 strong:first-of-type, .chapter h2 strong:first-of-type, .frontmatter .chapter-number, .frontmatter h1 strong:first-of-type, .frontmatter h2 strong:first-of-type {
   font-family: "Neuton", sans-serif; }
 
-.paged-wp h1:first-child, .paged-wp h2:first-child, .frontmatter h1:first-child, .frontmatter h2:first-child {
+.chapter h1:first-child, .chapter h2:first-child, .frontmatter h1:first-child, .frontmatter h2:first-child {
   font-family: "Neuton", sans-serif;
   font-size: 18pt;
   text-align: center;

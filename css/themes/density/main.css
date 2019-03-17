@@ -186,7 +186,7 @@ img {
   .pagedjs_first_page {
     margin-left: 177.8mm; } }
 
-.paged-wp {
+.chapter {
   page: chapter;
   break-before: recto; }
 
@@ -4181,9 +4181,9 @@ th, td {
   right: 0;
   text-align: right; }
 
-.frontmatter, .paged-wp {
+.frontmatter, .chapter {
   columns: 2; }
-  .frontmatter h1:first-child, .frontmatter h2:first-child, .paged-wp h1:first-child, .paged-wp h2:first-child {
+  .frontmatter h1:first-child, .frontmatter h2:first-child, .chapter h1:first-child, .chapter h2:first-child {
     column-span: all;
     max-width: 90%;
     font-size: 36pt;
@@ -4191,14 +4191,14 @@ th, td {
     margin: 26pt 0 13pt 0;
     break-after: avoid;
     break-inside: avoid; }
-    .frontmatter h1:first-child + p, .frontmatter h2:first-child + p, .paged-wp h1:first-child + p, .paged-wp h2:first-child + p {
+    .frontmatter h1:first-child + p, .frontmatter h2:first-child + p, .chapter h1:first-child + p, .chapter h2:first-child + p {
       width: 30em;
       column-span: all;
       font-size: 9.9pt;
       margin-top: 39pt;
       margin-bottom: 39pt;
       font-weight: normal; }
-      .frontmatter h1:first-child + p + p, .frontmatter h2:first-child + p + p, .paged-wp h1:first-child + p + p, .paged-wp h2:first-child + p + p {
+      .frontmatter h1:first-child + p + p, .frontmatter h2:first-child + p + p, .chapter h1:first-child + p + p, .chapter h2:first-child + p + p {
         text-indent: 0; }
 
 .chapter-number, h1 strong:first-of-type, h2 strong:first-of-type {

@@ -186,7 +186,7 @@ img {
   .pagedjs_first_page {
     margin-left: 129mm; } }
 
-.paged-wp {
+.chapter {
   page: chapter; }
 
 .copyright-page {
@@ -4222,14 +4222,14 @@ th, td {
   margin-left: 50%;
   border-radius: 7pt 0 0 7pt; }
 
-.paged-wp .chapter-number, .paged-wp h1 strong:first-of-type, .paged-wp h2 strong:first-of-type, .frontmatter .chapter-number, .frontmatter h1 strong:first-of-type, .frontmatter h2 strong:first-of-type,
+.chapter .chapter-number, .chapter h1 strong:first-of-type, .chapter h2 strong:first-of-type, .frontmatter .chapter-number, .frontmatter h1 strong:first-of-type, .frontmatter h2 strong:first-of-type,
 .contents-page .chapter-number,
 .contents-page h1 strong:first-of-type,
 .contents-page h2 strong:first-of-type {
   display: inline-block;
   opacity: 0.5; }
 
-.paged-wp h1:first-child, .paged-wp h2:first-child, .frontmatter h1:first-child, .frontmatter h2:first-child,
+.chapter h1:first-child, .chapter h2:first-child, .frontmatter h1:first-child, .frontmatter h2:first-child,
 .contents-page h1:first-child,
 .contents-page h2:first-child {
   font-family: "ZCOOL KuaiLe", sans-serif;
@@ -4244,7 +4244,7 @@ th, td {
   padding-right: 84pt;
   padding-top: 14pt;
   padding-bottom: 14pt; }
-  .paged-wp h1:first-child:after, .paged-wp h2:first-child:after, .frontmatter h1:first-child:after, .frontmatter h2:first-child:after,
+  .chapter h1:first-child:after, .chapter h2:first-child:after, .frontmatter h1:first-child:after, .frontmatter h2:first-child:after,
   .contents-page h1:first-child:after,
   .contents-page h2:first-child:after {
     content: "";
@@ -4256,13 +4256,13 @@ th, td {
     background-color: #3299FF;
     top: 35pt;
     z-index: -1; }
-  .paged-wp h1:first-child + p, .paged-wp h1:first-child + blockquote p:first-child, .paged-wp h2:first-child + p, .paged-wp h2:first-child + blockquote p:first-child, .frontmatter h1:first-child + p, .frontmatter h1:first-child + blockquote p:first-child, .frontmatter h2:first-child + p, .frontmatter h2:first-child + blockquote p:first-child,
+  .chapter h1:first-child + p, .chapter h1:first-child + blockquote p:first-child, .chapter h2:first-child + p, .chapter h2:first-child + blockquote p:first-child, .frontmatter h1:first-child + p, .frontmatter h1:first-child + blockquote p:first-child, .frontmatter h2:first-child + p, .frontmatter h2:first-child + blockquote p:first-child,
   .contents-page h1:first-child + p,
   .contents-page h1:first-child + blockquote p:first-child,
   .contents-page h2:first-child + p,
   .contents-page h2:first-child + blockquote p:first-child {
     text-indent: -7pt; }
-    .paged-wp h1:first-child + p::first-letter, .paged-wp h1:first-child + blockquote p:first-child::first-letter, .paged-wp h2:first-child + p::first-letter, .paged-wp h2:first-child + blockquote p:first-child::first-letter, .frontmatter h1:first-child + p::first-letter, .frontmatter h1:first-child + blockquote p:first-child::first-letter, .frontmatter h2:first-child + p::first-letter, .frontmatter h2:first-child + blockquote p:first-child::first-letter,
+    .chapter h1:first-child + p::first-letter, .chapter h1:first-child + blockquote p:first-child::first-letter, .chapter h2:first-child + p::first-letter, .chapter h2:first-child + blockquote p:first-child::first-letter, .frontmatter h1:first-child + p::first-letter, .frontmatter h1:first-child + blockquote p:first-child::first-letter, .frontmatter h2:first-child + p::first-letter, .frontmatter h2:first-child + blockquote p:first-child::first-letter,
     .contents-page h1:first-child + p::first-letter,
     .contents-page h1:first-child + blockquote p:first-child::first-letter,
     .contents-page h2:first-child + p::first-letter,
