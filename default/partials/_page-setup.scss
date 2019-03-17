@@ -39,6 +39,9 @@
         .pagedjs_left_page {
             float: left;
         }
+        .pagedjs_right_page {
+            margin-left: $page-width;
+        }
         .pagedjs_first_page {
             margin-left: $page-width;
         }
