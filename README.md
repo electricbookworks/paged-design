@@ -97,7 +97,7 @@ There are three optional steps to creating a new theme:
 
 We create many book features as Sass mixins, which are then `@include`d in elements and classes.
 
-This makes it easy to give different elements the same design in different contexts. For example, let's say your book's chapters are divided into parts. Your part titles will be `h1`s, and your chapter titles `h2`s. What heading level are your frontmatter headings, like 'Contents' and 'Prologue'? They are `h1`s sementically, but in terms of visual significance they need to *look like* the `h2`s.
+This makes it easy to give different elements the same design in different contexts. For example, let's say your book's chapters are divided into parts. Your part titles will be `h1`s, and your chapter titles `h2`s. What heading level are your frontmatter headings, like 'Contents' and 'Prologue'? They are `h1`s semantically, but in terms of visual significance they need to *look like* the `h2`s.
 
 So if, visually speaking, you have a big `heading-1` and a smaller `heading-2`, your part titles need to be `h1.heading-1`, your frontmatter titles `h1.heading-2`, and your chapter titles `h2.heading-2`. This will ensure you have both semantically accurate HTML and visually sensible styles.
 
