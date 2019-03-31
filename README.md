@@ -46,7 +46,7 @@ So, this means your HTML `head` will include these two tags:
 1. Open Chrome at [http://localhost:5000](http://localhost:5000).
 1. To get a PDF for printing, use Ctrl+P (Windows) or Cmd+P (Mac) to save as PDF in Chrome.
 
-In order to demo stylesheets in this project, we load stylesheets and `paged.js` a little differently frm how you'd load it in your book-production HTML. We use the `js/pager.js` script, which adds the theme-selection dropdown and waits for any MathJax to load on the page before running `paged.js`.
+In order to demo stylesheets in this project, we load stylesheets and `paged.js` a little differently from how you'd load it in your book-production HTML. We use the `js/pager.js` script, which adds the theme-selection dropdown and waits for any MathJax to load on the page before running `paged.js`.
 
 In actual book-production, you wouldn't do this. You'd most likely just add links to the `paged.js` script and your finished CSS to your HTML `head` like this:
 
