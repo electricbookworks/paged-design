@@ -32,9 +32,36 @@ function writeCSS(scssFile, cssFile) {
     });
 }
 
+// Helper function for error logging
+function logErrorWhenDebugging(error) {
+    'use strict';
+    var debug = false;
+    if (debug) {
+        console.log(error);
+    }
+}
+
+// Function for creating folders
+function createFolders(folders, parentFolder) {
+    'use strict';
+
+    // Create the folder, and don't worry if it exists
+    fs.mkdir(parentFolder, logErrorWhenDebugging);
+
+    // Create folders in parent folder
+    var i;
+    for (i = 0; i < folders.length; i += 1) {
+        fs.mkdir(parentFolder + '/' + folders[i], logErrorWhenDebugging);
+    }
+
+}
+
 // The main CSS-building function
 function build() {
     'use strict';
+
+    // Create output folders if they don't exist
+    createFolders(themes, 'css/themes');
 
     // Build default styles
     writeCSS(
