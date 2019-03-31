@@ -4,7 +4,7 @@ Customisable book designs created with [`paged.js`](https://gitlab.pagedmedia.or
 
 ## Project aims
 
-This project is a work in progress. The aim is to make it easy to create and adapt book designs for use with `paged.js`.
+This project is a work in progress. The aim is to make it easy to create and adapt book designs for use with `paged.js`. Currently, `paged.js` and therefore this tool only works properly in Chrome.
 
 Our default library of Sass partials account for common book features as base styles (e.g. `_bibliography.scss`). These partials have a vanilla, non-opinionated design, and can be styled lightly just by setting Sass variables.
 
@@ -37,21 +37,53 @@ So, this means your HTML `head` will include these two tags:
 3. At the command line in this folder, run `npm install`.
 4. To run the site locally and build CSS as you make changes, run `npm start` and open Chrome at [http://localhost:5000](http://localhost:5000).
 
-#### Creating new styles
+#### Developing new styles
 
-1. In `themes`, make a copy of `themes/template` or another theme you want to adapt.
-1. Edit and add to your theme's `_selectors.scss`, `_styles.scss`, and `_variables.scss`. These simply override the defaults when they're imported by the theme's `main.scss` file. See [Creating new styles](#creating-new-styles) below for more detail.
+1. In `themes`, make a copy of `themes/template` or another theme you want to adapt. Name your copy of the `template` folder for the name of your new theme, using no spaces, and ideally only lowercase letters.
+1. Edit and add to your theme's `_selectors.scss`, `_styles.scss`, and `_variables.scss`. These simply override the defaults when they're imported by the theme's `main.scss` file. See [Selectors, Variables and Styles](#selectors-variables-and-styles) below for more detail.
 1. Add your theme to the `themes` in `index.js` and in `js/pager.js`.
-1. To run the site locally and build CSS as you make changes, run `npm start` at the command line. Open Chrome at [http://localhost:5000](http://localhost:5000).
+1. Run `npm start` at the command line. (This will run the site on your machine and rebuild CSS as you make changes to files.)
+1. Open Chrome at [http://localhost:5000](http://localhost:5000).
+1. To get a PDF for printing, use Ctrl+P (Windows) or Cmd+P (Mac) to save as PDF in Chrome.
 
-   This builds and watches for Sass changes, and serves `index.html` so that the page can fetch `paged.js` over HTTP.
+In order to demo stylesheets in this project, we load stylesheets and `paged.js` a little differently frm how you'd load it in your book-production HTML. We use the `js/pager.js` script, which adds the theme-selection dropdown and waits for any MathJax to load on the page before running `paged.js`.
 
-Note that in order to demo stylesheets in this project, we load stylesheets and `paged.js` with `js/pager.js`. Our `pager.js` script adds the theme selector and waits for any MathJax to load on the page. In your finished books, you wouldn't do this. You'd most likely just add this to your HTML `head`:
+In actual book-production, you wouldn't do this. You'd most likely just add links to the `paged.js` script and your finished CSS to your HTML `head` like this:
 
 ```html
 <link rel="stylesheet" type="text/css" href="path/to/main.css">
 <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
 ```
+
+where `path/to/main.css` is the actual path to your finished CSS file.
+
+#### Selectors, variables and styles
+
+There are three parts to a theme: selectors, variables and styles. For your project, you may have to adapt these for each theme you create or each book you create CSS for.
+
+1. **Selectors**
+
+   Add your book's selectors in `themes/yourtheme/_selectors.scss`.
+
+   A selector is a word or phrase in CSS that identifies a particular kind of element in your book content's HTML. For instance, `p.epigraph` is the selector that defines all paragraphs tagged with `class="epigraph"`. [Here is a good reference for selectors](https://medium.com/design-code-repository/css-selectors-cheatsheet-details-9593bc204e3f).
+
+   Depending how your books' HTML has been built, you may have different selectors for book features. For instance, a chapter in one book might be in `<div class="chapter">`, and `<section id="chapter-1">` in another. The different chapter selectors in each of these cases might be `.chapter` and `[id^=chapter-]` respectively.
+
+1. **Variables**
+
+   Because we use Sass to generate CSS, we can use variables. Variables are how we store things like measurements, colours, and options that we want to reuse throughout our designs. For instance, if we store our text font's name in a `$font-text-main` variable, we can use the variable all over our code, and when we want to change the font we only change the value of the variable in one place.
+
+   We set variables in `themes/yourtheme/_variables.scss`.
+
+   We use a wide range of variables that affect your final CSS. You can see the default variables in `default/_variables.scss`. To override one of those defaults, add it to `themes/yourtheme/_variables.scss` without the `!default` rule. For example, to change the page width, add `$page-width: 152mm;` to `themes/yourtheme/_variables.scss`.
+
+1. **Styles**
+
+   Once you've defined selectors and variables, you can create custom CSS rules that add to or override our `default` styles.
+
+   Add your own style rules to `themes/yourtheme/_styles.scss`.
+
+   This file is for any custom styling. You can write in CSS or `.scss` syntax. To keep your designs aesthetically consistent, it's good to be familiar with the variables in `default/_variables.scss`, and to use them wherever possible.
 
 ## Repo structure
 
@@ -76,22 +108,6 @@ And a few other files for the build tools.
 ## The approach
 
 Our aim is to make it quicker and easier to create new book designs, without writing loads of CSS from scratch.
-
-### Creating new styles
-
-There are three optional steps to creating a new theme:
-
-1. Add your book's selectors in `themes/yourtheme/_selectors.scss`.
-
-   Depending how your books' HTML has been built, you may have different selectors for book features. For instance, a chapter in one book might be in `<div class="chapter">`, and `<section id="chapter-1">` in another. The different chapter selectors in each of these cases might be `.chapter` and `[id^=chapter-]` respectively.
-
-1. Set variables in `themes/yourtheme/_variables.scss`.
-
-   We use a bunch of variables that affect your final CSS. You can see the defaults in `default/_variables.scss`. To override one of those, add it to `themes/yourtheme/_variables.scss` without the `!default` rule. For example, to change the page width, add `$page-width: 152mm;` to `themes/yourtheme/_variables.scss`.
-
-1. Add your own style rules to `themes/yourtheme/_styles.scss`.
-
-   This file is for any styling. You can write in CSS or `.scss` syntax. To keep your designs aesthetically consistent, it's good to be familiar with the variables we design with in `default/_variables.scss`, and to use them wherever possible.
 
 ### On features as mixins
 
