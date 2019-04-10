@@ -4,14 +4,6 @@ var sass = require('node-sass');
 var fs = require('fs');
 var chokidar = require('chokidar');
 
-// Themes folders to build
-var themes = [
-    'template',
-    'density',
-    'beatrix',
-    'plastered'
-];
-
 // Process a scss file
 function writeCSS(scssFile, cssFile) {
     'use strict';
@@ -59,6 +51,8 @@ function createFolders(folders, parentFolder) {
 // The main CSS-building function
 function build() {
     'use strict';
+
+    var themes = fs.readdirSync('./themes/');
 
     // Create output folders if they don't exist
     createFolders(themes, 'css/themes');

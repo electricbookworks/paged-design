@@ -41,7 +41,7 @@ So, this means your HTML `head` will include these two tags:
 
 1. In `themes`, make a copy of `themes/template` or another theme you want to adapt. Name your copy of the `template` folder for the name of your new theme, using no spaces, and ideally only lowercase letters.
 1. Edit and add to your theme's `_selectors.scss`, `_styles.scss`, and `_variables.scss`. These simply override the defaults when they're imported by the theme's `main.scss` file. See [Selectors, Variables and Styles](#selectors-variables-and-styles) below for more detail.
-1. Add your theme to the `themes` in `index.js` and in `js/pager.js`.
+1. Add your theme to the `themes` list in `js/pager.js` (this adds it to the theme-selection dropdown).
 1. Run `npm start` at the command line. (This will run the site on your machine and rebuild CSS as you make changes to files.)
 1. Open Chrome at [http://localhost:5000](http://localhost:5000).
 1. To get a PDF for printing, use Ctrl+P (Windows) or Cmd+P (Mac) to save as PDF in Chrome.
