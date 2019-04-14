@@ -24,51 +24,18 @@ function writeCSS(scssFile, cssFile) {
     });
 }
 
-// Helper function for error logging
-function logErrorWhenDebugging(error) {
-    'use strict';
-    var debug = false;
-    if (debug) {
-        console.log(error);
-    }
-}
-
-// Function for creating folders
-function createFolders(folders, parentFolder) {
-    'use strict';
-
-    // Create the folder, and don't worry if it exists
-    fs.mkdir(parentFolder, logErrorWhenDebugging);
-
-    // Create folders in parent folder
-    var i;
-    for (i = 0; i < folders.length; i += 1) {
-        fs.mkdir(parentFolder + '/' + folders[i], logErrorWhenDebugging);
-    }
-
-}
-
 // The main CSS-building function
 function build() {
     'use strict';
 
     var themes = fs.readdirSync('./themes/');
 
-    // Create output folders if they don't exist
-    createFolders(themes, 'css/themes');
-
-    // Build default styles
-    writeCSS(
-        'default/main.scss',
-        'css/themes/default/main.css'
-    );
-
     // Build themes
     var i;
     for (i = 0; i < themes.length; i += 1) {
         writeCSS(
             'themes/' + themes[i] + '/main.scss',
-            'css/themes/' + themes[i] + '/main.css'
+            'themes/' + themes[i] + '/main.css'
         );
     }
 }
@@ -78,7 +45,7 @@ build();
 
 // ...then watch for changes
 var toWatch = ['default', 'themes'];
-chokidar.watch(toWatch).on('all', function (event, path) {
+chokidar.watch(toWatch, {ignored: /main\.css/}).on('all', function (event, path) {
     'use strict';
     console.log(event + ' at ' + path);
     build();
