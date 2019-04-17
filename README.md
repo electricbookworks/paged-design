@@ -142,3 +142,7 @@ When writing CSS, also note that the divs that `paged.js` introduces (in order t
 ### Fonts
 
 In this project, we link to online web fonts. This is just for demo purposes, and is a *bad idea* for real book production. When you make books for production, you should save and link to the actual font files in each project, and not link to fonts on the web, or to font files shared by different projects. This is because once you've refined your pages, any changes to the font files (e.g. adjustments to glyphs or kerning) could cause your pages to reflow in new and unintended ways.
+
+## Support
+
+This project was made possible by funding and encouragement from the [Coko Foundation](https://coko.foundation), the [Paged Media](http://www.pagedmedia.org/) initiative, and the [Shuttleworth Foundation](https://shuttleworthfoundation.org).
