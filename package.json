@@ -14,7 +14,8 @@
     "buildcss": "node index.js",
     "package": "node js/package.js",
     "runserver": "http-server -p 5000",
-    "start": "npm-run-all --parallel buildcss runserver",
+    "buildsite": "node js/build.js",
+    "start": "npm-run-all --parallel buildcss buildsite runserver",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
