@@ -1,18 +1,60 @@
 /*jslint node */
 
 var fs = require('fs');
+var path = require('path');
 var yazl = require('yazl');
 var themes = fs.readdirSync('./themes/');
 
+// Function to add a directory with yazl, thanks to
+// https://github.com/thejoshwolfe/yazl/issues/39
+var noop = Function.prototype;
+function addDirectory(zip, realPath, metadataPath, cb) {
+    'use strict';
+    fs.readdir(realPath, function (error, files) {
+        if (error === null) {
+            var i = files.length;
+            var resolve = function (error) {
+                if (error !== null) {
+                    resolve = noop;
+                    cb(error);
+                } else if (--i === 0) {
+                    resolve = noop;
+                    cb();
+                }
+            };
+            files.forEach(function (file) {
+                addDirectory(
+                    zip,
+                    path.join(realPath, file),
+                    metadataPath + "/" + file,
+                    resolve
+                );
+            });
+        } else if (error.code === "ENOTDIR") {
+            zip.addFile(realPath, metadataPath);
+            cb();
+        } else {
+            cb(error);
+        }
+    });
+}
+
+// Package the themes
 function packageThemes() {
     'use strict';
 
     // Loop through themes and zip contents
     var i, j, theme, filesToZip, fileToZip, zipFile, zipFilePath;
+    // var i, theme, zipFile, zipFilePath;
     for (i = 0; i < themes.length; i += 1) {
 
         // Get the relevant theme
         theme = themes[i];
+
+        // Don't create a zip of the _defaults directory
+        if (theme === "_defaults") {
+            return;
+        }
 
         // Create a new instance of a yazl zipFile
         zipFile = new yazl.ZipFile();
@@ -20,29 +62,9 @@ function packageThemes() {
         // Set the path of the output zip file
         zipFilePath = 'packaged/' + theme + '.zip';
 
-        // List all the files we want to zip,
+        // List the root-directory files we want to zip,
         // and where we want them in the output zip file.
         filesToZip = [
-            {
-                sourcePath: 'themes/' + theme + '/_selectors.scss',
-                zipPath: 'themes/' + theme + '/_selectors.scss'
-            },
-            {
-                sourcePath: 'themes/' + theme + '/_styles.scss',
-                zipPath: 'themes/' + theme + '/_styles.scss'
-            },
-            {
-                sourcePath: 'themes/' + theme + '/_variables.scss',
-                zipPath: 'themes/' + theme + '/_variables.scss'
-            },
-            {
-                sourcePath: 'themes/' + theme + '/main.scss',
-                zipPath: 'themes/' + theme + '/main.scss'
-            },
-            {
-                sourcePath: 'css/themes/' + theme + '/main.css',
-                zipPath: 'css/themes/' + theme + '/main.css'
-            },
             {
                 sourcePath: 'index.js',
                 zipPath: 'index.js'
@@ -57,7 +79,7 @@ function packageThemes() {
             }
         ];
 
-        // Loop through the files in this theme,
+        // Loop through those root-directory files,
         // and add them to the output zip file
         for (j = 0; j < filesToZip.length; j += 1) {
 
@@ -65,11 +87,27 @@ function packageThemes() {
             fileToZip = filesToZip[j];
 
             zipFile.addFile(fileToZip.sourcePath, fileToZip.zipPath);
-            zipFile.outputStream.pipe(fs.createWriteStream(zipFilePath));
         }
+
+        // Add the theme directory
+        addDirectory(zipFile, './themes/' + theme, 'themes/' + theme, function (error) {
+            if (error) {
+                return console.error(error);
+            }
+        });
+
+        // Add the _defaults directory
+        addDirectory(zipFile, './themes/_defaults', 'themes/_defaults', function (error) {
+            if (error) {
+                return console.error(error);
+            }
+        });
 
         // End the yazl zipping process for this theme
         zipFile.end();
+
+        // Write the zip file
+        zipFile.outputStream.pipe(fs.createWriteStream(zipFilePath));
 
     }
 }
