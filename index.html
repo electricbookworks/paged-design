@@ -6,12 +6,15 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
+<div class="wrapper">
 
     <h1>Book CSS</h1>
 
-    <p class="tagline">Customisable themes for book design with CSS</p>
+    <p class="tagline">Customisable themes for book design with&nbsp;CSS</p>
 
-    <p>Are you creating books with HTML and CSS? CSS files for books can be long and complicated to write. Our themes give you a head start: pick a theme for your book, add it to your project, and customise it to suit your needs.</p>
+    <p>Are you creating books with HTML and CSS? Stylesheets for books can be long and complicated to write. Our themes give you a head start: pick a theme, add it to your project, and customise it.</p>
+
+    <p>Note that <a href="https://gitlab.pagedmedia.org/tools/pagedjs"><code>paged.js</code></a> and this project are in development, so expect bugs,  workarounds, and exciting possibilities, and contribute if you can.</p>
 
     <h2>Themes</h2>
 
@@ -82,13 +85,13 @@
         <li>You'll need to have NodeJS installed on your computer. Our themes are written in Sass, and you'll use Node to build that into your finished CSS.</li>
         <li>Download a theme package and unzip it.</li>
         <li>Place the unzipped <code>book-css</code> package in your project. We're assuming that your project is contained in a single folder (like a Git repo).</li>
-        <li>In the <code>head</code> of your HTML (the content of your book), link to the compiled CSS file in your new theme folder. The path will depend on your folder structure, for example <code>../book-css/css/themes/beatrix/main.css</code>:<br>
-            <pre><code>&lt;link rel="stylesheet" type="text/css" href="../book-css/css/themes/beatrix/main.css"&gt;</code></pre>
+        <li>In the <code>head</code> of your HTML (the content of your book), link to the compiled CSS file in your new theme folder. The path will depend on your folder structure, for example <code>../css/beatrix/themes/beatrix/main.css</code>:<br>
+            <pre><code>&lt;link rel="stylesheet" type="text/css" href="../css/beatrix/themes/beatrix/main.css"&gt;</code></pre>
         </li>
         <li>In the <code>head</code> of your HTML, link to the <code>paged.js</code> script, which will lay out your pages in Chrome. For instance, if you want to always link to the latest official version:
             <pre><code>&lt;script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"&gt;&lt;/script&gt;</code></pre>
         </li>
-        <li>Serve your HTML. For example, if you're using Node and have http-server installed, you can run <code>npm run http-server -p 5000</code> in your project root folder, and visit your site at <a href="http://localhost:5000">http://localhost:5000</a>.</li>
+        <li>Serve your HTML. For example, if you're using Node and have http-server installed, you can run <code>npm run http-server -p 4000</code> in your project root folder, and visit your site at <a href="http://localhost:4000">http://localhost:4000</a>.</li>
     </ol>
 
     Now that you're up and running, you can customise your theme.
@@ -99,25 +102,26 @@
 
     <ol>
         <li>
-            <p>Install dependencies for <code>book-css</code>. From the command line, in the <code>book-css</code> folder, enter:</p>
+            <p>Install dependencies for <code>book-css</code>. To do this, from the command line, in the unzipped theme folder (alongside <code>package.json</code>), enter:</p>
 
             <p><code>npm install</code></p>
 
-            <p>which will install a few modules to <code>node_modules</code> that we need in that folder.</p>
+            <p>which will install a modules to <code>node_modules</code> that we need in that folder.</p>
         </li>
         <li>
-            <p>Start our Node script to watch for changes to your styles. Still in the <code>book-css</code> folder at the command line, run:</p>
+            <p>Start our Node script to watch for changes to your styles. To do this, in the same folder, at the command line, enter:</p>
 
             <p><code>npm buildcss</code></p>
 
-            <p>Node Sass will now the wathcing for changes. Every time you change a file in <code>build-css</code>, your compiled CSS will automatically update and you only need to refresh your browser to see your new styles.</p>
+            <p>Node Sass will now be watching for changes to your styles. Every time you change a file in your theme's Sass files, your compiled CSS will automatically update and you only need to refresh your browser to see your new styles. You may need to hard refresh (Ctrl+F5 or Cmd+R).</p>
         </li>
-        <li>Set your selectors for book features in <code>book-css/themes/YOURTHEME/_selectors.scss</code> (where <code>YOURTHEME</code> is the name of the theme you’ve downloaded).</li>
-        <li>Set any new values for design variables in <code>book-css/themes/YOURTHEME/_variables.scss</code>. See the template for variables you can set.</li>
-        <li>Add your own Sass/CSS styles to <code>book-css/themes/YOURTHEME/_styles.scss</code>.</li>
+        <li>Set your selectors for book features in <code>/themes/YOURTHEME/_selectors.scss</code> (where <code>YOURTHEME</code> is the name of the theme you’ve downloaded).</li>
+        <li>Set any new values for design variables in <code>/themes/YOURTHEME/_variables.scss</code>. See the <code>_defaults</code> for the variables you can set.</li>
+        <li>Add your own Sass/CSS styles to <code>/themes/YOURTHEME/_styles.scss</code>.</li>
     </ol>
 
-    <p>For more detail, see the technical docs.</p>
+    <p>There are some <a href="https://github.com/electricbookworks/book-css#readme">technical docs</a> on GitHub.</p>
 
+</div><!--.wrapper-->
 </body>
 </html>

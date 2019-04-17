@@ -15,7 +15,7 @@ $break-point-l: 60em;
 
 // Colours
 $color-text-main: #222222;
-$color-mid: #c0c0c0;
+$color-mid: #ECECEC;
 $color-light: #FFFFFF;
 $color-links: #4169E1;
 $color-code-background: #EEEEEE;
@@ -25,26 +25,32 @@ $color-code-background: #EEEEEE;
 body, html {
     overflow-x: hidden;
     font-family: $fonts-system;
-    margin: auto;
-    padding: $line-height * 0.5;
     line-height: $line-height;
     color: $color-text-main;
+    margin: 0;
+    padding: 0;
 }
-body {
+.wrapper {
+    margin: auto;
+    padding: $line-height / 2;
     max-width: $max-width;
-}
-h1, h2, h3 {
-    line-height: $line-height * 0.8;
-    margin: ($line-height * 2) 0 ($line-height * 0.5) 0;
-    & + & {
-        margin-top: 0;
-    }
 }
 // h1 really big on big screen because it's fashionable
 h1 {
+    line-height: $line-height * 0.8;
+    margin: ($line-height * 2) 0 0 0;
     @media only screen and (min-width: $break-point-l) {
         font-size: 5em;
         margin-top: $line-height;
+    }
+}
+h2, h3 {
+    line-height: $line-height * 0.8;
+    margin: ($line-height * 2) 0 $line-height 0;
+    & + h1,
+    & + h2,
+    & + h3 {
+        margin-top: 0;
     }
 }
 code, pre {
@@ -93,10 +99,24 @@ button {
     width: 1px;
 }
 
+// Tagline
+.tagline {
+    font-weight: bold;
+    background: $color-text-main;
+    color: $color-light;
+    margin: ($line-height / 2) -100em;
+    padding: ($line-height / 4) 100em;
+}
+
 // Theme gallery
 .gallery {
     list-style-type: none;
     padding: 0;
+    h1, h2, h3 {
+        &:first-child {
+            margin-top: 0;
+        }
+    }
     li {
         clear: both;
         margin-bottom: $line-height * 2;
@@ -104,20 +124,21 @@ button {
     }
     img {
         border: $rule-thickness solid $color-mid;
-        float: right;
+        float: left;
         max-height: 10em;
+        margin: 0 $line-height 0 0;
     }
 }
 
 .button {
     display: inline-block;
-    background-color: $color-links;
+    background-color: $color-text-main;
     border-radius: $border-radius;
     color: $color-light;
     font-weight: bold;
     padding: 0.5em 1em;
     margin: 0.5em 0;
     &:hover {
-        background-color: lighten($color-links, 5%);
+        background-color: lighten($color-text-main, 10%);
     }
 }
