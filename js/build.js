@@ -24,29 +24,13 @@ function writeCSS(scssFile, cssFile) {
     });
 }
 
-// The main CSS-building function
-function build() {
-    'use strict';
-
-    var themes = fs.readdirSync('./themes/');
-
-    // Build themes
-    var i;
-    for (i = 0; i < themes.length; i += 1) {
-        writeCSS(
-            'themes/' + themes[i] + '/main.scss',
-            'themes/' + themes[i] + '/main.css'
-        );
-    }
-}
-
 // Build once...
-build();
+writeCSS('css/main.scss', 'css/main.css');
 
 // ...then watch for changes
-var toWatch = ['default', 'themes'];
+var toWatch = ['css'];
 chokidar.watch(toWatch, {ignored: /main\.css/}).on('all', function (event, path) {
     'use strict';
     console.log(event + ' at ' + path);
-    build();
+    writeCSS('css/main.scss', 'css/main.css');
 });

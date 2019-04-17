@@ -1,0 +1,144 @@
+// main.scss
+
+// Fonts
+$fonts-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$fonts-serif: "Apple Garamond", "Baskerville", "Times New Roman", "Droid Serif", "Times","Source Serif Pro", serif;
+$fonts-monospace: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
+
+// Sizes
+$max-width: 40em;
+$border-radius: 0.2em;
+$line-height: 1.4em; // set in ems
+$rule-thickness: 1px;
+$input-padding: 0.2em;
+$break-point-l: 60em;
+
+// Colours
+$color-text-main: #222222;
+$color-mid: #ECECEC;
+$color-light: #FFFFFF;
+$color-links: #4169E1;
+$color-code-background: #EEEEEE;
+
+// Basic elements
+
+body, html {
+    overflow-x: hidden;
+    font-family: $fonts-system;
+    line-height: $line-height;
+    color: $color-text-main;
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    margin: auto;
+    padding: $line-height / 2;
+    max-width: $max-width;
+}
+// h1 really big on big screen because it's fashionable
+h1 {
+    line-height: $line-height * 0.8;
+    margin: ($line-height * 2) 0 0 0;
+    @media only screen and (min-width: $break-point-l) {
+        font-size: 5em;
+        margin-top: $line-height;
+    }
+}
+h2, h3 {
+    line-height: $line-height * 0.8;
+    margin: ($line-height * 2) 0 $line-height 0;
+    & + h1,
+    & + h2,
+    & + h3 {
+        margin-top: 0;
+    }
+}
+code, pre {
+    font-family: $fonts-monospace;
+    background-color: $color-code-background;
+    padding: 0.1em 0.3em;
+    border-radius: $border-radius;
+}
+pre {
+    overflow-x: scroll;
+}
+code {
+    line-height: 0; // stop code spans from widening lines
+}
+hr {
+    margin: ($line-height * 2) 0;
+    border: none;
+    border-top: $rule-thickness solid $color-mid;
+}
+a {
+    text-decoration: none;
+    color: $color-links;
+}
+input {
+    font-family: $fonts-system;
+    padding: $input-padding;
+    border: $rule-thickness solid $color-mid;
+    border-radius: $border-radius;
+}
+form {
+    margin-bottom: $line-height;
+}
+button {
+    font-family: $fonts-system;
+}
+
+// Common helper classes
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+// Tagline
+.tagline {
+    font-weight: bold;
+    background: $color-text-main;
+    color: $color-light;
+    margin: ($line-height / 2) -100em;
+    padding: ($line-height / 4) 100em;
+}
+
+// Theme gallery
+.gallery {
+    list-style-type: none;
+    padding: 0;
+    h1, h2, h3 {
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    li {
+        clear: both;
+        margin-bottom: $line-height * 2;
+        overflow: auto;
+    }
+    img {
+        border: $rule-thickness solid $color-mid;
+        float: left;
+        max-height: 10em;
+        margin: 0 $line-height 0 0;
+    }
+}
+
+.button {
+    display: inline-block;
+    background-color: $color-text-main;
+    border-radius: $border-radius;
+    color: $color-light;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    &:hover {
+        background-color: lighten($color-text-main, 10%);
+    }
+}

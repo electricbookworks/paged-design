@@ -18,7 +18,7 @@
 // ---------------------------------------------------
 
 // Import the default variables.
-@import '../../default/variables';
+@import '../_defaults/variables';
 // Import theme variables, which override defaults.
 @import 'variables';
 
@@ -28,7 +28,7 @@
 // ---------------------------------------------------
 
 // Import the default CSS selectors.
-@import '../../default/selectors';
+@import '../_defaults/selectors';
 // Import theme selectors, which override the defaults.
 @import 'selectors';
 
@@ -38,6 +38,6 @@
 // ---------------------------------------------------
 
 // Import all our default styles.
-@import '../../default/styles';
+@import '../_defaults/styles';
 // Import theme CSS, which may override the defaults.
 @import 'styles';

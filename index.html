@@ -1,18 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Sample content</title>
+	<title>Book CSS</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="https://arthurattwell.github.io/halfdecent/halfdecent.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-	<h1>CSS book designs</h1>
-    <p>This site demos book designs created with <a href="https://github.com/electricbookworks/book-css/#readme"><code>book-css</code></a>. It's a work in progress, and currently only works properly in Chrome. Choose a book here. Then, from the book's pages, select a design from the dropdown list, top right.</p>
-    <ul>
-        <li><a href="content/alice-in-wonderland/index.html?theme=beatrix"><em>Alice's Adventures in Wonderland</em></a></li>
-        <li><a href="content/the-future-of-ideas/index.html?theme=density"><em>The Future of Ideas</em></a></li>
-        <li><a href="content/little-brother/index.html?theme=plastered"><em>Little Brother</em></a></li>
-        <li><a href="content/samples/index.html"><em>Samples</em></a></li>
+<div class="wrapper">
+
+    <h1>Book CSS</h1>
+
+    <p class="tagline">Customisable themes for book design with&nbsp;CSS</p>
+
+    <p>Are you creating books with HTML and CSS? Stylesheets for books can be long and complicated to write. Our themes give you a head start: pick a theme, add it to your project, and customise it.</p>
+
+    <p>Note that <a href="https://gitlab.pagedmedia.org/tools/pagedjs"><code>paged.js</code></a> and this project are in development, so expect bugs,  workarounds, and exciting possibilities, and contribute if you can.</p>
+
+    <h2>Themes</h2>
+
+    <ul class="gallery">
+        <li>
+            <h3>Beatrix</h3>
+            <a href="content/alice-in-wonderland/index.html?theme=beatrix">
+                <img class="thumbnail" src="themes/beatrix/screenshot.jpg">
+            </a>
+            <p>Named for Ms Potter, a classic children's book theme for simple stories. Goes well with <a href="content/alice-in-wonderland/index.html?theme=beatrix"><em>Alice in Wonderland</em></a>.</p>
+            <p>
+                <a class="button" href="packaged/beatrix.zip">Download</a>
+            </p>
+        </li>
+        <li>
+            <h3>Density</h3>
+            <a href="content/the-future-of-ideas/index.html?theme=density">
+                <img class="thumbnail" src="themes/density/screenshot.jpg">
+            </a>
+            <p>A space-age look for big books. Goes well with <a href="content/the-future-of-ideas/index.html?theme=density"><em>The Future of Ideas,</em> by Lawrence Lessig</a>.
+            </p>
+            <p>
+                <a class="button" href="packaged/density.zip">Download</a>
+            </p>
+        </li>
+        <li>
+            <h3>Plastered</h3>
+            <a href="content/little-brother/index.html?theme=plastered">
+                <img class="thumbnail" src="themes/plastered/screenshot.jpg">
+            </a>
+            <p>A wild and wonky look for grabbing attention. Goes well with <a href="content/little-brother/index.html?theme=plastered"><em>Little Brother,</em> by Cory Doctorow</a>.</p>
+            <p>
+                <a class="button" href="packaged/plastered.zip">Download</a>
+            </p>
+        </li>
+        <li>
+            <h3>Template</h3>
+            <a href="content/samples/index.html?theme=template">
+                <img class="thumbnail" src="themes/template/screenshot.jpg">
+            </a>
+            <p>A plain template with very few opinions, and the starting place for creating brand new themes. Goes well with <a href="content/samples/index.html?theme=template">our typography samples</a>.</p>
+            <p>
+                <a class="button" href="packaged/template.zip">Download</a>
+            </p>
+        </li>
     </ul>
+
+    <p>These are just a small start. If you're interested in more themes, <a href="https://electricbookworks.com/contact">tell us</a> so that we know it's worth investing time in more theme development.</p>
+
+    <h2>Sample content</h2>
+
+    <p>This demo site includes four pieces of sample content for seeing themes at work:</p>
+
+    <ul>
+        <li><a href="content/samples/index.html?theme=template">A book of sample features common to most books</a></li>
+        <li><a href="content/alice-in-wonderland/index.html?theme=beatrix"><em>Alice in Wonderland</em></a></li>
+        <li><a href="content/little-brother/index.html?theme=plastered">The first chapter of <em>Little Brother,</em> by Cory Doctorow</a></li>
+        <li><a href="content/the-future-of-ideas/index.html?theme=density">The first chapter of <em>The Future of Ideas,</em> by Lawrence Lessig</a>.</li>
+    </ul>
+
+    <p>For each one, use the theme-selector dropdown to see the browser lay out the book before your eyes. (Only Chrome can get this right currently.)</p>
+
+    <h2>How to use a theme</h2>
+
+    <h3>Setting up</h3>
+
+    <ol>
+        <li>You'll need to have NodeJS installed on your computer. Our themes are written in Sass, and you'll use Node to build that into your finished CSS.</li>
+        <li>Download a theme package and unzip it.</li>
+        <li>Place the unzipped <code>book-css</code> package in your project. We're assuming that your project is contained in a single folder (like a Git repo).</li>
+        <li>In the <code>head</code> of your HTML (the content of your book), link to the compiled CSS file in your new theme folder. The path will depend on your folder structure, for example <code>../css/beatrix/themes/beatrix/main.css</code>:<br>
+            <pre><code>&lt;link rel="stylesheet" type="text/css" href="../css/beatrix/themes/beatrix/main.css"&gt;</code></pre>
+        </li>
+        <li>In the <code>head</code> of your HTML, link to the <code>paged.js</code> script, which will lay out your pages in Chrome. For instance, if you want to always link to the latest official version:
+            <pre><code>&lt;script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"&gt;&lt;/script&gt;</code></pre>
+        </li>
+        <li>Serve your HTML. For example, if you're using Node and have http-server installed, you can run <code>npm run http-server -p 4000</code> in your project root folder, and visit your site at <a href="http://localhost:4000">http://localhost:4000</a>.</li>
+    </ol>
+
+    Now that you're up and running, you can customise your theme.
+
+    <h3>Customising a theme</h3>
+
+    <p>Once you're set up:</p>
+
+    <ol>
+        <li>
+            <p>Install dependencies for <code>book-css</code>. To do this, from the command line, in the unzipped theme folder (alongside <code>package.json</code>), enter:</p>
+
+            <p><code>npm install</code></p>
+
+            <p>which will install a modules to <code>node_modules</code> that we need in that folder.</p>
+        </li>
+        <li>
+            <p>Start our Node script to watch for changes to your styles. To do this, in the same folder, at the command line, enter:</p>
+
+            <p><code>npm buildcss</code></p>
+
+            <p>Node Sass will now be watching for changes to your styles. Every time you change a file in your theme's Sass files, your compiled CSS will automatically update and you only need to refresh your browser to see your new styles. You may need to hard refresh (Ctrl+F5 or Cmd+R).</p>
+        </li>
+        <li>Set your selectors for book features in <code>/themes/YOURTHEME/_selectors.scss</code> (where <code>YOURTHEME</code> is the name of the theme you’ve downloaded).</li>
+        <li>Set any new values for design variables in <code>/themes/YOURTHEME/_variables.scss</code>. See the <code>_defaults</code> for the variables you can set.</li>
+        <li>Add your own Sass/CSS styles to <code>/themes/YOURTHEME/_styles.scss</code>.</li>
+    </ol>
+
+    <p>There are some <a href="https://github.com/electricbookworks/book-css#readme">technical docs</a> on GitHub.</p>
+
+</div><!--.wrapper-->
 </body>
 </html>

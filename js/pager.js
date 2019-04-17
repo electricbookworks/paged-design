@@ -40,7 +40,7 @@ function pagerCurrentTheme() {
     if (matchParam && pagerCheckThemeExists(matchParam[1])) {
         theme = matchParam[1];
     } else {
-        theme = 'default';
+        theme = 'template';
     }
     return theme;
 }
@@ -52,10 +52,10 @@ function pagerAddTheme(theme) {
     // Create a link element pointing to the new stylesheet
     var themeStylesheetLink = document.createElement('link');
     themeStylesheetLink.setAttribute('rel', 'stylesheet');
-    themeStylesheetLink.setAttribute('href', '../../css/themes/' + theme + '/main.css');
+    themeStylesheetLink.setAttribute('href', '../../themes/' + theme + '/main.css');
 
     // If there is a stylesheet, remove it
-    var stylesheet = document.querySelector('link[href^="../../css/themes/"]');
+    var stylesheet = document.querySelector('link[href^="../../themes/"]');
     if (stylesheet) {
         stylesheet.remove();
     }
