@@ -91,7 +91,7 @@ button {
   .gallery img {
     border: 1px solid #ECECEC;
     float: left;
-    max-height: 10em;
+    width: 8em;
     margin: 0 1.4em 0 0; }
 
 .button {
