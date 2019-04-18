@@ -14,7 +14,7 @@ The project already includes a few opinionated designs as themes. You can use or
 
 ## Use a theme in your project
 
-See the [instructions](https://electricbookworks.github.io/book-css) on the demo site for downloading and customising a theme for your project.
+See the [instructions](https://electricbookworks.github.io/paged-design) on the demo site for downloading and customising a theme for your project.
 
 ## Develop new themes
 
