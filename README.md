@@ -145,4 +145,4 @@ In this project, we link to online web fonts. This is just for demo purposes, an
 
 ## Support
 
-This project was made possible by funding and encouragement from the [Coko Foundation](https://coko.foundation), the [Paged Media](http://www.pagedmedia.org/) initiative, and the [Shuttleworth Foundation](https://shuttleworthfoundation.org).
+This project was made possible by funding and encouragement from [Adam Hyde](https://www.adamhyde.net/), the [Paged Media](http://www.pagedmedia.org/) initiative, and the [Shuttleworth Foundation](https://shuttleworthfoundation.org).
