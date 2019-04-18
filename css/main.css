@@ -73,10 +73,11 @@ button {
   width: 1px; }
 
 .tagline {
-  font-weight: bold;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   background: #222222;
   color: #FFFFFF;
-  margin: 0.7em -100em;
+  margin: 0.7em -100em 2.8em -100em;
   padding: 0.35em 100em; }
 
 .gallery {

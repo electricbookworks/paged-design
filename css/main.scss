@@ -101,10 +101,11 @@ button {
 
 // Tagline
 .tagline {
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: 0.01em;
     background: $color-text-main;
     color: $color-light;
-    margin: ($line-height / 2) -100em;
+    margin: ($line-height / 2) -100em ($line-height * 2) -100em;
     padding: ($line-height / 4) 100em;
 }
 
