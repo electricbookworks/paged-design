@@ -1,5 +1,5 @@
 {
-  "name": "book-css",
+  "name": "paged-design",
   "version": "0.1.0",
   "description": "Customisable book designs created with Paged.js",
   "main": "index.js",
@@ -20,12 +20,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electricbookworks/book-css.git"
+    "url": "git+https://github.com/electricbookworks/paged-design.git"
   },
   "author": "Arthur Attwell",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/electricbookworks/book-css/issues"
+    "url": "https://github.com/electricbookworks/paged-design/issues"
   },
-  "homepage": "https://github.com/electricbookworks/book-css#readme"
+  "homepage": "https://github.com/electricbookworks/paged-design#readme"
 }
