@@ -8,7 +8,7 @@ $fonts-monospace: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans M
 // Sizes
 $max-width: 40em;
 $border-radius: 0.2em;
-$line-height: 1.4em; // set in ems
+$line-height: 1.5em; // set in ems
 $rule-thickness: 1px;
 $input-padding: 0.2em;
 $break-point-l: 60em;
@@ -32,7 +32,7 @@ body, html {
 }
 .wrapper {
     margin: auto;
-    padding: $line-height / 2;
+    padding: ($line-height / 2) ($line-height / 2) ($line-height * 2) ($line-height / 2);
     max-width: $max-width;
 }
 // h1 really big on big screen because it's fashionable
