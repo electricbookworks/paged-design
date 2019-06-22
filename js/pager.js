@@ -14,10 +14,12 @@ var themes = {
 // Check for mathjax
 function pagerMathjax() {
     'use strict';
-    var mathjax = document.querySelector('script[type="math/tex"]');
+    var mathjax = document.querySelector('script[type="math/tex"], #MathJax_Config');
     if (mathjax) {
+        console.log('MathJax detected on page.');
         return true;
     } else {
+        console.log('No MathJax detected on page.');
         return false;
     }
 }
@@ -181,7 +183,7 @@ function pagerLoadPagedJS() {
     document.head.insertAdjacentElement('beforeend', pagedjs);
 
     // Run paged.js (wait for MathJax, if any)
-    if (pagerMathjax === true) {
+    if (pagerMathjax() === true) {
         MathJax.Hub.Queue(function () {
             window.PagedPolyfill.preview();
         });
