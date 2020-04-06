@@ -1,4 +1,5 @@
-/*global window, MathJax*/
+/*jslint browser */
+/*global window, MathJax */
 
 // Theme switcher
 
@@ -109,15 +110,34 @@ function pagerShowThemeSelectionList(listObject) {
     controls.id = 'pagerControls';
 
     // ... and style it
-    var controlsCSS = 'position: fixed;';
+    var controlsCSS = 'position: absolute;';
     controlsCSS += 'top: 1em;';
-    controlsCSS += 'right: 1em;';
+    controlsCSS += 'left: 1em;';
     controlsCSS += 'text-align: right;';
     controlsCSS += 'z-index: 1;';
     controlsCSS += 'font-size: 1.1em;';
     controlsCSS += 'font-family: "Source Sans Pro", "Helvetica", sans-serif;';
     controls.style.cssText = controlsCSS;
-    document.body.insertAdjacentElement('afterbegin', controls);
+
+    var readyForControls = false;
+    function showControls() {
+        if (readyForControls === true) {
+            var pagedJsTemplate = document.querySelector('.pagedjs_pages');
+            pagedJsTemplate.insertAdjacentElement('beforebegin', controls);
+        } else {
+            var check;
+            check = setInterval(function () {
+                console.log('Waiting for paged.js to lay out pages ...');
+                if (document.querySelector('.pagedjs_pages')) {
+                    console.log('... paged.js layout in progress.');
+                    readyForControls = true;
+                    showControls();
+                    clearInterval(check);
+                }
+            }, 1000);
+        }
+    }
+    showControls();
 
     // Create the dropdown
     var selectList = document.createElement('select');
@@ -186,6 +206,7 @@ function pagerLoadPagedJS() {
     if (pagerMathjax() === true) {
         MathJax.Hub.Queue(function () {
             window.PagedPolyfill.preview();
+            pagerShowThemeSelectionList(themes);
         });
     } else {
         var check;

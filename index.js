@@ -1,4 +1,4 @@
-/*jslint node*/
+/*jslint node, for */
 
 var sass = require('node-sass');
 var fs = require('fs');
