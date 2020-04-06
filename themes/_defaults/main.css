@@ -3764,10 +3764,11 @@ pre {
     color: #0000cf;
     font-weight: bold; }
 
-@page .cover {
+@page cover {
   margin: 0; }
 
-.cover {
+div.cover {
+  page: cover;
   margin: 0;
   padding: 0;
   position: absolute;
@@ -3775,15 +3776,9 @@ pre {
   right: -15mm;
   bottom: -60pt;
   left: -15mm;
-  break-after: verso; }
-  .cover .cover {
-    position: relative;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    break-after: none; }
-  .cover img, .cover img:only-child {
+  break-after: recto;
+  break-before: recto; }
+  div.cover img, div.cover img:only-child {
     height: 100%;
     margin: 0;
     max-width: 100%;

@@ -3,10 +3,11 @@
 // Cover-page styling.
 // Creates a single-page low-res cover for screen PDFs.
 
-@page #{$cover} {
+@page cover {
     margin: 0;
 }
 #{$cover} {
+    page: cover;
     margin: 0;
     padding: 0;
     position: absolute;
@@ -14,16 +15,8 @@
     right: -($margin-outside + $bleed + $trim);
     bottom: -($margin-bottom + $bleed + $trim);
     left: -($margin-inside + $bleed + $trim);
-    break-after: verso; // Add extra verso to retain correct folios
-    // Reset those rules for potential .#{cover} elements inside .#{cover}
-    #{$cover} {
-        position: relative;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        break-after: none;
-    }
+    break-after: recto; // Add extra verso to retain correct folios
+    break-before: recto; // Keeps cover on a recto
     // Have to target only-child to override general img styles
     // set in _images.scss
     img, img:only-child {
