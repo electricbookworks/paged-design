@@ -205,8 +205,15 @@ function pagerLoadPagedJS() {
     // Run paged.js (wait for MathJax, if any)
     if (pagerMathjax() === true) {
         MathJax.Hub.Queue(function () {
-            window.PagedPolyfill.preview();
-            pagerShowThemeSelectionList(themes);
+            var check;
+            check = setInterval(function () {
+                console.log('Waiting for paged.js to load ...');
+                if (window.PagedPolyfill.preview()) {
+                    console.log('... paged.js loaded.');
+                    pagerShowThemeSelectionList(themes);
+                    clearInterval(check);
+                }
+            }, 1000);
         });
     } else {
         var check;
