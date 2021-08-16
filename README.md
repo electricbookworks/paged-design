@@ -133,7 +133,7 @@ And if you want your dedications to look like epigraphs:
 
 Some existing roadmap items and issues in `paged.js` that are relevant here:
 
-- We can't yet reset a page number to a specific number, e.g. `.page-20 (counter-reset: page 20)}` only resets to 1, not to 20. (See [issue 91](https://gitlab.pagedmedia.org/tools/pagedjs/issues/91).)
+- ~~We can't yet reset a page number to a specific number, e.g. `.page-20 (counter-reset: page 20)}` only resets to 1, not to 20. (See [issue 91](https://gitlab.pagedmedia.org/tools/pagedjs/issues/91).)~~
 - We can't yet `float: top` and `float: bottom`. (See [issue 90](https://gitlab.pagedmedia.org/tools/pagedjs/issues/90).)
 - Bleed and trim support have recently been added, and need to be implemented in these themes. (See [issue 82](https://gitlab.pagedmedia.org/tools/pagedjs/issues/82).)
 - Setting a `leader(" ")` in `a::after` for TOCs is not yet supported. This is [noted on the specs roadmap](https://gitlab.pagedmedia.org/tools/pagedjs/wikis/Support-of-specifications).
