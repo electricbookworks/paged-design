@@ -5,7 +5,7 @@ const chokidar = require('chokidar')
 // Process a scss file
 function writeCSS (scssFile, cssFile) {
   'use strict'
-  console.log('Rebuilding CSS from ' + scssFile)
+//   console.log('Rebuilding CSS from ' + scssFile)
   sass.render({
     file: scssFile,
     outFile: cssFile
@@ -45,6 +45,6 @@ build()
 const toWatch = ['default', 'themes']
 chokidar.watch(toWatch, { ignored: /main\.css/ }).on('all', function (event, path) {
   'use strict'
-  console.log(event + ' at ' + path)
+//   console.log(event + ' at ' + path)
   build()
 })

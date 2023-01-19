@@ -1,15 +1,9 @@
-/* global window, MathJax */
+/* global MathJax, themes */
 
 // Theme switcher
 
-// Available themes, listed as
-// foldername: 'Theme name'
-const themes = {
-  template: 'Template',
-  density: 'Density',
-  beatrix: 'Beatrix',
-  plastered: 'Plastered'
-}
+// Note: the `themes` object is generated
+// during the build process.
 
 // Check for mathjax
 function pagerMathjax () {
@@ -224,9 +218,37 @@ function pagerLoadPagedJS () {
   }
 }
 
+// Wait for themes to load before layout
+let pagerThemeWaiter
+function pagerWaitForThemes () {
+  if (typeof themes !== 'undefined') {
+    pagerAddTheme(pagerCurrentTheme())
+    pagerLoadPagedJS()
+    clearInterval(pagerThemeWaiter)
+  } else {
+    pagerThemeWaiter = setInterval(pagerWaitForThemes, 250)
+  }
+}
+
+// Load themes list
+function pagerLoadThemes () {
+  'use strict'
+
+  const themesjs = document.createElement('script')
+  themesjs.src = window.location.protocol +
+    '//' +
+    window.location.host +
+    '/js/themes.js'
+  themesjs.async = false
+
+  document.head.insertAdjacentElement('beforeend', themesjs)
+
+  // Wait for `themes` variable load before continuing
+  pagerWaitForThemes()
+}
+
 // Start
 window.onload = function () {
   'use strict'
-  pagerAddTheme(pagerCurrentTheme())
-  pagerLoadPagedJS()
+  pagerLoadThemes()
 }
