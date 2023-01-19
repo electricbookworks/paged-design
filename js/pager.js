@@ -109,7 +109,7 @@ function pagerShowThemeSelectionList (listObject) {
   controls.id = 'pagerControls'
 
   // ... and style it
-  let controlsCSS = 'position: absolute;'
+  let controlsCSS = 'position: fixed;'
   controlsCSS += 'top: 1em;'
   controlsCSS += 'left: 1em;'
   controlsCSS += 'text-align: right;'
