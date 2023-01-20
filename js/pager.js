@@ -1,6 +1,4 @@
-/* global MathJax, themes */
-
-// Theme switcher
+/* global MathJax */
 
 // Note: the `themes` object is generated
 // during the build process.
@@ -10,10 +8,10 @@ function pagerMathjax () {
   'use strict'
   const mathjax = document.querySelector('script[type="math/tex"], #MathJax_Config')
   if (mathjax) {
-    console.log('MathJax detected on page.')
+    // console.log('MathJax detected on page.')
     return true
   } else {
-    console.log('No MathJax detected on page.')
+    // console.log('No MathJax detected on page.')
     return false
   }
 }
@@ -41,16 +39,16 @@ function pagerCurrentTheme () {
   return theme
 }
 
-// Load default theme
+// Load theme
 function pagerAddTheme (theme) {
   'use strict'
 
-  // Create a link element pointing to the new stylesheet
+  // Create a link element pointing to the desired theme's stylesheet
   const themeStylesheetLink = document.createElement('link')
   themeStylesheetLink.setAttribute('rel', 'stylesheet')
   themeStylesheetLink.setAttribute('href', '../../themes/' + theme + '/main.css')
 
-  // If there is a stylesheet, remove it
+  // If there is an existing theme stylesheet, remove it
   const stylesheet = document.querySelector('link[href^="../../themes/"]')
   if (stylesheet) {
     stylesheet.remove()
@@ -58,6 +56,9 @@ function pagerAddTheme (theme) {
 
   // Insert the new stylesheet
   document.head.insertAdjacentElement('beforeend', themeStylesheetLink)
+
+  // Load Paged.js
+  pagerLoadPagedJS()
 }
 
 // Load new theme
@@ -102,7 +103,7 @@ function pagerShowThemeSelectionList (listObject) {
   const controls = document.createElement('div')
   controls.id = 'pagerControls'
 
-  // ... and style it
+  // … and style it
   let controlsCSS = 'position: fixed;'
   controlsCSS += 'top: 1em;'
   controlsCSS += 'left: 1em;'
@@ -119,9 +120,9 @@ function pagerShowThemeSelectionList (listObject) {
       pagedJsTemplate.insertAdjacentElement('beforebegin', controls)
     } else {
       const check = setInterval(function () {
-        console.log('Waiting for paged.js to lay out pages ...')
+        console.log('Waiting for paged.js to lay out pages …')
         if (document.querySelector('.pagedjs_pages')) {
-          console.log('... paged.js layout in progress.')
+          console.log('… paged.js layout in progress.')
           readyForControls = true
           showControls()
           clearInterval(check)
@@ -135,7 +136,7 @@ function pagerShowThemeSelectionList (listObject) {
   const selectList = document.createElement('select')
   selectList.id = 'pagerSelectList'
 
-  // ... and style it
+  // … and style it
   let selectListCSS = 'font-family: inherit;'
   selectListCSS += 'padding: 0.3em;'
   selectListCSS += ''
@@ -165,11 +166,11 @@ function pagerShowThemeSelectionList (listObject) {
   const mediaQueryScreen = window.matchMedia('screen')
   mediaQueryPrint.addListener(function (query) {
     if (query.matches) {
-      console.log('Printing...')
+      console.log('Printing …')
       controls.style.display = 'none'
     }
   })
-  // ... and put it back when done.
+  // … and put it back when done.
   mediaQueryScreen.addListener(function (query) {
     if (query.matches) {
       controls.style.display = 'block'
@@ -198,9 +199,9 @@ function pagerLoadPagedJS () {
   if (pagerMathjax() === true) {
     MathJax.Hub.Queue(function () {
       const check = setInterval(function () {
-        console.log('Waiting for paged.js to load ...')
-        if (window.PagedPolyfill.preview()) {
-          console.log('... paged.js loaded.')
+        console.log('Waiting for paged.js to load …')
+        if (window.PagedPolyfill && window.PagedPolyfill.preview()) {
+          console.log('… paged.js loaded.')
           pagerShowThemeSelectionList(themes)
           clearInterval(check)
         }
@@ -208,9 +209,9 @@ function pagerLoadPagedJS () {
     })
   } else {
     const check = setInterval(function () {
-      console.log('Waiting for paged.js to load ...')
-      if (window.PagedPolyfill.preview()) {
-        console.log('... paged.js loaded.')
+      console.log('Waiting for paged.js to load …')
+      if (window.PagedPolyfill && window.PagedPolyfill.preview()) {
+        console.log('… paged.js loaded.')
         pagerShowThemeSelectionList(themes)
         clearInterval(check)
       }
@@ -220,31 +221,35 @@ function pagerLoadPagedJS () {
 
 // Wait for themes to load before layout
 let pagerThemeWaiter
-function pagerWaitForThemes () {
+function pagerWaitForThemesData () {
   if (typeof themes !== 'undefined') {
     pagerAddTheme(pagerCurrentTheme())
-    pagerLoadPagedJS()
     clearInterval(pagerThemeWaiter)
   } else {
-    pagerThemeWaiter = setInterval(pagerWaitForThemes, 250)
+    pagerThemeWaiter = setInterval(pagerWaitForThemesData, 250)
   }
 }
 
 // Load themes list
+let themes
 function pagerLoadThemes () {
   'use strict'
 
-  const themesjs = document.createElement('script')
-  themesjs.src = window.location.protocol +
+  const themesjs = window.location.protocol +
     '//' +
     window.location.host +
-    '/js/themes.js'
-  themesjs.async = false
+    '/js/themes.json'
 
-  document.head.insertAdjacentElement('beforeend', themesjs)
+  fetch(themesjs)
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (data) {
+      themes = data
+    })
 
   // Wait for `themes` variable load before continuing
-  pagerWaitForThemes()
+  pagerWaitForThemesData()
 }
 
 // Start
