@@ -4,19 +4,18 @@
   "description": "Customisable book designs created with Paged.js",
   "main": "index.js",
   "devDependencies": {
-    "chokidar": "^3.5.3",
     "http-server": "^14.1.1",
     "node-sass": "^8.0.0",
+    "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
     "standard": "^17.0.0",
     "yazl": "^2.5.1"
   },
   "scripts": {
-    "buildcss": "node index.js",
     "package": "node js/package.js",
-    "runserver": "http-server -p 5000",
-    "buildsite": "node js/build.js",
-    "start": "npm-run-all --parallel buildcss buildsite runserver",
+    "serve": "http-server -p 5000",
+    "compile": "nodemon js/build.js -e scss",
+    "start": "npm-run-all --parallel compile serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
