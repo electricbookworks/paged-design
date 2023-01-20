@@ -132,11 +132,11 @@ And if you want your dedications to look like epigraphs:
 
 Some existing roadmap items and issues in Paged.js that are relevant here:
 
-- ~~We can't yet reset a page number to a specific number, e.g. `.page-20 (counter-reset: page 20)}` only resets to 1, not to 20. (See [issue 91](https://gitlab.pagedmedia.org/tools/pagedjs/issues/91).)~~
-- We can't yet `float: top` and `float: bottom`. (See [issue 90](https://gitlab.pagedmedia.org/tools/pagedjs/issues/90).)
-- Bleed and trim support have recently been added, and need to be implemented in these themes. (See [issue 82](https://gitlab.pagedmedia.org/tools/pagedjs/issues/82).)
-- Setting a `leader(" ")` in `a::after` for TOCs is not yet supported. This is [noted on the specs roadmap](https://gitlab.pagedmedia.org/tools/pagedjs/wikis/Support-of-specifications).
-- We can't use `string-set` yet. (See [issue 44](https://gitlab.pagedmedia.org/tools/pagedjs/issues/44).)
+- ~~We can't yet reset a page number to a specific number, e.g. `.page-20 (counter-reset: page 20)}` only resets to 1, not to 20. (See [issue 91](https://gitlab.coko.foundation/pagedjs/pagedjs/-/issues/91).)~~
+- We can't yet `float: top` and `float: bottom`. (See [issue 90](https://gitlab.coko.foundation/pagedjs/pagedjs/-/issues/90).)
+- Bleed and trim support have recently been added, and need to be implemented in these themes. (See [issue 82](https://gitlab.coko.foundation/pagedjs/pagedjs/-/issues/82).)
+- Setting a `leader(" ")` in `a::after` for TOCs is not yet supported. This is [noted on the specs roadmap](https://pagedjs.org/documentation/cheatsheet/).
+- ~~We can't use `string-set` yet. (See [issue 44](https://gitlab.coko.foundation/pagedjs/pagedjs/-/issues/44).)~~ [Now available, to be implemented here.](https://pagedjs.org/posts/so-long-@media-screen!/#one-but-not-least)
 
 When writing CSS, also note that the divs that Paged.js introduces (in order to manage pagination) break some CSS child selectors like `>`. This is probably not avoidable, but it does make CSS work more challenging, and is important to keep in mind.
 
@@ -147,3 +147,5 @@ In this project, we link to online web fonts. This is just for demo purposes, an
 ## Support
 
 This project was made possible by funding and encouragement from [Adam Hyde](https://www.adamhyde.net/), the [Paged Media](http://www.pagedmedia.org/) initiative, and the [Shuttleworth Foundation](https://shuttleworthfoundation.org).
+
+The [paged.design](https://paged.design) site is maintained by [Electric Book Works](https://electricbookworks.com) and hosted with Netlify.
