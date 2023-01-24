@@ -118,6 +118,10 @@ When writing CSS, also note that the divs that Paged.js introduces (in order to 
 
 In this project, we link to online web fonts. This is just for demo purposes, and is a *bad idea* for real book production. When you make books for production, you should save and link to the actual font files in each project, and not link to fonts on the web, or to font files shared by different projects. This is because once you've refined your pages, any changes to the font files (e.g. adjustments to glyphs or kerning) could cause your pages to reflow in new and unintended ways.
 
+### MathJax
+
+The paged.design demo site supports Mathjax 3, and not earlier versions of MathJax. That is, `pager.js` will wait for MathJax 3 to do its math layout before applying theme styles and Paged.js layout. If your content HTML loads a Mathjax v2 script, the demo here may not work.
+
 ## Support
 
 This project was made possible by funding and encouragement from [Adam Hyde](https://www.adamhyde.net/), the [Paged Media](http://www.pagedmedia.org/) initiative, and the [Shuttleworth Foundation](https://shuttleworthfoundation.org).
