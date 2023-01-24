@@ -8,25 +8,14 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Load Mathjax -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js'></script>
-    <script>
-        MathJax.Hub.Config({
-            jax: ["input/TeX","output/SVG", "output/PreviewHTML"],
-            extensions: ["tex2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
-            TeX: {
-                extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
-            },
-            SVG: {
-                font: "Gyre-Pagella",
-                blacker: 0
-            }
-        });
-    </script>
-
-    <!-- Load pager, which waits for MathJax before loading pageed.js
-    and adding the theme-switching selection list. -->
+    <!-- Load pager, which waits for MathJax before loading paged.js
+    and adds the theme-switching selection list. -->
     <script src="../../js/pager.js"></script>
+
+    <!-- Load Mathjax 3 -->
+    <script type="text/javascript" id="MathJax-script"
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
 </head>
 
 <body>
@@ -1566,12 +1555,15 @@
             <div>
                 <h2 id="mathematics">Mathematics</h2>
                 <p>Here is some maths in LaTeX formatted by <a href="http://docs.mathjax.org/en/latest/">MathJax</a>.</p>
-                <p>LaTeX-style maths via MathJax can be inline (<script type="math/tex">E = mc^2</script>) or displayed:</p>
-                <script type="math/tex; mode=display">P_{t+1} - P_t=\frac{b+d}{s}(P_t-\overline{P})</script>
-                <p>The maths above and below is borrowed from <a href="https://core-econ.org/the-economy/book/text/leibniz-11-08-01.html"><em>The Economy</em></a> by CORE.</p>
-                <script type="math/tex; mode=display">P_{t+2} - P_{t+1}=\frac{b+d}{s}(P_{t+1}-\overline{P})</script>
-                <p>It follows from <script type="math/tex">P_{t} = \overset{\overline{}}{P} - \frac{s}{b + d}E_{t}</script> , <script type="math/tex">E_{t} = P_{t + 1} - P_{t}</script> and the equation above that</p>
-                <script type="math/tex; mode=display">\frac{P_{t+2} - P_{t+1}}{P_{t+1} - P_{t}}=\frac{P_{t+1}-\overline{P}}{ P_{t}-\overline{P}}=R</script>
+                <p>LaTeX-style maths via MathJax can be inline (\(E = mc^2\)) or displayed:</p>
+                \[P_{t+1} - P_t=\frac{b+d}{s}(P_t-\overline{P})\]
+                <p>The maths above and below is borrowed and adapted from <a href="https://www.core-econ.org/the-economy/book/text/leibniz-11-08-01.html"><em>The Economy</em></a> by CORE.</p>
+                \[P_{t+2} - P_{t+1}=\frac{b+d}{s}(P_{t+1}-\overline{P})\]
+                <p>It follows from \(P_{t} = \overset{\overline{}}{P} - \frac{s}{b + d}E_{t}\) , \(E_{t} = P_{t + 1} - P_{t}\) and the equation above that</p>
+                \[\begin{align}
+                \frac{P_{t+2} - P_{t+1}}{P_{t+1} - P_{t}} &amp;= \\
+                \frac{P_{t+1}-\overline{P}}{ P_{t}-\overline{P}} &amp;= R
+                \end{align}\]
             </div>
             <!--#content-->
         </div>
