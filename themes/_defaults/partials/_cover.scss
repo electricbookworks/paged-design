@@ -5,16 +5,17 @@
 
 @page cover {
     margin: 0;
+    padding: 0;
 }
 #{$cover} {
     page: cover;
     margin: 0;
     padding: 0;
     position: absolute;
-    top: -($margin-top + $bleed + $trim);
-    right: -($margin-outside + $bleed + $trim);
-    bottom: -($margin-bottom + $bleed + $trim);
-    left: -($margin-inside + $bleed + $trim);
+    top: -($bleed + $trim);
+    right: -($bleed + $trim);
+    bottom: -($bleed + $trim);
+    left: -($bleed + $trim);
     break-after: recto; // Add extra verso to retain correct folios
     break-before: recto; // Keeps cover on a recto
     // Have to target only-child to override general img styles

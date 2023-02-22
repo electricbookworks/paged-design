@@ -2,20 +2,26 @@
 
 @page { 
     size: $page-width $page-height;
-    margin-top: $margin-top;
-    margin-bottom: $margin-bottom;
     padding: 0;
     marks: $crop-marks;
-    // Not yet supported in paged.js:
-    bleed: $bleed; // https://gitlab.pagedmedia.org/tools/pagedjs/issues/82
+    bleed: $bleed;
     trim: $trim;
     pdf-page-colorspace: $colorspace;
 }
+
+// Note: Paged.js currently requires that we put
+// margin-top and margin-bottom in :left and :right
+// below, rather than in @page above.
+
 @page :left {
+    margin-top: $margin-top;
+    margin-bottom: $margin-bottom;
     margin-left: $margin-outside;
     margin-right: $margin-inside;
 }
 @page :right {
+    margin-top: $margin-top;
+    margin-bottom: $margin-bottom;
     margin-left: $margin-inside;
     margin-right: $margin-outside;
 }

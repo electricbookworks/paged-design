@@ -156,8 +156,6 @@ img {
 
 @page {
   size: 129mm 198mm;
-  margin-top: 42pt;
-  margin-bottom: 49pt;
   padding: 0;
   marks: crop;
   bleed: 0;
@@ -165,10 +163,14 @@ img {
   pdf-page-colorspace: rgb; }
 
 @page :left {
+  margin-top: 42pt;
+  margin-bottom: 49pt;
   margin-left: 24mm;
   margin-right: 15mm; }
 
 @page :right {
+  margin-top: 42pt;
+  margin-bottom: 49pt;
   margin-left: 15mm;
   margin-right: 24mm; }
 
@@ -185,9 +187,16 @@ img {
   bottom: 0; }
   .copyright-page p {
     text-align: initial;
-    margin-bottom: 14pt; }
+    margin-bottom: 7pt; }
     .copyright-page p + p {
       text-indent: 0; }
+  .copyright-page h1, .copyright-page h2, .copyright-page h3, .copyright-page h4, .copyright-page h5, .copyright-page h6 {
+    font-size: 9pt;
+    font-weight: bold;
+    font-style: normal;
+    margin: 14pt 0 7pt 0; }
+    .copyright-page h1 em, .copyright-page h2 em, .copyright-page h3 em, .copyright-page h4 em, .copyright-page h5 em, .copyright-page h6 em {
+      font-style: italic; }
   .copyright-page h1[id="copyright"] {
     display: none; }
 
@@ -212,6 +221,79 @@ img {
   page: frontmatter;
   break-before: recto; }
 
+.part-page {
+  page: part;
+  break-before: recto; }
+
+.previous-publications-page {
+  page: previous-publications;
+  break-before: page;
+  text-align: center; }
+  .previous-publications-page h1 {
+    font-size: 12.6pt;
+    margin: 14pt 0 0 0;
+    break-after: avoid;
+    break-inside: avoid; }
+  .previous-publications-page h2 {
+    font-weight: bold;
+    margin: 14pt 0 0 0;
+    break-after: avoid;
+    break-inside: avoid; }
+  .previous-publications-page h3 {
+    font-style: italic;
+    margin: 14pt 0 0 0;
+    break-after: avoid;
+    break-inside: avoid; }
+  .previous-publications-page h4 {
+    margin: 14pt 0 0 0;
+    break-after: avoid;
+    break-inside: avoid; }
+  .previous-publications-page h5 {
+    margin: 14pt 0 0 0;
+    break-after: avoid;
+    break-inside: avoid; }
+  .previous-publications-page p {
+    text-align: center;
+    margin-bottom: 14pt; }
+    .previous-publications-page p + p {
+      text-indent: 0; }
+
+.half-title-page {
+  page: half-title-page;
+  break-before: recto; }
+
+.title-page {
+  page: title-page;
+  break-before: recto; }
+
+.contents-page {
+  break-before: recto; }
+  .contents-page h1 {
+    font-size: 22.5pt;
+    line-height: 28pt;
+    margin: 28pt 0 14pt 0;
+    break-after: avoid;
+    break-inside: avoid; }
+  .contents-page h2 {
+    font-size: 12.6pt;
+    margin: 14pt 0 0 0;
+    break-after: avoid;
+    break-inside: avoid; }
+  .contents-page h3 {
+    font-weight: bold;
+    margin: 14pt 0 0 0;
+    break-after: avoid;
+    break-inside: avoid; }
+  .contents-page h4 {
+    font-style: italic;
+    margin: 14pt 0 0 0;
+    break-after: avoid;
+    break-inside: avoid; }
+  .contents-page h5 {
+    margin: 14pt 0 0 0;
+    break-after: avoid;
+    break-inside: avoid; }
+
 h1 {
   string-set: h1-text content(), h2-text content(), h1-title attr(title), h2-title attr(title); }
 
@@ -231,7 +313,7 @@ h6 {
   string-set: h6-text content(), h6-title attr(title); }
 
 @page chapter:left {
-  @top {
+  @top-center {
     content: normal; }
   @top-right {
     content: normal; }
@@ -241,7 +323,7 @@ h6 {
     content: normal; }
   @top-left-corner {
     content: normal; }
-  @bottom {
+  @bottom-center {
     content: normal; }
   @bottom-left {
     content: normal; }
@@ -253,7 +335,7 @@ h6 {
     content: normal; } }
 
 @page chapter:right {
-  @top {
+  @top-center {
     content: normal; }
   @top-right {
     content: normal; }
@@ -263,7 +345,7 @@ h6 {
     content: normal; }
   @top-left-corner {
     content: normal; }
-  @bottom {
+  @bottom-center {
     content: normal; }
   @bottom-left {
     content: normal; }
@@ -275,7 +357,7 @@ h6 {
     content: normal; } }
 
 @page chapter:first {
-  @top {
+  @top-center {
     content: normal; }
   @top-left {
     content: normal; }
@@ -287,7 +369,7 @@ h6 {
     content: normal; } }
 
 @page chapter:blank {
-  @top {
+  @top-center {
     content: normal; }
   @top-left {
     content: normal; }
@@ -297,7 +379,7 @@ h6 {
     content: normal; }
   @top-right-corner {
     content: normal; }
-  @bottom {
+  @bottom-center {
     content: normal; }
   @bottom-left {
     content: normal; }
@@ -309,7 +391,7 @@ h6 {
     content: normal; } }
 
 @page frontmatter:left {
-  @top {
+  @top-center {
     content: normal; }
   @top-right {
     content: normal; }
@@ -319,7 +401,7 @@ h6 {
     content: normal; }
   @top-left-corner {
     content: normal; }
-  @bottom {
+  @bottom-center {
     content: normal; }
   @bottom-left {
     content: normal; }
@@ -331,7 +413,7 @@ h6 {
     content: normal; } }
 
 @page frontmatter:right {
-  @top {
+  @top-center {
     content: normal; }
   @top-right {
     content: normal; }
@@ -341,7 +423,7 @@ h6 {
     content: normal; }
   @top-left-corner {
     content: normal; }
-  @bottom {
+  @bottom-center {
     content: normal; }
   @bottom-left {
     content: normal; }
@@ -353,7 +435,7 @@ h6 {
     content: normal; } }
 
 @page frontmatter:first {
-  @top {
+  @top-center {
     content: normal; }
   @top-left {
     content: normal; }
@@ -365,7 +447,7 @@ h6 {
     content: normal; } }
 
 @page frontmatter:blank {
-  @top {
+  @top-center {
     content: normal; }
   @top-left {
     content: normal; }
@@ -375,7 +457,227 @@ h6 {
     content: normal; }
   @top-right-corner {
     content: normal; }
-  @bottom {
+  @bottom-center {
+    content: normal; }
+  @bottom-left {
+    content: normal; }
+  @bottom-right {
+    content: normal; }
+  @bottom-left-corner {
+    content: normal; }
+  @bottom-right-corner {
+    content: normal; } }
+
+@page toc:first {
+  @top-center {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
+  @top-right-corner {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-left {
+    content: normal; }
+  @bottom-right {
+    content: normal; }
+  @bottom-left-corner {
+    content: normal; }
+  @bottom-right-corner {
+    content: normal; } }
+
+@page cover {
+  @top-center {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
+  @top-right-corner {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-left {
+    content: normal; }
+  @bottom-right {
+    content: normal; }
+  @bottom-left-corner {
+    content: normal; }
+  @bottom-right-corner {
+    content: normal; } }
+
+@page previous-publications {
+  @top-center {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
+  @top-right-corner {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-left {
+    content: normal; }
+  @bottom-right {
+    content: normal; }
+  @bottom-left-corner {
+    content: normal; }
+  @bottom-right-corner {
+    content: normal; } }
+
+@page copyright {
+  @top-center {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
+  @top-right-corner {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-left {
+    content: normal; }
+  @bottom-right {
+    content: normal; }
+  @bottom-left-corner {
+    content: normal; }
+  @bottom-right-corner {
+    content: normal; } }
+
+@page dedication {
+  @top-center {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
+  @top-right-corner {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-left {
+    content: normal; }
+  @bottom-right {
+    content: normal; }
+  @bottom-left-corner {
+    content: normal; }
+  @bottom-right-corner {
+    content: normal; } }
+
+@page epigraph {
+  @top-center {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
+  @top-right-corner {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-left {
+    content: normal; }
+  @bottom-right {
+    content: normal; }
+  @bottom-left-corner {
+    content: normal; }
+  @bottom-right-corner {
+    content: normal; } }
+
+@page frontispiece {
+  @top-center {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
+  @top-right-corner {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-left {
+    content: normal; }
+  @bottom-right {
+    content: normal; }
+  @bottom-left-corner {
+    content: normal; }
+  @bottom-right-corner {
+    content: normal; } }
+
+@page half-title-page {
+  @top-center {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
+  @top-right-corner {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-left {
+    content: normal; }
+  @bottom-right {
+    content: normal; }
+  @bottom-left-corner {
+    content: normal; }
+  @bottom-right-corner {
+    content: normal; } }
+
+@page title-page {
+  @top-center {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
+  @top-right-corner {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-left {
+    content: normal; }
+  @bottom-right {
+    content: normal; }
+  @bottom-left-corner {
+    content: normal; }
+  @bottom-right-corner {
+    content: normal; } }
+
+@page part {
+  @top-center {
+    content: normal; }
+  @top-left {
+    content: normal; }
+  @top-right {
+    content: normal; }
+  @top-left-corner {
+    content: normal; }
+  @top-right-corner {
+    content: normal; }
+  @bottom-center {
     content: normal; }
   @bottom-left {
     content: normal; }
@@ -3386,79 +3688,6 @@ h6 {
 .page-1000 {
   counter-reset: page 1000; }
 
-.part-page {
-  page: part;
-  break-before: recto; }
-
-.previous-publications-page {
-  page: previous-publications;
-  break-before: page;
-  text-align: center; }
-  .previous-publications-page h1 {
-    font-size: 12.6pt;
-    margin: 14pt 0 0 0;
-    break-after: avoid;
-    break-inside: avoid; }
-  .previous-publications-page h2 {
-    font-weight: bold;
-    margin: 14pt 0 0 0;
-    break-after: avoid;
-    break-inside: avoid; }
-  .previous-publications-page h3 {
-    font-style: italic;
-    margin: 14pt 0 0 0;
-    break-after: avoid;
-    break-inside: avoid; }
-  .previous-publications-page h4 {
-    margin: 14pt 0 0 0;
-    break-after: avoid;
-    break-inside: avoid; }
-  .previous-publications-page h5 {
-    margin: 14pt 0 0 0;
-    break-after: avoid;
-    break-inside: avoid; }
-  .previous-publications-page p {
-    text-align: center;
-    margin-bottom: 14pt; }
-    .previous-publications-page p + p {
-      text-indent: 0; }
-
-.half-title-page {
-  page: half-title-page;
-  break-before: recto; }
-
-.title-page {
-  page: title-page;
-  break-before: recto; }
-
-.contents-page {
-  break-before: recto; }
-  .contents-page h1 {
-    font-size: 22.5pt;
-    line-height: 28pt;
-    margin: 28pt 0 14pt 0;
-    break-after: avoid;
-    break-inside: avoid; }
-  .contents-page h2 {
-    font-size: 12.6pt;
-    margin: 14pt 0 0 0;
-    break-after: avoid;
-    break-inside: avoid; }
-  .contents-page h3 {
-    font-weight: bold;
-    margin: 14pt 0 0 0;
-    break-after: avoid;
-    break-inside: avoid; }
-  .contents-page h4 {
-    font-style: italic;
-    margin: 14pt 0 0 0;
-    break-after: avoid;
-    break-inside: avoid; }
-  .contents-page h5 {
-    margin: 14pt 0 0 0;
-    break-after: avoid;
-    break-inside: avoid; }
-
 .bibliography {
   text-indent: 0;
   margin: 14pt 0;
@@ -3752,17 +3981,18 @@ pre {
     font-weight: bold; }
 
 @page cover {
-  margin: 0; }
+  margin: 0;
+  padding: 0; }
 
 div.cover {
   page: cover;
   margin: 0;
   padding: 0;
   position: absolute;
-  top: -42pt;
-  right: -24mm;
-  bottom: -49pt;
-  left: -15mm;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   break-after: recto;
   break-before: recto; }
   div.cover img, div.cover img:only-child {

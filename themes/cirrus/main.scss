@@ -1,0 +1,43 @@
+// main.scss
+
+// This file collects variables and imports partials.
+// You shouldn't need to edit it. Create a custom design
+// by copying and editing the files in themes/template.
+
+
+// ---------------------------------------------------
+// Encoding
+// ---------------------------------------------------
+
+// First, let's set character encoding. Don't change this.
+@charset "utf-8";
+
+
+// ---------------------------------------------------
+// Variables
+// ---------------------------------------------------
+
+// Import the default variables.
+@import '../_defaults/variables';
+// Import theme variables, which override defaults.
+@import 'variables';
+
+
+// ---------------------------------------------------
+// Selector aliases
+// ---------------------------------------------------
+
+// Import the default CSS selectors.
+@import '../_defaults/selectors';
+// Import theme selectors, which override the defaults.
+@import 'selectors';
+
+
+// ---------------------------------------------------
+// Partials
+// ---------------------------------------------------
+
+// Import all our default styles.
+@import '../_defaults/styles';
+// Import theme CSS, which may override the defaults.
+@import 'styles';

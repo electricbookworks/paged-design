@@ -1,0 +1,13 @@
+// _styles.scss
+
+// Add your own custom CSS or Sass styles here,
+// or import your own partials.
+// They will be included by main.scss,
+// after default/_styles.scss
+
+// Partials for all Ketida HTML
+@import "partials/ketida/margin-boxes.scss";
+@import "partials/ketida/copyright-page.scss";
+@import "partials/ketida/cover.scss";
+
+// Partials specifically for this design

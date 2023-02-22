@@ -46,7 +46,7 @@ h6 {
 
 // Verso
 @page chapter:left {
-    @top {
+    @top-center {
         content: $verso-top;
     }
     @top-right {
@@ -61,7 +61,7 @@ h6 {
     @top-left-corner {
         content: $verso-top-left-corner;
     }
-    @bottom {
+    @bottom-center {
         content: $verso-bottom;
     }
     @bottom-left {
@@ -80,7 +80,7 @@ h6 {
 
 // Recto
 @page chapter:right {
-    @top {
+    @top-center {
         content: $recto-top;
     }
     @top-right {
@@ -95,7 +95,7 @@ h6 {
     @top-left-corner {
         content: $recto-top-left-corner;
     }
-    @bottom {
+    @bottom-center {
         content: $recto-bottom;
     }
     @bottom-left {
@@ -114,7 +114,7 @@ h6 {
 
 // No headers on first pages of chapters
 @page chapter:first {
-    @top { content: normal; }
+    @top-center { content: normal; }
     @top-left { content: normal; }
     @top-right { content: normal; }
     @top-left-corner { content: normal; }
@@ -123,12 +123,12 @@ h6 {
 
 // No headers or footers on blank pages of chapters
 @page chapter:blank {
-    @top { content: normal; }
+    @top-center { content: normal; }
     @top-left { content: normal; }
     @top-right { content: normal; }
     @top-left-corner { content: normal; }
     @top-right-corner { content: normal; }
-    @bottom { content: normal; }
+    @bottom-center { content: normal; }
     @bottom-left { content: normal; }
     @bottom-right { content: normal; }
     @bottom-left-corner { content: normal; }
@@ -139,7 +139,7 @@ h6 {
 
 // Verso
 @page frontmatter:left {
-    @top {
+    @top-center {
         content: $verso-top-frontmatter;
     }
     @top-right {
@@ -154,7 +154,7 @@ h6 {
     @top-left-corner {
         content: $verso-top-left-corner-frontmatter;
     }
-    @bottom {
+    @bottom-center {
         content: $verso-bottom-frontmatter;
     }
     @bottom-left {
@@ -173,7 +173,7 @@ h6 {
 
 // Recto
 @page frontmatter:right {
-    @top {
+    @top-center {
         content: $recto-top-frontmatter;
     }
     @top-right {
@@ -188,7 +188,7 @@ h6 {
     @top-left-corner {
         content: $recto-top-left-corner-frontmatter;
     }
-    @bottom {
+    @bottom-center {
         content: $recto-bottom-frontmatter;
     }
     @bottom-left {
@@ -207,7 +207,7 @@ h6 {
 
 // No headers on first pages of frontmatter
 @page frontmatter:first {
-    @top { content: normal; }
+    @top-center { content: normal; }
     @top-left { content: normal; }
     @top-right { content: normal; }
     @top-left-corner { content: normal; }
@@ -216,16 +216,49 @@ h6 {
 
 // No headers or footers on blank pages of frontmatter
 @page frontmatter:blank {
-    @top { content: normal; }
+    @top-center { content: normal; }
     @top-left { content: normal; }
     @top-right { content: normal; }
     @top-left-corner { content: normal; }
     @top-right-corner { content: normal; }
-    @bottom { content: normal; }
+    @bottom-center { content: normal; }
     @bottom-left { content: normal; }
     @bottom-right { content: normal; }
     @bottom-left-corner { content: normal; }
     @bottom-right-corner { content: normal; }
+}
+
+// No headers or footers on first pages of toc
+@page toc:first {
+    @top-center { content: normal; }
+    @top-left { content: normal; }
+    @top-right { content: normal; }
+    @top-left-corner { content: normal; }
+    @top-right-corner { content: normal; }
+    @bottom-center { content: normal; }
+    @bottom-left { content: normal; }
+    @bottom-right { content: normal; }
+    @bottom-left-corner { content: normal; }
+    @bottom-right-corner { content: normal; }
+}
+
+// No headers or footers on the following
+// list of pages.
+$no-running-margins: cover, previous-publications, copyright, dedication, epigraph, frontispiece, half-title-page, title-page, part;
+
+@each $page in $no-running-margins {
+    @page #{$page} {
+        @top-center { content: normal; }
+        @top-left { content: normal; }
+        @top-right { content: normal; }
+        @top-left-corner { content: normal; }
+        @top-right-corner { content: normal; }
+        @bottom-center { content: normal; }
+        @bottom-left { content: normal; }
+        @bottom-right { content: normal; }
+        @bottom-left-corner { content: normal; }
+        @bottom-right-corner { content: normal; }
+    }
 }
 
 // Reset page numbers with 'page-n' classes,

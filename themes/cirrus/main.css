@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Fondamento:400,400i|Neuton:400,400i,700|Vollkorn:400,400i,700,700i&subset=latin-ext");
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -48,26 +47,26 @@ table {
   border-spacing: 0; }
 
 body {
-  font-family: "Vollkorn", serif;
-  font-size: 10pt;
+  font-family: "Crimson Pro", serif;
+  font-size: 11pt;
   line-height: 15pt; }
 
 h1 {
-  font-size: 40pt;
+  font-size: 44pt;
   line-height: 45pt;
   margin: 30pt 0 15pt 0;
   break-after: avoid;
   break-inside: avoid; }
 
 h2 {
-  font-size: 25pt;
+  font-size: 27.5pt;
   line-height: 30pt;
   margin: 30pt 0 15pt 0;
   break-after: avoid;
   break-inside: avoid; }
 
 h3 {
-  font-size: 14pt;
+  font-size: 15.4pt;
   margin: 15pt 0 0 0;
   break-after: avoid;
   break-inside: avoid; }
@@ -113,7 +112,7 @@ dl {
     display: inline-block;
     float: left;
     font-weight: bold;
-    margin-right: 5pt; }
+    margin-right: 5.5pt; }
 
 blockquote {
   padding: 15pt; }
@@ -145,7 +144,7 @@ sub {
 
 hr {
   border: 0;
-  font-family: "Fondamento", sans-serif;
+  font-family: "Lato", sans-serif;
   text-align: center;
   margin: 15pt 0; }
   hr:after {
@@ -155,7 +154,7 @@ img {
   max-width: 100%; }
 
 @page {
-  size: 111mm 178mm;
+  size: 210mm 297mm;
   padding: 0;
   marks: crop;
   bleed: 0;
@@ -163,133 +162,133 @@ img {
   pdf-page-colorspace: rgb; }
 
 @page :left {
-  margin-top: 45pt;
+  margin-top: 60pt;
   margin-bottom: 60pt;
   margin-left: 15mm;
   margin-right: 15mm; }
 
 @page :right {
-  margin-top: 45pt;
+  margin-top: 60pt;
   margin-bottom: 60pt;
   margin-left: 15mm;
   margin-right: 15mm; }
 
-.chapter {
+section.chapter.component-body {
   page: chapter;
   break-before: recto; }
 
-.copyright-page {
+section.copyright_page.component-front {
   page: copyright;
   break-before: verso;
-  font-size: 8pt;
+  font-size: 8.8pt;
   line-height: 12pt;
   position: absolute;
   bottom: 0; }
-  .copyright-page p {
+  section.copyright_page.component-front p {
     text-align: initial;
     margin-bottom: 7.5pt; }
-    .copyright-page p + p {
+    section.copyright_page.component-front p + p {
       text-indent: 0; }
-  .copyright-page h1, .copyright-page h2, .copyright-page h3, .copyright-page h4, .copyright-page h5, .copyright-page h6 {
-    font-size: 10pt;
+  section.copyright_page.component-front h1, section.copyright_page.component-front h2, section.copyright_page.component-front h3, section.copyright_page.component-front h4, section.copyright_page.component-front h5, section.copyright_page.component-front h6 {
+    font-size: 11pt;
     font-weight: bold;
     font-style: normal;
     margin: 15pt 0 7.5pt 0; }
-    .copyright-page h1 em, .copyright-page h2 em, .copyright-page h3 em, .copyright-page h4 em, .copyright-page h5 em, .copyright-page h6 em {
+    section.copyright_page.component-front h1 em, section.copyright_page.component-front h2 em, section.copyright_page.component-front h3 em, section.copyright_page.component-front h4 em, section.copyright_page.component-front h5 em, section.copyright_page.component-front h6 em {
       font-style: italic; }
-  .copyright-page h1[id="copyright"] {
+  section.copyright_page.component-front h1[id="copyright"] {
     display: none; }
 
-.dedication-page {
+section.dedication_page {
   page: dedication;
   break-before: page;
   margin-top: 75pt; }
 
-.endmatter {
+section.component-back {
   page: endmatter; }
 
-.epigraph-page {
+section.epigraph_page {
   page: epigraph;
   break-before: page;
   margin-top: 75pt; }
 
-.frontispiece-page {
+section.frontispiece_page {
   page: frontispiece;
   break-before: page; }
 
-.frontmatter {
+section.component.component-front, section.introduction.component-front {
   page: frontmatter;
   break-before: recto; }
 
-.part-page {
+section.part_page {
   page: part;
   break-before: recto; }
 
-.previous-publications-page {
+section.previous_publications_page {
   page: previous-publications;
   break-before: page;
   text-align: center; }
-  .previous-publications-page h1 {
-    font-size: 14pt;
+  section.previous_publications_page h1 {
+    font-size: 15.4pt;
     margin: 15pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
-  .previous-publications-page h2 {
+  section.previous_publications_page h2 {
     font-weight: bold;
     margin: 15pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
-  .previous-publications-page h3 {
+  section.previous_publications_page h3 {
     font-style: italic;
     margin: 15pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
-  .previous-publications-page h4 {
+  section.previous_publications_page h4 {
     margin: 15pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
-  .previous-publications-page h5 {
+  section.previous_publications_page h5 {
     margin: 15pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
-  .previous-publications-page p {
+  section.previous_publications_page p {
     text-align: center;
     margin-bottom: 15pt; }
-    .previous-publications-page p + p {
+    section.previous_publications_page p + p {
       text-indent: 0; }
 
-.half-title-page {
+section.halftitle.component-front {
   page: half-title-page;
   break-before: recto; }
 
-.title-page {
+section.titlepage.component-front {
   page: title-page;
   break-before: recto; }
 
-.contents-page {
+section.toc.component-front {
   break-before: recto; }
-  .contents-page h1 {
-    font-size: 25pt;
+  section.toc.component-front h1 {
+    font-size: 27.5pt;
     line-height: 30pt;
     margin: 30pt 0 15pt 0;
     break-after: avoid;
     break-inside: avoid; }
-  .contents-page h2 {
-    font-size: 14pt;
+  section.toc.component-front h2 {
+    font-size: 15.4pt;
     margin: 15pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
-  .contents-page h3 {
+  section.toc.component-front h3 {
     font-weight: bold;
     margin: 15pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
-  .contents-page h4 {
+  section.toc.component-front h4 {
     font-style: italic;
     margin: 15pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
-  .contents-page h5 {
+  section.toc.component-front h5 {
     margin: 15pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
@@ -402,7 +401,7 @@ h6 {
   @top-left-corner {
     content: normal; }
   @bottom-center {
-    content: counter(page, lower-roman); }
+    content: counter(page, decimal); }
   @bottom-left {
     content: normal; }
   @bottom-right {
@@ -424,7 +423,7 @@ h6 {
   @top-left-corner {
     content: normal; }
   @bottom-center {
-    content: counter(page, lower-roman); }
+    content: counter(page, decimal); }
   @bottom-left {
     content: normal; }
   @bottom-right {
@@ -3727,7 +3726,7 @@ code, .code {
   background-color: #eee;
   padding: 0.1em 0.3em;
   border-radius: 0.1em;
-  font-size: 8pt; }
+  font-size: 8.8pt; }
 
 pre {
   background-color: #eee;
@@ -3984,7 +3983,7 @@ pre {
   margin: 0;
   padding: 0; }
 
-div.cover {
+section.cover.component-front {
   page: cover;
   margin: 0;
   padding: 0;
@@ -3995,7 +3994,7 @@ div.cover {
   left: 0;
   break-after: recto;
   break-before: recto; }
-  div.cover img, div.cover img:only-child {
+  section.cover.component-front img, section.cover.component-front img:only-child {
     height: 100%;
     margin: 0;
     max-width: 100%;
@@ -4060,7 +4059,7 @@ figure, .figure {
     page-break-before: avoid;
     text-align: center;
     text-indent: 0;
-    font-size: 8pt; }
+    font-size: 8.8pt; }
   figure img, figure p img, .figure img, .figure p img {
     width: auto;
     max-width: 100%;
@@ -4100,7 +4099,7 @@ p + p > img:first-child {
 
 .index, .reference-index {
   columns: 2;
-  font-size: 8pt;
+  font-size: 8.8pt;
   margin: 15pt 0 0 0; }
   .index ul, .index ol, .reference-index ul, .reference-index ol {
     margin: 0; }
@@ -4115,10 +4114,10 @@ p + p > img:first-child {
     font-size: 0; }
     .index a::before, .reference-index a::before {
       content: target-counter(attr(href), page);
-      font-size: 8pt; }
+      font-size: 8.8pt; }
     .index a::after, .reference-index a::after {
       content: ", ";
-      font-size: 8pt; }
+      font-size: 8.8pt; }
     .index a:last-of-type::after, .reference-index a:last-of-type::after {
       content: normal; }
 
@@ -4126,7 +4125,7 @@ p + p > img:first-child {
   box-sizing: border-box;
   clear: both;
   float: right;
-  font-size: 8pt;
+  font-size: 8.8pt;
   font-style: inherit;
   margin: 0 0 15pt 15pt;
   text-align: left;
@@ -4162,7 +4161,7 @@ p + p > img:first-child {
 
 .footnotes {
   margin: 15pt 0 0 0;
-  font-size: 8pt;
+  font-size: 8.8pt;
   line-height: 12pt; }
 
 .reversefootnote {
@@ -4176,7 +4175,7 @@ p + p > img:first-child {
   @footnotes {
     margin-top: 7.5pt;
     padding-top: 7.5pt;
-    font-size: 8pt; } }
+    font-size: 8.8pt; } }
 
 blockquote + .source {
   padding: 15pt;
@@ -4210,13 +4209,13 @@ blockquote > .source {
 
 .pullquote {
   padding: 15pt;
-  font-size: 22pt;
+  font-size: 24.2pt;
   line-height: 30pt; }
 
 table {
   border-collapse: collapse;
   margin: 15pt 0;
-  font-size: 8pt;
+  font-size: 8.8pt;
   width: 100%;
   max-width: 100%; }
   table ul, table ol {
@@ -4248,87 +4247,87 @@ th, td {
   .table-caption + p {
     text-indent: 0; }
 
-.half-title-page,
-.title-page {
+section.halftitle.component-front,
+section.titlepage.component-front {
   margin: 75pt auto 0 auto;
   text-align: center; }
-  .half-title-page p,
-  .title-page p {
+  section.halftitle.component-front p,
+  section.titlepage.component-front p {
     text-indent: 0;
     hyphens: none;
     text-align: center; }
-  .half-title-page .title-page-title,
-  .half-title-page .title-page-title,
-  .title-page .title-page-title,
-  .title-page .title-page-title {
+  section.halftitle.component-front .title-page-title,
+  section.halftitle.component-front .title-page-title,
+  section.titlepage.component-front .title-page-title,
+  section.titlepage.component-front .title-page-title {
     font-weight: bold;
-    font-family: "Fondamento", sans-serif;
-    font-size: 19.6pt;
+    font-family: "Lato", sans-serif;
+    font-size: 21.56pt;
     line-height: 1.1;
     margin: 0;
     string-set: book-title content(); }
-  .half-title-page .title-page-subtitle,
-  .title-page .title-page-subtitle {
-    font-family: "Fondamento", sans-serif;
-    font-size: 14pt;
+  section.halftitle.component-front .title-page-subtitle,
+  section.titlepage.component-front .title-page-subtitle {
+    font-family: "Lato", sans-serif;
+    font-size: 15.4pt;
     line-height: 1.1;
     margin: 15pt 0 0 0;
     string-set: book-subtitle content(); }
-  .half-title-page .title-page-author,
-  .title-page .title-page-author {
-    font-size: 14pt;
+  section.halftitle.component-front .title-page-author,
+  section.titlepage.component-front .title-page-author {
+    font-size: 15.4pt;
     line-height: 21pt;
     margin: 60pt 0;
     string-set: book-author content(); }
-  .half-title-page .title-page-contributors,
-  .title-page .title-page-contributors {
-    font-size: 10pt;
+  section.halftitle.component-front .title-page-contributors,
+  section.titlepage.component-front .title-page-contributors {
+    font-size: 11pt;
     line-height: 15pt;
     margin: 60pt 0 15pt 0; }
-  .half-title-page .title-page-publisher,
-  .title-page .title-page-publisher {
+  section.halftitle.component-front .title-page-publisher,
+  section.titlepage.component-front .title-page-publisher {
     position: absolute;
     bottom: 0;
     text-align: center;
     text-indent: 0;
     transform: translateX(-50%);
     margin-left: 50%; }
-  .half-title-page .title-page-logo,
-  .title-page .title-page-logo {
-    width: 22.2mm;
+  section.halftitle.component-front .title-page-logo,
+  section.titlepage.component-front .title-page-logo {
+    width: 42mm;
     position: absolute;
     text-align: center;
     bottom: 0;
     transform: translateX(-50%);
     margin-left: 50%;
     display: block; }
-    .half-title-page .title-page-logo img,
-    .title-page .title-page-logo img {
+    section.halftitle.component-front .title-page-logo img,
+    section.titlepage.component-front .title-page-logo img {
       width: 100%; }
 
-.toc-list, #markdown-toc {
+.toc nav ol {
   list-style-type: none;
   text-align: left;
   padding: 0;
   margin: 0; }
-  .toc-list ul, .toc-list ol, #markdown-toc ul, #markdown-toc ol {
+  .toc nav ol ul, .toc nav ol ol {
     list-style-type: none;
     margin: 0;
     margin-left: 15pt; }
-  .toc-list li, #markdown-toc li {
+  .toc nav ol li {
     margin: 0; }
-    .toc-list li a .toc-entry-text, #markdown-toc li a .toc-entry-text {
+    .toc nav ol li a .toc-entry-text {
       display: inline-block;
       max-width: 90%; }
-    .toc-list li a::after, #markdown-toc li a::after {
+    .toc nav ol li a::after {
       content: target-counter(attr(href), page);
       float: right; }
-    .toc-list li.frontmatter-entry a::after, #markdown-toc li.frontmatter-entry a::after {
-      content: target-counter(attr(href), page, lower-roman);
+    .toc nav ol li.frontmatter-entry a::after {
+      content: target-counter(attr(href), page, decimal);
       float: right; }
-  p + .toc-list, p + #markdown-toc {
+  p + .toc nav ol {
     margin-top: 15pt; }
-  .toc-list + p, #markdown-toc + p {
+  .toc nav ol + p {
     margin-top: 15pt; }
 
 /* CSS for Paged.js interface – v0.4 */
@@ -4465,86 +4464,16 @@ th, td {
 .pagedjs_bleed-right .pagedjs_marks-crop:last-child {
   box-shadow: 0px -1px 0px 0px var(--pagedjs-crop-shadow); }
 
-.title-page .title-page-title {
-  font-size: 30pt; }
-  .title-page .title-page-title::after {
-    content: "\2014";
-    display: block; }
+.running-left {
+  position: running(runningLeft); }
 
-.title-page .title-page-author {
-  margin-top: 15pt; }
+.running-right {
+  position: running(runningRight); }
 
-.chapter .chapter-number, .chapter h1 strong:first-of-type, .chapter h2 strong:first-of-type, .frontmatter .chapter-number, .frontmatter h1 strong:first-of-type, .frontmatter h2 strong:first-of-type {
-  font-family: "Neuton", sans-serif; }
+section.copyright_page.component-front {
+  max-width: 40em; }
+  section.copyright_page.component-front h1 {
+    visibility: hidden; }
 
-.chapter h1:first-child, .chapter h2:first-child, .frontmatter h1:first-child, .frontmatter h2:first-child {
-  font-family: "Neuton", sans-serif;
-  font-size: 18pt;
-  text-align: center;
-  margin-bottom: 105pt;
-  letter-spacing: 0.1em;
-  font-variant: all-small-caps;
-  text-transform: uppercase;
-  font-feature-settings: "c2sc", "smcp", "onum"; }
-
-.copyright-page p {
-  margin-bottom: 7.5pt; }
-
-.chapter-number, h1 strong:first-of-type, h2 strong:first-of-type {
-  font-family: "Fondamento", sans-serif;
-  font-weight: bold;
-  line-height: 1; }
-  .chapter-number::after, h1 strong:first-of-type::after, h2 strong:first-of-type::after {
-    content: "\2014";
-    display: block;
-    line-height: 0;
-    margin-bottom: 14pt; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: 10pt;
-  text-align: center;
-  margin-bottom: 0;
-  font-weight: normal;
-  font-style: normal;
-  margin: 15pt 0 0 0; }
-
-h1 {
-  font-size: 15pt;
-  letter-spacing: 0.1em;
-  font-variant: all-small-caps;
-  text-transform: uppercase;
-  font-feature-settings: "c2sc", "smcp", "onum"; }
-
-h2 {
-  margin-top: 30pt;
-  margin-bottom: 15pt;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-feature-settings: "c2sc", "smcp", "onum"; }
-
-h3 {
-  margin-top: 30pt;
-  margin-bottom: 15pt;
-  font-size: 12pt; }
-
-h4 {
-  font-style: italic; }
-
-blockquote p {
-  text-align: left; }
-
-.sidenote {
-  width: auto;
-  text-align: left;
-  font-size: 9pt; }
-  .sidenote::before {
-    content: "";
-    display: block;
-    height: 15pt;
-    border-bottom: 0.5pt dotted #eee;
-    margin-right: 15pt; }
-
-.footnotes {
-  font-size: 9pt; }
-  .footnotes p, .footnotes ul, .footnotes ol, .footnotes dl {
-    text-align: left; }
+section.cover.component-front figure {
+  margin: 0; }

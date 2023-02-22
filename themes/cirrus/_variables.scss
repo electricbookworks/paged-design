@@ -1,0 +1,18 @@
+// _variables.scss
+
+// Set your own variables here. These override
+// the defaults in themes/_defaults/_variables.scss.
+// For brevity, we don't repeat all supported variables here.
+// Copy the ones you want to change from defaults.scss
+// to here, and remove `!default` from each one.
+
+$page-width: 210mm;
+$page-height: 297mm;
+$margin-top: 60pt;
+$margin-bottom: 60pt;
+
+// Since we can't yet control `page-1` in Ketida HTML
+// we rather just give all frontmatter decimal page numbering.
+$frontmatter-page-numbers: decimal;
+$verso-bottom-frontmatter: counter(page, $frontmatter-page-numbers);
+$recto-bottom-frontmatter: counter(page, $frontmatter-page-numbers);

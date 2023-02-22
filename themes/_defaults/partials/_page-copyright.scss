@@ -7,13 +7,27 @@
     line-height: $line-height-default * 0.8;
     position: absolute;
     bottom: 0;
+
     p {
         text-align: initial;
-        margin-bottom: $line-height-default;
+        margin-bottom: $line-height-default / 2;
         & + p {
             text-indent: 0;
         }
     }
+
+    // Super-simple headings on copyright pages
+    h1, h2, h3, h4, h5, h6 {
+        font-size: $font-size-default;
+        font-weight: bold;
+        font-style: normal;
+        margin: $line-height-default 0 ($line-height-default / 2) 0;
+
+        em {
+            font-style: italic;
+        }
+    }
+
     // Don't show the heading 'Copyright', which
     // we might still want in the PDF bookmarks
     // and in other outputs.
