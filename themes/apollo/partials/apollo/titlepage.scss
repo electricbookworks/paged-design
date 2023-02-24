@@ -1,0 +1,46 @@
+@mixin title-pages-common() {
+
+    // Rules
+    border-top: 5pt solid $apollo-accent;
+    border-bottom: 5pt solid $apollo-accent;
+    padding: $line-height-default 0;
+
+    h1 {
+        font-size: 48pt;
+        line-height: 1;
+        margin-top: 0;
+    }
+
+    // Subtitle
+    h1 + p, .cst {
+        @include small-caps();
+
+        color: $apollo-accent;
+        font-family: $font-display-main;
+        font-size: 16pt;
+        font-weight: 500;
+        line-height: 24pt;
+    }
+
+    h2 {
+        @include heading-3();
+
+        color: $color-text-main;
+    }
+
+    p, ul, ol, dl {
+        text-align: left;
+    }
+}
+
+#{$page-half-title-page} {
+    @include title-pages-common();
+
+    h1 {
+        margin: 0;
+    }
+}
+
+#{$page-title-page} {
+    @include title-pages-common();
+}

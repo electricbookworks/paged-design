@@ -48,43 +48,43 @@ table {
 
 body {
   font-family: "Crimson Pro", serif;
-  font-size: 11pt;
-  line-height: 15pt; }
+  font-size: 10pt;
+  line-height: 14pt; }
 
 h1 {
-  font-size: 44pt;
-  line-height: 45pt;
-  margin: 30pt 0 15pt 0;
+  font-size: 40pt;
+  line-height: 42pt;
+  margin: 28pt 0 14pt 0;
   break-after: avoid;
   break-inside: avoid; }
 
 h2 {
-  font-size: 27.5pt;
-  line-height: 30pt;
-  margin: 30pt 0 15pt 0;
+  font-size: 25pt;
+  line-height: 28pt;
+  margin: 28pt 0 14pt 0;
   break-after: avoid;
   break-inside: avoid; }
 
 h3 {
-  font-size: 15.4pt;
-  margin: 15pt 0 0 0;
+  font-size: 14pt;
+  margin: 14pt 0 0 0;
   break-after: avoid;
   break-inside: avoid; }
 
 h4 {
   font-weight: bold;
-  margin: 15pt 0 0 0;
+  margin: 14pt 0 0 0;
   break-after: avoid;
   break-inside: avoid; }
 
 h5 {
   font-style: italic;
-  margin: 15pt 0 0 0;
+  margin: 14pt 0 0 0;
   break-after: avoid;
   break-inside: avoid; }
 
 h6 {
-  margin: 15pt 0 0 0;
+  margin: 14pt 0 0 0;
   break-after: avoid;
   break-inside: avoid; }
 
@@ -92,30 +92,30 @@ p {
   margin: 0;
   text-align: justify; }
   p + p {
-    text-indent: 15pt; }
+    text-indent: 10pt; }
 
 ol {
-  margin-top: 15pt;
-  margin-bottom: 15pt;
-  margin-left: 15pt;
+  margin-top: 14pt;
+  margin-bottom: 14pt;
+  margin-left: 10pt;
   list-style: decimal; }
 
 ul {
-  margin-top: 15pt;
-  margin-bottom: 15pt;
-  margin-left: 15pt;
+  margin-top: 14pt;
+  margin-bottom: 14pt;
+  margin-left: 10pt;
   list-style: disc; }
 
 dl {
-  margin: 15pt 0; }
+  margin: 14pt 0; }
   dl dt {
     display: inline-block;
     float: left;
     font-weight: bold;
-    margin-right: 5.5pt; }
+    margin-right: 5pt; }
 
 blockquote {
-  padding: 15pt; }
+  padding: 14pt 10pt; }
   blockquote + blockquote {
     padding-top: 0; }
   h1 + blockquote, h2 + blockquote, h3 + blockquote,
@@ -144,9 +144,9 @@ sub {
 
 hr {
   border: 0;
-  font-family: "Lato", sans-serif;
+  font-family: "Inter", sans-serif;
   text-align: center;
-  margin: 15pt 0; }
+  margin: 14pt 0; }
   hr:after {
     content: ""; }
 
@@ -164,14 +164,14 @@ img {
 @page :left {
   margin-top: 60pt;
   margin-bottom: 60pt;
-  margin-left: 15mm;
+  margin-left: 64mm;
   margin-right: 15mm; }
 
 @page :right {
   margin-top: 60pt;
   margin-bottom: 60pt;
   margin-left: 15mm;
-  margin-right: 15mm; }
+  margin-right: 64mm; }
 
 section.chapter.component-body {
   page: chapter;
@@ -180,20 +180,20 @@ section.chapter.component-body {
 section.copyright_page.component-front {
   page: copyright;
   break-before: verso;
-  font-size: 8.8pt;
-  line-height: 12pt;
+  font-size: 8pt;
+  line-height: 11.2pt;
   position: absolute;
   bottom: 0; }
   section.copyright_page.component-front p {
     text-align: initial;
-    margin-bottom: 7.5pt; }
+    margin-bottom: 7pt; }
     section.copyright_page.component-front p + p {
       text-indent: 0; }
   section.copyright_page.component-front h1, section.copyright_page.component-front h2, section.copyright_page.component-front h3, section.copyright_page.component-front h4, section.copyright_page.component-front h5, section.copyright_page.component-front h6 {
-    font-size: 11pt;
+    font-size: 10pt;
     font-weight: bold;
     font-style: normal;
-    margin: 15pt 0 7.5pt 0; }
+    margin: 14pt 0 7pt 0; }
     section.copyright_page.component-front h1 em, section.copyright_page.component-front h2 em, section.copyright_page.component-front h3 em, section.copyright_page.component-front h4 em, section.copyright_page.component-front h5 em, section.copyright_page.component-front h6 em {
       font-style: italic; }
   section.copyright_page.component-front h1[id="copyright"] {
@@ -229,31 +229,31 @@ section.previous_publications_page {
   break-before: page;
   text-align: center; }
   section.previous_publications_page h1 {
-    font-size: 15.4pt;
-    margin: 15pt 0 0 0;
+    font-size: 14pt;
+    margin: 14pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
   section.previous_publications_page h2 {
     font-weight: bold;
-    margin: 15pt 0 0 0;
+    margin: 14pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
   section.previous_publications_page h3 {
     font-style: italic;
-    margin: 15pt 0 0 0;
+    margin: 14pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
   section.previous_publications_page h4 {
-    margin: 15pt 0 0 0;
+    margin: 14pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
   section.previous_publications_page h5 {
-    margin: 15pt 0 0 0;
+    margin: 14pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
   section.previous_publications_page p {
     text-align: center;
-    margin-bottom: 15pt; }
+    margin-bottom: 14pt; }
     section.previous_publications_page p + p {
       text-indent: 0; }
 
@@ -266,30 +266,30 @@ section.titlepage.component-front {
   break-before: recto; }
 
 section.toc.component-front {
-  break-before: recto; }
-  section.toc.component-front h1 {
-    font-size: 27.5pt;
-    line-height: 30pt;
-    margin: 30pt 0 15pt 0;
-    break-after: avoid;
-    break-inside: avoid; }
+  break-before: recto;
+  page: contents-page h1;
+  page-font-size: 25pt;
+  page-line-height: 28pt;
+  page-margin: 28pt 0 14pt 0;
+  page-break-after: avoid;
+  page-break-inside: avoid; }
   section.toc.component-front h2 {
-    font-size: 15.4pt;
-    margin: 15pt 0 0 0;
+    font-size: 14pt;
+    margin: 14pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
   section.toc.component-front h3 {
     font-weight: bold;
-    margin: 15pt 0 0 0;
+    margin: 14pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
   section.toc.component-front h4 {
     font-style: italic;
-    margin: 15pt 0 0 0;
+    margin: 14pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
   section.toc.component-front h5 {
-    margin: 15pt 0 0 0;
+    margin: 14pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
 
@@ -3688,21 +3688,20 @@ h6 {
   counter-reset: page 1000; }
 
 .bibliography {
-  text-indent: 0;
-  margin: 15pt 0;
   list-style-type: none;
+  margin: 14pt 0;
   padding: 0;
-  margin: 15pt 0; }
+  text-indent: 0; }
   .bibliography li {
-    text-indent: -30pt;
-    margin-left: 30pt; }
+    text-indent: -20pt;
+    margin-left: 20pt; }
   .bibliography + p {
     text-indent: 0; }
 
 .box {
   border: 0.5pt solid grey;
-  margin: 15pt 0;
-  padding: 15pt;
+  margin: 14pt 0;
+  padding: 14pt;
   text-indent: 0; }
   .box + p {
     text-indent: 0; }
@@ -3721,18 +3720,18 @@ h6 {
 
 code, .code {
   font-family: "Inconsolata", monospace;
-  line-height: 15pt;
+  line-height: 14pt;
   white-space: pre-wrap;
   background-color: #eee;
   padding: 0.1em 0.3em;
   border-radius: 0.1em;
-  font-size: 8.8pt; }
+  font-size: 8pt; }
 
 pre {
   background-color: #eee;
   border-radius: 0.1em;
-  margin: 15pt 0;
-  padding: 7.5pt; }
+  margin: 14pt 0;
+  padding: 7pt; }
   pre code {
     padding: 0; }
   pre + p {
@@ -4012,26 +4011,26 @@ section.cover.component-front {
   text-align: center; }
   .dedication + p {
     text-indent: 0;
-    margin-top: 15pt; }
+    margin-top: 14pt; }
 
 .dialogue dt {
   clear: inside;
   float: left;
-  min-width: 30pt;
-  padding-right: 3.75pt; }
+  min-width: 20pt;
+  padding-right: 2.5pt; }
   .dialogue dt:after {
     content: ": "; }
 
 .dialogue dd {
-  margin: 0 0 0 33.75pt; }
+  margin: 0 0 0 22.5pt; }
 
 .epigraph {
   text-align: center;
   text-indent: 0;
-  padding: 0 30pt; }
+  padding: 0 20pt; }
   .epigraph + [class*=source] {
     text-indent: 0;
-    padding: 0 30pt;
+    padding: 0 20pt;
     page-break-before: avoid;
     text-align: center;
     font-style: italic; }
@@ -4039,12 +4038,12 @@ section.cover.component-front {
       font-style: normal; }
     .epigraph + [class*=source] + p {
       text-indent: 0;
-      margin-top: 15pt; }
+      margin-top: 14pt; }
 
 figure, .figure {
   clear: both;
   float: bottom;
-  margin: 15pt 0;
+  margin: 14pt 0;
   break-inside: avoid;
   background-color: inherit;
   font-size: inherit;
@@ -4059,14 +4058,14 @@ figure, .figure {
     page-break-before: avoid;
     text-align: center;
     text-indent: 0;
-    font-size: 8.8pt; }
+    font-size: 8pt; }
   figure img, figure p img, .figure img, .figure p img {
     width: auto;
     max-width: 100%;
     margin: 0 auto 0 auto;
     max-height: 100%; }
   figure + p, .figure + p {
-    text-indent: 15pt;
+    text-indent: 10pt;
     text-indent: 0; }
 
 .glossary, .glossary dl {
@@ -4085,39 +4084,39 @@ p, ul, ol, dl {
   hyphenate-lines: 2; }
 
 p > img:only-child {
-  margin-top: 15pt;
-  margin-left: -15pt;
-  margin-bottom: 15pt;
+  margin-top: 14pt;
+  margin-left: -14pt;
+  margin-bottom: 14pt;
   max-width: 100%;
   margin-left: 0; }
 
 p + p > img:first-child {
-  margin-top: 15pt;
-  margin-left: -15pt;
-  margin-bottom: 15pt;
+  margin-top: 14pt;
+  margin-left: -14pt;
+  margin-bottom: 14pt;
   max-width: 100%; }
 
 .index, .reference-index {
   columns: 2;
-  font-size: 8.8pt;
-  margin: 15pt 0 0 0; }
+  font-size: 8pt;
+  margin: 14pt 0 0 0; }
   .index ul, .index ol, .reference-index ul, .reference-index ol {
     margin: 0; }
   .index li, .reference-index li {
     list-style-type: none;
-    margin: 0 0 0 15pt;
-    text-indent: -15pt; }
+    margin: 0 0 0 10pt;
+    text-indent: -10pt; }
     .index li li, .reference-index li li {
-      margin: 0 0 0 7.5pt; }
+      margin: 0 0 0 5pt; }
   .index a, .reference-index a {
     text-indent: 0;
     font-size: 0; }
     .index a::before, .reference-index a::before {
       content: target-counter(attr(href), page);
-      font-size: 8.8pt; }
+      font-size: 8pt; }
     .index a::after, .reference-index a::after {
       content: ", ";
-      font-size: 8.8pt; }
+      font-size: 8pt; }
     .index a:last-of-type::after, .reference-index a:last-of-type::after {
       content: normal; }
 
@@ -4125,9 +4124,9 @@ p + p > img:first-child {
   box-sizing: border-box;
   clear: both;
   float: right;
-  font-size: 8.8pt;
+  font-size: 8pt;
   font-style: inherit;
-  margin: 0 0 15pt 15pt;
+  margin: 0 0 14pt 10pt;
   text-align: left;
   text-indent: 0;
   width: 35%;
@@ -4135,7 +4134,7 @@ p + p > img:first-child {
   p + .sidenote + p,
   p + .sidenote + .sidenote + p,
   p + .sidenote + .sidenote + .sidenote + p {
-    text-indent: 15pt; }
+    text-indent: 10pt; }
   h1 + .sidenote + p,
   h2 + .sidenote + p,
   h3 + .sidenote + p,
@@ -4160,9 +4159,9 @@ p + p > img:first-child {
   line-height: inherit; }
 
 .footnotes {
-  margin: 15pt 0 0 0;
-  font-size: 8.8pt;
-  line-height: 12pt; }
+  margin: 14pt 0 0 0;
+  font-size: 8pt;
+  line-height: 11.2pt; }
 
 .reversefootnote {
   visibility: hidden; }
@@ -4173,12 +4172,12 @@ p + p > img:first-child {
 
 @page {
   @footnotes {
-    margin-top: 7.5pt;
-    padding-top: 7.5pt;
-    font-size: 8.8pt; } }
+    margin-top: 7pt;
+    padding-top: 7pt;
+    font-size: 8pt; } }
 
 blockquote + .source {
-  padding: 15pt;
+  padding: 14pt 10pt;
   font-style: italic;
   text-indent: 0;
   page-break-before: avoid;
@@ -4194,7 +4193,7 @@ blockquote + .source {
     text-indent: 0; }
 
 blockquote > .source {
-  padding: 15pt;
+  padding: 14pt 10pt;
   font-style: italic;
   text-indent: 0;
   page-break-before: avoid;
@@ -4208,14 +4207,14 @@ blockquote > .source {
     font-style: normal; }
 
 .pullquote {
-  padding: 15pt;
-  font-size: 24.2pt;
-  line-height: 30pt; }
+  padding: 14pt 10pt;
+  font-size: 22pt;
+  line-height: 28pt; }
 
 table {
   border-collapse: collapse;
-  margin: 15pt 0;
-  font-size: 8.8pt;
+  margin: 14pt 0;
+  font-size: 8pt;
   width: 100%;
   max-width: 100%; }
   table ul, table ol {
@@ -4230,7 +4229,7 @@ th, td {
   border-bottom: 0.5pt solid grey;
   border-left: 0;
   border-right: 0;
-  padding: 1.5pt 3pt;
+  padding: 1.4pt 2.8pt;
   vertical-align: top;
   page-break-inside: avoid; }
   th p, th ul, th ol, th dl, td p, td ul, td ol, td dl {
@@ -4239,7 +4238,7 @@ th, td {
     text-align: left; }
 
 .table-caption {
-  margin: 15pt 0;
+  margin: 14pt 0;
   font-style: italic;
   text-indent: 0; }
   .table-caption em {
@@ -4261,29 +4260,29 @@ section.titlepage.component-front {
   section.titlepage.component-front .title-page-title,
   section.titlepage.component-front .title-page-title {
     font-weight: bold;
-    font-family: "Lato", sans-serif;
-    font-size: 21.56pt;
+    font-family: "Inter", sans-serif;
+    font-size: 19.6pt;
     line-height: 1.1;
     margin: 0;
     string-set: book-title content(); }
   section.halftitle.component-front .title-page-subtitle,
   section.titlepage.component-front .title-page-subtitle {
-    font-family: "Lato", sans-serif;
-    font-size: 15.4pt;
+    font-family: "Inter", sans-serif;
+    font-size: 14pt;
     line-height: 1.1;
-    margin: 15pt 0 0 0;
+    margin: 14pt 0 0 0;
     string-set: book-subtitle content(); }
   section.halftitle.component-front .title-page-author,
   section.titlepage.component-front .title-page-author {
-    font-size: 15.4pt;
-    line-height: 21pt;
-    margin: 60pt 0;
+    font-size: 14pt;
+    line-height: 19.6pt;
+    margin: 56pt 0;
     string-set: book-author content(); }
   section.halftitle.component-front .title-page-contributors,
   section.titlepage.component-front .title-page-contributors {
-    font-size: 11pt;
-    line-height: 15pt;
-    margin: 60pt 0 15pt 0; }
+    font-size: 10pt;
+    line-height: 14pt;
+    margin: 56pt 0 14pt 0; }
   section.halftitle.component-front .title-page-publisher,
   section.titlepage.component-front .title-page-publisher {
     position: absolute;
@@ -4294,7 +4293,7 @@ section.titlepage.component-front {
     margin-left: 50%; }
   section.halftitle.component-front .title-page-logo,
   section.titlepage.component-front .title-page-logo {
-    width: 42mm;
+    width: 15mm;
     position: absolute;
     text-align: center;
     bottom: 0;
@@ -4313,7 +4312,7 @@ section.titlepage.component-front {
   .toc nav ol ul, .toc nav ol ol {
     list-style-type: none;
     margin: 0;
-    margin-left: 15pt; }
+    margin-left: 10pt; }
   .toc nav ol li {
     margin: 0; }
     .toc nav ol li a .toc-entry-text {
@@ -4326,9 +4325,9 @@ section.titlepage.component-front {
       content: target-counter(attr(href), page, decimal);
       float: right; }
   p + .toc nav ol {
-    margin-top: 15pt; }
+    margin-top: 14pt; }
   .toc nav ol + p {
-    margin-top: 15pt; }
+    margin-top: 14pt; }
 
 /* CSS for Paged.js interface – v0.4 */
 /* https://gitlab.coko.foundation/pagedjs/interface-polyfill/-/blob/master/interface.css */
@@ -4464,6 +4463,11 @@ section.titlepage.component-front {
 .pagedjs_bleed-right .pagedjs_marks-crop:last-child {
   box-shadow: 0px -1px 0px 0px var(--pagedjs-crop-shadow); }
 
+.small-caps {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  letter-spacing: 0.07em; }
+
 .running-left {
   position: running(runningLeft); }
 
@@ -4471,9 +4475,192 @@ section.titlepage.component-front {
   position: running(runningRight); }
 
 section.copyright_page.component-front {
-  max-width: 40em; }
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%); }
+  section.copyright_page.component-front h1, section.copyright_page.component-front h2, section.copyright_page.component-front h3, section.copyright_page.component-front h4, section.copyright_page.component-front h5, section.copyright_page.component-front h6 {
+    color: black;
+    font-family: "Crimson Pro", serif;
+    font-size: inherit;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 14pt;
+    margin: 21pt 0 7pt 0; }
   section.copyright_page.component-front h1 {
-    visibility: hidden; }
+    display: none; }
 
 section.cover.component-front figure {
   margin: 0; }
+
+section.toc.component-front nav ol li a:after {
+  font-family: "Crimson Pro", serif;
+  font-size: 10pt; }
+
+section.toc.component-front nav ol li.toc-level-one ~ .toc-level-two {
+  margin-left: 10pt; }
+
+section.toc.component-front nav ol li.toc-section {
+  margin-left: 20pt; }
+
+section.toc.component-front nav ol li.toc-front + .toc-body,
+section.toc.component-front nav ol li.toc-body + .toc-unnumbered,
+section.toc.component-front nav ol li.toc-body + .toc-back,
+section.toc.component-front nav ol li.toc-unnumbered + .toc-back {
+  margin-top: 14pt !important; }
+
+:root {
+  --apollo-accent: rgb(0, 131, 141); }
+
+h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 32pt;
+  line-height: 42pt;
+  text-align: left; }
+
+h2 {
+  color: var(--apollo-accent);
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14pt;
+  line-height: 14pt;
+  margin-bottom: 0;
+  margin-top: 28pt;
+  text-align: left; }
+
+h3 {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  letter-spacing: 0.07em;
+  font-family: "Inter", sans-serif;
+  font-size: 10pt;
+  font-weight: 500;
+  line-height: 14pt;
+  margin-bottom: 0;
+  margin-top: 14pt;
+  text-align: left; }
+
+h4 {
+  font-family: "Crimson Pro", serif;
+  text-align: left; }
+
+h5 {
+  font-family: "Crimson Pro", serif;
+  font-style: italic;
+  font-weight: bold;
+  text-align: left; }
+
+h6 {
+  font-family: "Crimson Pro", serif;
+  font-style: italic;
+  text-align: left; }
+
+@page half-title-page :left {
+  margin-left: 39.5mm;
+  margin-right: 39.5mm; }
+
+@page half-title-page :right {
+  margin-left: 39.5mm;
+  margin-right: 39.5mm; }
+
+@page title-page :left {
+  margin-left: 39.5mm;
+  margin-right: 39.5mm; }
+
+@page title-page :right {
+  margin-left: 39.5mm;
+  margin-right: 39.5mm; }
+
+@page copyright :left {
+  margin-left: 39.5mm;
+  margin-right: 39.5mm; }
+
+@page copyright :right {
+  margin-left: 39.5mm;
+  margin-right: 39.5mm; }
+
+@page contents-page :left {
+  margin-left: 39.5mm;
+  margin-right: 39.5mm; }
+
+@page contents-page :right {
+  margin-left: 39.5mm;
+  margin-right: 39.5mm; }
+
+section.halftitle.component-front {
+  border-top: 5pt solid var(--apollo-accent);
+  border-bottom: 5pt solid var(--apollo-accent);
+  padding: 14pt 0; }
+  section.halftitle.component-front h1 {
+    font-size: 48pt;
+    line-height: 1;
+    margin-top: 0; }
+  section.halftitle.component-front h1 + p, section.halftitle.component-front .cst {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.07em;
+    color: var(--apollo-accent);
+    font-family: "Inter", sans-serif;
+    font-size: 16pt;
+    font-weight: 500;
+    line-height: 24pt; }
+  section.halftitle.component-front h2 {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.07em;
+    font-family: "Inter", sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    line-height: 14pt;
+    margin-bottom: 0;
+    margin-top: 14pt;
+    text-align: left;
+    color: black; }
+  section.halftitle.component-front p, section.halftitle.component-front ul, section.halftitle.component-front ol, section.halftitle.component-front dl {
+    text-align: left; }
+  section.halftitle.component-front h1 {
+    margin: 0; }
+
+section.titlepage.component-front {
+  border-top: 5pt solid var(--apollo-accent);
+  border-bottom: 5pt solid var(--apollo-accent);
+  padding: 14pt 0; }
+  section.titlepage.component-front h1 {
+    font-size: 48pt;
+    line-height: 1;
+    margin-top: 0; }
+  section.titlepage.component-front h1 + p, section.titlepage.component-front .cst {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.07em;
+    color: var(--apollo-accent);
+    font-family: "Inter", sans-serif;
+    font-size: 16pt;
+    font-weight: 500;
+    line-height: 24pt; }
+  section.titlepage.component-front h2 {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.07em;
+    font-family: "Inter", sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    line-height: 14pt;
+    margin-bottom: 0;
+    margin-top: 14pt;
+    text-align: left;
+    color: black; }
+  section.titlepage.component-front p, section.titlepage.component-front ul, section.titlepage.component-front ol, section.titlepage.component-front dl {
+    text-align: left; }
+
+section.toc.component-front nav {
+  font-family: "Inter", sans-serif; }
+  section.toc.component-front nav ol li {
+    margin-bottom: 7pt; }
+    section.toc.component-front nav ol li.toc-part, section.toc.component-front nav ol li.toc-unit {
+      color: var(--apollo-accent);
+      font-weight: 500; }
+    section.toc.component-front nav ol li.toc-level-one ~ .toc-level-two {
+      font-family: "Crimson Pro", serif; }
+    section.toc.component-front nav ol li.toc-section {
+      font-family: "Crimson Pro", serif;
+      font-size: 10pt; }

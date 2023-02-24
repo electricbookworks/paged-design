@@ -6,8 +6,17 @@
 // after default/_styles.scss
 
 // Partials for all Ketida HTML
+@import "partials/ketida/mixins.scss";
+@import "partials/ketida/typography.scss";
 @import "partials/ketida/margin-boxes.scss";
 @import "partials/ketida/copyright-page.scss";
 @import "partials/ketida/cover.scss";
+@import "partials/ketida/contents.scss";
 
 // Partials specifically for this design
+@import "partials/apollo/colors.scss";
+@import "partials/apollo/mixins.scss";
+@import "partials/apollo/typography.scss";
+@import "partials/apollo/layout.scss";
+@import "partials/apollo/titlepage.scss";
+@import "partials/apollo/contents.scss";

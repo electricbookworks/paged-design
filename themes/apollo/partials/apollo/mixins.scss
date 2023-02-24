@@ -1,0 +1,8 @@
+// Mixins intended for reuse in various partials.
+// Mixins created only for use in a specific partial
+// should be created in that partial, not here.
+
+@mixin page-center-text-area() {
+    margin-left: ($margin-outside + $margin-inside) / 2;
+    margin-right: ($margin-outside + $margin-inside) / 2;
+}

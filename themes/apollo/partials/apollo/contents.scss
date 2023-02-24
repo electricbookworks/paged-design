@@ -1,0 +1,33 @@
+#{$page-toc} {
+
+    nav {
+        font-family: $font-text-secondary;
+
+        ol {
+
+            li {
+                margin-bottom: $line-height-default / 2;
+
+                &.toc-front {}
+
+                &.toc-part,
+                &.toc-unit {
+                    color: $apollo-accent;
+                    font-weight: 500;
+                }
+
+                &.toc-level-one {
+
+                    & ~ .toc-level-two {
+                        font-family: $font-text-main;
+                    }
+                }
+
+                &.toc-section {
+                    font-family: $font-text-main;
+                    font-size: $font-size-default;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+// Settings colors as custom properties
+// lets us change colour in the browser
+// by changing the custom property.
+
+:root {
+    --apollo-accent: rgb(0, 131, 141);
+}
+
+$apollo-accent: var(--apollo-accent);

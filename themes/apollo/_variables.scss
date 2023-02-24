@@ -10,9 +10,20 @@ $page-width: 210mm;
 $page-height: 297mm;
 $margin-top: 60pt;
 $margin-bottom: 60pt;
+$margin-inside: 15mm;
+$margin-outside: 15mm + 49mm; // outer margin + sidebar
 
 // Since we can't yet control `page-1` in Ketida HTML
 // we rather just give all frontmatter decimal page numbering.
 $frontmatter-page-numbers: decimal;
 $verso-bottom-frontmatter: counter(page, $frontmatter-page-numbers);
 $recto-bottom-frontmatter: counter(page, $frontmatter-page-numbers);
+
+// Type
+$font-text-main: "Crimson Pro", serif;
+$font-text-secondary: "Inter", sans-serif;
+$font-display-main: "Inter", sans-serif;
+$font-display-secondary: "Crimson Pro", serif;
+$font-size-default: 10pt;
+$line-height-default: 14pt;
+$paragraph-indent: 10pt;
