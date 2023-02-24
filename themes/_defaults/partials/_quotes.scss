@@ -33,7 +33,7 @@ blockquote > #{$source} {
 // Pullquotes
 
 #{$pullquote} {
-    padding: $line-height-default;
+    padding: $line-height-default $paragraph-indent;
     font-size: $font-size-default * 2.2;
     line-height: $line-height-default * 2;
 }

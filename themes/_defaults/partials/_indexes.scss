@@ -13,10 +13,10 @@ $index-font-size: $font-size-default * $font-size-smaller;
     }
     li {
         list-style-type: none;
-        margin: 0 0 0 ($line-height-default * 1);
-        text-indent: $line-height-default * (-1);
+        margin: 0 0 0 ($paragraph-indent * 1);
+        text-indent: $paragraph-indent * (-1);
         li {
-            margin: 0 0 0 ($line-height-default / 2);
+            margin: 0 0 0 ($paragraph-indent / 2);
         }
     }
     a {

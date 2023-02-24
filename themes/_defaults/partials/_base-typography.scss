@@ -75,7 +75,7 @@ h6 {
     text-align: $text-align-default;
     // Indent all paragraphs that follow paragraphs
     & + & {
-        text-indent: $line-height-default;
+        text-indent: $paragraph-indent;
     }
 }
 p {
@@ -87,7 +87,7 @@ p {
     margin-top: $line-height-default;
     margin-bottom: $line-height-default;
     // Move markers into text area
-    margin-left: $line-height-default;
+    margin-left: $paragraph-indent;
 }
 @mixin ol() {
     @include list;
@@ -120,7 +120,7 @@ dl {
 
 // Blockquotes
 @mixin blockquote() {
-    padding: $line-height-default;
+    padding: $line-height-default $paragraph-indent;
     & + blockquote {
         padding-top: 0;
     }

@@ -93,18 +93,18 @@ p {
   margin: 0;
   text-align: left; }
   p + p {
-    text-indent: 13pt; }
+    text-indent: 11pt; }
 
 ol {
   margin-top: 13pt;
   margin-bottom: 13pt;
-  margin-left: 13pt;
+  margin-left: 11pt;
   list-style: decimal; }
 
 ul {
   margin-top: 13pt;
   margin-bottom: 13pt;
-  margin-left: 13pt;
+  margin-left: 11pt;
   list-style: disc; }
 
 dl {
@@ -116,7 +116,7 @@ dl {
     margin-right: 4.5pt; }
 
 blockquote {
-  padding: 13pt; }
+  padding: 13pt 11pt; }
   blockquote + blockquote {
     padding-top: 0; }
   h1 + blockquote, h2 + blockquote, h3 + blockquote,
@@ -267,13 +267,13 @@ img {
   break-before: recto; }
 
 .contents-page {
-  break-before: recto; }
-  .contents-page h1 {
-    font-size: 22.5pt;
-    line-height: 26pt;
-    margin: 26pt 0 13pt 0;
-    break-after: avoid;
-    break-inside: avoid; }
+  break-before: recto;
+  page: contents-page h1;
+  page-font-size: 22.5pt;
+  page-line-height: 26pt;
+  page-margin: 26pt 0 13pt 0;
+  page-break-after: avoid;
+  page-break-inside: avoid; }
   .contents-page h2 {
     font-size: 12.6pt;
     margin: 13pt 0 0 0;
@@ -3689,14 +3689,13 @@ h6 {
   counter-reset: page 1000; }
 
 .bibliography {
-  text-indent: 0;
-  margin: 13pt 0;
   list-style-type: none;
+  margin: 13pt 0;
   padding: 0;
-  margin: 13pt 0; }
+  text-indent: 0; }
   .bibliography li {
-    text-indent: -26pt;
-    margin-left: 26pt; }
+    text-indent: -22pt;
+    margin-left: 22pt; }
   .bibliography + p {
     text-indent: 0; }
 
@@ -4018,21 +4017,21 @@ div.cover {
 .dialogue dt {
   clear: inside;
   float: left;
-  min-width: 26pt;
-  padding-right: 3.25pt; }
+  min-width: 22pt;
+  padding-right: 2.75pt; }
   .dialogue dt:after {
     content: ": "; }
 
 .dialogue dd {
-  margin: 0 0 0 29.25pt; }
+  margin: 0 0 0 24.75pt; }
 
 .epigraph {
   text-align: center;
   text-indent: 0;
-  padding: 0 26pt; }
+  padding: 0 22pt; }
   .epigraph + [class*=source] {
     text-indent: 0;
-    padding: 0 26pt;
+    padding: 0 22pt;
     page-break-before: avoid;
     text-align: center;
     font-style: italic; }
@@ -4067,7 +4066,7 @@ figure, .figure {
     margin: 0 auto 0 auto;
     max-height: 100%; }
   figure + p, .figure + p {
-    text-indent: 13pt;
+    text-indent: 11pt;
     text-indent: 0; }
 
 .glossary, .glossary dl {
@@ -4106,10 +4105,10 @@ p + p > img:first-child {
     margin: 0; }
   .index li, .reference-index li {
     list-style-type: none;
-    margin: 0 0 0 13pt;
-    text-indent: -13pt; }
+    margin: 0 0 0 11pt;
+    text-indent: -11pt; }
     .index li li, .reference-index li li {
-      margin: 0 0 0 6.5pt; }
+      margin: 0 0 0 5.5pt; }
   .index a, .reference-index a {
     text-indent: 0;
     font-size: 0; }
@@ -4128,7 +4127,7 @@ p + p > img:first-child {
   float: right;
   font-size: 7.2pt;
   font-style: inherit;
-  margin: 0 0 13pt 13pt;
+  margin: 0 0 13pt 11pt;
   text-align: left;
   text-indent: 0;
   width: 35%;
@@ -4136,7 +4135,7 @@ p + p > img:first-child {
   p + .sidenote + p,
   p + .sidenote + .sidenote + p,
   p + .sidenote + .sidenote + .sidenote + p {
-    text-indent: 13pt; }
+    text-indent: 11pt; }
   h1 + .sidenote + p,
   h2 + .sidenote + p,
   h3 + .sidenote + p,
@@ -4179,7 +4178,7 @@ p + p > img:first-child {
     font-size: 7.2pt; } }
 
 blockquote + .source {
-  padding: 13pt;
+  padding: 13pt 11pt;
   font-style: italic;
   text-indent: 0;
   page-break-before: avoid;
@@ -4195,7 +4194,7 @@ blockquote + .source {
     text-indent: 0; }
 
 blockquote > .source {
-  padding: 13pt;
+  padding: 13pt 11pt;
   font-style: italic;
   text-indent: 0;
   page-break-before: avoid;
@@ -4209,7 +4208,7 @@ blockquote > .source {
     font-style: normal; }
 
 .pullquote {
-  padding: 13pt;
+  padding: 13pt 11pt;
   font-size: 19.8pt;
   line-height: 26pt; }
 
@@ -4295,7 +4294,7 @@ th, td {
     margin-left: 50%; }
   .half-title-page .title-page-logo,
   .title-page .title-page-logo {
-    width: 35.56mm;
+    width: 15mm;
     position: absolute;
     text-align: center;
     bottom: 0;
@@ -4314,7 +4313,7 @@ th, td {
   .toc-list ul, .toc-list ol, #markdown-toc ul, #markdown-toc ol {
     list-style-type: none;
     margin: 0;
-    margin-left: 13pt; }
+    margin-left: 11pt; }
   .toc-list li, #markdown-toc li {
     margin: 0; }
     .toc-list li a .toc-entry-text, #markdown-toc li a .toc-entry-text {

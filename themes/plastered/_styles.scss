@@ -164,7 +164,7 @@ $heart-curves: $line-height-default / 2;
             z-index: -1;
         }
     & + p, & + blockquote p:first-child {
-        text-indent: -($line-height-default / 2);
+        text-indent: -($paragraph-indent / 2);
         &::first-letter {
             display: inline-block;
             background-color: $color-text-main;

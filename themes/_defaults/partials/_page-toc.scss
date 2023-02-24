@@ -2,6 +2,8 @@
 
 #{$page-toc} {
     break-before: recto;
+    page: contents-page
+
     // Conventionally, the 'Contents' heading is smaller
     // than a chapter opener. So we use smaller styles
     // for each heading level.

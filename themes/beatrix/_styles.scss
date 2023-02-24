@@ -119,7 +119,7 @@ blockquote {
         display: block;
         height: $line-height-default;
         border-bottom: $rule-thickness dotted $color-light;
-        margin-right: $line-height-default;
+        margin-right: $paragraph-indent;
     }
 }
 #{$endnotes} {
