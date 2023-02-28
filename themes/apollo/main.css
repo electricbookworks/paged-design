@@ -90,7 +90,7 @@ h6 {
 
 p {
   margin: 0;
-  text-align: justify; }
+  text-align: start; }
   p + p {
     text-indent: 10pt; }
 
@@ -4664,3 +4664,20 @@ section.toc.component-front nav {
     section.toc.component-front nav ol li.toc-section {
       font-family: "Crimson Pro", serif;
       font-size: 10pt; }
+
+@page :blank {
+  background-color: var(--apollo-accent); }
+
+.component:not(.copyright_page) header + p,
+.component-front:not(.copyright_page) header + p,
+.component-back:not(.copyright_page) header + p,
+.component-body:not(.copyright_page) header + p {
+  color: var(--apollo-accent);
+  font-size: 16pt;
+  line-height: 20pt;
+  margin-bottom: 14pt; }
+  .component:not(.copyright_page) header + p + p,
+  .component-front:not(.copyright_page) header + p + p,
+  .component-back:not(.copyright_page) header + p + p,
+  .component-body:not(.copyright_page) header + p + p {
+    text-indent: 0; }

@@ -1,0 +1,28 @@
+@mixin leader-paragraph() {
+    color: $apollo-accent;
+    font-size: 16pt;
+    line-height: 20pt;
+    margin-bottom: $line-height-default;
+}
+
+.component,
+.component-front,
+.component-back,
+.component-body {
+
+    &:not(.copyright_page) {
+
+        header {
+
+            // When a paragraph follows a main heading,
+            // treat it as a leader paragraph.
+            & + p {
+                @include leader-paragraph();
+
+                & + p {
+                    text-indent: 0;
+                }
+            }
+        }
+    }
+}

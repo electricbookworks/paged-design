@@ -1,3 +1,7 @@
 {
-  "name": "Apollo"
+  "name": "Apollo",
+  "scripts": {
+    "prelayout": ["headers.js"],
+    "postlayout": ["baseline-grid.js"]
+  }
 }
