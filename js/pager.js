@@ -1,5 +1,8 @@
 /* global MathJax, MutationObserver */
 
+// Variable for holding theme data
+let themes
+
 // Check that a theme exists
 function checkThemeExists (theme) {
   'use strict'
@@ -25,6 +28,26 @@ function detectThemeFromURL () {
   return theme
 }
 
+// Load any theme scripts
+function loadThemeScripts (themeDirectory, themeData, preOrPostLayout) {
+  'use strict'
+
+  return new Promise((resolve) => {
+    // Create a script element for each
+    // script in the theme.
+    themeData.scripts[preOrPostLayout].forEach(function (script) {
+      const themeScriptElement = document.createElement('script')
+      themeScriptElement.src = '../../themes/' +
+        themeDirectory +
+        '/js/' +
+        script
+      themeScriptElement.async = false
+      document.head.insertAdjacentElement('beforeend', themeScriptElement)
+      resolve()
+    })
+  })
+}
+
 // Load paged.js on the page
 function loadPagedJS () {
   'use strict'
@@ -33,16 +56,20 @@ function loadPagedJS () {
   pagedjs.src = 'https://unpkg.com/pagedjs/dist/paged.polyfill.js'
   pagedjs.async = false
   document.body.insertAdjacentElement('beforeend', pagedjs)
+
+  // With Paged loaded, we can add scripts
+  // that must run after Paged has loaded.
+  loadThemeScripts(detectThemeFromURL(), themes[detectThemeFromURL()], 'postlayout')
 }
 
 // Load theme CSS
-function loadThemeStylesheet (theme) {
+async function loadThemeStylesheet (themeDirectory) {
   'use strict'
 
   // Create a link element pointing to the desired theme's stylesheet
   const themeStylesheetLink = document.createElement('link')
   themeStylesheetLink.setAttribute('rel', 'stylesheet')
-  themeStylesheetLink.setAttribute('href', '../../themes/' + theme + '/main.css')
+  themeStylesheetLink.setAttribute('href', '../../themes/' + themeDirectory + '/main.css')
 
   // If there is an existing theme stylesheet, remove it
   const stylesheet = document.querySelector('link[href^="../../themes/"]')
@@ -53,24 +80,30 @@ function loadThemeStylesheet (theme) {
   // Insert the new stylesheet
   document.head.insertAdjacentElement('beforeend', themeStylesheetLink)
 
+  // Load theme scripts
+  const themeData = themes[themeDirectory]
+  if (themeData.scripts) {
+    await loadThemeScripts(themeDirectory, themeData, 'prelayout')
+  }
+
   // Load Paged.js
   loadPagedJS()
 }
 
 // Set new theme in URL parameter
-function updateThemeInURLParameter (theme) {
+function updateThemeInURLParameter (themeDirectory) {
   'use strict'
 
-  // Reload if the theme isn't already loaded
-  if (theme !== detectThemeFromURL()) {
+  // Reload if the themeDirectory isn't already loaded
+  if (themeDirectory !== detectThemeFromURL()) {
     // Get the current URL
     const currentLocationWithParams = window.location.href
 
     // Remove any params
     const currentLocationWithoutParams = currentLocationWithParams.match(/[^?]+/)
 
-    // Reload the page with new theme param
-    window.location.href = currentLocationWithoutParams + '?theme=' + theme
+    // Reload the page with new themeDirectory param
+    window.location.href = currentLocationWithoutParams + '?theme=' + themeDirectory
   }
 }
 
@@ -94,7 +127,7 @@ function insertLinkToHomePage () {
 }
 
 // Create a theme-switcher dropdown.
-function showThemeSelectionList (listObject) {
+function showThemeSelectionList (themes) {
   'use strict'
 
   // Create a div for the list
@@ -123,13 +156,13 @@ function showThemeSelectionList (listObject) {
 
   // Add the themes as options
   let selected = ''
-  Object.entries(listObject).forEach(
+  Object.entries(themes).forEach(
     function ([key, value]) {
       selected = ''
       if (key === detectThemeFromURL()) {
         selected = 'selected'
       }
-      selectList.innerHTML += '<option value="' + key + '"' + selected + '>' + value + '</option>'
+      selectList.innerHTML += '<option value="' + key + '"' + selected + '>' + value.name + '</option>'
     }
   )
 
@@ -182,7 +215,6 @@ function showThemeSelectionList (listObject) {
 }
 
 // Load themes.json
-let themes
 async function pagerLoadThemes () {
   'use strict'
 
@@ -196,6 +228,8 @@ async function pagerLoadThemes () {
       return response.json()
     })
     .then(function (data) {
+      // Populate the themes variable
+      // with the data in the response.
       themes = data
     })
 

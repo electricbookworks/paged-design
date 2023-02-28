@@ -14,7 +14,7 @@
   "scripts": {
     "package": "node js/package.js",
     "serve": "http-server -p 5000",
-    "compile": "nodemon js/build.js -e scss",
+    "compile": "nodemon js/build.js -e scss,html,js",
     "start": "npm-run-all --parallel compile serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

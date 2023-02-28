@@ -25,7 +25,7 @@ async function writeThemeData () {
     // If it has one, write its theme data to themesData
     if (fs.existsSync(pathToThemeJS)) {
       const themeDataFile = await fsPromises.readFile(pathToThemeJS, { encoding: 'utf-8' })
-      themesData[directory.name] = JSON.parse(themeDataFile).name
+      themesData[directory.name] = JSON.parse(themeDataFile)
     }
 
     // Count each directory we look inside
