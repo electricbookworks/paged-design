@@ -89,33 +89,31 @@ h6 {
   break-inside: avoid; }
 
 p {
-  margin: 0;
-  text-align: start; }
-  p + p {
-    text-indent: 10pt; }
+  text-align: start;
+  margin-bottom: 7pt; }
 
 ol {
-  margin-top: 14pt;
-  margin-bottom: 14pt;
+  margin-top: 7pt;
+  margin-bottom: 7pt;
   margin-left: 10pt;
   list-style: decimal; }
 
 ul {
-  margin-top: 14pt;
-  margin-bottom: 14pt;
+  margin-top: 7pt;
+  margin-bottom: 7pt;
   margin-left: 10pt;
   list-style: disc; }
 
 dl {
-  margin: 14pt 0; }
+  margin: 7pt 0; }
   dl dt {
-    display: inline-block;
+    display: block;
     float: left;
     font-weight: bold;
     margin-right: 5pt; }
 
 blockquote {
-  padding: 14pt 10pt; }
+  padding: 7pt 10pt; }
   blockquote + blockquote {
     padding-top: 0; }
   h1 + blockquote, h2 + blockquote, h3 + blockquote,
@@ -193,7 +191,7 @@ section.copyright_page.component-front {
     font-size: 10pt;
     font-weight: bold;
     font-style: normal;
-    margin: 14pt 0 7pt 0; }
+    margin: 7pt 0 0 0; }
     section.copyright_page.component-front h1 em, section.copyright_page.component-front h2 em, section.copyright_page.component-front h3 em, section.copyright_page.component-front h4 em, section.copyright_page.component-front h5 em, section.copyright_page.component-front h6 em {
       font-style: italic; }
   section.copyright_page.component-front h1[id="copyright"] {
@@ -253,7 +251,7 @@ section.previous_publications_page {
     break-inside: avoid; }
   section.previous_publications_page p {
     text-align: center;
-    margin-bottom: 14pt; }
+    margin-bottom: 7pt; }
     section.previous_publications_page p + p {
       text-indent: 0; }
 
@@ -3689,7 +3687,7 @@ h6 {
 
 .bibliography {
   list-style-type: none;
-  margin: 14pt 0;
+  margin: 7pt 0;
   padding: 0;
   text-indent: 0; }
   .bibliography li {
@@ -3730,7 +3728,7 @@ code, .code {
 pre {
   background-color: #eee;
   border-radius: 0.1em;
-  margin: 14pt 0;
+  margin: 7pt 0;
   padding: 7pt; }
   pre code {
     padding: 0; }
@@ -4011,7 +4009,7 @@ section.cover.component-front {
   text-align: center; }
   .dedication + p {
     text-indent: 0;
-    margin-top: 14pt; }
+    margin-top: 7pt; }
 
 .dialogue dt {
   clear: inside;
@@ -4099,7 +4097,7 @@ p + p > img:first-child {
 .index, .reference-index {
   columns: 2;
   font-size: 8pt;
-  margin: 14pt 0 0 0; }
+  margin: 7pt 0 0 0; }
   .index ul, .index ol, .reference-index ul, .reference-index ol {
     margin: 0; }
   .index li, .reference-index li {
@@ -4126,7 +4124,7 @@ p + p > img:first-child {
   float: right;
   font-size: 8pt;
   font-style: inherit;
-  margin: 0 0 14pt 10pt;
+  margin: 0 0 7pt 10pt;
   text-align: left;
   text-indent: 0;
   width: 35%;
@@ -4177,7 +4175,7 @@ p + p > img:first-child {
     font-size: 8pt; } }
 
 blockquote + .source {
-  padding: 14pt 10pt;
+  padding: 7pt 10pt;
   font-style: italic;
   text-indent: 0;
   page-break-before: avoid;
@@ -4193,7 +4191,7 @@ blockquote + .source {
     text-indent: 0; }
 
 blockquote > .source {
-  padding: 14pt 10pt;
+  padding: 7pt 10pt;
   font-style: italic;
   text-indent: 0;
   page-break-before: avoid;
@@ -4207,7 +4205,7 @@ blockquote > .source {
     font-style: normal; }
 
 .pullquote {
-  padding: 14pt 10pt;
+  padding: 7pt 10pt;
   font-size: 22pt;
   line-height: 28pt; }
 
@@ -4229,7 +4227,7 @@ th, td {
   border-bottom: 0.5pt solid grey;
   border-left: 0;
   border-right: 0;
-  padding: 1.4pt 2.8pt;
+  padding: 0.2em 0.3em;
   vertical-align: top;
   page-break-inside: avoid; }
   th p, th ul, th ol, th dl, td p, td ul, td ol, td dl {
@@ -4238,7 +4236,7 @@ th, td {
     text-align: left; }
 
 .table-caption {
-  margin: 14pt 0;
+  margin: 7pt 0;
   font-style: italic;
   text-indent: 0; }
   .table-caption em {
@@ -4491,6 +4489,9 @@ section.copyright_page.component-front {
 
 section.cover.component-front figure {
   margin: 0; }
+
+section.titlepage.component-front p.author {
+  margin-bottom: 0; }
 
 section.toc.component-front nav ol li a:after {
   font-family: "Crimson Pro", serif;

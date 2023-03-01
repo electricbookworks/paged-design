@@ -26,5 +26,13 @@ $font-display-main: "Inter", sans-serif;
 $font-display-secondary: "Crimson Pro", serif;
 $font-size-default: 10pt;
 $line-height-default: 14pt;
-$paragraph-indent: 10pt;
 $text-align-default: start;
+
+// Paragraphs
+$paragraphs: spaced;
+$text-indent: 10pt;
+
+// Note: $text-spacing that isn't $line-height-default
+// will break the baseline grid, and therefore
+// line alignment across spreads.
+$text-spacing: $line-height-default / 2;

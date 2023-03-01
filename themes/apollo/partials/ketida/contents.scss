@@ -21,12 +21,12 @@
                 &.toc-level-one {
 
                     & ~ .toc-level-two {
-                        margin-left: $paragraph-indent;
+                        margin-left: $text-indent;
                     }
                 }
 
                 &.toc-section {
-                    margin-left: $paragraph-indent * 2;
+                    margin-left: $text-indent * 2;
                 }
 
                 // Add space between TOC sections
