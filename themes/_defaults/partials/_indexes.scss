@@ -7,16 +7,16 @@ $index-font-size: $font-size-default * $font-size-smaller;
 #{$index} {
     columns: 2;
     font-size: $index-font-size;
-    margin: $line-height-default 0 0 0;
+    margin: $text-spacing 0 0 0;
     ul, ol {
         margin: 0;
     }
     li {
         list-style-type: none;
-        margin: 0 0 0 ($paragraph-indent * 1);
-        text-indent: $paragraph-indent * (-1);
+        margin: 0 0 0 ($text-indent * 1);
+        text-indent: $text-indent * (-1);
         li {
-            margin: 0 0 0 ($paragraph-indent / 2);
+            margin: 0 0 0 ($text-indent / 2);
         }
     }
     a {

@@ -90,33 +90,33 @@ h6 {
   break-inside: avoid; }
 
 p {
-  margin: 0;
-  text-align: left; }
+  text-align: left;
+  margin: 0; }
   p + p {
     text-indent: 11pt; }
 
 ol {
-  margin-top: 13pt;
-  margin-bottom: 13pt;
+  margin-top: 15pt;
+  margin-bottom: 15pt;
   margin-left: 11pt;
   list-style: decimal; }
 
 ul {
-  margin-top: 13pt;
-  margin-bottom: 13pt;
+  margin-top: 15pt;
+  margin-bottom: 15pt;
   margin-left: 11pt;
   list-style: disc; }
 
 dl {
-  margin: 13pt 0; }
+  margin: 15pt 0; }
   dl dt {
-    display: inline-block;
+    display: block;
     float: left;
     font-weight: bold;
     margin-right: 4.5pt; }
 
 blockquote {
-  padding: 13pt 11pt; }
+  padding: 15pt 11pt; }
   blockquote + blockquote {
     padding-top: 0; }
   h1 + blockquote, h2 + blockquote, h3 + blockquote,
@@ -187,14 +187,14 @@ img {
   bottom: 0; }
   .copyright-page p {
     text-align: initial;
-    margin-bottom: 6.5pt; }
+    margin-bottom: 15pt; }
     .copyright-page p + p {
       text-indent: 0; }
   .copyright-page h1, .copyright-page h2, .copyright-page h3, .copyright-page h4, .copyright-page h5, .copyright-page h6 {
     font-size: 9pt;
     font-weight: bold;
     font-style: normal;
-    margin: 13pt 0 6.5pt 0; }
+    margin: 15pt 0 0 0; }
     .copyright-page h1 em, .copyright-page h2 em, .copyright-page h3 em, .copyright-page h4 em, .copyright-page h5 em, .copyright-page h6 em {
       font-style: italic; }
   .copyright-page h1[id="copyright"] {
@@ -254,7 +254,7 @@ img {
     break-inside: avoid; }
   .previous-publications-page p {
     text-align: center;
-    margin-bottom: 13pt; }
+    margin-bottom: 15pt; }
     .previous-publications-page p + p {
       text-indent: 0; }
 
@@ -3690,7 +3690,7 @@ h6 {
 
 .bibliography {
   list-style-type: none;
-  margin: 13pt 0;
+  margin: 15pt 0;
   padding: 0;
   text-indent: 0; }
   .bibliography li {
@@ -3731,7 +3731,7 @@ code, .code {
 pre {
   background-color: #eee;
   border-radius: 0.1em;
-  margin: 13pt 0;
+  margin: 15pt 0;
   padding: 6.5pt; }
   pre code {
     padding: 0; }
@@ -4012,7 +4012,7 @@ div.cover {
   text-align: center; }
   .dedication + p {
     text-indent: 0;
-    margin-top: 13pt; }
+    margin-top: 15pt; }
 
 .dialogue dt {
   clear: inside;
@@ -4100,7 +4100,7 @@ p + p > img:first-child {
 .index, .reference-index {
   columns: 2;
   font-size: 7.2pt;
-  margin: 13pt 0 0 0; }
+  margin: 15pt 0 0 0; }
   .index ul, .index ol, .reference-index ul, .reference-index ol {
     margin: 0; }
   .index li, .reference-index li {
@@ -4127,7 +4127,7 @@ p + p > img:first-child {
   float: right;
   font-size: 7.2pt;
   font-style: inherit;
-  margin: 0 0 13pt 11pt;
+  margin: 0 0 15pt 11pt;
   text-align: left;
   text-indent: 0;
   width: 35%;
@@ -4178,7 +4178,7 @@ p + p > img:first-child {
     font-size: 7.2pt; } }
 
 blockquote + .source {
-  padding: 13pt 11pt;
+  padding: 15pt 11pt;
   font-style: italic;
   text-indent: 0;
   page-break-before: avoid;
@@ -4194,7 +4194,7 @@ blockquote + .source {
     text-indent: 0; }
 
 blockquote > .source {
-  padding: 13pt 11pt;
+  padding: 15pt 11pt;
   font-style: italic;
   text-indent: 0;
   page-break-before: avoid;
@@ -4208,7 +4208,7 @@ blockquote > .source {
     font-style: normal; }
 
 .pullquote {
-  padding: 13pt 11pt;
+  padding: 15pt 11pt;
   font-size: 19.8pt;
   line-height: 26pt; }
 
@@ -4230,7 +4230,7 @@ th, td {
   border-bottom: 1.5pt solid grey;
   border-left: 0;
   border-right: 0;
-  padding: 1.3pt 2.6pt;
+  padding: 0.2em 0.3em;
   vertical-align: top;
   page-break-inside: avoid; }
   th p, th ul, th ol, th dl, td p, td ul, td ol, td dl {
@@ -4239,7 +4239,7 @@ th, td {
     text-align: left; }
 
 .table-caption {
-  margin: 13pt 0;
+  margin: 15pt 0;
   font-style: italic;
   text-indent: 0; }
   .table-caption em {

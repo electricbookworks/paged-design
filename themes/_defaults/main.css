@@ -89,8 +89,8 @@ h6 {
   break-inside: avoid; }
 
 p {
-  margin: 0;
-  text-align: justify; }
+  text-align: justify;
+  margin: 0; }
   p + p {
     text-indent: 11pt; }
 
@@ -109,7 +109,7 @@ ul {
 dl {
   margin: 15pt 0; }
   dl dt {
-    display: inline-block;
+    display: block;
     float: left;
     font-weight: bold;
     margin-right: 5.5pt; }
@@ -186,14 +186,14 @@ img {
   bottom: 0; }
   .copyright-page p {
     text-align: initial;
-    margin-bottom: 7.5pt; }
+    margin-bottom: 15pt; }
     .copyright-page p + p {
       text-indent: 0; }
   .copyright-page h1, .copyright-page h2, .copyright-page h3, .copyright-page h4, .copyright-page h5, .copyright-page h6 {
     font-size: 11pt;
     font-weight: bold;
     font-style: normal;
-    margin: 15pt 0 7.5pt 0; }
+    margin: 15pt 0 0 0; }
     .copyright-page h1 em, .copyright-page h2 em, .copyright-page h3 em, .copyright-page h4 em, .copyright-page h5 em, .copyright-page h6 em {
       font-style: italic; }
   .copyright-page h1[id="copyright"] {
@@ -4229,7 +4229,7 @@ th, td {
   border-bottom: 0.5pt solid grey;
   border-left: 0;
   border-right: 0;
-  padding: 1.5pt 3pt;
+  padding: 0.2em 0.3em;
   vertical-align: top;
   page-break-inside: avoid; }
   th p, th ul, th ol, th dl, td p, td ul, td ol, td dl {

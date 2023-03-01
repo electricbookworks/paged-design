@@ -47,13 +47,17 @@ $font-display-secondary: "Lato", sans-serif !default;
 $font-code: "Inconsolata", monospace;
 $font-size-default: 11pt !default;
 $line-height-default: 15pt !default;
-$paragraph-indent: 11pt !default;
 $text-align-default: justify !default;
 
 // Ratio for making text smaller
 $font-size-smaller: 0.8 !default;
 // Ratio for making text larger
 $font-size-larger: 1.4 !default;
+
+// Paragraphs: spaced or indented?
+$paragraphs: indented !default;
+$text-indent: 11pt !default;
+$text-spacing: $line-height-default !default;
 
 
 // Page breaks

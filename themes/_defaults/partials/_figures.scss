@@ -39,7 +39,7 @@
     // But while float: bottom and float: top are not
     // supported in paged.js, we set the indent to 0.
     & + p {
-        text-indent: $paragraph-indent; // only if figures are floated
+        text-indent: $text-indent; // only if figures are floated
         text-indent: 0;
     }
 }

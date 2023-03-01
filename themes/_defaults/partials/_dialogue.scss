@@ -7,14 +7,14 @@
     dt {
         clear: inside; // lets sidebar elements float beside
         float: left;
-        min-width: $paragraph-indent * 2;
-        padding-right: ($paragraph-indent * 0.25);
+        min-width: $text-indent * 2;
+        padding-right: ($text-indent * 0.25);
         &:after {
             content: ": "
         }
     }
     dd {
         // match width + padding of dt
-        margin: 0 0 0 ($paragraph-indent * 2.25);
+        margin: 0 0 0 ($text-indent * 2.25);
     }
 }

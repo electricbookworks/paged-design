@@ -4,12 +4,12 @@
 
 #{$bibliography} {
     list-style-type: none;
-    margin: $line-height-default 0;
+    margin: $text-spacing 0;
     padding: 0;
     text-indent: 0;
     li {
-        text-indent: $paragraph-indent * (-2);
-        margin-left: $paragraph-indent * 2;
+        text-indent: $text-indent * (-2);
+        margin-left: $text-indent * 2;
     }
     & + p {
         text-indent: 0;

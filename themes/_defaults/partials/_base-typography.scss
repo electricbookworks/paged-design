@@ -11,6 +11,7 @@ body {
     line-height: $line-height-default;
 }
 
+
 // Headings
 
 @mixin h1() {
@@ -20,6 +21,7 @@ body {
     break-after: avoid;
     break-inside: avoid;
 }
+
 @mixin h2() {
     font-size: $font-size-default * 2.5;
     line-height: $line-height-default * 2;
@@ -27,152 +29,198 @@ body {
     break-after: avoid;
     break-inside: avoid;
 }
+
 @mixin h3() {
     font-size: $font-size-default * 1.4;
     margin: $line-height-default 0 0 0;
     break-after: avoid;
     break-inside: avoid;
 }
+
 @mixin h4() {
     font-weight: bold;
     margin: $line-height-default 0 0 0;
     break-after: avoid;
     break-inside: avoid;
 }
+
 @mixin h5() {
     font-style: italic;
     margin: $line-height-default 0 0 0;
     break-after: avoid;
     break-inside: avoid;
 }
+
 @mixin h6() {
     margin: $line-height-default 0 0 0;
     break-after: avoid;
     break-inside: avoid;
 }
+
 h1 {
     @include h1();
 }
+
 h2 {
     @include h2();
 }
+
 h3 {
     @include h3();
 }
+
 h4 {
     @include h4();
 }
+
 h5 {
     @include h5();
 }
+
 h6 {
     @include h6();
 }
 
+
 // Paragraphs
+
 @mixin p() {
-    margin: 0;
     text-align: $text-align-default;
+    
     // Indent all paragraphs that follow paragraphs
-    & + & {
-        text-indent: $paragraph-indent;
+    @if $paragraphs == indented {
+        margin: 0;
+        & + & {
+            text-indent: $text-indent;
+        }
+    } @else {
+        margin-bottom: $text-spacing;
     }
 }
+
 p {
     @include p();
 }
 
+
 // Lists
+
 @mixin list() {
-    margin-top: $line-height-default;
-    margin-bottom: $line-height-default;
+    margin-top: $text-spacing;
+    margin-bottom: $text-spacing;
+
     // Move markers into text area
-    margin-left: $paragraph-indent;
+    margin-left: $text-indent;
 }
+
 @mixin ol() {
     @include list;
     list-style: decimal;
 }
+
 @mixin ul() {
     @include list;
     list-style: disc;
 }
+
 ol {
     @include ol();
 }
+
 ul {
     @include ul();
 }
 
+
 // Definition lists
+
 @mixin definition-list() {
-    margin: $line-height-default 0;
+    margin: $text-spacing 0;
+
     dt {
-        display: inline-block;
+        display: block;
         float: left;
         font-weight: bold;
         margin-right: $font-size-default / 2;
     }
 }
+
 dl {
     @include definition-list;
 }
 
 // Blockquotes
 @mixin blockquote() {
-    padding: $line-height-default $paragraph-indent;
+    padding: $text-spacing $text-indent;
+
     & + blockquote {
         padding-top: 0;
     }
+
     h1 + &, h2 + &, h3 + &,
     h4 + &, h5 + &, h6 + & {
         padding-top: 0;
     }
 }
+
 blockquote {
     @include blockquote();
 }
 
+
 // Links
+
 @mixin links() {
     text-decoration: none;
     color: $color-links;
 }
+
 a {
     @include links();
 }
 
+
 // Emphasis
+
 em {
     font-style: italic;
 }
+
 strong {
     font-weight: bold;
 }
 
+
 // Super- and subscript
+
 sup, sub {
     line-height: 0; // prevent increasing line height in print output
     font-size: 1em * $font-size-smaller;
 }
+
 sup {
     vertical-align: super;
 }
+
 sub {
     vertical-align: sub;
 }
 
+
 // Horizontal rules
+
 // Using <hr> as a text divider
 hr {
     border: 0;
     font-family: $font-display-main;
     text-align: center;
     margin: $line-height-default 0;
+
     &:after {
         content: $text-divider;
     }
 }
+
 
 // Images
 

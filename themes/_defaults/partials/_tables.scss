@@ -21,7 +21,7 @@ th, td {
     border-bottom: $rule-thickness solid $color-mid;
     border-left: 0;
     border-right: 0;
-    padding: ($line-height-default * 0.1) ($line-height-default * 0.2);
+    padding: 0.2em 0.3em;
     vertical-align: top;
     page-break-inside: avoid;
     p, ul, ol, dl {
@@ -31,7 +31,7 @@ th, td {
     }
 }
 #{$table-caption} {
-    margin: $line-height-default 0;
+    margin: $text-spacing 0;
     font-style: italic;
     text-indent: 0;
     em {
