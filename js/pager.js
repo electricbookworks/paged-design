@@ -1,5 +1,11 @@
 /* global MathJax, MutationObserver */
 
+// Options, e.g. for setting the source of the paged.js script.
+const pagerOptions = {
+  pagedjs: '../../js/vendor/paged.polyfill.js'
+  // pagedjs: 'https://unpkg.com/pagedjs/dist/paged.polyfill.js'
+}
+
 // Variable for holding theme data
 let themes
 
@@ -53,7 +59,7 @@ function loadPagedJS () {
   'use strict'
 
   const pagedjs = document.createElement('script')
-  pagedjs.src = 'https://unpkg.com/pagedjs/dist/paged.polyfill.js'
+  pagedjs.src = pagerOptions.pagedjs
   pagedjs.async = false
   document.body.insertAdjacentElement('beforeend', pagedjs)
 
