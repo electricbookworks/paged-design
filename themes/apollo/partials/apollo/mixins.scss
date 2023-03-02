@@ -7,14 +7,34 @@
     margin-right: ($margin-outside + $margin-inside) / 2;
 }
 
-@mixin heading-1 {
+@mixin extend-to-right-sidebar() {
+    margin-right: $margin-outside-sidebar - $margin-outside;
+    width: $page-width - $margin-inside - $margin-outside-sidebar;
+}
+
+@mixin extend-to-left-sidebar() {
+    margin-left: $margin-outside-sidebar - $margin-outside;
+    width: $page-width - $margin-inside - $margin-outside-sidebar;
+}
+
+@mixin undo-extend-to-right-sidebar() {
+    margin-right: $margin-outside;
+    width: $page-width - $margin-inside - $margin-outside;
+}
+
+@mixin undo-extend-to-left-sidebar() {
+    margin-left: $margin-outside;
+    width: $page-width - $margin-inside - $margin-outside;
+}
+
+@mixin heading-1($font-size: 48pt) {
     font-family: $font-display-main;
-    font-size: 32pt;
+    font-size: $font-size;
     line-height: $line-height-default * 3;
     text-align: left;
 }
 
-@mixin heading-2 {
+@mixin heading-2() {
     color: $apollo-accent;
     font-family: $font-display-main;
     font-weight: 500;
@@ -25,7 +45,7 @@
     text-align: left;
 }
 
-@mixin heading-3 {
+@mixin heading-3() {
     @include small-caps();
 
     font-family: $font-display-main;
@@ -37,20 +57,56 @@
     text-align: left;
 }
 
-@mixin heading-4 {
+@mixin heading-4() {
     font-family: $font-display-secondary;
     text-align: left;
 }
 
-@mixin heading-5 {
+@mixin heading-5() {
     font-family: $font-display-secondary;
     font-style: italic;
     font-weight: bold;
     text-align: left;
 }
 
-@mixin heading-6 {
+@mixin heading-6() {
     font-family: $font-display-secondary;
     font-style: italic;
     text-align: left;
+}
+
+@mixin subtitle($location: chapter) {
+
+    @if $location == titlepage {
+        @include small-caps();
+        color: $apollo-accent;
+        font-family: $font-display-main;
+        font-size: 16pt;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24pt;
+
+        em {
+            font-style: italic;
+        }
+
+    } @else {
+        color: $color-text-main;
+        font-family: $font-text-main;
+        font-size: 14pt;
+        font-style: italic;
+        font-weight: normal;
+        line-height: $line-height-default;
+    
+        em {
+            font-style: normal;
+        }
+    }
+}
+
+@mixin boxes-common() {
+    background-color: $apollo-hint;
+    font-family: $font-text-secondary;
+    font-size: 9pt;
+    padding: ($line-height-default / 2);
 }

@@ -36,3 +36,8 @@ $text-indent: 10pt;
 // will break the baseline grid, and therefore
 // line alignment across spreads.
 $text-spacing: $line-height-default / 2;
+
+// Variables specific to this theme
+$margin-outside-sidebar: 16mm;
+$sidebar-width: $margin-outside - $margin-outside-sidebar;
+$pages-with-centred-text: half-title-page, title-page, copyright, contents-page;

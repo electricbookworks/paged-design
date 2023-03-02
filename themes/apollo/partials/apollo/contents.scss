@@ -1,5 +1,9 @@
 #{$page-toc} {
 
+    h1 {
+        @include heading-1(32pt);
+    }
+
     nav {
         font-family: $font-text-secondary;
 

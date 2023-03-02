@@ -10,14 +10,16 @@
 
 #{$page-copyright} {
     bottom: auto;
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
 
     h1, h2, h3, h4, h5, h6 {
         @include copyright-page-headings();
     }
 
-    h1 {
+    header, h1 {
         display: none;
     }
 }

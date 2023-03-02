@@ -4,6 +4,10 @@
 
 :root {
     --apollo-accent: rgb(0, 131, 141);
+    --apollo-grey: rgb(100, 100, 100);
+    --apollo-hint: rgb(235, 245, 246);
 }
 
 $apollo-accent: var(--apollo-accent);
+$apollo-grey: var(--apollo-grey);
+$apollo-hint: var(--apollo-hint);

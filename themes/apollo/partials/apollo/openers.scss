@@ -1,3 +1,168 @@
+@mixin extend-into-right-sidebar() {
+
+    // Making something wide to extend into the sidebar
+    // only works with 'width' if chapter openers
+    // are on right-hand pages. We would need something
+    // like margin-inside/margin-outside otherwise.
+    width: $page-width - $margin-inside - $margin-outside-sidebar;
+}
+
+.component-body {
+
+    // Use calc because margin-top and line-height-default
+    // might be defined with different units, e.g. pt and mm.
+    $opener-image-height: calc(#{$margin-top} + (#{$line-height-default * 12}));
+
+    header {
+        @include extend-into-right-sidebar();
+
+        &:first-of-type {
+            margin-top: calc(#{$opener-image-height} + #{$line-height-default} * 3);
+        }
+
+        & + .cst {
+            @include extend-into-right-sidebar();
+        }
+
+        & ~ p.author {
+            @include extend-into-right-sidebar();
+            @include small-caps();
+            font-family: $font-text-secondary;
+            font-size: 9pt;
+            margin-bottom: $line-height-default * 2;
+        }
+    }
+
+    // Depends on this image being early enough
+    // in the chapter that it's on the first page.
+    // And these only display big on .component-body.
+    .content-opener-image {
+        position: absolute;
+    
+        // We set the bleed directly here rather than using $bleed
+        // because we want the image to appear the same in
+        // screen PDF (where bleed is 0) and print PDF (with bleed).
+        // We use calc where variables might be defined with
+        // different units, e.g. mm or pt.
+        top: -($margin-top + 3mm);
+        left: 0;
+
+        right: calc((#{$margin-outside} + 3mm) * -1);
+        height: $opener-image-height;
+
+        // If we need to allow left-hand-page openers,
+        // we'll need to bleed the image on boths sides
+        // like this, because we don't have something like
+        // margin-inside/margin-outside to handle different
+        // positions on left and right pages.
+        // left: calc((#{$margin-inside} + 3mm) * -1);
+    
+        img {
+            object-fit: cover;
+        }
+    
+        figure {
+            margin: 0;
+
+            figcaption {
+                position: running(opener-image-caption);
+            }
+        }
+    }
+}
+
+// Put the opener image caption in a margin box
+@page chapter:first {
+
+    // TODO: cann't find way to put a rule above
+    // this margin box text, as per design spec.
+    @right-bottom {
+        content: element(opener-image-caption);
+        font-family: $font-text-secondary;
+        font-size: 8pt;
+        max-width: $sidebar-width;
+        margin-left: $text-indent * 2;
+        padding: 0;
+        text-align: left;
+    }
+    
+    @right-middle {
+        content: "";
+    }
+
+    @right-top {
+        content: "";
+    }
+}
+
+// Extend chapter opener elements to full width
+// TODO: pagedjs-ignore does not seem to work when Ctrl+P,
+// only when previewing in the browser. Doh.
+// @media pagedjs-ignore {
+
+//     .pagedjs_right_page {
+    
+//         header,
+//         .cst {
+//             @include extend-to-right-sidebar();
+//         }
+
+//         .content-opener-image {
+//             @include content-opener-image-align(right);
+//         }
+//     }
+    
+//     .pagedjs_left_page {
+    
+//         header,
+//         .cst {
+//             @include extend-to-left-sidebar();
+//         }
+
+//         .content-opener-image {
+//             @include content-opener-image-align(left);
+//         }
+//     }
+
+//     // But don't extend headers in pages with centered text
+//     @each $page in $pages-with-centred-text {
+
+//         .pagedjs_left_page.pagedjs_#{$page}_page {
+        
+//             header,
+//             .cst {
+//                 @include undo-extend-to-left-sidebar();
+//             }
+//         }
+        
+//         .pagedjs_right_page.pagedjs_#{$page}_page {
+        
+//             header,
+//             .cst {
+//                 @include undo-extend-to-right-sidebar();
+//             }
+//         }
+//     }
+// }
+
+
+// Chapter numbers
+
+.chapter-number {
+    color: $apollo-grey;
+    font-family: $font-display-main;
+    font-size: 16pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    & + h1 {
+        margin-top: 0;
+    }
+}
+
+// Lead-in paragraphs
+
 @mixin leader-paragraph() {
     color: $apollo-accent;
     font-size: 16pt;
@@ -25,4 +190,48 @@
             }
         }
     }
+}
+
+
+// Component/chapter subtitles
+
+.cst {
+    @include subtitle();
+}
+
+
+// Opening boxes
+
+.learning-objectives {
+    @include boxes-common();
+
+    & > p {
+        @include small-caps();
+        font-size: 9pt;
+    }
+
+    ul, ol {
+        margin: 0 0 0 14pt;
+        padding: 0;
+    }
+
+    & + .outline {
+        margin-bottom: 0;
+    }
+}
+
+.outline {
+    @include boxes-common();
+
+    & > p {
+        @include small-caps();
+        font-size: 9pt;
+    }
+
+    ul, ol {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
 }

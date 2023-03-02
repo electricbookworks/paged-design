@@ -4461,6 +4461,9 @@ section.titlepage.component-front {
 .pagedjs_bleed-right .pagedjs_marks-crop:last-child {
   box-shadow: 0px -1px 0px 0px var(--pagedjs-crop-shadow); }
 
+ul li p, ol li p {
+  margin-bottom: 0; }
+
 .small-caps {
   text-transform: uppercase;
   font-size: 0.7em;
@@ -4474,8 +4477,10 @@ section.titlepage.component-front {
 
 section.copyright_page.component-front {
   bottom: auto;
-  top: 50%;
-  transform: translateY(-50%); }
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center; }
   section.copyright_page.component-front h1, section.copyright_page.component-front h2, section.copyright_page.component-front h3, section.copyright_page.component-front h4, section.copyright_page.component-front h5, section.copyright_page.component-front h6 {
     color: black;
     font-family: "Crimson Pro", serif;
@@ -4484,7 +4489,7 @@ section.copyright_page.component-front {
     font-weight: bold;
     line-height: 14pt;
     margin: 21pt 0 7pt 0; }
-  section.copyright_page.component-front h1 {
+  section.copyright_page.component-front header, section.copyright_page.component-front h1 {
     display: none; }
 
 section.cover.component-front figure {
@@ -4510,11 +4515,13 @@ section.toc.component-front nav ol li.toc-unnumbered + .toc-back {
   margin-top: 14pt !important; }
 
 :root {
-  --apollo-accent: rgb(0, 131, 141); }
+  --apollo-accent: rgb(0, 131, 141);
+  --apollo-grey: rgb(100, 100, 100);
+  --apollo-hint: rgb(235, 245, 246); }
 
 h1 {
   font-family: "Inter", sans-serif;
-  font-size: 32pt;
+  font-size: 48pt;
   line-height: 42pt;
   text-align: left; }
 
@@ -4595,15 +4602,18 @@ section.halftitle.component-front {
     font-size: 48pt;
     line-height: 1;
     margin-top: 0; }
-  section.halftitle.component-front h1 + p, section.halftitle.component-front .cst {
+  section.halftitle.component-front .cst {
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 0.07em;
     color: var(--apollo-accent);
     font-family: "Inter", sans-serif;
     font-size: 16pt;
+    font-style: normal;
     font-weight: 500;
     line-height: 24pt; }
+    section.halftitle.component-front .cst em {
+      font-style: italic; }
   section.halftitle.component-front h2 {
     text-transform: uppercase;
     font-size: 0.7em;
@@ -4629,15 +4639,18 @@ section.titlepage.component-front {
     font-size: 48pt;
     line-height: 1;
     margin-top: 0; }
-  section.titlepage.component-front h1 + p, section.titlepage.component-front .cst {
+  section.titlepage.component-front .cst {
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 0.07em;
     color: var(--apollo-accent);
     font-family: "Inter", sans-serif;
     font-size: 16pt;
+    font-style: normal;
     font-weight: 500;
     line-height: 24pt; }
+    section.titlepage.component-front .cst em {
+      font-style: italic; }
   section.titlepage.component-front h2 {
     text-transform: uppercase;
     font-size: 0.7em;
@@ -4653,6 +4666,12 @@ section.titlepage.component-front {
   section.titlepage.component-front p, section.titlepage.component-front ul, section.titlepage.component-front ol, section.titlepage.component-front dl {
     text-align: left; }
 
+section.toc.component-front h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 32pt;
+  line-height: 42pt;
+  text-align: left; }
+
 section.toc.component-front nav {
   font-family: "Inter", sans-serif; }
   section.toc.component-front nav ol li {
@@ -4666,8 +4685,66 @@ section.toc.component-front nav {
       font-family: "Crimson Pro", serif;
       font-size: 10pt; }
 
+section.component.component-front h1, section.introduction.component-front h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 32pt;
+  line-height: 42pt;
+  text-align: left; }
+
 @page :blank {
   background-color: var(--apollo-accent); }
+
+.component-body header {
+  width: 179mm; }
+  .component-body header:first-of-type {
+    margin-top: calc(calc(60pt + (168pt)) + 14pt * 3); }
+  .component-body header + .cst {
+    width: 179mm; }
+  .component-body header ~ p.author {
+    width: 179mm;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.07em;
+    font-family: "Inter", sans-serif;
+    font-size: 9pt;
+    margin-bottom: 28pt; }
+
+.component-body .content-opener-image {
+  position: absolute;
+  top: -68.50394pt;
+  left: 0;
+  right: calc((64mm + 3mm) * -1);
+  height: calc(60pt + (168pt)); }
+  .component-body .content-opener-image img {
+    object-fit: cover; }
+  .component-body .content-opener-image figure {
+    margin: 0; }
+    .component-body .content-opener-image figure figcaption {
+      position: running(opener-image-caption); }
+
+@page chapter:first {
+  @right-bottom {
+    content: element(opener-image-caption);
+    font-family: "Inter", sans-serif;
+    font-size: 8pt;
+    max-width: 48mm;
+    margin-left: 20pt;
+    padding: 0;
+    text-align: left; }
+  @right-middle {
+    content: ""; }
+  @right-top {
+    content: ""; } }
+
+.chapter-number {
+  color: var(--apollo-grey);
+  font-family: "Inter", sans-serif;
+  font-size: 16pt;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; }
+  .chapter-number + h1 {
+    margin-top: 0; }
 
 .component:not(.copyright_page) header + p,
 .component-front:not(.copyright_page) header + p,
@@ -4682,3 +4759,44 @@ section.toc.component-front nav {
   .component-back:not(.copyright_page) header + p + p,
   .component-body:not(.copyright_page) header + p + p {
     text-indent: 0; }
+
+.cst {
+  color: black;
+  font-family: "Crimson Pro", serif;
+  font-size: 14pt;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 14pt; }
+  .cst em {
+    font-style: normal; }
+
+.learning-objectives {
+  background-color: var(--apollo-hint);
+  font-family: "Inter", sans-serif;
+  font-size: 9pt;
+  padding: 7pt; }
+  .learning-objectives > p {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.07em;
+    font-size: 9pt; }
+  .learning-objectives ul, .learning-objectives ol {
+    margin: 0 0 0 14pt;
+    padding: 0; }
+  .learning-objectives + .outline {
+    margin-bottom: 0; }
+
+.outline {
+  background-color: var(--apollo-hint);
+  font-family: "Inter", sans-serif;
+  font-size: 9pt;
+  padding: 7pt; }
+  .outline > p {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.07em;
+    font-size: 9pt; }
+  .outline ul, .outline ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }

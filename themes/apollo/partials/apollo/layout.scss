@@ -1,5 +1,3 @@
-$pages-with-centred-text: half-title-page, title-page, copyright, contents-page;
-
 @each $page in $pages-with-centred-text {
     @page #{$page} :left {
         @include page-center-text-area();

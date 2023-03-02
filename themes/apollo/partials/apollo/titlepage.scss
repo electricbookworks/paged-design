@@ -12,14 +12,8 @@
     }
 
     // Subtitle
-    h1 + p, .cst {
-        @include small-caps();
-
-        color: $apollo-accent;
-        font-family: $font-display-main;
-        font-size: 16pt;
-        font-weight: 500;
-        line-height: 24pt;
+    .cst {
+        @include subtitle(titlepage);
     }
 
     h2 {
