@@ -1,0 +1,16 @@
+.epigraph-prose {
+    @include blockquote();
+
+    & + .source-note {
+        margin-top: -$line-height-default;
+    }
+}
+
+.source-note {
+    @include blockquote();
+    font-style: italic;
+
+    em {
+        font-style: normal;
+    }
+}

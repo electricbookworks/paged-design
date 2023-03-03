@@ -4739,10 +4739,13 @@ section.component.component-front h1, section.introduction.component-front h1 {
 .chapter-number {
   color: var(--apollo-grey);
   font-family: "Inter", sans-serif;
-  font-size: 16pt;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em; }
+  letter-spacing: 0.05em;
+  float: left;
+  font-size: 48pt;
+  line-height: 42pt;
+  margin-right: 10pt; }
   .chapter-number + h1 {
     margin-top: 0; }
 
@@ -4800,3 +4803,30 @@ section.component.component-front h1, section.introduction.component-front h1 {
     list-style-type: none;
     margin: 0;
     padding: 0; }
+
+.focus-questions {
+  background-color: var(--apollo-hint);
+  font-family: "Inter", sans-serif;
+  font-size: 9pt;
+  padding: 7pt; }
+
+.epigraph-prose {
+  padding: 7pt 10pt; }
+  .epigraph-prose + blockquote {
+    padding-top: 0; }
+  h1 + .epigraph-prose, h2 + .epigraph-prose, h3 + .epigraph-prose,
+  h4 + .epigraph-prose, h5 + .epigraph-prose, h6 + .epigraph-prose {
+    padding-top: 0; }
+  .epigraph-prose + .source-note {
+    margin-top: -14pt; }
+
+.source-note {
+  padding: 7pt 10pt;
+  font-style: italic; }
+  .source-note + blockquote {
+    padding-top: 0; }
+  h1 + .source-note, h2 + .source-note, h3 + .source-note,
+  h4 + .source-note, h5 + .source-note, h6 + .source-note {
+    padding-top: 0; }
+  .source-note em {
+    font-style: normal; }

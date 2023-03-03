@@ -148,13 +148,32 @@
 
 // Chapter numbers
 
+// The spec design used the word 'chapter'
+// before the number, but Ketida only inserts
+// a number. We don't want to add generated content
+// in CSS, because the book might not be in English.
+// So instead, we'll add a design where the chapter number
+// sits to the left of the header text.
+
+$chapter-number-has-text: false;
+
 .chapter-number {
     color: $apollo-grey;
     font-family: $font-display-main;
-    font-size: 16pt;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+
+    @if $chapter-number-has-text == true {
+        font-size: 16pt;
+    } @else {
+        float: left;
+
+        // Size and line-height matches h1
+        font-size: 48pt;
+        line-height: $line-height-default * 3;
+        margin-right: $text-indent;
+    }
 
     & + h1 {
         margin-top: 0;
