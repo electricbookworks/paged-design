@@ -111,6 +111,7 @@ Some existing roadmap items and issues in Paged.js that are relevant here:
 - Bleed and trim support have recently been added, and need to be implemented in these themes. (See [issue 82](https://gitlab.coko.foundation/pagedjs/pagedjs/-/issues/82).)
 - Setting a `leader(" ")` in `a::after` for TOCs is not yet supported. This is [noted on the specs roadmap](https://pagedjs.org/documentation/cheatsheet/).
 - ~~We can't use `string-set` yet. (See [issue 44](https://gitlab.coko.foundation/pagedjs/pagedjs/-/issues/44).)~~ [Now available, to be implemented here.](https://pagedjs.org/posts/so-long-@media-screen!/#one-but-not-least)
+- Too much specificity in your CSS selectors can break paged.js. Paged.js has to rewrite a lot of your paged-media styles, and can't handle too much class nesting. If your find your classes are not being applied, and you can't even see them in dev tools when previewing your page layout, then they may be too specific.
 
 When writing CSS, also note that the divs that Paged.js introduces (in order to manage pagination) break some CSS child selectors like `>`. This is probably not avoidable, but it does make CSS work more challenging, and is important to keep in mind.
 
