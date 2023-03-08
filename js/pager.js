@@ -58,14 +58,32 @@ function loadThemeScripts (themeDirectory, themeData, preOrPostLayout) {
 function loadPagedJS () {
   'use strict'
 
-  const pagedjs = document.createElement('script')
-  pagedjs.src = pagerOptions.pagedjs
-  pagedjs.async = false
-  document.body.insertAdjacentElement('beforeend', pagedjs)
+  return new Promise((resolve) => {
+    const pagedjs = document.createElement('script')
+    pagedjs.src = pagerOptions.pagedjs
+    pagedjs.async = false
+    document.body.insertAdjacentElement('beforeend', pagedjs)
 
-  // With Paged loaded, we can add scripts
-  // that must run after Paged has loaded.
-  loadThemeScripts(detectThemeFromURL(), themes[detectThemeFromURL()], 'postlayout')
+    // With Paged loaded, we can add scripts
+    // that must run after Paged has loaded.
+    loadThemeScripts(detectThemeFromURL(), themes[detectThemeFromURL()], 'postlayout')
+    resolve()
+  })
+}
+
+// Load script to scroll to last location.
+// Currently requires entering scrollToLastPosition()
+// in the dev tools console. TODO: add a button for this.
+function loadReloadInPlace () {
+  'use strict'
+
+  return new Promise((resolve) => {
+    const reloader = document.createElement('script')
+    reloader.src = '../../js/scroll-to-last-position.js'
+    reloader.async = false
+    document.body.insertAdjacentElement('beforeend', reloader)
+    resolve()
+  })
 }
 
 // Load theme CSS
@@ -93,7 +111,10 @@ async function loadThemeStylesheet (themeDirectory) {
   }
 
   // Load Paged.js
-  loadPagedJS()
+  await loadPagedJS()
+
+  // Reload in place to speed up theme development
+  await loadReloadInPlace()
 }
 
 // Set new theme in URL parameter
