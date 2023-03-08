@@ -31,6 +31,12 @@ $bleed: 0 !default;
 $trim: 0 !default;
 $crop-marks: crop !default; // crop | none
 
+// Sidebar
+// -------
+
+$sidebar-width: 45mm;
+$sidebar-position: outside; // outside | left | right | none
+$sidebar-gap: 5mm;
 
 // Type
 // ----

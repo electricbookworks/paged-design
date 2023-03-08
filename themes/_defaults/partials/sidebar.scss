@@ -1,0 +1,25 @@
+@mixin move-to-sidebar($selector, $shift-outwards: 0px) {
+
+    .pagedjs_right_page {
+
+        .pagedjs_area #{$selector} {
+            float: right;
+
+            // Use calc() in case $sidebar-width and
+            // $shift-outwards are defined in different units.
+            margin-right: calc(-1 * (#{$sidebar-width} + #{$shift-outwards}));
+            margin-left: $sidebar-gap;
+            width: $sidebar-width - $sidebar-gap;
+        }
+    }
+
+    .pagedjs_left_page {
+
+        .pagedjs_area  #{$selector} {
+            float: left;
+            margin-left: calc(-1 * (#{$sidebar-width} + #{$shift-outwards}));
+            margin-right: $sidebar-gap;
+            width: $sidebar-width - $sidebar-gap;
+        }
+    }
+}

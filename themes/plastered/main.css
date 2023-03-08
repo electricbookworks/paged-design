@@ -89,6 +89,9 @@ h6 {
   break-after: avoid;
   break-inside: avoid; }
 
+.pagedjs_page_content h1:first-child, .pagedjs_page_content h2:first-child, .pagedjs_page_content h3:first-child, .pagedjs_page_content h4:first-child, .pagedjs_page_content h5:first-child, .pagedjs_page_content h6:first-child {
+  margin-top: 0; }
+
 p {
   text-align: justify;
   margin: 0; }
@@ -122,6 +125,8 @@ blockquote {
   h1 + blockquote, h2 + blockquote, h3 + blockquote,
   h4 + blockquote, h5 + blockquote, h6 + blockquote {
     padding-top: 0; }
+  blockquote p:last-child, blockquote ul:last-child, blockquote ol:last-child, blockquote dl:last-child {
+    margin-bottom: 0; }
 
 a {
   text-decoration: none;
@@ -173,6 +178,12 @@ img {
   margin-bottom: 49pt;
   margin-left: 15mm;
   margin-right: 24mm; }
+
+.pagedjs_right_page .pagedjs_area {
+  padding-right: 45mm; }
+
+.pagedjs_left_page .pagedjs_area {
+  padding-left: 45mm; }
 
 .chapter {
   page: chapter;
@@ -4188,6 +4199,8 @@ blockquote + .source {
   h1 + blockquote + .source, h2 + blockquote + .source, h3 + blockquote + .source,
   h4 + blockquote + .source, h5 + blockquote + .source, h6 + blockquote + .source {
     padding-top: 0; }
+  blockquote + .source p:last-child, blockquote + .source ul:last-child, blockquote + .source ol:last-child, blockquote + .source dl:last-child {
+    margin-bottom: 0; }
   blockquote + .source em {
     font-style: normal; }
   blockquote + .source + p {
@@ -4204,6 +4217,8 @@ blockquote > .source {
   h1 + blockquote > .source, h2 + blockquote > .source, h3 + blockquote > .source,
   h4 + blockquote > .source, h5 + blockquote > .source, h6 + blockquote > .source {
     padding-top: 0; }
+  blockquote > .source p:last-child, blockquote > .source ul:last-child, blockquote > .source ol:last-child, blockquote > .source dl:last-child {
+    margin-bottom: 0; }
   blockquote > .source em {
     font-style: normal; }
 

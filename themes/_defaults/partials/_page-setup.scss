@@ -1,6 +1,6 @@
 // _page-setup.scss
 
-@page { 
+@page {
     size: $page-width $page-height;
     padding: 0;
     marks: $crop-marks;
@@ -24,4 +24,57 @@
     margin-bottom: $margin-bottom;
     margin-left: $margin-inside;
     margin-right: $margin-outside;
+}
+
+// Sidebar
+
+@if $sidebar-position == outside {
+
+    .pagedjs_right_page {
+
+        .pagedjs_area {
+            padding-right: $sidebar-width;
+        }
+    }
+
+    .pagedjs_left_page {
+
+        .pagedjs_area {
+            padding-left: $sidebar-width;
+        }
+    }
+}
+
+@if $sidebar-position == left {
+
+    .pagedjs_right_page {
+
+        .pagedjs_area {
+            padding-left: $sidebar-width;
+        }
+    }
+
+    .pagedjs_left_page {
+
+        .pagedjs_area {
+            padding-left: $sidebar-width;
+        }
+    }
+}
+
+@if $sidebar-position == right {
+
+    .pagedjs_right_page {
+
+        .pagedjs_area {
+            padding-right: $sidebar-width;
+        }
+    }
+
+    .pagedjs_left_page {
+
+        .pagedjs_area {
+            padding-right: $sidebar-width;
+        }
+    }
 }

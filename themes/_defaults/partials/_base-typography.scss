@@ -81,6 +81,18 @@ h6 {
     @include h6();
 }
 
+// When headings are the first item
+// on a page, remove margin-top.
+.pagedjs_page_content {
+
+    h1, h2, h3, h4, h5, h6 {
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
 
 // Paragraphs
 
@@ -160,6 +172,13 @@ dl {
     h1 + &, h2 + &, h3 + &,
     h4 + &, h5 + &, h6 + & {
         padding-top: 0;
+    }
+
+    p, ul, ol, dl {
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }
 
