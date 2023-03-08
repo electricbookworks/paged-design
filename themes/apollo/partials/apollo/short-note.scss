@@ -1,0 +1,5 @@
+aside.short.note {
+    @include boxes-common();
+}
+
+@include move-to-sidebar("aside.short.note");

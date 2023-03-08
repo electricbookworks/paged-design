@@ -1,35 +1,28 @@
-@mixin extend-into-right-sidebar() {
-
-    // Making something wide to extend into the sidebar
-    // only works with 'width' if chapter openers
-    // are on right-hand pages. We would need something
-    // like margin-inside/margin-outside otherwise.
-    width: $page-width - $margin-inside - $margin-outside-sidebar;
-}
-
 .component-body {
 
     // Use calc because margin-top and line-height-default
     // might be defined with different units, e.g. pt and mm.
-    $opener-image-height: calc(#{$margin-top} + (#{$line-height-default * 12}));
+    $opener-image-height: calc(#{$margin-top} + (#{$line-height-default * 16}));
+    $opener-image-bleed: 3mm;
 
+    // The heading below the image
     header {
-        @include extend-into-right-sidebar();
+        @include extend-to-right-sidebar();
 
         &:first-of-type {
-            margin-top: calc(#{$opener-image-height} + #{$line-height-default} * 3);
+            margin-top: calc(#{$opener-image-height} - #{$line-height-default} * 1);
         }
 
         & + .cst {
-            @include extend-into-right-sidebar();
+            @include extend-to-right-sidebar();
         }
 
         & ~ p.author {
-            @include extend-into-right-sidebar();
+            @include extend-to-right-sidebar();
             @include small-caps();
             font-family: $font-text-secondary;
-            font-size: 9pt;
-            margin-bottom: $line-height-default * 2;
+            font-size: $font-size-default-small;
+            margin-bottom: $line-height-default * 1.5;
         }
     }
 
@@ -37,113 +30,47 @@
     // in the chapter that it's on the first page.
     // And these only display big on .component-body.
     .content-opener-image {
-        position: absolute;
-    
-        // We set the bleed directly here rather than using $bleed
-        // because we want the image to appear the same in
-        // screen PDF (where bleed is 0) and print PDF (with bleed).
-        // We use calc where variables might be defined with
-        // different units, e.g. mm or pt.
-        top: -($margin-top + 3mm);
-        left: 0;
-
-        right: calc((#{$margin-outside} + 3mm) * -1);
-        height: $opener-image-height;
-
-        // If we need to allow left-hand-page openers,
-        // we'll need to bleed the image on boths sides
-        // like this, because we don't have something like
-        // margin-inside/margin-outside to handle different
-        // positions on left and right pages.
-        // left: calc((#{$margin-inside} + 3mm) * -1);
-    
-        img {
-            object-fit: cover;
-        }
     
         figure {
+            display: contents;
             margin: 0;
+            
+            img {
+                position: absolute;
+
+                // We set the bleed directly here rather than using $bleed
+                // because we want the image to appear the same in
+                // screen PDF (where bleed is 0) and print PDF (with bleed).
+                // We use calc where variables might be defined with
+                // different units, e.g. mm or pt.
+                top: -($margin-top + $opener-image-bleed);
+                left: 0;
+
+                right: calc((#{$margin-outside} + #{$sidebar-width} + $opener-image-bleed) * -1);
+                height: $opener-image-height + $opener-image-bleed;
+                margin: 0;
+                max-width: none;
+                object-fit: cover;
+                width: $page-width - $margin-inside + $opener-image-bleed;
+            }
 
             figcaption {
-                position: running(opener-image-caption);
+
+                // Position
+                position: absolute;
+                bottom: 0;
+                right: -($sidebar-width + $sidebar-gap);
+                width: $sidebar-width - $sidebar-gap;
+
+                // Appearance
+                border-top: $rule-thickness solid $apollo-accent;
+                font-family: $font-text-secondary;
+                font-size: $font-size-default-small;
+                padding-top: $line-height-default / 2;
             }
         }
     }
 }
-
-// Put the opener image caption in a margin box
-@page chapter:first {
-
-    // TODO: cann't find way to put a rule above
-    // this margin box text, as per design spec.
-    @right-bottom {
-        content: element(opener-image-caption);
-        font-family: $font-text-secondary;
-        font-size: 8pt;
-        max-width: $sidebar-width;
-        margin-left: $text-indent * 2;
-        padding: 0;
-        text-align: left;
-    }
-    
-    @right-middle {
-        content: "";
-    }
-
-    @right-top {
-        content: "";
-    }
-}
-
-// Extend chapter opener elements to full width
-// TODO: pagedjs-ignore does not seem to work when Ctrl+P,
-// only when previewing in the browser. Doh.
-// @media pagedjs-ignore {
-
-//     .pagedjs_right_page {
-    
-//         header,
-//         .cst {
-//             @include extend-to-right-sidebar();
-//         }
-
-//         .content-opener-image {
-//             @include content-opener-image-align(right);
-//         }
-//     }
-    
-//     .pagedjs_left_page {
-    
-//         header,
-//         .cst {
-//             @include extend-to-left-sidebar();
-//         }
-
-//         .content-opener-image {
-//             @include content-opener-image-align(left);
-//         }
-//     }
-
-//     // But don't extend headers in pages with centered text
-//     @each $page in $pages-with-centred-text {
-
-//         .pagedjs_left_page.pagedjs_#{$page}_page {
-        
-//             header,
-//             .cst {
-//                 @include undo-extend-to-left-sidebar();
-//             }
-//         }
-        
-//         .pagedjs_right_page.pagedjs_#{$page}_page {
-        
-//             header,
-//             .cst {
-//                 @include undo-extend-to-right-sidebar();
-//             }
-//         }
-//     }
-// }
 
 
 // Chapter numbers
@@ -165,12 +92,12 @@ $chapter-number-has-text: false;
     letter-spacing: 0.05em;
 
     @if $chapter-number-has-text == true {
-        font-size: 16pt;
+        font-size: 21px;
     } @else {
         float: left;
 
         // Size and line-height matches h1
-        font-size: 48pt;
+        font-size: 64px;
         line-height: $line-height-default * 3;
         margin-right: $text-indent;
     }
@@ -184,8 +111,8 @@ $chapter-number-has-text: false;
 
 @mixin leader-paragraph() {
     color: $apollo-accent;
-    font-size: 16pt;
-    line-height: 20pt;
+    font-size: 21px;
+    line-height: 27px;
     margin-bottom: $line-height-default;
 }
 
@@ -224,33 +151,54 @@ $chapter-number-has-text: false;
 .learning-objectives {
     @include boxes-common();
 
+    // Assumes there will be an element with margin-top
+    // after this, like a heading. This way, the box
+    // can merge visually with, say, .outline.
+    margin-bottom: 0;
+
     & > p {
         @include small-caps();
-        font-size: 9pt;
+        font-size: $font-size-default-small;
+        margin-bottom: 0;
     }
 
     ul, ol {
-        margin: 0 0 0 14pt;
+        margin: 0 0 0 $line-height-default; // not sure why LHD
         padding: 0;
     }
 
     & + .outline {
-        margin-bottom: 0;
+
+        // Need to override specificity here,
+        // because of how paged.js rewrites CSS here.
+        margin: 0 0 $line-height-default 0!important;
     }
 }
 
 .outline {
     @include boxes-common();
 
+    // Assumes there will be an element with margin-top
+    // after this, like a heading. This way, the box
+    // can merge visually with, say, .learning-objectives.
+    margin-bottom: 0;
+
     & > p {
         @include small-caps();
-        font-size: 9pt;
+        font-size: $font-size-default-small;
+        margin-bottom: 0;
     }
 
     ul, ol {
         list-style-type: none;
         margin: 0;
         padding: 0;
+    }
+
+    & + .learning-objectives {
+        // Need to override specificity here,
+        // because of how paged.js rewrites CSS here.
+        margin: 0 0 $line-height-default 0!important;
     }
 
 }

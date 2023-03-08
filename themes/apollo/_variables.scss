@@ -6,12 +6,19 @@
 // Copy the ones you want to change from defaults.scss
 // to here, and remove `!default` from each one.
 
+// Theme custom variable
+$baseline-grid-unit: 19px; // roughly 14pt
+
+// When paged.js is your rendering target,
+// use px rather than pt for accurate rendering.
 $page-width: 210mm;
 $page-height: 297mm;
-$margin-top: 60pt;
-$margin-bottom: 60pt;
-$margin-inside: 15mm;
-$margin-outside: 15mm + 49mm; // outer margin + sidebar
+$margin-top: $baseline-grid-unit * 4;
+$margin-bottom: $baseline-grid-unit * 4;
+$margin-inside: 20mm;
+$margin-outside: 15mm;
+$sidebar-width: 50mm;
+$sidebar-position: outside;
 
 // Since we can't yet control `page-1` in Ketida HTML
 // we rather just give all frontmatter decimal page numbering.
@@ -24,13 +31,14 @@ $font-text-main: "Crimson Pro", serif;
 $font-text-secondary: "Inter", sans-serif;
 $font-display-main: "Inter", sans-serif;
 $font-display-secondary: "Crimson Pro", serif;
-$font-size-default: 10pt;
-$line-height-default: 14pt;
+$font-size-default: 13px; // roughly 10pt
+$font-size-default-small: 10px; // custom theme variable
+$line-height-default: $baseline-grid-unit; // roughly 14pt
 $text-align-default: start;
 
 // Paragraphs
 $paragraphs: spaced;
-$text-indent: 10pt;
+$text-indent: $font-size-default;
 
 // Note: $text-spacing that isn't $line-height-default
 // will break the baseline grid, and therefore
@@ -39,5 +47,5 @@ $text-spacing: $line-height-default / 2;
 
 // Variables specific to this theme
 $margin-outside-sidebar: 16mm;
-$sidebar-width: $margin-outside - $margin-outside-sidebar;
 $pages-with-centred-text: half-title-page, title-page, copyright, contents-page;
+$box-padding: $line-height-default / 2;

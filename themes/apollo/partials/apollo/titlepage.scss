@@ -1,12 +1,12 @@
 @mixin title-pages-common() {
 
     // Rules
-    border-top: 5pt solid $apollo-accent;
-    border-bottom: 5pt solid $apollo-accent;
+    border-top: 7px solid $apollo-accent;
+    border-bottom: 7px solid $apollo-accent;
     padding: $line-height-default 0;
 
     h1 {
-        font-size: 48pt;
+        font-size: 64px;
         line-height: 1;
         margin-top: 0;
     }

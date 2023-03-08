@@ -1,0 +1,6 @@
+aside.biography {
+    @include boxes-common();
+
+    font-family: $font-text-main;
+    font-size: $font-size-default;
+}

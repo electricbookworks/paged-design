@@ -21,3 +21,15 @@ h5 {
 h6 {
     @include heading-6();
 }
+
+blockquote {
+
+    & + .source-note {
+        @include blockquote();
+
+        margin-top: -$line-height-default;
+
+        // !important to override default source-note
+        padding-top: 0!important;
+    }
+}

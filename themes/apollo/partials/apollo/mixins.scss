@@ -2,32 +2,27 @@
 // Mixins created only for use in a specific partial
 // should be created in that partial, not here.
 
-@mixin page-center-text-area() {
-    margin-left: ($margin-outside + $margin-inside) / 2;
-    margin-right: ($margin-outside + $margin-inside) / 2;
-}
-
 @mixin extend-to-right-sidebar() {
-    margin-right: $margin-outside-sidebar - $margin-outside;
-    width: $page-width - $margin-inside - $margin-outside-sidebar;
+    margin-right: -($sidebar-width);
+    width: $page-width - $margin-inside - $margin-outside;
 }
 
 @mixin extend-to-left-sidebar() {
-    margin-left: $margin-outside-sidebar - $margin-outside;
-    width: $page-width - $margin-inside - $margin-outside-sidebar;
+    margin-left: -($sidebar-width);
+    width: $page-width - $margin-inside - $margin-outside;
 }
 
 @mixin undo-extend-to-right-sidebar() {
-    margin-right: $margin-outside;
-    width: $page-width - $margin-inside - $margin-outside;
+    margin-right: 0;
+    width: $page-width - $margin-inside - $margin-outside - $sidebar-width;
 }
 
 @mixin undo-extend-to-left-sidebar() {
-    margin-left: $margin-outside;
-    width: $page-width - $margin-inside - $margin-outside;
+    margin-left: 0;
+    width: $page-width - $margin-inside - $margin-outside - $sidebar-width;
 }
 
-@mixin heading-1($font-size: 48pt) {
+@mixin heading-1($font-size: 64px) {
     font-family: $font-display-main;
     font-size: $font-size;
     line-height: $line-height-default * 3;
@@ -38,7 +33,7 @@
     color: $apollo-accent;
     font-family: $font-display-main;
     font-weight: 500;
-    font-size: 14pt;
+    font-size: 19px;
     line-height: $line-height-default;
     margin-bottom: 0;
     margin-top: $line-height-default * 2;
@@ -49,7 +44,7 @@
     @include small-caps();
 
     font-family: $font-display-main;
-    font-size: 10pt;
+    font-size: $font-size-default;
     font-weight: 500;
     line-height: $line-height-default;
     margin-bottom: 0;
@@ -81,10 +76,10 @@
         @include small-caps();
         color: $apollo-accent;
         font-family: $font-display-main;
-        font-size: 16pt;
+        font-size: 21px;
         font-style: normal;
         font-weight: 500;
-        line-height: 24pt;
+        line-height: 32px;
 
         em {
             font-style: italic;
@@ -93,7 +88,7 @@
     } @else {
         color: $color-text-main;
         font-family: $font-text-main;
-        font-size: 14pt;
+        font-size: 19px;
         font-style: italic;
         font-weight: normal;
         line-height: $line-height-default;
@@ -107,6 +102,51 @@
 @mixin boxes-common() {
     background-color: $apollo-hint;
     font-family: $font-text-secondary;
-    font-size: 9pt;
-    padding: ($line-height-default / 2);
+    font-size: $font-size-default-small;
+    margin: $line-height-default 0;
+    padding: $box-padding;
+
+    h2, h3, h4, h5, h6 {
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        & + h3,
+        & + h4,
+        & + h5,
+        & + h6 {
+            margin-top: 0;
+        }
+    }
+
+    p, ol, ul, dl {
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@mixin top-and-bottom-box-border() {
+
+    border-top: 5px solid $apollo-accent;
+    border-bottom: 5px solid $apollo-accent;
+
+    &[data-split-to] {
+        border-bottom: 0;
+
+        // paged.js wants to remove padding here,
+        // which I think is wrong. So we put it back.
+        padding-bottom: $box-padding!important;
+        margin-bottom: $box-padding!important;
+    }
+
+    &[data-split-from] {
+
+        // paged.js wants to remove padding here,
+        // which I think is wrong. So we put it back.
+        padding-top: $box-padding!important;
+        margin-top: $box-padding!important;
+    }
 }

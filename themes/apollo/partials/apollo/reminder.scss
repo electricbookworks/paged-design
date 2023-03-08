@@ -1,0 +1,14 @@
+aside.reminder {
+    @include boxes-common;
+}
+
+@include move-to-sidebar("aside.reminder.short");
+
+// When this is in a box of some kind,
+// adjust its margin-outside.
+
+$boxes-that-contain-short-reminders: box, self-reflection-activities, worked-example;
+
+@each $box in $boxes-that-contain-short-reminders {
+    @include move-to-sidebar(".#{$box} aside.reminder.short", $box-padding);
+}
