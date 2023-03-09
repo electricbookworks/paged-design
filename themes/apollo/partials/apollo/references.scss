@@ -1,0 +1,41 @@
+// We include `div` in the selector here because
+// 'references' is commonly used in custom designs
+// for other book features. Specifying `div` may
+// reduce the chance of collisions.
+
+.pagedjs_right_page.pagedjs_references-page_page {
+    background-color: $apollo-hint;
+    
+    div.references {
+        @include extend-to-right-sidebar();
+    }
+}
+
+.pagedjs_left_page.pagedjs_references-page_page {
+    background-color: $apollo-hint;
+    
+    div.references {
+        @include extend-to-left-sidebar();
+    }
+}
+
+div.references {
+    break-before: page;
+    column-count: 2;
+    font-family: $font-text-secondary;
+    font-size: $font-size-default-small;
+    page: references-page;
+
+    h2 {
+        column-span: all;
+    }
+
+    ul {
+        list-style-type: none;
+        margin-left: 0;
+
+        li {
+            margin-bottom: $text-spacing;
+        }
+    }
+}

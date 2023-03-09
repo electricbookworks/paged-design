@@ -1,0 +1,21 @@
+.review-activity {
+    @include boxes-common();
+    @include top-and-bottom-box-border();
+
+    font-family: $font-text-main;
+    font-size: $font-size-default;
+}
+
+.pagedjs_right_page {
+    
+    .review-activity {
+        @include extend-to-right-sidebar();
+    }
+}
+
+.pagedjs_left_page {
+    
+    .review-activity {
+        @include extend-to-left-sidebar();
+    }
+}

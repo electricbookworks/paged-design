@@ -1,0 +1,13 @@
+table {
+    font-family: $font-text-secondary;
+    font-size: $font-size-default-small;
+
+    th {
+        background-color: $apollo-hint;
+        font-weight: bold;
+    }
+
+    td {
+        border-color: $apollo-accent;
+    }
+}

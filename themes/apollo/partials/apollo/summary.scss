@@ -1,0 +1,27 @@
+// We include `div` in the selector here because
+// 'summary' is commonly used in custom designs
+// for other book features. Specifying `div` may
+// reduce the chance of collisions.
+
+div.summary {
+    column-count: 2;
+    break-before: page;
+
+    h2 {
+        column-span: all;
+    }
+}
+
+.pagedjs_right_page {
+    
+    div.summary {
+        @include extend-to-right-sidebar();
+    }
+}
+
+.pagedjs_left_page {
+    
+    div.summary {
+        @include extend-to-left-sidebar();
+    }
+}

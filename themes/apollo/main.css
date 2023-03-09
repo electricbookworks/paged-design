@@ -4537,6 +4537,9 @@ div.introduction {
 .pagedjs_page_content div.introduction:first-child {
   margin-top: 0; }
 
+.key-term {
+  font-weight: bold; }
+
 :root {
   --apollo-accent: rgb(0, 131, 141);
   --apollo-grey: rgb(100, 100, 100);
@@ -4596,6 +4599,15 @@ blockquote + .source-note {
     padding-top: 0; }
   blockquote + .source-note p:last-child, blockquote + .source-note ul:last-child, blockquote + .source-note ol:last-child, blockquote + .source-note dl:last-child {
     margin-bottom: 0; }
+
+table {
+  font-family: "Inter", sans-serif;
+  font-size: 10px; }
+  table th {
+    background-color: var(--apollo-hint);
+    font-weight: bold; }
+  table td {
+    border-color: var(--apollo-accent); }
 
 .pagedjs_half-title-page_page .pagedjs_area {
   padding-left: 25mm;
@@ -5403,3 +5415,133 @@ aside.biography {
       padding-top: 0; }
     .extract-prose + .source-note p:last-child, .extract-prose + .source-note ul:last-child, .extract-prose + .source-note ol:last-child, .extract-prose + .source-note dl:last-child {
       margin-bottom: 0; }
+
+.pagedjs_right_page .key-terms {
+  margin-right: -50mm;
+  width: 175mm; }
+
+.pagedjs_left_page .key-terms {
+  margin-left: -50mm;
+  width: 175mm; }
+
+.key-terms {
+  column-count: 2;
+  break-before: page; }
+  .key-terms h2 {
+    column-span: all; }
+
+.key-term {
+  color: var(--apollo-accent); }
+
+div.summary {
+  column-count: 2;
+  break-before: page; }
+  div.summary h2 {
+    column-span: all; }
+
+.pagedjs_right_page div.summary {
+  margin-right: -50mm;
+  width: 175mm; }
+
+.pagedjs_left_page div.summary {
+  margin-left: -50mm;
+  width: 175mm; }
+
+.review-activity {
+  background-color: var(--apollo-hint);
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  margin: 19px 0;
+  padding: 9.5px;
+  border-top: 5px solid var(--apollo-accent);
+  border-bottom: 5px solid var(--apollo-accent);
+  font-family: "Crimson Pro", serif;
+  font-size: 13px; }
+  .review-activity h2:first-child, .review-activity h3:first-child, .review-activity h4:first-child, .review-activity h5:first-child, .review-activity h6:first-child {
+    margin-top: 0; }
+  .review-activity h2 + h3,
+  .review-activity h2 + h4,
+  .review-activity h2 + h5,
+  .review-activity h2 + h6, .review-activity h3 + h3,
+  .review-activity h3 + h4,
+  .review-activity h3 + h5,
+  .review-activity h3 + h6, .review-activity h4 + h3,
+  .review-activity h4 + h4,
+  .review-activity h4 + h5,
+  .review-activity h4 + h6, .review-activity h5 + h3,
+  .review-activity h5 + h4,
+  .review-activity h5 + h5,
+  .review-activity h5 + h6, .review-activity h6 + h3,
+  .review-activity h6 + h4,
+  .review-activity h6 + h5,
+  .review-activity h6 + h6 {
+    margin-top: 0; }
+  .review-activity p:last-child, .review-activity ol:last-child, .review-activity ul:last-child, .review-activity dl:last-child {
+    margin-bottom: 0; }
+  .review-activity[data-split-to] {
+    border-bottom: 0;
+    padding-bottom: 9.5px !important;
+    margin-bottom: 9.5px !important; }
+  .review-activity[data-split-from] {
+    padding-top: 9.5px !important;
+    margin-top: 9.5px !important; }
+
+.pagedjs_right_page .review-activity {
+  margin-right: -50mm;
+  width: 175mm; }
+
+.pagedjs_left_page .review-activity {
+  margin-left: -50mm;
+  width: 175mm; }
+
+.pagedjs_right_page.pagedjs_references-page_page {
+  background-color: var(--apollo-hint); }
+  .pagedjs_right_page.pagedjs_references-page_page div.references {
+    margin-right: -50mm;
+    width: 175mm; }
+
+.pagedjs_left_page.pagedjs_references-page_page {
+  background-color: var(--apollo-hint); }
+  .pagedjs_left_page.pagedjs_references-page_page div.references {
+    margin-left: -50mm;
+    width: 175mm; }
+
+div.references {
+  break-before: page;
+  column-count: 2;
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  page: references-page; }
+  div.references h2 {
+    column-span: all; }
+  div.references ul {
+    list-style-type: none;
+    margin-left: 0; }
+    div.references ul li {
+      margin-bottom: 9.5px; }
+
+.pagedjs_right_page.pagedjs_further-reading-page_page {
+  background-color: var(--apollo-hint); }
+  .pagedjs_right_page.pagedjs_further-reading-page_page div.further-reading {
+    margin-right: -50mm;
+    width: 175mm; }
+
+.pagedjs_left_page.pagedjs_further-reading-page_page {
+  background-color: var(--apollo-hint); }
+  .pagedjs_left_page.pagedjs_further-reading-page_page div.further-reading {
+    margin-left: -50mm;
+    width: 175mm; }
+
+div.further-reading {
+  break-before: page;
+  column-count: 2;
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  page: further-reading-page; }
+  div.further-reading h2 {
+    column-span: all; }
+  div.further-reading ul {
+    list-style-type: none;
+    margin-left: 0; }
+    div.further-reading ul li {
+      margin-bottom: 9.5px; }

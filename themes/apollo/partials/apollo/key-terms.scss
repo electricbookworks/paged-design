@@ -1,0 +1,28 @@
+.pagedjs_right_page {
+    
+    .key-terms {
+        @include extend-to-right-sidebar();
+    }
+}
+
+.pagedjs_left_page {
+    
+    .key-terms {
+        @include extend-to-left-sidebar();
+    }
+}
+
+.key-terms {
+    column-count: 2;
+    break-before: page;
+
+    h2 {
+        column-span: all;
+    }
+}
+
+// Not nested in .key-terms because
+// .key-term can be used in any text block.
+.key-term {
+    color: $apollo-accent;
+}

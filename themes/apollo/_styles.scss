@@ -14,11 +14,13 @@
 @import "partials/ketida/titlepage.scss";
 @import "partials/ketida/contents.scss";
 @import "partials/ketida/sections.scss";
+@import "partials/ketida/key-terms.scss";
 
 // Partials specifically for this design
 @import "partials/apollo/colors.scss";
 @import "partials/apollo/mixins.scss";
 @import "partials/apollo/typography.scss";
+@import "partials/apollo/tables.scss";
 @import "partials/apollo/layout.scss";
 @import "partials/apollo/titlepage.scss";
 @import "partials/apollo/contents.scss";
@@ -39,3 +41,8 @@
 @import "partials/apollo/case-study.scss";
 @import "partials/apollo/biography.scss";
 @import "partials/apollo/extract-prose.scss";
+@import "partials/apollo/key-terms.scss";
+@import "partials/apollo/summary.scss";
+@import "partials/apollo/review-activity.scss";
+@import "partials/apollo/references.scss";
+@import "partials/apollo/further-reading.scss";
