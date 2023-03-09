@@ -17,15 +17,27 @@
                 &.toc-part,
                 &.toc-unit {
                     color: $apollo-accent;
+                    font-size: 14px;
                     font-weight: 500;
+                    text-transform: uppercase;
+                    letter-spacing: 0.075em;
                 }
 
                 &.toc-level-one {
 
                     & ~ .toc-level-two {
+                        font-family: $font-text-secondary;
+                    }
+                }
+
+                &.toc-level-two {
+
+                    & ~ .toc-level-three {
                         font-family: $font-text-main;
                     }
                 }
+
+                &.toc-level-three {}
 
                 &.toc-section {
                     font-family: $font-text-main;

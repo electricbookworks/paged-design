@@ -1,0 +1,15 @@
+section.part {
+
+    // See openers.scss for part-page versions
+    // of the opener image etc.
+
+    .part-number {
+
+        // Hide this because we expect
+        // the naming of the part to be done in text.
+        // When this number displays alone, and also
+        // chapter numbers display alone, they are both
+        // just numbers, and cannot be distinguished.
+        display: none;
+    }
+}

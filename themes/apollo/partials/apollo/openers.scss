@@ -1,8 +1,8 @@
 .component-body {
 
-    // Use calc because margin-top and line-height-default
-    // might be defined with different units, e.g. pt and mm.
-    $opener-image-height: calc(#{$margin-top} + (#{$line-height-default * 16}));
+    // Requires that margin-top and line-height-default
+    // are defined with the same units, e.g. px.
+    $opener-image-height: $margin-top + ($line-height-default * 16);
     $opener-image-bleed: 3mm;
 
     // The heading below the image
@@ -67,6 +67,38 @@
                 font-family: $font-text-secondary;
                 font-size: $font-size-default-small;
                 padding-top: $line-height-default / 2;
+            }
+        }
+    }
+
+    // Also see part-page.scss
+    &.part {
+
+        .content-opener-image {
+
+            figure {
+
+                img {
+                    height: $opener-image-height * 1.5 + $opener-image-bleed;
+                }
+            }
+        }
+
+        header {
+
+            &:first-of-type {
+                margin-top: $opener-image-height * 1.5 - $line-height-default;
+            }
+
+            h1 {
+
+                strong:first-of-type {
+                    @include small-caps();
+                    color: $apollo-accent;
+                    font-size: 42px;
+                    font-weight: normal;
+                    line-height: 48px;
+                }
             }
         }
     }

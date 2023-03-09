@@ -25,6 +25,15 @@
                     }
                 }
 
+                &.toc-level-two {
+
+                    & ~ .toc-level-three {
+                        margin-left: $text-indent * 2;
+                    }
+                }
+
+                &.toc-level-three {}
+
                 &.toc-section {
                     margin-left: $text-indent * 2;
                 }

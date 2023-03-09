@@ -25,7 +25,7 @@
 @mixin heading-1($font-size: 64px) {
     font-family: $font-display-main;
     font-size: $font-size;
-    line-height: $line-height-default * 3;
+    line-height: $font-size;
     text-align: left;
 }
 

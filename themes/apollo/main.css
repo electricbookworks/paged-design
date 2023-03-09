@@ -4508,7 +4508,13 @@ section.copyright_page.component-front {
     display: none; }
 
 section.cover.component-front figure {
-  margin: 0; }
+  margin: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
 
 section.titlepage.component-front p.author {
   margin-bottom: 0; }
@@ -4519,6 +4525,9 @@ section.toc.component-front nav ol li a:after {
 
 section.toc.component-front nav ol li.toc-level-one ~ .toc-level-two {
   margin-left: 13px; }
+
+section.toc.component-front nav ol li.toc-level-two ~ .toc-level-three {
+  margin-left: 26px; }
 
 section.toc.component-front nav ol li.toc-section {
   margin-left: 26px; }
@@ -4540,6 +4549,12 @@ div.introduction {
 .key-term {
   font-weight: bold; }
 
+.start-right {
+  break-before: right; }
+
+.start-left {
+  break-before: left; }
+
 :root {
   --apollo-accent: rgb(0, 131, 141);
   --apollo-grey: rgb(100, 100, 100);
@@ -4548,7 +4563,7 @@ div.introduction {
 h1 {
   font-family: "Inter", sans-serif;
   font-size: 64px;
-  line-height: 57px;
+  line-height: 64px;
   text-align: left; }
 
 h2 {
@@ -4703,7 +4718,7 @@ section.titlepage.component-front {
 section.toc.component-front h1 {
   font-family: "Inter", sans-serif;
   font-size: 42px;
-  line-height: 57px;
+  line-height: 42px;
   text-align: left; }
 
 section.toc.component-front nav {
@@ -4712,8 +4727,13 @@ section.toc.component-front nav {
     margin-bottom: 9.5px; }
     section.toc.component-front nav ol li.toc-part, section.toc.component-front nav ol li.toc-unit {
       color: var(--apollo-accent);
-      font-weight: 500; }
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.075em; }
     section.toc.component-front nav ol li.toc-level-one ~ .toc-level-two {
+      font-family: "Inter", sans-serif; }
+    section.toc.component-front nav ol li.toc-level-two ~ .toc-level-three {
       font-family: "Crimson Pro", serif; }
     section.toc.component-front nav ol li.toc-section {
       font-family: "Crimson Pro", serif;
@@ -4722,7 +4742,7 @@ section.toc.component-front nav {
 section.component.component-front h1, section.introduction.component-front h1 {
   font-family: "Inter", sans-serif;
   font-size: 42px;
-  line-height: 57px;
+  line-height: 42px;
   text-align: left; }
 
 @page :blank {
@@ -4732,7 +4752,7 @@ section.component.component-front h1, section.introduction.component-front h1 {
   margin-right: -50mm;
   width: 175mm; }
   .component-body header:first-of-type {
-    margin-top: calc(calc(76px + (304px)) - 19px * 1); }
+    margin-top: calc(380px - 19px * 1); }
   .component-body header + .cst {
     margin-right: -50mm;
     width: 175mm; }
@@ -4754,7 +4774,7 @@ section.component.component-front h1, section.introduction.component-front h1 {
     top: -87.33858px;
     left: 0;
     right: calc((15mm + 50mm + $opener-image-bleed) * -1);
-    height: calc(76px + (304px))3mm;
+    height: 391.33858px;
     margin: 0;
     max-width: none;
     object-fit: cover;
@@ -4768,6 +4788,21 @@ section.component.component-front h1, section.introduction.component-front h1 {
     font-family: "Inter", sans-serif;
     font-size: 10px;
     padding-top: 9.5px; }
+
+.component-body.part .content-opener-image figure img {
+  height: 581.33858px; }
+
+.component-body.part header:first-of-type {
+  margin-top: 551px; }
+
+.component-body.part header h1 strong:first-of-type {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  letter-spacing: 0.07em;
+  color: var(--apollo-accent);
+  font-size: 42px;
+  font-weight: normal;
+  line-height: 48px; }
 
 .chapter-number {
   color: var(--apollo-grey);
@@ -4886,6 +4921,9 @@ section.component.component-front h1, section.introduction.component-front h1 {
     padding: 0; }
   .outline + .learning-objectives {
     margin: 0 0 19px 0 !important; }
+
+section.part .part-number {
+  display: none; }
 
 .focus-questions {
   background-color: var(--apollo-hint);
