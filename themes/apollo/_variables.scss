@@ -49,3 +49,16 @@ $text-spacing: $line-height-default / 2;
 $margin-outside-sidebar: 16mm;
 $pages-with-centred-text: half-title-page, title-page, copyright, contents-page;
 $box-padding: $line-height-default / 2;
+
+// Runners
+$verso-bottom-left-frontmatter: counter(page);
+$verso-bottom-frontmatter: string(h1-text, last);
+
+$recto-bottom-frontmatter: string(h1-text, last);
+$recto-bottom-right-frontmatter:  counter(page);
+
+$verso-bottom-left: counter(page);
+$verso-bottom: string(h1-text, last);
+
+$recto-bottom: string(h1-text, last);
+$recto-bottom-right:  counter(page);

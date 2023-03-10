@@ -12,7 +12,6 @@
 @import "partials/ketida/copyright-page.scss";
 @import "partials/ketida/cover.scss";
 @import "partials/ketida/titlepage.scss";
-@import "partials/ketida/frontmatter.scss";
 @import "partials/ketida/contents.scss";
 @import "partials/ketida/sections.scss";
 @import "partials/ketida/key-terms.scss";
@@ -26,6 +25,7 @@
 @import "partials/apollo/layout.scss";
 @import "partials/apollo/titlepage.scss";
 @import "partials/apollo/contents.scss";
+@import "partials/apollo/frontmatter.scss";
 @import "partials/apollo/blanks.scss";
 @import "partials/apollo/openers.scss";
 @import "partials/apollo/part-page.scss";
@@ -48,3 +48,4 @@
 @import "partials/apollo/review-activity.scss";
 @import "partials/apollo/references.scss";
 @import "partials/apollo/further-reading.scss";
+@import "partials/apollo/running.scss";

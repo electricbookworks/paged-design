@@ -332,9 +332,9 @@ h6 {
   @top-left-corner {
     content: normal; }
   @bottom-center {
-    content: counter(page); }
+    content: string(h1-text, last); }
   @bottom-left {
-    content: normal; }
+    content: counter(page); }
   @bottom-right {
     content: normal; }
   @bottom-left-corner {
@@ -354,11 +354,11 @@ h6 {
   @top-left-corner {
     content: normal; }
   @bottom-center {
-    content: counter(page); }
+    content: string(h1-text, last); }
   @bottom-left {
     content: normal; }
   @bottom-right {
-    content: normal; }
+    content: counter(page); }
   @bottom-left-corner {
     content: normal; }
   @bottom-right-corner {
@@ -410,9 +410,9 @@ h6 {
   @top-left-corner {
     content: normal; }
   @bottom-center {
-    content: counter(page, decimal); }
+    content: string(h1-text, last); }
   @bottom-left {
-    content: normal; }
+    content: counter(page); }
   @bottom-right {
     content: normal; }
   @bottom-left-corner {
@@ -432,11 +432,11 @@ h6 {
   @top-left-corner {
     content: normal; }
   @bottom-center {
-    content: counter(page, decimal); }
+    content: string(h1-text, last); }
   @bottom-left {
     content: normal; }
   @bottom-right {
-    content: normal; }
+    content: counter(page); }
   @bottom-left-corner {
     content: normal; }
   @bottom-right-corner {
@@ -4741,6 +4741,12 @@ section.component-front.toc nav {
       font-family: "Crimson Pro", serif;
       font-size: 13px; }
 
+section.component-front h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 42px;
+  line-height: 42px;
+  text-align: left; }
+
 @page :blank {
   background-color: var(--apollo-accent); }
 
@@ -5579,3 +5585,52 @@ div.further-reading {
     margin-left: 0; }
     div.further-reading ul li {
       margin-bottom: 9.5px; }
+
+.pagedjs_margin-bottom {
+  grid-template-columns: auto 1fr auto !important; }
+
+@page :left {
+  @bottom-center {
+    border-left: 1px solid var(--apollo-accent);
+    height: 19px;
+    margin: 5mm 0;
+    padding-left: 0.25em;
+    text-align: left; }
+  @bottom-left {
+    height: 19px;
+    margin: 5mm 0;
+    padding-right: 0.25em;
+    text-align: right; } }
+
+@page :right {
+  @bottom-center {
+    border-right: 1px solid var(--apollo-accent);
+    height: 19px;
+    margin: 5mm 0;
+    padding-right: 0.25em;
+    text-align: right; }
+  @bottom-right {
+    height: 19px;
+    margin: 5mm 0;
+    padding-left: 0.25em;
+    text-align: left; } }
+
+@page cover {
+  @bottom-center {
+    border-left: 0;
+    border-left: 0; } }
+
+@page half-title-page {
+  @bottom-center {
+    border-left: 0;
+    border-left: 0; } }
+
+@page title-page {
+  @bottom-center {
+    border-left: 0;
+    border-left: 0; } }
+
+@page copyright {
+  @bottom-center {
+    border-left: 0;
+    border-left: 0; } }
