@@ -185,55 +185,8 @@ img {
 .pagedjs_left_page .pagedjs_area {
   padding-left: 45mm; }
 
-.chapter {
-  page: chapter;
-  break-before: recto; }
-
-.copyright-page {
-  page: copyright;
-  break-before: verso;
-  font-size: 7.2pt;
-  line-height: 11.2pt;
-  position: absolute;
-  bottom: 0; }
-  .copyright-page p {
-    text-align: initial;
-    margin-bottom: 15pt; }
-    .copyright-page p + p {
-      text-indent: 0; }
-  .copyright-page h1, .copyright-page h2, .copyright-page h3, .copyright-page h4, .copyright-page h5, .copyright-page h6 {
-    font-size: 9pt;
-    font-weight: bold;
-    font-style: normal;
-    margin: 15pt 0 0 0; }
-    .copyright-page h1 em, .copyright-page h2 em, .copyright-page h3 em, .copyright-page h4 em, .copyright-page h5 em, .copyright-page h6 em {
-      font-style: italic; }
-  .copyright-page h1[id="copyright"] {
-    display: none; }
-
-.dedication-page {
-  page: dedication;
-  break-before: page;
-  margin-top: 140pt; }
-
-.endmatter {
-  page: endmatter; }
-
-.epigraph-page {
-  page: epigraph;
-  break-before: page;
-  margin-top: 140pt; }
-
-.frontispiece-page {
-  page: frontispiece;
-  break-before: page; }
-
 .frontmatter {
   page: frontmatter;
-  break-before: recto; }
-
-.part-page {
-  page: part;
   break-before: recto; }
 
 .previous-publications-page {
@@ -268,6 +221,10 @@ img {
     margin-bottom: 15pt; }
     .previous-publications-page p + p {
       text-indent: 0; }
+
+.frontispiece-page {
+  page: frontispiece;
+  break-before: page; }
 
 .half-title-page {
   page: half-title-page;
@@ -304,6 +261,49 @@ img {
     margin: 14pt 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
+
+.copyright-page {
+  page: copyright;
+  break-before: verso;
+  font-size: 7.2pt;
+  line-height: 11.2pt;
+  position: absolute;
+  bottom: 0; }
+  .copyright-page p {
+    text-align: initial;
+    margin-bottom: 15pt; }
+    .copyright-page p + p {
+      text-indent: 0; }
+  .copyright-page h1, .copyright-page h2, .copyright-page h3, .copyright-page h4, .copyright-page h5, .copyright-page h6 {
+    font-size: 9pt;
+    font-weight: bold;
+    font-style: normal;
+    margin: 15pt 0 0 0; }
+    .copyright-page h1 em, .copyright-page h2 em, .copyright-page h3 em, .copyright-page h4 em, .copyright-page h5 em, .copyright-page h6 em {
+      font-style: italic; }
+  .copyright-page h1[id="copyright"] {
+    display: none; }
+
+.dedication-page {
+  page: dedication;
+  break-before: page;
+  margin-top: 140pt; }
+
+.epigraph-page {
+  page: epigraph;
+  break-before: page;
+  margin-top: 140pt; }
+
+.part-page {
+  page: part;
+  break-before: recto; }
+
+.chapter {
+  page: chapter;
+  break-before: recto; }
+
+.endmatter {
+  page: endmatter; }
 
 h1 {
   string-set: h1-text content(), h2-text content(), h1-title attr(title), h2-title attr(title); }

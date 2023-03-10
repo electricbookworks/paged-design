@@ -8,21 +8,21 @@
 // E.g. $epigraph: '.epigraph-page .epigraph, .opener .ep';
 // Page types
 
-$cover: 'section.cover.component-front';
-$page-title-page: 'section.titlepage.component-front';
-$page-half-title-page: 'section.halftitle.component-front';
+$cover: 'section.cover';
+$page-title-page: 'section.component-front.titlepage';
+$page-half-title-page: 'section.component-front.halftitle';
 $page-copyright: 'section.copyright_page.component-front';
-$page-toc: 'section.toc.component-front';
-$page-frontmatter: 'section.component.component-front, section.introduction.component-front';
-$page-chapter: 'section.chapter.component-body';
+$page-toc: 'section.component-front.toc';
+$page-frontmatter: 'section.component-front';
+$page-chapter: 'section.component-body';
 $page-endmatter: 'section.component-back';
+$page-part: 'section.part';
 
 // The following are guesses at Ketida output,
 // and may need to be revised, or are unnecessary.
 $page-dedication: 'section.dedication_page';
 $page-epigraph: 'section.epigraph_page';
 $page-frontispiece: 'section.frontispiece_page';
-$page-part: 'section.part_page';
 $page-previous-publications: 'section.previous_publications_page';
 
 // On-page features

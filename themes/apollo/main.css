@@ -182,55 +182,8 @@ img {
 .pagedjs_left_page .pagedjs_area {
   padding-left: 50mm; }
 
-section.chapter.component-body {
-  page: chapter;
-  break-before: recto; }
-
-section.copyright_page.component-front {
-  page: copyright;
-  break-before: verso;
-  font-size: 10.4px;
-  line-height: 15.2px;
-  position: absolute;
-  bottom: 0; }
-  section.copyright_page.component-front p {
-    text-align: initial;
-    margin-bottom: 9.5px; }
-    section.copyright_page.component-front p + p {
-      text-indent: 0; }
-  section.copyright_page.component-front h1, section.copyright_page.component-front h2, section.copyright_page.component-front h3, section.copyright_page.component-front h4, section.copyright_page.component-front h5, section.copyright_page.component-front h6 {
-    font-size: 13px;
-    font-weight: bold;
-    font-style: normal;
-    margin: 9.5px 0 0 0; }
-    section.copyright_page.component-front h1 em, section.copyright_page.component-front h2 em, section.copyright_page.component-front h3 em, section.copyright_page.component-front h4 em, section.copyright_page.component-front h5 em, section.copyright_page.component-front h6 em {
-      font-style: italic; }
-  section.copyright_page.component-front h1[id="copyright"] {
-    display: none; }
-
-section.dedication_page {
-  page: dedication;
-  break-before: page;
-  margin-top: 75pt; }
-
-section.component-back {
-  page: endmatter; }
-
-section.epigraph_page {
-  page: epigraph;
-  break-before: page;
-  margin-top: 75pt; }
-
-section.frontispiece_page {
-  page: frontispiece;
-  break-before: page; }
-
-section.component.component-front, section.introduction.component-front {
+section.component-front {
   page: frontmatter;
-  break-before: recto; }
-
-section.part_page {
-  page: part;
   break-before: recto; }
 
 section.previous_publications_page {
@@ -266,15 +219,19 @@ section.previous_publications_page {
     section.previous_publications_page p + p {
       text-indent: 0; }
 
-section.halftitle.component-front {
+section.frontispiece_page {
+  page: frontispiece;
+  break-before: page; }
+
+section.component-front.halftitle {
   page: half-title-page;
   break-before: recto; }
 
-section.titlepage.component-front {
+section.component-front.titlepage {
   page: title-page;
   break-before: recto; }
 
-section.toc.component-front {
+section.component-front.toc {
   break-before: recto;
   page: contents-page h1;
   page-font-size: 32.5px;
@@ -282,25 +239,68 @@ section.toc.component-front {
   page-margin: 38px 0 19px 0;
   page-break-after: avoid;
   page-break-inside: avoid; }
-  section.toc.component-front h2 {
+  section.component-front.toc h2 {
     font-size: 18.2px;
     margin: 19px 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
-  section.toc.component-front h3 {
+  section.component-front.toc h3 {
     font-weight: bold;
     margin: 19px 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
-  section.toc.component-front h4 {
+  section.component-front.toc h4 {
     font-style: italic;
     margin: 19px 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
-  section.toc.component-front h5 {
+  section.component-front.toc h5 {
     margin: 19px 0 0 0;
     break-after: avoid;
     break-inside: avoid; }
+
+section.copyright_page.component-front {
+  page: copyright;
+  break-before: verso;
+  font-size: 10.4px;
+  line-height: 15.2px;
+  position: absolute;
+  bottom: 0; }
+  section.copyright_page.component-front p {
+    text-align: initial;
+    margin-bottom: 9.5px; }
+    section.copyright_page.component-front p + p {
+      text-indent: 0; }
+  section.copyright_page.component-front h1, section.copyright_page.component-front h2, section.copyright_page.component-front h3, section.copyright_page.component-front h4, section.copyright_page.component-front h5, section.copyright_page.component-front h6 {
+    font-size: 13px;
+    font-weight: bold;
+    font-style: normal;
+    margin: 9.5px 0 0 0; }
+    section.copyright_page.component-front h1 em, section.copyright_page.component-front h2 em, section.copyright_page.component-front h3 em, section.copyright_page.component-front h4 em, section.copyright_page.component-front h5 em, section.copyright_page.component-front h6 em {
+      font-style: italic; }
+  section.copyright_page.component-front h1[id="copyright"] {
+    display: none; }
+
+section.dedication_page {
+  page: dedication;
+  break-before: page;
+  margin-top: 75pt; }
+
+section.epigraph_page {
+  page: epigraph;
+  break-before: page;
+  margin-top: 75pt; }
+
+section.part {
+  page: part;
+  break-before: recto; }
+
+section.component-body {
+  page: chapter;
+  break-before: recto; }
+
+section.component-back {
+  page: endmatter; }
 
 h1 {
   string-set: h1-text content(), h2-text content(), h1-title attr(title), h2-title attr(title); }
@@ -3991,7 +3991,7 @@ pre {
   margin: 0;
   padding: 0; }
 
-section.cover.component-front {
+section.cover {
   page: cover;
   margin: 0;
   padding: 0;
@@ -4002,7 +4002,7 @@ section.cover.component-front {
   left: 0;
   break-after: recto;
   break-before: recto; }
-  section.cover.component-front img, section.cover.component-front img:only-child {
+  section.cover img, section.cover img:only-child {
     height: 100%;
     margin: 0;
     max-width: 100%;
@@ -4259,53 +4259,53 @@ th, td {
   .table-caption + p {
     text-indent: 0; }
 
-section.halftitle.component-front,
-section.titlepage.component-front {
+section.component-front.halftitle,
+section.component-front.titlepage {
   margin: 75pt auto 0 auto;
   text-align: center; }
-  section.halftitle.component-front p,
-  section.titlepage.component-front p {
+  section.component-front.halftitle p,
+  section.component-front.titlepage p {
     text-indent: 0;
     hyphens: none;
     text-align: center; }
-  section.halftitle.component-front .title-page-title,
-  section.halftitle.component-front .title-page-title,
-  section.titlepage.component-front .title-page-title,
-  section.titlepage.component-front .title-page-title {
+  section.component-front.halftitle .title-page-title,
+  section.component-front.halftitle .title-page-title,
+  section.component-front.titlepage .title-page-title,
+  section.component-front.titlepage .title-page-title {
     font-weight: bold;
     font-family: "Inter", sans-serif;
     font-size: 25.48px;
     line-height: 1.1;
     margin: 0;
     string-set: book-title content(); }
-  section.halftitle.component-front .title-page-subtitle,
-  section.titlepage.component-front .title-page-subtitle {
+  section.component-front.halftitle .title-page-subtitle,
+  section.component-front.titlepage .title-page-subtitle {
     font-family: "Inter", sans-serif;
     font-size: 18.2px;
     line-height: 1.1;
     margin: 19px 0 0 0;
     string-set: book-subtitle content(); }
-  section.halftitle.component-front .title-page-author,
-  section.titlepage.component-front .title-page-author {
+  section.component-front.halftitle .title-page-author,
+  section.component-front.titlepage .title-page-author {
     font-size: 18.2px;
     line-height: 26.6px;
     margin: 76px 0;
     string-set: book-author content(); }
-  section.halftitle.component-front .title-page-contributors,
-  section.titlepage.component-front .title-page-contributors {
+  section.component-front.halftitle .title-page-contributors,
+  section.component-front.titlepage .title-page-contributors {
     font-size: 13px;
     line-height: 19px;
     margin: 76px 0 19px 0; }
-  section.halftitle.component-front .title-page-publisher,
-  section.titlepage.component-front .title-page-publisher {
+  section.component-front.halftitle .title-page-publisher,
+  section.component-front.titlepage .title-page-publisher {
     position: absolute;
     bottom: 0;
     text-align: center;
     text-indent: 0;
     transform: translateX(-50%);
     margin-left: 50%; }
-  section.halftitle.component-front .title-page-logo,
-  section.titlepage.component-front .title-page-logo {
+  section.component-front.halftitle .title-page-logo,
+  section.component-front.titlepage .title-page-logo {
     width: 15mm;
     position: absolute;
     text-align: center;
@@ -4313,8 +4313,8 @@ section.titlepage.component-front {
     transform: translateX(-50%);
     margin-left: 50%;
     display: block; }
-    section.halftitle.component-front .title-page-logo img,
-    section.titlepage.component-front .title-page-logo img {
+    section.component-front.halftitle .title-page-logo img,
+    section.component-front.titlepage .title-page-logo img {
       width: 100%; }
 
 .toc nav ol {
@@ -4507,37 +4507,37 @@ section.copyright_page.component-front {
   section.copyright_page.component-front header, section.copyright_page.component-front h1 {
     display: none; }
 
-section.cover.component-front figure {
+section.cover figure {
   margin: 0;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0; }
-  section.cover.component-front figure img {
+  section.cover figure img {
     min-width: 100%;
     object-fit: cover; }
 
-section.titlepage.component-front p.author {
+section.component-front.titlepage p.author {
   margin-bottom: 0; }
 
-section.toc.component-front nav ol li a:after {
+section.component-front.toc nav ol li a:after {
   font-family: "Crimson Pro", serif;
   font-size: 13px; }
 
-section.toc.component-front nav ol li.toc-level-one ~ .toc-level-two {
+section.component-front.toc nav ol li.toc-level-one ~ .toc-level-two {
   margin-left: 13px; }
 
-section.toc.component-front nav ol li.toc-level-two ~ .toc-level-three {
+section.component-front.toc nav ol li.toc-level-two ~ .toc-level-three {
   margin-left: 26px; }
 
-section.toc.component-front nav ol li.toc-section {
+section.component-front.toc nav ol li.toc-section {
   margin-left: 26px; }
 
-section.toc.component-front nav ol li.toc-front + .toc-body,
-section.toc.component-front nav ol li.toc-body + .toc-unnumbered,
-section.toc.component-front nav ol li.toc-body + .toc-back,
-section.toc.component-front nav ol li.toc-unnumbered + .toc-back {
+section.component-front.toc nav ol li.toc-front + .toc-body,
+section.component-front.toc nav ol li.toc-body + .toc-unnumbered,
+section.component-front.toc nav ol li.toc-body + .toc-back,
+section.component-front.toc nav ol li.toc-unnumbered + .toc-back {
   margin-top: 19px !important; }
 
 section.section,
@@ -4645,15 +4645,15 @@ table {
 .pagedjs_cover_page .pagedjs_area {
   padding: 0; }
 
-section.halftitle.component-front {
+section.component-front.halftitle {
   border-top: 7px solid var(--apollo-accent);
   border-bottom: 7px solid var(--apollo-accent);
   padding: 19px 0; }
-  section.halftitle.component-front h1 {
+  section.component-front.halftitle h1 {
     font-size: 64px;
     line-height: 1;
     margin-top: 0; }
-  section.halftitle.component-front .cst {
+  section.component-front.halftitle .cst {
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 0.07em;
@@ -4663,9 +4663,9 @@ section.halftitle.component-front {
     font-style: normal;
     font-weight: 500;
     line-height: 32px; }
-    section.halftitle.component-front .cst em {
+    section.component-front.halftitle .cst em {
       font-style: italic; }
-  section.halftitle.component-front h2 {
+  section.component-front.halftitle h2 {
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 0.07em;
@@ -4677,20 +4677,20 @@ section.halftitle.component-front {
     margin-top: 19px;
     text-align: left;
     color: black; }
-  section.halftitle.component-front p, section.halftitle.component-front ul, section.halftitle.component-front ol, section.halftitle.component-front dl {
+  section.component-front.halftitle p, section.component-front.halftitle ul, section.component-front.halftitle ol, section.component-front.halftitle dl {
     text-align: left; }
-  section.halftitle.component-front h1 {
+  section.component-front.halftitle h1 {
     margin: 0; }
 
-section.titlepage.component-front {
+section.component-front.titlepage {
   border-top: 7px solid var(--apollo-accent);
   border-bottom: 7px solid var(--apollo-accent);
   padding: 19px 0; }
-  section.titlepage.component-front h1 {
+  section.component-front.titlepage h1 {
     font-size: 64px;
     line-height: 1;
     margin-top: 0; }
-  section.titlepage.component-front .cst {
+  section.component-front.titlepage .cst {
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 0.07em;
@@ -4700,9 +4700,9 @@ section.titlepage.component-front {
     font-style: normal;
     font-weight: 500;
     line-height: 32px; }
-    section.titlepage.component-front .cst em {
+    section.component-front.titlepage .cst em {
       font-style: italic; }
-  section.titlepage.component-front h2 {
+  section.component-front.titlepage h2 {
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 0.07em;
@@ -4714,38 +4714,32 @@ section.titlepage.component-front {
     margin-top: 19px;
     text-align: left;
     color: black; }
-  section.titlepage.component-front p, section.titlepage.component-front ul, section.titlepage.component-front ol, section.titlepage.component-front dl {
+  section.component-front.titlepage p, section.component-front.titlepage ul, section.component-front.titlepage ol, section.component-front.titlepage dl {
     text-align: left; }
 
-section.toc.component-front h1 {
+section.component-front.toc h1 {
   font-family: "Inter", sans-serif;
   font-size: 42px;
   line-height: 42px;
   text-align: left; }
 
-section.toc.component-front nav {
+section.component-front.toc nav {
   font-family: "Inter", sans-serif; }
-  section.toc.component-front nav ol li {
+  section.component-front.toc nav ol li {
     margin-bottom: 9.5px; }
-    section.toc.component-front nav ol li.toc-part, section.toc.component-front nav ol li.toc-unit {
+    section.component-front.toc nav ol li.toc-part, section.component-front.toc nav ol li.toc-unit {
       color: var(--apollo-accent);
       font-size: 14px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.075em; }
-    section.toc.component-front nav ol li.toc-level-one ~ .toc-level-two {
+    section.component-front.toc nav ol li.toc-level-one ~ .toc-level-two {
       font-family: "Inter", sans-serif; }
-    section.toc.component-front nav ol li.toc-level-two ~ .toc-level-three {
+    section.component-front.toc nav ol li.toc-level-two ~ .toc-level-three {
       font-family: "Crimson Pro", serif; }
-    section.toc.component-front nav ol li.toc-section {
+    section.component-front.toc nav ol li.toc-section {
       font-family: "Crimson Pro", serif;
       font-size: 13px; }
-
-section.component.component-front h1, section.introduction.component-front h1 {
-  font-family: "Inter", sans-serif;
-  font-size: 42px;
-  line-height: 42px;
-  text-align: left; }
 
 @page :blank {
   background-color: var(--apollo-accent); }
