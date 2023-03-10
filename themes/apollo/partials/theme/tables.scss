@@ -3,11 +3,11 @@ table {
     font-size: $font-size-default-small;
 
     th {
-        background-color: $apollo-hint;
+        background-color: $theme-color-accent-light;
         font-weight: bold;
     }
 
     td {
-        border-color: $apollo-accent;
+        border-color: $theme-color-accent;
     }
 }

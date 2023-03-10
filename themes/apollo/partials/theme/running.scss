@@ -1,5 +1,5 @@
 @mixin runner-text-common($side: left) {
-    border-#{$side}: 1px solid $apollo-accent;
+    border-#{$side}: 1px solid $theme-color-accent;
     height: $line-height-default;
     margin: 5mm 0;
     padding-#{$side}: 0.25em;

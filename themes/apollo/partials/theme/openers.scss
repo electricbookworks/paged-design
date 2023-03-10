@@ -63,7 +63,7 @@
                 width: $sidebar-width - $sidebar-gap;
 
                 // Appearance
-                border-top: $rule-thickness solid $apollo-accent;
+                border-top: $rule-thickness solid $theme-color-accent;
                 font-family: $font-text-secondary;
                 font-size: $font-size-default-small;
                 padding-top: $line-height-default / 2;
@@ -94,7 +94,7 @@
 
                 strong:first-of-type {
                     @include small-caps();
-                    color: $apollo-accent;
+                    color: $theme-color-accent;
                     font-size: 42px;
                     font-weight: normal;
                     line-height: 48px;
@@ -117,7 +117,7 @@
 $chapter-number-has-text: false;
 
 .chapter-number {
-    color: $apollo-grey;
+    color: $theme-color-grey;
     font-family: $font-display-main;
     font-weight: 500;
     text-transform: uppercase;
@@ -142,7 +142,7 @@ $chapter-number-has-text: false;
 // Lead-in paragraphs
 
 @mixin leader-paragraph() {
-    color: $apollo-accent;
+    color: $theme-color-accent;
     font-size: 21px;
     line-height: 27px;
     margin-bottom: $line-height-default;

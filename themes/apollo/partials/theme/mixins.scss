@@ -30,7 +30,7 @@
 }
 
 @mixin heading-2() {
-    color: $apollo-accent;
+    color: $theme-color-accent;
     font-family: $font-display-main;
     font-weight: 500;
     font-size: 19px;
@@ -74,7 +74,7 @@
 
     @if $location == titlepage {
         @include small-caps();
-        color: $apollo-accent;
+        color: $theme-color-accent;
         font-family: $font-display-main;
         font-size: 21px;
         font-style: normal;
@@ -100,7 +100,7 @@
 }
 
 @mixin boxes-common() {
-    background-color: $apollo-hint;
+    background-color: $theme-color-accent-light;
     font-family: $font-text-secondary;
     font-size: $font-size-default-small;
     margin: $line-height-default 0;
@@ -130,8 +130,8 @@
 
 @mixin top-and-bottom-box-border() {
 
-    border-top: 5px solid $apollo-accent;
-    border-bottom: 5px solid $apollo-accent;
+    border-top: 5px solid $theme-color-accent;
+    border-bottom: 5px solid $theme-color-accent;
 
     &[data-split-to] {
         border-bottom: 0;

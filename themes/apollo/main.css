@@ -4558,9 +4558,9 @@ div.introduction {
   break-before: left; }
 
 :root {
-  --apollo-accent: rgb(0, 131, 141);
-  --apollo-grey: rgb(100, 100, 100);
-  --apollo-hint: rgb(235, 245, 246); }
+  --theme-color-accent: rgb(0, 131, 141);
+  --theme-color-grey: rgb(100, 100, 100);
+  --theme-color-accent-light: rgb(235, 245, 246); }
 
 h1 {
   font-family: "Inter", sans-serif;
@@ -4569,7 +4569,7 @@ h1 {
   text-align: left; }
 
 h2 {
-  color: var(--apollo-accent);
+  color: var(--theme-color-accent);
   font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 19px;
@@ -4621,10 +4621,10 @@ table {
   font-family: "Inter", sans-serif;
   font-size: 10px; }
   table th {
-    background-color: var(--apollo-hint);
+    background-color: var(--theme-color-accent-light);
     font-weight: bold; }
   table td {
-    border-color: var(--apollo-accent); }
+    border-color: var(--theme-color-accent); }
 
 .pagedjs_half-title-page_page .pagedjs_area {
   padding-left: 25mm;
@@ -4646,8 +4646,8 @@ table {
   padding: 0; }
 
 section.component-front.halftitle {
-  border-top: 7px solid var(--apollo-accent);
-  border-bottom: 7px solid var(--apollo-accent);
+  border-top: 7px solid var(--theme-color-accent);
+  border-bottom: 7px solid var(--theme-color-accent);
   padding: 19px 0; }
   section.component-front.halftitle h1 {
     font-size: 64px;
@@ -4657,7 +4657,7 @@ section.component-front.halftitle {
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 0.07em;
-    color: var(--apollo-accent);
+    color: var(--theme-color-accent);
     font-family: "Inter", sans-serif;
     font-size: 21px;
     font-style: normal;
@@ -4683,8 +4683,8 @@ section.component-front.halftitle {
     margin: 0; }
 
 section.component-front.titlepage {
-  border-top: 7px solid var(--apollo-accent);
-  border-bottom: 7px solid var(--apollo-accent);
+  border-top: 7px solid var(--theme-color-accent);
+  border-bottom: 7px solid var(--theme-color-accent);
   padding: 19px 0; }
   section.component-front.titlepage h1 {
     font-size: 64px;
@@ -4694,7 +4694,7 @@ section.component-front.titlepage {
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 0.07em;
-    color: var(--apollo-accent);
+    color: var(--theme-color-accent);
     font-family: "Inter", sans-serif;
     font-size: 21px;
     font-style: normal;
@@ -4728,7 +4728,7 @@ section.component-front.toc nav {
   section.component-front.toc nav ol li {
     margin-bottom: 9.5px; }
     section.component-front.toc nav ol li.toc-part, section.component-front.toc nav ol li.toc-unit {
-      color: var(--apollo-accent);
+      color: var(--theme-color-accent);
       font-size: 14px;
       font-weight: 500;
       text-transform: uppercase;
@@ -4748,7 +4748,7 @@ section.component-front h1 {
   text-align: left; }
 
 @page :blank {
-  background-color: var(--apollo-accent); }
+  background-color: var(--theme-color-accent); }
 
 .component-body header {
   margin-right: -50mm;
@@ -4786,7 +4786,7 @@ section.component-front h1 {
     bottom: 0;
     right: -55mm;
     width: 45mm;
-    border-top: 0.5pt solid var(--apollo-accent);
+    border-top: 0.5pt solid var(--theme-color-accent);
     font-family: "Inter", sans-serif;
     font-size: 10px;
     padding-top: 9.5px; }
@@ -4801,13 +4801,13 @@ section.component-front h1 {
   text-transform: uppercase;
   font-size: 0.7em;
   letter-spacing: 0.07em;
-  color: var(--apollo-accent);
+  color: var(--theme-color-accent);
   font-size: 42px;
   font-weight: normal;
   line-height: 48px; }
 
 .chapter-number {
-  color: var(--apollo-grey);
+  color: var(--theme-color-grey);
   font-family: "Inter", sans-serif;
   font-weight: 500;
   text-transform: uppercase;
@@ -4823,7 +4823,7 @@ section.component-front h1 {
 .component-front:not(.copyright_page) header + p,
 .component-back:not(.copyright_page) header + p,
 .component-body:not(.copyright_page) header + p {
-  color: var(--apollo-accent);
+  color: var(--theme-color-accent);
   font-size: 21px;
   line-height: 27px;
   margin-bottom: 19px; }
@@ -4844,7 +4844,7 @@ section.component-front h1 {
     font-style: normal; }
 
 .learning-objectives {
-  background-color: var(--apollo-hint);
+  background-color: var(--theme-color-accent-light);
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
@@ -4884,7 +4884,7 @@ section.component-front h1 {
     margin: 0 0 19px 0 !important; }
 
 .outline {
-  background-color: var(--apollo-hint);
+  background-color: var(--theme-color-accent-light);
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
@@ -4928,7 +4928,7 @@ section.part .part-number {
   display: none; }
 
 .focus-questions {
-  background-color: var(--apollo-hint);
+  background-color: var(--theme-color-accent-light);
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
@@ -4968,7 +4968,7 @@ section.part .part-number {
   width: 45mm; }
 
 aside.short.note {
-  background-color: var(--apollo-hint);
+  background-color: var(--theme-color-accent-light);
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
@@ -5008,13 +5008,13 @@ aside.short.note {
   width: 45mm; }
 
 aside.worked-example {
-  background-color: var(--apollo-hint);
+  background-color: var(--theme-color-accent-light);
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
   padding: 9.5px;
-  border-top: 5px solid var(--apollo-accent);
-  border-bottom: 5px solid var(--apollo-accent);
+  border-top: 5px solid var(--theme-color-accent);
+  border-bottom: 5px solid var(--theme-color-accent);
   font-family: "Crimson Pro", serif;
   font-size: 13px; }
   aside.worked-example h2:first-child, aside.worked-example h3:first-child, aside.worked-example h4:first-child, aside.worked-example h5:first-child, aside.worked-example h6:first-child {
@@ -5051,13 +5051,13 @@ aside.worked-example {
     margin-top: -19px !important; }
 
 .self-reflection-activities {
-  background-color: var(--apollo-hint);
+  background-color: var(--theme-color-accent-light);
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
   padding: 9.5px;
-  border-top: 5px solid var(--apollo-accent);
-  border-bottom: 5px solid var(--apollo-accent);
+  border-top: 5px solid var(--theme-color-accent);
+  border-bottom: 5px solid var(--theme-color-accent);
   font-family: "Crimson Pro", serif;
   font-size: 13px; }
   .self-reflection-activities h2:first-child, .self-reflection-activities h3:first-child, .self-reflection-activities h4:first-child, .self-reflection-activities h5:first-child, .self-reflection-activities h6:first-child {
@@ -5090,7 +5090,7 @@ aside.worked-example {
     margin-top: 9.5px !important; }
 
 aside.reminder {
-  background-color: var(--apollo-hint);
+  background-color: var(--theme-color-accent-light);
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
@@ -5166,7 +5166,7 @@ aside.reminder {
   width: 45mm; }
 
 aside.warning {
-  background-color: var(--apollo-hint);
+  background-color: var(--theme-color-accent-light);
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
@@ -5300,7 +5300,7 @@ aside.warning {
     font-style: normal; }
 
 aside.tip {
-  background-color: var(--apollo-hint);
+  background-color: var(--theme-color-accent-light);
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
@@ -5376,7 +5376,7 @@ aside.tip {
   width: 45mm; }
 
 aside.case-study {
-  background-color: var(--apollo-hint);
+  background-color: var(--theme-color-accent-light);
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
@@ -5406,7 +5406,7 @@ aside.case-study {
     margin-bottom: 0; }
 
 aside.biography {
-  background-color: var(--apollo-hint);
+  background-color: var(--theme-color-accent-light);
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
@@ -5471,7 +5471,7 @@ aside.biography {
     column-span: all; }
 
 .key-term {
-  color: var(--apollo-accent); }
+  color: var(--theme-color-accent); }
 
 div.summary {
   column-count: 2;
@@ -5488,13 +5488,13 @@ div.summary {
   width: 175mm; }
 
 .review-activity {
-  background-color: var(--apollo-hint);
+  background-color: var(--theme-color-accent-light);
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
   padding: 9.5px;
-  border-top: 5px solid var(--apollo-accent);
-  border-bottom: 5px solid var(--apollo-accent);
+  border-top: 5px solid var(--theme-color-accent);
+  border-bottom: 5px solid var(--theme-color-accent);
   font-family: "Crimson Pro", serif;
   font-size: 13px; }
   .review-activity h2:first-child, .review-activity h3:first-child, .review-activity h4:first-child, .review-activity h5:first-child, .review-activity h6:first-child {
@@ -5535,13 +5535,13 @@ div.summary {
   width: 175mm; }
 
 .pagedjs_right_page.pagedjs_references-page_page {
-  background-color: var(--apollo-hint); }
+  background-color: var(--theme-color-accent-light); }
   .pagedjs_right_page.pagedjs_references-page_page div.references {
     margin-right: -50mm;
     width: 175mm; }
 
 .pagedjs_left_page.pagedjs_references-page_page {
-  background-color: var(--apollo-hint); }
+  background-color: var(--theme-color-accent-light); }
   .pagedjs_left_page.pagedjs_references-page_page div.references {
     margin-left: -50mm;
     width: 175mm; }
@@ -5561,13 +5561,13 @@ div.references {
       margin-bottom: 9.5px; }
 
 .pagedjs_right_page.pagedjs_further-reading-page_page {
-  background-color: var(--apollo-hint); }
+  background-color: var(--theme-color-accent-light); }
   .pagedjs_right_page.pagedjs_further-reading-page_page div.further-reading {
     margin-right: -50mm;
     width: 175mm; }
 
 .pagedjs_left_page.pagedjs_further-reading-page_page {
-  background-color: var(--apollo-hint); }
+  background-color: var(--theme-color-accent-light); }
   .pagedjs_left_page.pagedjs_further-reading-page_page div.further-reading {
     margin-left: -50mm;
     width: 175mm; }
@@ -5591,7 +5591,7 @@ div.further-reading {
 
 @page :left {
   @bottom-center {
-    border-left: 1px solid var(--apollo-accent);
+    border-left: 1px solid var(--theme-color-accent);
     height: 19px;
     margin: 5mm 0;
     padding-left: 0.25em;
@@ -5604,7 +5604,7 @@ div.further-reading {
 
 @page :right {
   @bottom-center {
-    border-right: 1px solid var(--apollo-accent);
+    border-right: 1px solid var(--theme-color-accent);
     height: 19px;
     margin: 5mm 0;
     padding-right: 0.25em;
