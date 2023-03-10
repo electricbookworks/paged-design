@@ -23,8 +23,6 @@ $sidebar-position: outside;
 // Since we can't yet control `page-1` in Ketida HTML
 // we rather just give all frontmatter decimal page numbering.
 $frontmatter-page-numbers: decimal;
-$verso-bottom-frontmatter: counter(page, $frontmatter-page-numbers);
-$recto-bottom-frontmatter: counter(page, $frontmatter-page-numbers);
 
 // Type
 $font-text-main: "Crimson Pro", serif;

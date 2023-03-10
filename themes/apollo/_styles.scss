@@ -5,6 +5,9 @@
 // They will be included by main.scss,
 // after default/_styles.scss
 
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Inter:wght@400;500;700&display=swap');
+
 // Partials for all platform (e.g. Ketida) HTML
 @import "partials/platform/mixins.scss";
 @import "partials/platform/typography.scss";
