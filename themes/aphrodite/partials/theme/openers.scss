@@ -1,0 +1,236 @@
+.component-body {
+
+    // Requires that margin-top and line-height-default
+    // are defined with the same units, e.g. px.
+    $opener-image-height: $margin-top + ($line-height-default * 16);
+    $opener-image-bleed: 3mm;
+
+    // The heading below the image
+    header {
+        // @include extend-to-right-sidebar();
+
+        &:first-of-type {
+            margin-top: calc(#{$opener-image-height} - #{$line-height-default} * 1);
+        }
+
+        & + .cst {
+            // @include extend-to-right-sidebar();
+        }
+
+        & ~ p.author {
+            // @include extend-to-right-sidebar();
+            @include small-caps();
+            font-family: $font-text-secondary;
+            font-size: $font-size-default-small;
+            margin-bottom: $line-height-default * 1.5;
+        }
+    }
+
+    // Depends on this image being early enough
+    // in the chapter that it's on the first page.
+    // And these only display big on .component-body.
+    .content-opener-image {
+    
+        figure {
+            display: contents;
+            margin: 0;
+            
+            img {
+                position: absolute;
+
+                // We set the bleed directly here rather than using $bleed
+                // because we want the image to appear the same in
+                // screen PDF (where bleed is 0) and print PDF (with bleed).
+                // We use calc where variables might be defined with
+                // different units, e.g. mm or pt.
+                top: -($margin-top + $opener-image-bleed);
+                left: 0;
+
+                right: calc((#{$margin-outside} + #{$sidebar-width} + $opener-image-bleed) * -1);
+                height: $opener-image-height + $opener-image-bleed;
+                margin: 0;
+                max-width: none;
+                object-fit: cover;
+                width: $page-width - $margin-inside + $opener-image-bleed;
+            }
+
+            figcaption {
+
+                // Position
+                position: absolute;
+                bottom: 0;
+                right: -($sidebar-width + $sidebar-gap);
+                width: $sidebar-width - $sidebar-gap;
+
+                // Appearance
+                border-top: $rule-thickness solid $theme-color-accent;
+                font-family: $font-text-secondary;
+                font-size: $font-size-default-small;
+                padding-top: $line-height-default / 2;
+            }
+        }
+    }
+
+    // Also see part-page.scss
+    &.part {
+
+        .content-opener-image {
+
+            figure {
+
+                img {
+                    height: $opener-image-height * 1.5 + $opener-image-bleed;
+                }
+            }
+        }
+
+        header {
+
+            &:first-of-type {
+                margin-top: $opener-image-height * 1.5 - $line-height-default;
+            }
+
+            h1 {
+
+                strong:first-of-type {
+                    @include small-caps();
+                    color: $theme-color-accent;
+                    font-size: 42px;
+                    font-weight: normal;
+                    line-height: 48px;
+                }
+            }
+        }
+    }
+}
+
+
+// Chapter numbers
+
+// The spec design used the word 'chapter'
+// before the number, but Ketida only inserts
+// a number. We don't want to add generated content
+// in CSS, because the book might not be in English.
+// So instead, we'll add a design where the chapter number
+// sits to the left of the header text.
+
+$chapter-number-has-text: false;
+
+.chapter-number {
+    color: $theme-color-grey;
+    font-family: $font-display-main;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    @if $chapter-number-has-text == true {
+        font-size: 21px;
+    } @else {
+        float: left;
+
+        // Size and line-height matches h1
+        font-size: 64px;
+        line-height: $line-height-default * 3;
+        margin-right: $text-indent;
+    }
+
+    & + h1 {
+        margin-top: 0;
+    }
+}
+
+// Lead-in paragraphs
+
+@mixin leader-paragraph() {
+    color: $theme-color-accent;
+    font-size: 21px;
+    line-height: 27px;
+    margin-bottom: $line-height-default;
+}
+
+.component,
+.component-front,
+.component-back,
+.component-body {
+
+    &:not(.copyright_page) {
+
+        header {
+
+            // When a paragraph follows a main heading,
+            // treat it as a leader paragraph.
+            & + p {
+                @include leader-paragraph();
+
+                & + p {
+                    text-indent: 0;
+                }
+            }
+        }
+    }
+}
+
+
+// Component/chapter subtitles
+
+.cst {
+    @include subtitle();
+}
+
+
+// Opening boxes
+
+.learning-objectives {
+    @include boxes-common();
+
+    // Assumes there will be an element with margin-top
+    // after this, like a heading. This way, the box
+    // can merge visually with, say, .outline.
+    margin-bottom: 0;
+
+    & > p {
+        @include small-caps();
+        font-size: $font-size-default-small;
+        margin-bottom: 0;
+    }
+
+    ul, ol {
+        margin: 0 0 0 $line-height-default; // not sure why LHD
+        padding: 0;
+    }
+
+    & + .outline {
+
+        // Need to override specificity here,
+        // because of how paged.js rewrites CSS here.
+        margin: 0 0 $line-height-default 0!important;
+    }
+}
+
+.outline {
+    @include boxes-common();
+
+    // Assumes there will be an element with margin-top
+    // after this, like a heading. This way, the box
+    // can merge visually with, say, .learning-objectives.
+    margin-bottom: 0;
+
+    & > p {
+        @include small-caps();
+        font-size: $font-size-default-small;
+        margin-bottom: 0;
+    }
+
+    ul, ol {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    & + .learning-objectives {
+        // Need to override specificity here,
+        // because of how paged.js rewrites CSS here.
+        margin: 0 0 $line-height-default 0!important;
+    }
+
+}

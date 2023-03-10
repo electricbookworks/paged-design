@@ -1,0 +1,13 @@
+ul, ol {
+
+    li {
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.small-caps {
+    @include small-caps();
+}

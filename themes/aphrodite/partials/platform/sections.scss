@@ -1,0 +1,21 @@
+section.section,
+div.introduction {
+
+    margin-top: $line-height-default;
+}
+
+// But when this starts a page,
+// no margin-top
+
+// When headings are the first item
+// on a page, remove margin-top.
+.pagedjs_page_content {
+
+    section.section,
+    div.introduction {
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}

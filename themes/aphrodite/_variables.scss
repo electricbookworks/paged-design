@@ -1,0 +1,59 @@
+// _variables.scss
+
+// Set your own variables here. These override
+// the defaults in themes/_defaults/_variables.scss.
+// For brevity, we don't repeat all supported variables here.
+// Copy the ones you want to change from defaults.scss
+// to here, and remove `!default` from each one.
+
+// Theme custom variable
+$baseline-grid-unit: 20px; // roughly 14pt
+
+// When paged.js is your rendering target,
+// use px rather than pt for accurate rendering.
+$page-width: 152mm;
+$page-height: 228mm;
+$margin-top: $baseline-grid-unit * 4;
+$margin-bottom: $baseline-grid-unit * 4;
+$margin-inside: 20mm;
+$margin-outside: 20mm;
+$sidebar-width: 0mm;
+$sidebar-position: outside;
+
+// Since we can't yet control `page-1` in Ketida HTML
+// we rather just give all frontmatter decimal page numbering.
+$frontmatter-page-numbers: decimal;
+
+// Type
+$font-text-main: "Gelasio", serif;
+$font-text-secondary: "Inter", sans-serif;
+$font-display-main: "Gelasio", sans-serif;
+$font-display-secondary: "Gelasio", serif;
+$font-size-default: 12px; // roughly 9pt
+$font-size-default-small: 10px; // custom theme variable
+$line-height-default: $baseline-grid-unit;
+$text-align-default: start;
+
+// Paragraphs
+$paragraphs: indented;
+$text-indent: $font-size-default;
+
+// Note: $text-spacing that isn't derived from
+// $line-height-default will break the baseline grid,
+// and therefore line alignment across spreads.
+$text-spacing: $line-height-default;
+
+$start-depth: 0;
+
+// Variables specific to this theme
+$box-padding: $line-height-default / 2;
+
+// probably not required for Aphrodite
+    $margin-outside-sidebar: 16mm;
+    $pages-with-centred-text: half-title-page, title-page, copyright, contents-page;
+
+// Runners
+$verso-top-frontmatter: string(h1-text, last);
+$recto-top-frontmatter: string(h1-text, last);
+$verso-top: string(h1-text, last);
+$recto-top: string(h1-text, last);

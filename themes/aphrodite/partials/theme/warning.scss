@@ -1,0 +1,14 @@
+aside.warning {
+    @include boxes-common;
+}
+
+@include move-to-sidebar("aside.warning.short");
+
+// When this is in a box of some kind,
+// adjust its margin-outside.
+
+$boxes-that-contain-short-warnings: box, self-reflection-activities, worked-example;
+
+@each $box in $boxes-that-contain-short-warnings {
+    @include move-to-sidebar(".#{$box} aside.warning.short", $box-padding);
+}

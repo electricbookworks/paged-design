@@ -1,0 +1,7 @@
+.self-reflection-activities {
+    @include boxes-common();
+    @include top-and-bottom-box-border();
+
+    font-family: $font-text-main;
+    font-size: $font-size-default;
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Aphrodite",
+  "scripts": {
+    "prelayout": ["headers.js"],
+    "postlayout": ["baseline-grid.js"]
+  }
+}

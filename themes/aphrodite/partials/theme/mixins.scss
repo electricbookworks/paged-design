@@ -1,0 +1,179 @@
+// Mixins intended for reuse in various partials.
+// Mixins created only for use in a specific partial
+// should be created in that partial, not here.
+
+// @mixin extend-to-right-sidebar() {
+//     margin-right: -($sidebar-width);
+//     width: $page-width - $margin-inside - $margin-outside;
+// }
+
+// @mixin extend-to-left-sidebar() {
+//     margin-left: -($sidebar-width);
+//     width: $page-width - $margin-inside - $margin-outside;
+// }
+
+// @mixin undo-extend-to-right-sidebar() {
+//     margin-right: 0;
+//     width: $page-width - $margin-inside - $margin-outside - $sidebar-width;
+// }
+
+// @mixin undo-extend-to-left-sidebar() {
+//     margin-left: 0;
+//     width: $page-width - $margin-inside - $margin-outside - $sidebar-width;
+// }
+
+@mixin heading-1($font-size: 64px) {
+    font-family: $font-display-main;
+    font-size: $font-size;
+    line-height: $font-size;
+    text-align: left;
+}
+
+@mixin heading-2() {
+    color: $theme-color-accent;
+    font-family: $font-display-main;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: $line-height-default;
+    margin-bottom: 0;
+    margin-top: $line-height-default * 2;
+    text-align: left;
+}
+
+@mixin heading-3() {
+    @include small-caps();
+
+    font-family: $font-display-main;
+    font-size: $font-size-default;
+    font-weight: 500;
+    line-height: $line-height-default;
+    margin-bottom: 0;
+    margin-top: $line-height-default;
+    text-align: left;
+}
+
+@mixin heading-4() {
+    font-family: $font-display-secondary;
+    text-align: left;
+}
+
+@mixin heading-5() {
+    font-family: $font-display-secondary;
+    font-style: italic;
+    font-weight: bold;
+    text-align: left;
+}
+
+@mixin heading-6() {
+    font-family: $font-display-secondary;
+    font-style: italic;
+    text-align: left;
+}
+
+@mixin subtitle($location: chapter) {
+
+    @if $location == titlepage {
+        font-family: $font-display-main;
+        font-size: 20px;
+        font-style: italic;
+        font-weight: normal;
+        line-height: 32px;
+
+        em {
+            font-style: normal;
+        }
+
+    } @else {
+        color: $color-text-main;
+        font-family: $font-text-main;
+        font-size: 19px;
+        font-style: italic;
+        font-weight: normal;
+        line-height: $line-height-default;
+    
+        em {
+            font-style: normal;
+        }
+    }
+}
+
+@mixin boxes-common() {
+    background-color: $theme-color-accent-light;
+    font-family: $font-text-secondary;
+    font-size: $font-size-default-small;
+    margin: $line-height-default 0;
+    padding: $box-padding;
+
+    h2, h3, h4, h5, h6 {
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        & + h3,
+        & + h4,
+        & + h5,
+        & + h6 {
+            margin-top: 0;
+        }
+    }
+
+    p, ol, ul, dl {
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@mixin top-and-bottom-box-border() {
+
+    border-top: 5px solid $theme-color-accent;
+    border-bottom: 5px solid $theme-color-accent;
+
+    &[data-split-to] {
+        border-bottom: 0;
+
+        // paged.js wants to remove padding here,
+        // which I think is wrong. So we put it back.
+        padding-bottom: $box-padding!important;
+        margin-bottom: $box-padding!important;
+    }
+
+    &[data-split-from] {
+
+        // paged.js wants to remove padding here,
+        // which I think is wrong. So we put it back.
+        padding-top: $box-padding!important;
+        margin-top: $box-padding!important;
+    }
+}
+
+@mixin wavy-vertical-line($color: $theme-color-accent) {
+    background-color: $color;
+
+    // https://css-generators.com/wavy-shapes/
+    --mask:
+        radial-gradient(35.99px at calc(100% + 18.00px) 50%,#0000 calc(99% - 2px),#000 calc(101% - 2px) 99%,#0000 101%) calc(50% - 16px + .5px) calc(50% - 60px)/ 32px 120px  repeat-y,
+        radial-gradient(35.99px at -18px 50%,#0000 calc(99% - 2px),#000 calc(101% - 2px) 99%,#0000 101%) calc(50% + 16px) 50%/32px 120px  repeat-y;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+}
+
+@mixin wavy-vertical-box($color: $theme-color-accent) {
+    background-color: $color;
+    --mask:
+        radial-gradient(34.99px at calc(100% - 48.00px) 50%,#000 99%,#0000 101%) 0 calc(50% - 60px)/100% 120px,
+        radial-gradient(34.99px at calc(100% + 18.00px) 50%,#0000 99%,#000 101%) calc(100% - 30px) 50%/100% 120px repeat-y;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+}
+
+@mixin wavy-horizontal-box($color: $theme-color-accent) {
+    background-color: $color;
+    --mask:
+        radial-gradient(34.99px at 50% calc(100% - 48.00px),#000 99%,#0000 101%) calc(50% - 60px) 0/120px 100%,
+        radial-gradient(34.99px at 50% calc(100% + 18.00px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px 100% repeat-x;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+}

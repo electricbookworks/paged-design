@@ -1,0 +1,14 @@
+aside.tip {
+    @include boxes-common;
+}
+
+@include move-to-sidebar("aside.tip.short");
+
+// When this is in a box of some kind,
+// adjust its margin-outside.
+
+$boxes-that-contain-short-tips: box, self-reflection-activities, worked-example;
+
+@each $box in $boxes-that-contain-short-tips {
+    @include move-to-sidebar(".#{$box} aside.tip.short", $box-padding);
+}

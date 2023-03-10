@@ -1,0 +1,50 @@
+@mixin runner-text-common($side: left) {
+    border-#{$side}: 1px solid $theme-color-accent;
+    height: $line-height-default;
+    margin: 5mm 0;
+    padding-#{$side}: 0.25em;
+    text-align: $side;
+}
+
+@mixin runner-number-common($inside: left) {
+    height: $line-height-default;
+    margin: 5mm 0;
+    padding-#{$inside}: 0.25em;
+    text-align: $inside;
+}
+
+.pagedjs_margin-bottom {
+    grid-template-columns: auto 1fr auto!important;
+}
+
+@page :left {
+
+    @bottom-center {
+        @include runner-text-common(left);
+    }
+    @bottom-left {
+        @include runner-number-common(right);
+    }
+}
+
+@page :right {
+
+    @bottom-center {
+        @include runner-text-common(right);
+    }
+    @bottom-right {
+        @include runner-number-common(left)
+    }
+}
+
+// Remove runner borders from certain pages
+$page-types-without-runners: cover, half-title-page, title-page, copyright;
+
+@each $page-type in $page-types-without-runners {
+    @page #{$page-type} {
+        @bottom-center {
+            border-left: 0;
+            border-left: 0;
+        }
+    }
+}

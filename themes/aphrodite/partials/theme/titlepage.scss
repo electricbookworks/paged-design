@@ -1,0 +1,62 @@
+@mixin title-pages-common() {
+    display: flex;
+    flex-direction: column;
+    height: $page-height - $margin-top - $margin-bottom;
+    justify-content: center;
+
+    h1 {
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-top: 0;
+    }
+
+    // Subtitle
+    .cst {
+        @include subtitle(titlepage);
+    }
+
+    h2 {
+        @include heading-3();
+
+        color: $color-text-main;
+    }
+
+    p, ul, ol, dl {
+        text-align: left;
+    }
+}
+
+#{$page-half-title-page} {
+    @include title-pages-common();
+    margin-left: 50mm - $margin-inside;
+
+    h1 {
+        margin: 0;
+    }
+
+    &::before {
+        @include wavy-vertical-box();
+        content: "";
+        position: absolute;
+        left: -($margin-inside + 3mm); // 3mm for bleed
+        top: -($margin-top + 3mm);
+        bottom: -($margin-bottom + 3mm);
+        width: 50mm;
+    }
+}
+
+#{$page-title-page} {
+    @include title-pages-common();
+    margin-left: 35mm - $margin-inside;
+
+    &::before {
+        @include wavy-vertical-line();
+        content: "";
+        position: absolute;
+        left: -($margin-inside + 3mm); // 3mm for bleed
+        top: -($margin-top + 3mm);
+        bottom: -($margin-bottom + 3mm);
+        width: 50mm;
+    }
+}

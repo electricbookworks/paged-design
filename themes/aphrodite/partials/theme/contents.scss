@@ -1,0 +1,49 @@
+#{$page-toc} {
+
+    h1 {
+        @include heading-1(42px);
+    }
+
+    nav {
+        font-family: $font-text-secondary;
+
+        ol {
+
+            li {
+                margin-bottom: $line-height-default / 2;
+
+                &.toc-front {}
+
+                &.toc-part,
+                &.toc-unit {
+                    color: $theme-color-accent;
+                    font-size: 14px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    letter-spacing: 0.075em;
+                }
+
+                &.toc-level-one {
+
+                    & ~ .toc-level-two {
+                        font-family: $font-text-secondary;
+                    }
+                }
+
+                &.toc-level-two {
+
+                    & ~ .toc-level-three {
+                        font-family: $font-text-main;
+                    }
+                }
+
+                &.toc-level-three {}
+
+                &.toc-section {
+                    font-family: $font-text-main;
+                    font-size: $font-size-default;
+                }
+            }
+        }
+    }
+}

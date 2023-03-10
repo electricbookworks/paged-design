@@ -1,0 +1,14 @@
+// Settings colors as custom properties
+// lets us change colour in the browser
+// by changing the custom property.
+
+:root {
+    --theme-color-accent: rgb(189, 28, 62);
+    --theme-color-grey: rgb(100, 100, 100);
+    --theme-color-accent-light: rgb(252, 245, 245);
+}
+
+$color-accent: var(--theme-color-accent);
+$theme-color-accent: var(--theme-color-accent);
+$theme-color-grey: var(--theme-color-grey);
+$theme-color-accent-light: var(--theme-color-accent-light);

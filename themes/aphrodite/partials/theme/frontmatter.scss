@@ -1,0 +1,6 @@
+#{$page-frontmatter} {
+
+    h1 {
+        @include heading-1(42px);
+    }
+}
