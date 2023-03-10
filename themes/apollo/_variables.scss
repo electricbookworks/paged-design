@@ -31,16 +31,16 @@ $font-display-main: "Inter", sans-serif;
 $font-display-secondary: "Crimson Pro", serif;
 $font-size-default: 13px; // roughly 10pt
 $font-size-default-small: 10px; // custom theme variable
-$line-height-default: $baseline-grid-unit; // roughly 14pt
+$line-height-default: $baseline-grid-unit;
 $text-align-default: start;
 
 // Paragraphs
 $paragraphs: spaced;
 $text-indent: $font-size-default;
 
-// Note: $text-spacing that isn't $line-height-default
-// will break the baseline grid, and therefore
-// line alignment across spreads.
+// Note: $text-spacing that isn't derived from
+// $line-height-default will break the baseline grid,
+// and therefore line alignment across spreads.
 $text-spacing: $line-height-default / 2;
 
 // Variables specific to this theme
