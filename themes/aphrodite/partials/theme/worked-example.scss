@@ -1,19 +1,12 @@
 aside.worked-example {
     @include boxes-common();
-    @include top-and-bottom-box-border();
+    @include box-border-left();
 
     font-family: $font-text-main;
     font-size: $font-size-default;
 
-    // Design spec wanted to remove the rule entirely
-    // when .self-reflection-activities follows .worked-example,
-    // but that would require JS to tell .worked-example that
-    // it precedes .self-reflection-activities. And we can't
-    // assume that a given server will run theme scripts
-    // for security reasons.
     & + .self-reflection-activities,
     & + aside.worked-example {
-        border-top: 0!important;
         margin-top: -($line-height-default)!important;
     }
 }

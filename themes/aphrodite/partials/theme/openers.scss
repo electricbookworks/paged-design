@@ -7,7 +7,6 @@
 
     // The heading below the image
     header {
-        // @include extend-to-right-sidebar();
 
         &::before {
             @include wavy-horizontal-box-upwards(white);
@@ -21,19 +20,24 @@
         }
 
         &:first-of-type {
-            margin-top: calc(#{$opener-image-height} - #{$line-height-default} * 1);
-        }
-
-        & + .cst {
-            // @include extend-to-right-sidebar();
+            margin-top: calc(#{$opener-image-height} - #{$line-height-default} * 3);
         }
 
         & ~ p.author {
-            // @include extend-to-right-sidebar();
-            @include small-caps();
-            font-family: $font-text-secondary;
             font-size: $font-size-default-small;
+            font-style: italic;
             margin-bottom: $line-height-default * 1.5;
+            margin-left: $margin-outside + $margin-inside;
+            text-indent: 0;
+
+            em {
+                font-style: normal;
+            }
+        }
+
+        h1 {
+            @include heading-1(38px);
+            margin-bottom: $line-height-default * 0.5;
         }
     }
 
@@ -68,15 +72,19 @@
 
                 // Position
                 position: absolute;
-                bottom: 0;
-                right: -($sidebar-width + $sidebar-gap);
-                width: $sidebar-width - $sidebar-gap;
+                top: -($line-height-default * 3);
+                right: -($margin-outside + $opener-image-bleed);
+                width: $page-width * 0.4;
+                background-color: $theme-color-accent;
+                padding-top: $line-height-default * 0.5;
+                padding-bottom: $line-height-default * 0.5;
+                padding-right: ($text-indent * 2) + $opener-image-bleed;
+                padding-left: $text-indent * 0.5;
 
-                // Appearance
-                border-top: $rule-thickness solid $theme-color-accent;
+                // Type
+                color: white;
                 font-family: $font-text-secondary;
                 font-size: $font-size-default-small;
-                padding-top: $line-height-default / 2;
             }
         }
     }
@@ -175,7 +183,7 @@
 $chapter-number-has-text: false;
 
 .chapter-number {
-    color: $theme-color-grey;
+    color: $theme-color-accent;
     font-family: $font-display-main;
     font-weight: 500;
     text-transform: uppercase;
@@ -187,8 +195,9 @@ $chapter-number-has-text: false;
         float: left;
 
         // Size and line-height matches h1
-        font-size: 64px;
-        line-height: $line-height-default * 3;
+        font-size: 38px;
+        font-weight: bold;
+        line-height: 38px;
         margin-right: $text-indent;
     }
 
@@ -201,6 +210,7 @@ $chapter-number-has-text: false;
 
 .cst {
     @include subtitle();
+    margin-bottom: $line-height-default * 0.5;
 }
 
 
@@ -216,6 +226,7 @@ $chapter-number-has-text: false;
 
     & > p {
         @include small-caps();
+        color: $theme-color-accent;
         font-size: $font-size-default-small;
         margin-bottom: 0;
     }
@@ -243,6 +254,7 @@ $chapter-number-has-text: false;
 
     & > p {
         @include small-caps();
+        color: $theme-color-accent;
         font-size: $font-size-default-small;
         margin-bottom: 0;
     }

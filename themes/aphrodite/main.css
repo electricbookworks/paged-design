@@ -4487,6 +4487,9 @@ ul li p, ol li p {
   font-size: 0.7em;
   letter-spacing: 0.07em; }
 
+span.math-node {
+  line-height: 1; }
+
 .running-left {
   position: running(runningLeft); }
 
@@ -4575,7 +4578,7 @@ h2 {
   color: var(--theme-color-accent);
   font-family: "Gelasio", sans-serif;
   font-weight: 500;
-  font-size: 19px;
+  font-size: 16px;
   line-height: 20px;
   margin-bottom: 0;
   margin-top: 40px;
@@ -4622,7 +4625,7 @@ blockquote + .source-note {
 
 table {
   font-family: "Inter", sans-serif;
-  font-size: 10px; }
+  font-size: 11px; }
   table th {
     background-color: var(--theme-color-accent-light);
     font-weight: bold; }
@@ -4779,8 +4782,8 @@ section.component-front.toc nav {
 
 section.component-front h1 {
   font-family: "Gelasio", sans-serif;
-  font-size: 42px;
-  line-height: 42px;
+  font-size: 32px;
+  line-height: 32px;
   text-align: left; }
 
 section.copyright_page.component-front {
@@ -4867,15 +4870,23 @@ section.component-back h1:before {
   z-index: 1; }
 
 .component-body header:first-of-type {
-  margin-top: calc(240px - 20px * 1); }
+  margin-top: calc(240px - 20px * 3); }
 
 .component-body header ~ p.author {
-  text-transform: uppercase;
-  font-size: 0.7em;
-  letter-spacing: 0.07em;
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
-  margin-bottom: 30px; }
+  font-size: 11px;
+  font-style: italic;
+  margin-bottom: 30px;
+  margin-left: 40mm;
+  text-indent: 0; }
+  .component-body header ~ p.author em {
+    font-style: normal; }
+
+.component-body header h1 {
+  font-family: "Gelasio", sans-serif;
+  font-size: 38px;
+  line-height: 38px;
+  text-align: left;
+  margin-bottom: 10px; }
 
 .component-body .content-opener-image figure {
   display: contents;
@@ -4892,13 +4903,17 @@ section.component-back h1:before {
     width: 158mm; }
   .component-body .content-opener-image figure figcaption {
     position: absolute;
-    bottom: 0;
-    right: -5mm;
-    width: -5mm;
-    border-top: 0.5pt solid var(--theme-color-accent);
+    top: -60px;
+    right: -23mm;
+    width: 60.8mm;
+    background-color: var(--theme-color-accent);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 35.33858px;
+    padding-left: 6px;
+    color: white;
     font-family: "Inter", sans-serif;
-    font-size: 10px;
-    padding-top: 10px; }
+    font-size: 11px; }
 
 .component-body.part .content-opener-image figure img {
   min-height: 234mm;
@@ -4960,32 +4975,34 @@ section.component-back h1:before {
     break-before: page; }
 
 .chapter-number {
-  color: var(--theme-color-grey);
+  color: var(--theme-color-accent);
   font-family: "Gelasio", sans-serif;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   float: left;
-  font-size: 64px;
-  line-height: 60px;
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 38px;
   margin-right: 12px; }
   .chapter-number + h1 {
     margin-top: 0; }
 
 .cst {
-  color: black;
+  color: var(--theme-color-accent);
   font-family: "Gelasio", serif;
-  font-size: 19px;
+  font-size: 16px;
   font-style: italic;
   font-weight: normal;
-  line-height: 20px; }
+  line-height: 20px;
+  margin-bottom: 10px; }
   .cst em {
     font-style: normal; }
 
 .learning-objectives {
   background-color: var(--theme-color-accent-light);
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-family: "Gelasio", serif;
+  font-size: 11px;
   margin: 20px 0;
   padding: 10px;
   margin-bottom: 0; }
@@ -5014,7 +5031,8 @@ section.component-back h1:before {
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 0.07em;
-    font-size: 10px;
+    color: var(--theme-color-accent);
+    font-size: 11px;
     margin-bottom: 0; }
   .learning-objectives ul, .learning-objectives ol {
     margin: 0 0 0 20px;
@@ -5024,8 +5042,8 @@ section.component-back h1:before {
 
 .outline {
   background-color: var(--theme-color-accent-light);
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-family: "Gelasio", serif;
+  font-size: 11px;
   margin: 20px 0;
   padding: 10px;
   margin-bottom: 0; }
@@ -5054,7 +5072,8 @@ section.component-back h1:before {
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 0.07em;
-    font-size: 10px;
+    color: var(--theme-color-accent);
+    font-size: 11px;
     margin-bottom: 0; }
   .outline ul, .outline ol {
     list-style-type: none;
@@ -5068,8 +5087,8 @@ section.part .part-number {
 
 .focus-questions {
   background-color: var(--theme-color-accent-light);
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-family: "Gelasio", serif;
+  font-size: 11px;
   margin: 20px 0;
   padding: 10px; }
   .focus-questions h2:first-child, .focus-questions h3:first-child, .focus-questions h4:first-child, .focus-questions h5:first-child, .focus-questions h6:first-child {
@@ -5108,8 +5127,8 @@ section.part .part-number {
 
 aside.short.note {
   background-color: var(--theme-color-accent-light);
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-family: "Gelasio", serif;
+  font-size: 11px;
   margin: 20px 0;
   padding: 10px; }
   aside.short.note h2:first-child, aside.short.note h3:first-child, aside.short.note h4:first-child, aside.short.note h5:first-child, aside.short.note h6:first-child {
@@ -5134,26 +5153,13 @@ aside.short.note {
   aside.short.note p:last-child, aside.short.note ol:last-child, aside.short.note ul:last-child, aside.short.note dl:last-child {
     margin-bottom: 0; }
 
-.pagedjs_right_page .pagedjs_area aside.short.note {
-  float: right;
-  margin-right: calc(-1 * (0mm + 0px));
-  margin-left: 5mm;
-  width: -5mm; }
-
-.pagedjs_left_page .pagedjs_area aside.short.note {
-  float: left;
-  margin-left: calc(-1 * (0mm + 0px));
-  margin-right: 5mm;
-  width: -5mm; }
-
 aside.worked-example {
   background-color: var(--theme-color-accent-light);
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-family: "Gelasio", serif;
+  font-size: 11px;
   margin: 20px 0;
   padding: 10px;
-  border-top: 5px solid var(--theme-color-accent);
-  border-bottom: 5px solid var(--theme-color-accent);
+  border-left: 1px solid var(--theme-color-accent);
   font-family: "Gelasio", serif;
   font-size: 12px; }
   aside.worked-example h2:first-child, aside.worked-example h3:first-child, aside.worked-example h4:first-child, aside.worked-example h5:first-child, aside.worked-example h6:first-child {
@@ -5177,22 +5183,14 @@ aside.worked-example {
     margin-top: 0; }
   aside.worked-example p:last-child, aside.worked-example ol:last-child, aside.worked-example ul:last-child, aside.worked-example dl:last-child {
     margin-bottom: 0; }
-  aside.worked-example[data-split-to] {
-    border-bottom: 0;
-    padding-bottom: 10px !important;
-    margin-bottom: 10px !important; }
-  aside.worked-example[data-split-from] {
-    padding-top: 10px !important;
-    margin-top: 10px !important; }
   aside.worked-example + .self-reflection-activities,
   aside.worked-example + aside.worked-example {
-    border-top: 0 !important;
     margin-top: -20px !important; }
 
 .self-reflection-activities {
   background-color: var(--theme-color-accent-light);
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-family: "Gelasio", serif;
+  font-size: 11px;
   margin: 20px 0;
   padding: 10px;
   border-top: 5px solid var(--theme-color-accent);
@@ -5230,8 +5228,8 @@ aside.worked-example {
 
 aside.reminder {
   background-color: var(--theme-color-accent-light);
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-family: "Gelasio", serif;
+  font-size: 11px;
   margin: 20px 0;
   padding: 10px; }
   aside.reminder h2:first-child, aside.reminder h3:first-child, aside.reminder h4:first-child, aside.reminder h5:first-child, aside.reminder h6:first-child {
@@ -5306,8 +5304,8 @@ aside.reminder {
 
 aside.warning {
   background-color: var(--theme-color-accent-light);
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-family: "Gelasio", serif;
+  font-size: 11px;
   margin: 20px 0;
   padding: 10px; }
   aside.warning h2:first-child, aside.warning h3:first-child, aside.warning h4:first-child, aside.warning h5:first-child, aside.warning h6:first-child {
@@ -5440,8 +5438,8 @@ aside.warning {
 
 aside.tip {
   background-color: var(--theme-color-accent-light);
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-family: "Gelasio", serif;
+  font-size: 11px;
   margin: 20px 0;
   padding: 10px; }
   aside.tip h2:first-child, aside.tip h3:first-child, aside.tip h4:first-child, aside.tip h5:first-child, aside.tip h6:first-child {
@@ -5516,8 +5514,8 @@ aside.tip {
 
 aside.case-study {
   background-color: var(--theme-color-accent-light);
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-family: "Gelasio", serif;
+  font-size: 11px;
   margin: 20px 0;
   padding: 10px;
   font-family: "Gelasio", serif;
@@ -5546,8 +5544,8 @@ aside.case-study {
 
 aside.biography {
   background-color: var(--theme-color-accent-light);
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-family: "Gelasio", serif;
+  font-size: 11px;
   margin: 20px 0;
   padding: 10px;
   font-family: "Gelasio", serif;
@@ -5612,8 +5610,8 @@ div.summary {
 
 .review-activity {
   background-color: var(--theme-color-accent-light);
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-family: "Gelasio", serif;
+  font-size: 11px;
   margin: 20px 0;
   padding: 10px;
   border-top: 5px solid var(--theme-color-accent);
@@ -5659,7 +5657,7 @@ div.references {
   break-before: page;
   column-count: 2;
   font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   page: references-page; }
   div.references h2 {
     column-span: all; }
@@ -5679,7 +5677,7 @@ div.further-reading {
   break-before: page;
   column-count: 2;
   font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   page: further-reading-page; }
   div.further-reading h2 {
     column-span: all; }

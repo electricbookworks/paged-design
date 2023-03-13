@@ -2,26 +2,6 @@
 // Mixins created only for use in a specific partial
 // should be created in that partial, not here.
 
-// @mixin extend-to-right-sidebar() {
-//     margin-right: -($sidebar-width);
-//     width: $page-width - $margin-inside - $margin-outside;
-// }
-
-// @mixin extend-to-left-sidebar() {
-//     margin-left: -($sidebar-width);
-//     width: $page-width - $margin-inside - $margin-outside;
-// }
-
-// @mixin undo-extend-to-right-sidebar() {
-//     margin-right: 0;
-//     width: $page-width - $margin-inside - $margin-outside - $sidebar-width;
-// }
-
-// @mixin undo-extend-to-left-sidebar() {
-//     margin-left: 0;
-//     width: $page-width - $margin-inside - $margin-outside - $sidebar-width;
-// }
-
 @mixin heading-1($font-size: 64px) {
     font-family: $font-display-main;
     font-size: $font-size;
@@ -33,7 +13,7 @@
     color: $theme-color-accent;
     font-family: $font-display-main;
     font-weight: 500;
-    font-size: 19px;
+    font-size: 16px;
     line-height: $line-height-default;
     margin-bottom: 0;
     margin-top: $line-height-default * 2;
@@ -84,9 +64,9 @@
         }
 
     } @else {
-        color: $color-text-main;
+        color: $theme-color-accent;
         font-family: $font-text-main;
-        font-size: 19px;
+        font-size: 16px;
         font-style: italic;
         font-weight: normal;
         line-height: $line-height-default;
@@ -99,7 +79,7 @@
 
 @mixin boxes-common() {
     background-color: $theme-color-accent-light;
-    font-family: $font-text-secondary;
+    font-family: $font-text-main;
     font-size: $font-size-default-small;
     margin: $line-height-default 0;
     padding: $box-padding;
@@ -126,10 +106,10 @@
     }
 }
 
-@mixin top-and-bottom-box-border() {
+@mixin top-and-bottom-box-border($thickness: 5px) {
 
-    border-top: 5px solid $theme-color-accent;
-    border-bottom: 5px solid $theme-color-accent;
+    border-top: $thickness solid $theme-color-accent;
+    border-bottom: $thickness solid $theme-color-accent;
 
     &[data-split-to] {
         border-bottom: 0;
@@ -147,6 +127,10 @@
         padding-top: $box-padding!important;
         margin-top: $box-padding!important;
     }
+}
+
+@mixin box-border-left($thickness: 1px) {
+    border-left: $thickness solid $theme-color-accent;
 }
 
 @mixin wavy-vertical-line($color: $theme-color-accent) {

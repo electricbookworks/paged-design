@@ -4485,6 +4485,9 @@ ul li p, ol li p {
   font-size: 0.7em;
   letter-spacing: 0.07em; }
 
+span.math-node {
+  line-height: 1; }
+
 .running-left {
   position: running(runningLeft); }
 
