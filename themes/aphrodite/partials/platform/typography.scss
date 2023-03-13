@@ -11,3 +11,7 @@ ul, ol {
 .small-caps {
     @include small-caps();
 }
+
+span.math-node {
+    line-height: 1;
+}
