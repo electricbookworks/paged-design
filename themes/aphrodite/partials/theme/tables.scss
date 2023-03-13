@@ -1,6 +1,7 @@
 table {
     font-family: $font-text-secondary;
     font-size: $font-size-default-small;
+    break-inside: avoid;
 
     th {
         background-color: $theme-color-accent-light;

@@ -48,10 +48,6 @@ $start-depth: 0;
 // Variables specific to this theme
 $box-padding: $line-height-default / 2;
 
-// probably not required for Aphrodite
-    $margin-outside-sidebar: 16mm;
-    $pages-with-centred-text: half-title-page, title-page, copyright, contents-page;
-
 // Runners
 $verso-top-frontmatter: string(h1-text, last);
 $recto-top-frontmatter: string(h1-text, last);

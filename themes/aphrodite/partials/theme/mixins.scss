@@ -85,6 +85,7 @@
     padding: $box-padding;
 
     h2, h3, h4, h5, h6 {
+        font-weight: 500;
 
         &:first-child {
             margin-top: 0;
@@ -99,6 +100,11 @@
     }
 
     p, ol, ul, dl {
+        margin-bottom: $line-height-default * 0.5;
+
+        & + p {
+            text-indent: 0;
+        }
         
         &:last-child {
             margin-bottom: 0;
@@ -149,6 +155,15 @@
     --mask:
         radial-gradient(19.69px at calc(100% - 27.75px) 50%,#000 99%,#0000 101%) 0 calc(50% - 30px)/100% 60px,
         radial-gradient(19.69px at calc(100% + 12.75px) 50%,#0000 99%,#000 101%) calc(100% - 15px) 50%/100% 60px repeat-y;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+}
+
+@mixin wavy-vertical-box-right($color: $theme-color-accent) {
+    background-color: $color;
+    --mask:
+        radial-gradient(19.69px at 27.75px 50%,#000 99%,#0000 101%) 0 calc(50% - 30px)/100% 60px,
+        radial-gradient(19.69px at -12.75px 50%,#0000 99%,#000 101%) 15px 50%/100% 60px repeat-y;
     -webkit-mask: var(--mask);
             mask: var(--mask);
 }

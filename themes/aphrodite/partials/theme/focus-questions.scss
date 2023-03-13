@@ -1,5 +1,3 @@
 .focus-questions {
     @include boxes-common();
 }
-
-@include move-to-sidebar(".focus-questions");

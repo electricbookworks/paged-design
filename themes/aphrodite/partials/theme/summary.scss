@@ -4,24 +4,44 @@
 // reduce the chance of collisions.
 
 div.summary {
-    column-count: 2;
     break-before: page;
+    page: summary;
 
     h2 {
-        column-span: all;
+
+        &:first-child {
+            margin-bottom: $line-height-default * 0.5;
+        }
     }
 }
 
-.pagedjs_right_page {
-    
-    div.summary {
-        // @include extend-to-right-sidebar();
+@page summary:left {
+
+    // Can't use top-corner boxes because
+    // the wave patterns in each margin box
+    // don't line up. Have to extend this box.
+    @left-middle {
+        @include wavy-vertical-box();
+        content: "";
+        display: block;
+        width: 15mm;
+        margin-left: -3mm;
+        height: $page-height + (6mm); // allow bleed
+        margin-top: -($margin-top + 3mm);
+        margin-bottom: -($margin-bottom + 3mm);
     }
 }
 
-.pagedjs_left_page {
-    
-    div.summary {
-        // @include extend-to-left-sidebar();
+@page summary:right {
+
+    @right-middle {
+        @include wavy-vertical-box-right();
+        content: "";
+        display: block;
+        width: 18mm;
+        margin-left: 8mm;
+        height: $page-height + (6mm); // allow bleed
+        margin-top: -($margin-top + 3mm);
+        margin-bottom: -($margin-bottom + 3mm);
     }
 }

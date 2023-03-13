@@ -2,6 +2,7 @@ aside.worked-example {
     @include boxes-common();
     @include box-border-left();
 
+    background-color: white;
     font-family: $font-text-main;
     font-size: $font-size-default;
 

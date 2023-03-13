@@ -1,23 +1,19 @@
-.pagedjs_right_page {
-    
-    .key-terms {
-        // @include extend-to-right-sidebar();
-    }
-}
-
-.pagedjs_left_page {
-    
-    .key-terms {
-        // @include extend-to-left-sidebar();
-    }
-}
-
 .key-terms {
-    column-count: 2;
     break-before: page;
 
     h2 {
-        column-span: all;
+
+        &:first-child {
+            margin-bottom: $line-height-default * 0.5;
+        }
+    }
+
+    p {
+        margin-bottom: $line-height-default * 0.5;
+
+        & + p {
+            text-indent: 0;
+        }
     }
 }
 

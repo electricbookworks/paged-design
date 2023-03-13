@@ -3,31 +3,16 @@
 // for other book features. Specifying `div` may
 // reduce the chance of collisions.
 
-.pagedjs_right_page.pagedjs_references-page_page {
-    background-color: $theme-color-accent-light;
-    
-    div.references {
-        // @include extend-to-right-sidebar();
-    }
-}
-
-.pagedjs_left_page.pagedjs_references-page_page {
-    background-color: $theme-color-accent-light;
-    
-    div.references {
-        // @include extend-to-left-sidebar();
-    }
-}
-
 div.references {
     break-before: page;
-    column-count: 2;
-    font-family: $font-text-secondary;
-    font-size: $font-size-default-small;
     page: references-page;
 
-    h2 {
-        column-span: all;
+    h3, h4, h5, h6 {
+
+        & + ul,
+        & + ol {
+            margin-top: 0;
+        }
     }
 
     ul {
@@ -35,7 +20,8 @@ div.references {
         margin-left: 0;
 
         li {
-            margin-bottom: $text-spacing;
+            margin-left: $text-indent;
+            text-indent: -($text-indent);
         }
     }
 }
