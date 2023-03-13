@@ -2,12 +2,23 @@
 
     // Requires that margin-top and line-height-default
     // are defined with the same units, e.g. px.
-    $opener-image-height: $margin-top + ($line-height-default * 16);
+    $opener-image-height: $margin-top + ($line-height-default * 8);
     $opener-image-bleed: 3mm;
 
     // The heading below the image
     header {
         // @include extend-to-right-sidebar();
+
+        &::before {
+            @include wavy-horizontal-box-upwards(white);
+            content: "";
+            position: absolute;
+            left: -($margin-inside + $opener-image-bleed);
+            top: $opener-image-height / 2;
+            right: -($margin-outside + $opener-image-bleed);
+            height: 15mm;
+            z-index: 1;
+        }
 
         &:first-of-type {
             margin-top: calc(#{$opener-image-height} - #{$line-height-default} * 1);
@@ -44,14 +55,13 @@
                 // We use calc where variables might be defined with
                 // different units, e.g. mm or pt.
                 top: -($margin-top + $opener-image-bleed);
-                left: 0;
-
+                left: -($margin-inside + $opener-image-bleed);
                 right: calc((#{$margin-outside} + #{$sidebar-width} + $opener-image-bleed) * -1);
                 height: $opener-image-height + $opener-image-bleed;
                 margin: 0;
                 max-width: none;
                 object-fit: cover;
-                width: $page-width - $margin-inside + $opener-image-bleed;
+                width: $page-width + ($opener-image-bleed * 2);
             }
 
             figcaption {
@@ -77,28 +87,76 @@
         .content-opener-image {
 
             figure {
-
+                
                 img {
-                    height: $opener-image-height * 1.5 + $opener-image-bleed;
+                    min-height: $page-height + ($opener-image-bleed * 2);
+                    min-width: $page-height + ($opener-image-bleed * 2);
+                    position: absolute;
+                    top: -($margin-top + $opener-image-bleed);
+                    bottom: -($margin-bottom + $opener-image-bleed);
+                    left: -($margin-inside + $opener-image-bleed);
+                    right: -($margin-outside + $opener-image-bleed);
+                    z-index: -1;
                 }
             }
         }
 
+        &::before {
+            @include wavy-vertical-box;
+            content: "";
+            position: absolute;
+            left: -($margin-inside + $opener-image-bleed);
+            top: -($margin-top + $opener-image-bleed);
+            bottom: -($margin-bottom + $opener-image-bleed);
+            width: 50mm;
+            z-index: 1;
+        }
+
         header {
-
-            &:first-of-type {
-                margin-top: $opener-image-height * 1.5 - $line-height-default;
+            
+            &::before {
+                content: normal;
             }
+            
+            h1:first-of-type {
 
-            h1 {
+                // Typography
+                color: white;
+                font-size: 30pt;
+                width: $page-height;
+
+                // Position
+                transform-origin: left;
+                transform: rotate(270deg);
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                z-index: 2;
 
                 strong:first-of-type {
-                    @include small-caps();
-                    color: $theme-color-accent;
+                    color: $color-text-main;
+                    display: inline-block;
                     font-size: 42px;
-                    font-weight: normal;
-                    line-height: 48px;
+                    font-weight: 500;
+                    line-height: 1;
                 }
+            }
+        }
+
+        p {
+            background-color: $theme-color-accent-light;
+            padding-top: ($line-height-default * 0.5);
+            padding-bottom: ($line-height-default * 0.5);
+            padding-right: $margin-outside;
+            padding-left: 30mm;
+            position: absolute;
+            bottom: 0;
+            right: -($margin-outside);
+            width: $page-width - 20mm;
+            z-index: 0;
+
+            &:nth-of-type(2) {
+                break-before: page;
             }
         }
     }
@@ -138,38 +196,6 @@ $chapter-number-has-text: false;
         margin-top: 0;
     }
 }
-
-// Lead-in paragraphs
-
-@mixin leader-paragraph() {
-    color: $theme-color-accent;
-    font-size: 21px;
-    line-height: 27px;
-    margin-bottom: $line-height-default;
-}
-
-.component,
-.component-front,
-.component-back,
-.component-body {
-
-    &:not(.copyright_page) {
-
-        header {
-
-            // When a paragraph follows a main heading,
-            // treat it as a leader paragraph.
-            & + p {
-                @include leader-paragraph();
-
-                & + p {
-                    text-indent: 0;
-                }
-            }
-        }
-    }
-}
-
 
 // Component/chapter subtitles
 

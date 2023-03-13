@@ -1,3 +1,16 @@
+@mixin toc-level-one() {
+    color: $theme-color-accent;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+}
+
+@mixin toc-level-two() {
+    font-size: 14px;
+    font-weight: 500;
+}
+
 #{$page-toc} {
 
     h1 {
@@ -5,28 +18,26 @@
     }
 
     nav {
-        font-family: $font-text-secondary;
+        font-family: $font-text-main;
 
         ol {
 
             li {
                 margin-bottom: $line-height-default / 2;
 
-                &.toc-front {}
+                &.toc-front {
+                    @include toc-level-two();
+                }
 
                 &.toc-part,
                 &.toc-unit {
-                    color: $theme-color-accent;
-                    font-size: 14px;
-                    font-weight: 500;
-                    text-transform: uppercase;
-                    letter-spacing: 0.075em;
+                    @include toc-level-one();
                 }
 
                 &.toc-level-one {
 
                     & ~ .toc-level-two {
-                        font-family: $font-text-secondary;
+                        font-family: $font-text-main;
                     }
                 }
 
@@ -42,6 +53,14 @@
                 &.toc-section {
                     font-family: $font-text-main;
                     font-size: $font-size-default;
+                }
+
+                &.toc-unnumbered {
+                    @include toc-level-two();
+                }
+
+                &.toc-back {
+                    @include toc-level-two();
                 }
             }
         }

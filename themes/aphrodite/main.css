@@ -4587,7 +4587,7 @@ h3 {
   letter-spacing: 0.07em;
   font-family: "Gelasio", sans-serif;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 20px;
   margin-bottom: 0;
   margin-top: 20px;
@@ -4673,7 +4673,7 @@ section.component-front.halftitle {
     letter-spacing: 0.07em;
     font-family: "Gelasio", sans-serif;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: bold;
     line-height: 20px;
     margin-bottom: 0;
     margin-top: 20px;
@@ -4686,8 +4686,8 @@ section.component-front.halftitle {
   section.component-front.halftitle::before {
     background-color: var(--theme-color-accent);
     --mask:
-        radial-gradient(34.99px at calc(100% - 48.00px) 50%,#000 99%,#0000 101%) 0 calc(50% - 60px)/100% 120px,
-        radial-gradient(34.99px at calc(100% + 18.00px) 50%,#0000 99%,#000 101%) calc(100% - 30px) 50%/100% 120px repeat-y;
+        radial-gradient(19.69px at calc(100% - 27.75px) 50%,#000 99%,#0000 101%) 0 calc(50% - 30px)/100% 60px,
+        radial-gradient(19.69px at calc(100% + 12.75px) 50%,#0000 99%,#000 101%) calc(100% - 15px) 50%/100% 60px repeat-y;
     -webkit-mask: var(--mask);
     mask: var(--mask);
     content: "";
@@ -4722,7 +4722,7 @@ section.component-front.titlepage {
     letter-spacing: 0.07em;
     font-family: "Gelasio", sans-serif;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: bold;
     line-height: 20px;
     margin-bottom: 0;
     margin-top: 20px;
@@ -4733,8 +4733,8 @@ section.component-front.titlepage {
   section.component-front.titlepage::before {
     background-color: var(--theme-color-accent);
     --mask:
-        radial-gradient(35.99px at calc(100% + 18.00px) 50%,#0000 calc(99% - 2px),#000 calc(101% - 2px) 99%,#0000 101%) calc(50% - 16px + .5px) calc(50% - 60px)/ 32px 120px  repeat-y,
-        radial-gradient(35.99px at -18px 50%,#0000 calc(99% - 2px),#000 calc(101% - 2px) 99%,#0000 101%) calc(50% + 16px) 50%/32px 120px  repeat-y;
+        radial-gradient(20.69px at calc(100% + 12.75px) 50%,#0000 calc(99% - 2px),#000 calc(101% - 2px) 99%,#0000 101%) calc(50% - 8.5px + .5px) calc(50% - 30px)/ 17px 60px  repeat-y,
+        radial-gradient(20.69px at -12.75px 50%,#0000 calc(99% - 2px),#000 calc(101% - 2px) 99%,#0000 101%) calc(50% + 8.5px) 50%/17px 60px  repeat-y;
     -webkit-mask: var(--mask);
     mask: var(--mask);
     content: "";
@@ -4751,22 +4751,31 @@ section.component-front.toc h1 {
   text-align: left; }
 
 section.component-front.toc nav {
-  font-family: "Inter", sans-serif; }
+  font-family: "Gelasio", serif; }
   section.component-front.toc nav ol li {
     margin-bottom: 10px; }
+    section.component-front.toc nav ol li.toc-front {
+      font-size: 14px;
+      font-weight: 500; }
     section.component-front.toc nav ol li.toc-part, section.component-front.toc nav ol li.toc-unit {
       color: var(--theme-color-accent);
       font-size: 14px;
-      font-weight: 500;
+      font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 0.075em; }
     section.component-front.toc nav ol li.toc-level-one ~ .toc-level-two {
-      font-family: "Inter", sans-serif; }
+      font-family: "Gelasio", serif; }
     section.component-front.toc nav ol li.toc-level-two ~ .toc-level-three {
       font-family: "Gelasio", serif; }
     section.component-front.toc nav ol li.toc-section {
       font-family: "Gelasio", serif;
       font-size: 12px; }
+    section.component-front.toc nav ol li.toc-unnumbered {
+      font-size: 14px;
+      font-weight: 500; }
+    section.component-front.toc nav ol li.toc-back {
+      font-size: 14px;
+      font-weight: 500; }
 
 section.component-front h1 {
   font-family: "Gelasio", sans-serif;
@@ -4774,11 +4783,91 @@ section.component-front h1 {
   line-height: 42px;
   text-align: left; }
 
-@page :blank {
-  background-color: var(--theme-color-accent); }
+section.copyright_page.component-front {
+  text-align: center; }
+  section.copyright_page.component-front h1, section.copyright_page.component-front h2, section.copyright_page.component-front h3, section.copyright_page.component-front h4, section.copyright_page.component-front h5 {
+    margin: 10px 0 0 0;
+    text-align: center; }
+  section.copyright_page.component-front p {
+    margin-bottom: 10px;
+    text-align: center; }
+  section.copyright_page.component-front ul, section.copyright_page.component-front ol, section.copyright_page.component-front dl {
+    margin-top: 0;
+    text-align: center; }
+
+section.preface h1:before {
+  background-color: var(--theme-color-accent);
+  --mask:
+        radial-gradient(19.69px at 50% calc(100% - 27.75px),#000 99%,#0000 101%) calc(50% - 30px) 0/60px 100%,
+        radial-gradient(19.69px at 50% calc(100% + 12.75px),#0000 99%,#000 101%) 50% calc(100% - 15px)/60px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  content: "";
+  position: absolute;
+  top: -91.33858px;
+  left: -23mm;
+  right: -23mm;
+  height: 15mm; }
+
+section.introduction h1:before {
+  background-color: var(--theme-color-accent);
+  --mask:
+        radial-gradient(19.69px at 50% calc(100% - 27.75px),#000 99%,#0000 101%) calc(50% - 30px) 0/60px 100%,
+        radial-gradient(19.69px at 50% calc(100% + 12.75px),#0000 99%,#000 101%) 50% calc(100% - 15px)/60px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  content: "";
+  position: absolute;
+  top: -91.33858px;
+  left: -23mm;
+  right: -23mm;
+  height: 15mm; }
+
+section.unnumbered h1:before {
+  background-color: var(--theme-color-accent);
+  --mask:
+        radial-gradient(19.69px at 50% calc(100% - 27.75px),#000 99%,#0000 101%) calc(50% - 30px) 0/60px 100%,
+        radial-gradient(19.69px at 50% calc(100% + 12.75px),#0000 99%,#000 101%) 50% calc(100% - 15px)/60px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  content: "";
+  position: absolute;
+  top: -91.33858px;
+  left: -23mm;
+  right: -23mm;
+  height: 15mm; }
+
+section.component-back h1:before {
+  background-color: var(--theme-color-accent);
+  --mask:
+        radial-gradient(19.69px at 50% calc(100% - 27.75px),#000 99%,#0000 101%) calc(50% - 30px) 0/60px 100%,
+        radial-gradient(19.69px at 50% calc(100% + 12.75px),#0000 99%,#000 101%) 50% calc(100% - 15px)/60px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  content: "";
+  position: absolute;
+  top: -91.33858px;
+  left: -23mm;
+  right: -23mm;
+  height: 15mm; }
+
+@page :blank {}.component-body header::before {
+  background-color: white;
+  --mask:
+        radial-gradient(19.69px at 50% 27.75px,#000 99%,#0000 101%) calc(50% - 30px) 0/60px 100%,
+        radial-gradient(19.69px at 50% -12.75px,#0000 99%,#000 101%) 50% 15px/60px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  content: "";
+  position: absolute;
+  left: -23mm;
+  top: 120px;
+  right: -23mm;
+  height: 15mm;
+  z-index: 1; }
 
 .component-body header:first-of-type {
-  margin-top: calc(400px - 20px * 1); }
+  margin-top: calc(240px - 20px * 1); }
 
 .component-body header ~ p.author {
   text-transform: uppercase;
@@ -4794,13 +4883,13 @@ section.component-front h1 {
   .component-body .content-opener-image figure img {
     position: absolute;
     top: -91.33858px;
-    left: 0;
+    left: -23mm;
     right: calc((20mm + 0mm + $opener-image-bleed) * -1);
-    height: 411.33858px;
+    height: 251.33858px;
     margin: 0;
     max-width: none;
     object-fit: cover;
-    width: 135mm; }
+    width: 158mm; }
   .component-body .content-opener-image figure figcaption {
     position: absolute;
     bottom: 0;
@@ -4812,19 +4901,63 @@ section.component-front h1 {
     padding-top: 10px; }
 
 .component-body.part .content-opener-image figure img {
-  height: 611.33858px; }
+  min-height: 234mm;
+  min-width: 234mm;
+  position: absolute;
+  top: -91.33858px;
+  bottom: -91.33858px;
+  left: -23mm;
+  right: -23mm;
+  z-index: -1; }
 
-.component-body.part header:first-of-type {
-  margin-top: 580px; }
+.component-body.part::before {
+  background-color: var(--theme-color-accent);
+  --mask:
+        radial-gradient(19.69px at calc(100% - 27.75px) 50%,#000 99%,#0000 101%) 0 calc(50% - 30px)/100% 60px,
+        radial-gradient(19.69px at calc(100% + 12.75px) 50%,#0000 99%,#000 101%) calc(100% - 15px) 50%/100% 60px repeat-y;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  content: "";
+  position: absolute;
+  left: -23mm;
+  top: -91.33858px;
+  bottom: -91.33858px;
+  width: 50mm;
+  z-index: 1; }
 
-.component-body.part header h1 strong:first-of-type {
-  text-transform: uppercase;
-  font-size: 0.7em;
-  letter-spacing: 0.07em;
-  color: var(--theme-color-accent);
-  font-size: 42px;
-  font-weight: normal;
-  line-height: 48px; }
+.component-body.part header::before {
+  content: normal; }
+
+.component-body.part header h1:first-of-type {
+  color: white;
+  font-size: 30pt;
+  width: 228mm;
+  transform-origin: left;
+  transform: rotate(270deg);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2; }
+  .component-body.part header h1:first-of-type strong:first-of-type {
+    color: black;
+    display: inline-block;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1; }
+
+.component-body.part p {
+  background-color: var(--theme-color-accent-light);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20mm;
+  padding-left: 30mm;
+  position: absolute;
+  bottom: 0;
+  right: -20mm;
+  width: 132mm;
+  z-index: 0; }
+  .component-body.part p:nth-of-type(2) {
+    break-before: page; }
 
 .chapter-number {
   color: var(--theme-color-grey);
@@ -4838,20 +4971,6 @@ section.component-front h1 {
   margin-right: 12px; }
   .chapter-number + h1 {
     margin-top: 0; }
-
-.component:not(.copyright_page) header + p,
-.component-front:not(.copyright_page) header + p,
-.component-back:not(.copyright_page) header + p,
-.component-body:not(.copyright_page) header + p {
-  color: var(--theme-color-accent);
-  font-size: 21px;
-  line-height: 27px;
-  margin-bottom: 20px; }
-  .component:not(.copyright_page) header + p + p,
-  .component-front:not(.copyright_page) header + p + p,
-  .component-back:not(.copyright_page) header + p + p,
-  .component-body:not(.copyright_page) header + p + p {
-    text-indent: 0; }
 
 .cst {
   color: black;
@@ -5574,47 +5693,51 @@ div.further-reading {
   grid-template-columns: auto 1fr auto !important; }
 
 @page :left {
+  @top-center {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.07em;
+    font-size: 10px;
+    margin-top: 20px; }
   @bottom-center {
-    border-left: 1px solid var(--theme-color-accent);
-    height: 20px;
-    margin: 5mm 0;
-    padding-left: 0.25em;
-    text-align: left; }
-  @bottom-left {
-    height: 20px;
-    margin: 5mm 0;
-    padding-right: 0.25em;
-    text-align: right; } }
+    font-variant: lining-nums; } }
 
 @page :right {
+  @top-center {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.07em;
+    font-size: 10px;
+    margin-top: 20px; }
   @bottom-center {
-    border-right: 1px solid var(--theme-color-accent);
-    height: 20px;
-    margin: 5mm 0;
-    padding-right: 0.25em;
-    text-align: right; }
-  @bottom-right {
-    height: 20px;
-    margin: 5mm 0;
-    padding-left: 0.25em;
-    text-align: left; } }
+    font-variant: lining-nums; } }
 
 @page cover {
+  @top-center {
+    content: normal; }
   @bottom-center {
-    border-left: 0;
-    border-left: 0; } }
+    content: normal; } }
 
 @page half-title-page {
+  @top-center {
+    content: normal; }
   @bottom-center {
-    border-left: 0;
-    border-left: 0; } }
+    content: normal; } }
 
 @page title-page {
+  @top-center {
+    content: normal; }
   @bottom-center {
-    border-left: 0;
-    border-left: 0; } }
+    content: normal; } }
 
 @page copyright {
+  @top-center {
+    content: normal; }
   @bottom-center {
-    border-left: 0;
-    border-left: 0; } }
+    content: normal; } }
+
+@page part {
+  @top-center {
+    content: normal; }
+  @bottom-center {
+    content: normal; } }

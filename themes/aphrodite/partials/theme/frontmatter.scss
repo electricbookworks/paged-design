@@ -4,3 +4,43 @@
         @include heading-1(42px);
     }
 }
+
+#{$page-copyright} {
+    text-align: center;
+
+    h1, h2, h3, h4, h5 {
+        margin: ($line-height-default / 2) 0 0 0;
+        text-align: center;
+    }
+
+    p {
+        margin-bottom: $line-height-default / 2;
+        text-align: center;
+    }
+
+    ul, ol, dl {
+        margin-top: 0;
+        text-align: center;
+    }
+}
+
+$sections-with-shallow-waves: preface, introduction, unnumbered, component-back;
+
+@each $section-type in $sections-with-shallow-waves {
+
+    section.#{$section-type} {
+
+        h1 {
+
+            &:before {
+                @include wavy-horizontal-box();
+                content: "";
+                position: absolute;
+                top: -($margin-top + 3mm); // bleed for when printed
+                left: -($margin-inside + 3mm);
+                right: -($margin-inside + 3mm);
+                height: 15mm;
+            }
+        }
+    }
+}

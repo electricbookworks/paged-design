@@ -1,16 +1,11 @@
-@mixin runner-text-common($side: left) {
-    border-#{$side}: 1px solid $theme-color-accent;
-    height: $line-height-default;
-    margin: 5mm 0;
-    padding-#{$side}: 0.25em;
-    text-align: $side;
+@mixin runner-text-common() {
+    @include small-caps();
+    font-size: 10px;
+    margin-top: $line-height-default;
 }
 
-@mixin runner-number-common($inside: left) {
-    height: $line-height-default;
-    margin: 5mm 0;
-    padding-#{$inside}: 0.25em;
-    text-align: $inside;
+@mixin runner-number-common() {
+    font-variant: lining-nums;
 }
 
 .pagedjs_margin-bottom {
@@ -19,32 +14,34 @@
 
 @page :left {
 
-    @bottom-center {
-        @include runner-text-common(left);
+    @top-center {
+        @include runner-text-common();
     }
-    @bottom-left {
-        @include runner-number-common(right);
+    @bottom-center {
+        @include runner-number-common();
     }
 }
 
 @page :right {
 
-    @bottom-center {
-        @include runner-text-common(right);
+    @top-center {
+        @include runner-text-common();
     }
-    @bottom-right {
-        @include runner-number-common(left)
+    @bottom-center {
+        @include runner-number-common()
     }
 }
 
 // Remove runner borders from certain pages
-$page-types-without-runners: cover, half-title-page, title-page, copyright;
+$page-types-without-runners: cover, half-title-page, title-page, copyright, part;
 
 @each $page-type in $page-types-without-runners {
     @page #{$page-type} {
+        @top-center {
+            content: normal;
+        }
         @bottom-center {
-            border-left: 0;
-            border-left: 0;
+            content: normal;
         }
     }
 }
