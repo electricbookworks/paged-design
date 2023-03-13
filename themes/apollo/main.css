@@ -296,7 +296,7 @@ section.part {
   page: part;
   break-before: recto; }
 
-section.component-body {
+section.component-body.chapter, section.component-body.unnumbered {
   page: chapter;
   break-before: recto; }
 
@@ -5632,6 +5632,11 @@ div.further-reading {
     border-left: 0; } }
 
 @page copyright {
+  @bottom-center {
+    border-left: 0;
+    border-left: 0; } }
+
+@page part {
   @bottom-center {
     border-left: 0;
     border-left: 0; } }

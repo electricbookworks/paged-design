@@ -38,7 +38,7 @@
 }
 
 // Remove runner borders from certain pages
-$page-types-without-runners: cover, half-title-page, title-page, copyright;
+$page-types-without-runners: cover, half-title-page, title-page, copyright, part;
 
 @each $page-type in $page-types-without-runners {
     @page #{$page-type} {
