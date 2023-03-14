@@ -1,0 +1,7 @@
+#{$page-copyright} {
+    padding-right: 35mm;
+
+    h2 {
+        @include debox-heading();
+    }
+}

@@ -1,6 +1,6 @@
 #{$page-frontmatter} {
 
     h1 {
-        @include heading-1(42px);
+        @include heading-1($line-height-default * 2);
     }
 }

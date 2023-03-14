@@ -139,37 +139,6 @@ $chapter-number-has-text: false;
     }
 }
 
-// Lead-in paragraphs
-
-@mixin leader-paragraph() {
-    color: $theme-color-accent;
-    font-size: 21px;
-    line-height: 27px;
-    margin-bottom: $line-height-default;
-}
-
-.component,
-.component-front,
-.component-back,
-.component-body {
-
-    &:not(.copyright_page) {
-
-        header {
-
-            // When a paragraph follows a main heading,
-            // treat it as a leader paragraph.
-            & + p {
-                @include leader-paragraph();
-
-                & + p {
-                    text-indent: 0;
-                }
-            }
-        }
-    }
-}
-
 
 // Component/chapter subtitles
 

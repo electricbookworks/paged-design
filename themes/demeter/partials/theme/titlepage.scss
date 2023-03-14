@@ -1,28 +1,35 @@
-@mixin title-pages-common() {
+$theme-title-page-indent: 60mm;
 
-    // Rules
-    border-top: 7px solid $theme-color-accent;
-    border-bottom: 7px solid $theme-color-accent;
-    padding: $line-height-default 0;
+@mixin title-pages-common() {
+    display: flex;
+    flex-direction: column;
+    height: $page-height - $margin-top - $margin-bottom;
+    justify-content: center;
 
     h1 {
-        font-size: 64px;
+        font-size: 42px;
         line-height: 1;
         margin-top: 0;
+        max-width: 78mm;
     }
 
     // Subtitle
     .cst {
         @include subtitle(titlepage);
+
+        max-width: 78mm;
     }
 
     h2 {
         @include heading-3();
 
+        max-width: 78mm;
+        background-color: white;
         color: $color-text-main;
     }
 
     p, ul, ol, dl {
+        max-width: 78mm;
         text-align: left;
     }
 }
@@ -37,4 +44,26 @@
 
 #{$page-title-page} {
     @include title-pages-common();
+
+    h1 {
+
+        &::before {
+            background-color: $theme-color-accent;
+            content: "";
+            display: block;
+            position: absolute;
+            left: -($margin-inside + $theme-title-page-indent + 3mm);
+            top: -($margin-top + 3mm);
+            bottom: -($margin-bottom + 3mm);
+            width: $theme-title-page-indent + $margin-inside + 3mm - $text-indent;
+        }
+    }
+}
+
+.pagedjs_half-title-page_page,
+.pagedjs_title-page_page {
+
+    .pagedjs_area {
+        margin-left: $theme-title-page-indent - $margin-inside;
+    }
 }

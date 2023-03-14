@@ -4594,13 +4594,19 @@ h1 {
   text-align: left; }
 
 h2 {
-  color: var(--theme-color-accent);
+  text-transform: uppercase;
+  font-size: 0.7em;
+  letter-spacing: 0.07em;
+  background-color: var(--theme-color-accent);
+  color: white;
   font-family: "Jost", sans-serif;
   font-weight: 500;
-  font-size: 19px;
+  font-size: 13px;
   line-height: 19px;
   margin-bottom: 0;
   margin-top: 38px;
+  margin-left: -1mm;
+  padding: 3px 1mm 3px 1mm;
   text-align: left; }
 
 h3 {
@@ -4660,23 +4666,26 @@ table {
   padding: 0; }
 
 section.component-front.halftitle {
-  border-top: 7px solid var(--theme-color-accent);
-  border-bottom: 7px solid var(--theme-color-accent);
-  padding: 19px 0; }
+  display: flex;
+  flex-direction: column;
+  height: 213.78333mm;
+  justify-content: center; }
   section.component-front.halftitle h1 {
-    font-size: 64px;
+    font-size: 42px;
     line-height: 1;
-    margin-top: 0; }
+    margin-top: 0;
+    max-width: 78mm; }
   section.component-front.halftitle .cst {
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 0.07em;
     color: var(--theme-color-accent);
     font-family: "Jost", sans-serif;
-    font-size: 21px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
-    line-height: 32px; }
+    line-height: 28px;
+    max-width: 78mm; }
     section.component-front.halftitle .cst em {
       font-style: italic; }
   section.component-front.halftitle h2 {
@@ -4690,30 +4699,36 @@ section.component-front.halftitle {
     margin-bottom: 0;
     margin-top: 19px;
     text-align: left;
+    max-width: 78mm;
+    background-color: white;
     color: black; }
   section.component-front.halftitle p, section.component-front.halftitle ul, section.component-front.halftitle ol, section.component-front.halftitle dl {
+    max-width: 78mm;
     text-align: left; }
   section.component-front.halftitle h1 {
     margin: 0; }
 
 section.component-front.titlepage {
-  border-top: 7px solid var(--theme-color-accent);
-  border-bottom: 7px solid var(--theme-color-accent);
-  padding: 19px 0; }
+  display: flex;
+  flex-direction: column;
+  height: 213.78333mm;
+  justify-content: center; }
   section.component-front.titlepage h1 {
-    font-size: 64px;
+    font-size: 42px;
     line-height: 1;
-    margin-top: 0; }
+    margin-top: 0;
+    max-width: 78mm; }
   section.component-front.titlepage .cst {
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 0.07em;
     color: var(--theme-color-accent);
     font-family: "Jost", sans-serif;
-    font-size: 21px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
-    line-height: 32px; }
+    line-height: 28px;
+    max-width: 78mm; }
     section.component-front.titlepage .cst em {
       font-style: italic; }
   section.component-front.titlepage h2 {
@@ -4727,9 +4742,25 @@ section.component-front.titlepage {
     margin-bottom: 0;
     margin-top: 19px;
     text-align: left;
+    max-width: 78mm;
+    background-color: white;
     color: black; }
   section.component-front.titlepage p, section.component-front.titlepage ul, section.component-front.titlepage ol, section.component-front.titlepage dl {
+    max-width: 78mm;
     text-align: left; }
+  section.component-front.titlepage h1::before {
+    background-color: var(--theme-color-accent);
+    content: "";
+    display: block;
+    position: absolute;
+    left: -83mm;
+    top: -87.33858px;
+    bottom: -87.33858px;
+    width: 79.56042mm; }
+
+.pagedjs_half-title-page_page .pagedjs_area,
+.pagedjs_title-page_page .pagedjs_area {
+  margin-left: 40mm; }
 
 section.component-front.toc h1 {
   font-family: "Jost", sans-serif;
@@ -4766,8 +4797,8 @@ section.component-front.toc nav {
 
 section.component-front h1 {
   font-family: "Jost", sans-serif;
-  font-size: 42px;
-  line-height: 42px;
+  font-size: 38px;
+  line-height: 38px;
   text-align: left; }
 
 @page :blank {}.component-body header {
@@ -4838,20 +4869,6 @@ section.component-front h1 {
   margin-right: 13px; }
   .chapter-number + h1 {
     margin-top: 0; }
-
-.component:not(.copyright_page) header + p,
-.component-front:not(.copyright_page) header + p,
-.component-back:not(.copyright_page) header + p,
-.component-body:not(.copyright_page) header + p {
-  color: var(--theme-color-accent);
-  font-size: 21px;
-  line-height: 27px;
-  margin-bottom: 19px; }
-  .component:not(.copyright_page) header + p + p,
-  .component-front:not(.copyright_page) header + p + p,
-  .component-back:not(.copyright_page) header + p + p,
-  .component-body:not(.copyright_page) header + p + p {
-    text-indent: 0; }
 
 .cst {
   color: black;
@@ -5669,3 +5686,10 @@ div.further-reading {
     font-family: "Jost", sans-serif;
     font-size: 10px;
     text-align: right; } }
+
+section.copyright_page.component-front {
+  padding-right: 35mm; }
+  section.copyright_page.component-front h2 {
+    background-color: white;
+    margin-left: 0;
+    padding-left: 0; }
