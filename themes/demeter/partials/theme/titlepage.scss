@@ -1,0 +1,40 @@
+@mixin title-pages-common() {
+
+    // Rules
+    border-top: 7px solid $theme-color-accent;
+    border-bottom: 7px solid $theme-color-accent;
+    padding: $line-height-default 0;
+
+    h1 {
+        font-size: 64px;
+        line-height: 1;
+        margin-top: 0;
+    }
+
+    // Subtitle
+    .cst {
+        @include subtitle(titlepage);
+    }
+
+    h2 {
+        @include heading-3();
+
+        color: $color-text-main;
+    }
+
+    p, ul, ol, dl {
+        text-align: left;
+    }
+}
+
+#{$page-half-title-page} {
+    @include title-pages-common();
+
+    h1 {
+        margin: 0;
+    }
+}
+
+#{$page-title-page} {
+    @include title-pages-common();
+}

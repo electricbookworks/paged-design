@@ -1,0 +1,23 @@
+aside.warning {
+    @include boxes-common($theme-color-accent, white);
+    line-height: 16px;
+}
+
+@include move-to-sidebar("aside.warning");
+
+.pagedjs_left_page {
+    @include extend-move-to-sidebar("aside.warning", left);
+}
+
+.pagedjs_right_page {
+    @include extend-move-to-sidebar("aside.warning", right);
+}
+
+// When this is in a box of some kind,
+// adjust its margin-outside.
+
+$boxes-that-contain-short-warnings: box, self-reflection-activities, worked-example;
+
+@each $box in $boxes-that-contain-short-warnings {
+    @include move-to-sidebar(".#{$box} aside.warning", $box-padding);
+}

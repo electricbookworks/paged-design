@@ -1,0 +1,6 @@
+aside.case-study {
+    @include boxes-common($theme-color-accent, white);
+
+    font-family: $font-text-main;
+    font-size: $font-size-default;
+}

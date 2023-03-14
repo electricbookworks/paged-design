@@ -1,0 +1,23 @@
+aside.tip {
+    @include boxes-common($theme-color-accent, white);
+    line-height: 16px;
+}
+
+@include move-to-sidebar("aside.tip");
+
+.pagedjs_left_page {
+    @include extend-move-to-sidebar("aside.tip", left);
+}
+
+.pagedjs_right_page {
+    @include extend-move-to-sidebar("aside.tip", right);
+}
+
+// When this is in a box of some kind,
+// adjust its margin-outside.
+
+$boxes-that-contain-short-tips: box, self-reflection-activities, worked-example;
+
+@each $box in $boxes-that-contain-short-tips {
+    @include move-to-sidebar(".#{$box} aside.tip", $box-padding);
+}

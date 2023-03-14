@@ -1,0 +1,12 @@
+.extract-prose{
+    @include blockquote();
+
+    & + .source-note {
+        @include blockquote();
+
+        margin-top: -$line-height-default;
+
+        // !important to override default source-note
+        padding-top: 0!important;
+    }
+}

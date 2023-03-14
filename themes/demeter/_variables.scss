@@ -1,0 +1,65 @@
+// _variables.scss
+
+// Set your own variables here. These override
+// the defaults in themes/_defaults/_variables.scss.
+// For brevity, we don't repeat all supported variables here.
+// Copy the ones you want to change from defaults.scss
+// to here, and remove `!default` from each one.
+
+// Theme custom variable
+$baseline-grid-unit: 19px; // roughly 14pt
+
+// When paged.js is your rendering target,
+// use px rather than pt for accurate rendering.
+$page-width: 178mm;
+$page-height: 254mm;
+$margin-top: $baseline-grid-unit * 4;
+$margin-bottom: $baseline-grid-unit * 4;
+$margin-inside: 20mm;
+$margin-outside: 0mm;
+$sidebar-width: 40mm;
+$sidebar-position: outside;
+
+// Since we can't yet control `page-1` in Ketida HTML
+// we rather just give all frontmatter decimal page numbering.
+$frontmatter-page-numbers: decimal;
+
+// Type
+$font-text-main: "Crimson Pro", serif;
+$font-text-secondary: "Jost", sans-serif;
+$font-display-main: "Jost", sans-serif;
+$font-display-secondary: "Crimson Pro", serif;
+$font-size-default: 13px; // roughly 10pt
+$font-size-default-small: 10px; // custom theme variable
+$line-height-default: $baseline-grid-unit;
+$text-align-default: start;
+
+// Paragraphs
+$paragraphs: spaced;
+$text-indent: $font-size-default;
+
+// Start position
+$start-depth: 0;
+
+// Note: $text-spacing that isn't derived from
+// $line-height-default will break the baseline grid,
+// and therefore line alignment across spreads.
+$text-spacing: $line-height-default / 2;
+
+// Variables specific to this theme
+$margin-outside-sidebar: 0mm;
+$pages-with-centred-text: none;
+$box-padding: $line-height-default / 2;
+
+// Runners
+$verso-top-frontmatter: string(h1-text, last);
+$verso-bottom-frontmatter: counter(page);
+
+$recto-top-frontmatter: string(h1-text, last);
+$recto-bottom-frontmatter:  counter(page);
+
+$verso-top: string(h1-text, last);
+$verso-bottom: counter(page);
+
+$recto-top:  string(h1-text, last);
+$recto-bottom: counter(page);

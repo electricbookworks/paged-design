@@ -1,0 +1,23 @@
+aside.short.note {
+    @include boxes-common($theme-color-accent, white);
+    line-height: 16px;
+}
+
+@include move-to-sidebar("aside.short.note");
+
+.pagedjs_left_page {
+    @include extend-move-to-sidebar("aside.short.note", left);
+}
+
+.pagedjs_right_page {
+    @include extend-move-to-sidebar("aside.short.note", right);
+}
+
+// When this is in a box of some kind,
+// adjust its margin-outside.
+
+$boxes-that-contain-short-notes: box, self-reflection-activities, worked-example;
+
+@each $box in $boxes-that-contain-short-notes {
+    @include move-to-sidebar(".#{$box} aside.note.short", $box-padding);
+}

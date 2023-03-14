@@ -1,0 +1,82 @@
+// We include `div` in the selector here because
+// 'summary' is commonly used in custom designs
+// for other book features. Specifying `div` may
+// reduce the chance of collisions.
+
+div.summary {
+    break-before: page;
+    page: summary;
+
+    // First page of summary
+    &[data-split-original="true"] {
+
+        h2, h3 {
+            
+            &:first-child {
+                color: white; // reversed on coloured strip
+            }
+        }
+    }
+
+    // Following pages of summary
+    &[data-split-from] {
+        padding-top: $line-height-default * 2!important;
+    }
+}
+
+.pagedjs_summary_page {
+
+    .pagedjs_area {
+
+        &::before {
+            content: "";
+            display: block;
+            height: 5mm;
+            background-color: $theme-color-accent;
+            position: absolute;
+            top: $margin-top;
+            z-index: 0;
+        }
+        &::after {
+            content: "";
+            display: block;
+            height: $page-height + 6mm;
+            background-color: $theme-color-grey-light;
+            position: absolute;
+            top: -3mm;
+            bottom: -3mm;
+            width: $sidebar-width + 3mm - 5mm;
+            z-index: -1;
+        }
+    }
+
+    &.pagedjs_left_page {
+
+        .pagedjs_area {
+
+            &::before {
+                left: -($margin-outside + 3mm);
+                right: -($margin-inside)
+            }
+
+            &::after {
+                left: -($margin-outside + 3mm);
+            }
+        }
+    }
+
+    &.pagedjs_right_page {
+
+        .pagedjs_area {
+
+            &::before {
+                left: -($margin-outside);
+                right: -($margin-inside + 3mm)
+            }
+
+            &::after {
+                right: -($margin-outside + 3mm);
+            }
+        }
+    }
+}
