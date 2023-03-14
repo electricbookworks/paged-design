@@ -8,11 +8,9 @@
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
-    "standard": "^17.0.0",
-    "yazl": "^2.5.1"
+    "standard": "^17.0.0"
   },
   "scripts": {
-    "package": "node js/package.js",
     "serve": "http-server -p 5000",
     "compile": "nodemon js/build.js -e scss,html,js",
     "start": "npm-run-all --parallel compile serve",
