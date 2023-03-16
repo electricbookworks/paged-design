@@ -73,8 +73,7 @@
 // See https://gitlab.pagedmedia.org/tools/pagedjs/wikis/Support-of-specifications
 @page {
     @footnotes {
-        margin-top: $line-height-default / 2;
-        padding-top: $line-height-default / 2;
+        margin-top: $line-height-default;
         font-size: $font-size-default * $font-size-smaller;
     }
 }
