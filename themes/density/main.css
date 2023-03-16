@@ -4184,8 +4184,7 @@ p + p > img:first-child {
 
 @page {
   @footnotes {
-    margin-top: 6.5pt;
-    padding-top: 6.5pt;
+    margin-top: 13pt;
     font-size: 7.2pt; } }
 
 blockquote + .source {
