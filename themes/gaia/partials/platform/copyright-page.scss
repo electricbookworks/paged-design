@@ -1,0 +1,25 @@
+@mixin copyright-page-headings {
+    color: $color-text-main;
+    font-family: $font-display-secondary;
+    font-size: inherit;
+    font-style: normal;
+    font-weight: bold;
+    line-height: $line-height-default;
+    margin: ($line-height-default * 1.5) 0 ($line-height-default / 2) 0;
+}
+
+#{$page-copyright} {
+    bottom: auto;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+
+    h1, h2, h3, h4, h5, h6 {
+        @include copyright-page-headings();
+    }
+
+    header, h1 {
+        display: none;
+    }
+}

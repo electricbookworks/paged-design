@@ -1,0 +1,12 @@
+figure {}
+
+$boxes-that-might-contain-figures: case-study, worked-example, self-reflection-activities, biography;
+
+@each $box in $boxes-that-might-contain-figures {
+
+    // Let sidebar elements float beside figures
+    // when they are in boxes.
+    .#{$box} figure {
+        clear: none;
+    }
+}

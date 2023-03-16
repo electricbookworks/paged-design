@@ -1,0 +1,14 @@
+table {
+    font-family: $font-text-secondary;
+    font-size: $font-size-default-small;
+
+    th {
+        background-color: $theme-color-accent;
+        color: white;
+        font-weight: bold;
+    }
+
+    td {
+        border-color: $theme-color-accent;
+    }
+}

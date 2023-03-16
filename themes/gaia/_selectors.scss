@@ -1,0 +1,29 @@
+// _selectors.scss
+
+// Since people use different class names for similar things,
+// you can override the defaults with your own CSS selectors.
+// Your output CSS will use your selectors.
+// Use commas to separate selectors, as you would in CSS,
+// and wrap the whole list in quotes.
+// E.g. $epigraph: '.epigraph-page .epigraph, .opener .ep';
+// Page types
+
+$cover: 'section.cover';
+$page-title-page: 'section.component-front.titlepage';
+$page-half-title-page: 'section.component-front.halftitle';
+$page-copyright: 'section.copyright_page.component-front';
+$page-toc: 'section.component-front.toc';
+$page-frontmatter: 'section.component-front';
+$page-chapter: 'section.component-body.chapter, section.component-body.unnumbered';
+$page-endmatter: 'section.component-back';
+$page-part: 'section.part';
+
+// The following are guesses at Ketida output,
+// and may need to be revised, or are unnecessary.
+$page-dedication: 'section.dedication_page';
+$page-epigraph: 'section.epigraph_page';
+$page-frontispiece: 'section.frontispiece_page';
+$page-previous-publications: 'section.previous_publications_page';
+
+// On-page features
+$toc: '.toc nav ol'

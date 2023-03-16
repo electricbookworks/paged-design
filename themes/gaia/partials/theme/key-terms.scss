@@ -1,0 +1,9 @@
+.key-terms {
+    break-before: page;
+}
+
+// Not nested in .key-terms because
+// .key-term can be used in any text block.
+.key-term {
+    color: $theme-color-accent;
+}

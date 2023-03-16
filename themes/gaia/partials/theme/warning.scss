@@ -1,0 +1,26 @@
+@include theme-sidenotes("aside.warning");
+
+// aside.warning {
+//     @include boxes-common($theme-color-accent, white);
+//     break-inside: avoid;
+//     line-height: 16px;
+// }
+
+// @include move-to-sidebar("aside.warning", 3mm);
+
+// .pagedjs_left_page .pagedjs_area {
+//     @include extend-move-to-sidebar("aside.warning", left);
+// }
+
+// .pagedjs_right_page .pagedjs_area {
+//     @include extend-move-to-sidebar("aside.warning", right);
+// }
+
+// // When this is in a box of some kind,
+// // adjust its margin-outside.
+
+// $boxes-that-contain-short-warnings: box, self-reflection-activities, worked-example;
+
+// @each $box in $boxes-that-contain-short-warnings {
+//     @include move-to-sidebar(".#{$box} aside.warning", ($box-padding + 3mm));
+// }

@@ -1,0 +1,10 @@
+.epigraph-prose {
+    @include blockquote();
+
+    & + .source-note {
+        @include blockquote();
+
+        margin-top: -$line-height-default;
+        padding-top: 0;
+    }
+}

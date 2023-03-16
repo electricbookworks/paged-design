@@ -1,0 +1,110 @@
+$theme-title-page-max-width: 90mm;
+
+@mixin title-pages-common() {
+
+    h1 {
+        font-size: 62px;
+        line-height: 1;
+        margin-top: 0;
+        max-width: $theme-title-page-max-width;
+    }
+
+    // Subtitle
+    .cst {
+        @include subtitle(titlepage);
+
+        max-width: $theme-title-page-max-width;
+    }
+
+    h2 {
+        @include heading-3();
+
+        max-width: $theme-title-page-max-width;
+        background-color: white;
+        color: $color-text-main;
+    }
+
+    p, ul, ol, dl {
+        font-style: italic;
+        max-width: $theme-title-page-max-width;
+        text-align: left;
+
+        em {
+            font-style: normal;
+        }
+    }
+}
+
+@mixin half-title-circle() {
+
+    // Position
+    position: absolute;
+    display: block;
+
+    // Design
+    background-color: $theme-color-accent;
+    border-radius: $theme-circle-size;
+    content: "";
+    width: $theme-circle-size;
+    height: $theme-circle-size;
+}
+
+#{$page-half-title-page} {
+    @include title-pages-common();
+
+    // We need to add three circles here.
+    // The top and bottom ones we attach to the section,
+    // and the other one to the half title.
+    // This is the only way to get them to show
+    // properly at this stage, because pagedjs borks
+    // the shape otherwise if it touches the bottom margin. 
+
+    &::before {
+        @include half-title-circle();
+        top: -($margin-top + ($theme-circle-size * 0.5));
+    }
+
+    &::after {
+        @include half-title-circle();
+        bottom: -($margin-bottom + ($theme-circle-size * 0.5));
+    }
+
+    h1 {
+
+        position: relative;
+        margin-top: ($theme-circle-size * 0.5 - $margin-top) + ($line-height-default * 4);
+
+        &::before {
+            @include half-title-circle();
+            bottom: -($theme-circle-size + ($line-height-default * 4));
+        }
+    }
+}
+
+#{$page-title-page} {
+    @include title-pages-common();
+
+    display: flex;
+    flex-direction: column;
+    height: $page-height - $margin-top - $margin-bottom;
+    justify-content: center;
+
+    // Circle on right
+    &::before {
+
+        // Position
+        position: absolute;
+        display: block;
+        right: -($margin-outside + (190mm * 0.5) + $sidebar-width);
+        top: ($page-height * 0.5) - (190mm * 0.5) - ($margin-top); 
+
+        // Design
+        background-color: $theme-color-accent;
+        border-radius: 190mm;
+        content: "";
+        width: 190mm;
+        height: 190mm;
+    }
+
+    h1 {}
+}

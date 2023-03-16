@@ -1,0 +1,28 @@
+// Note: a paragraph in poetry is a stanza,
+// not a line. Lines in poetry in HTML should
+// be separated with line breaks.
+
+.extract-poetry {
+    margin-bottom: $text-spacing;
+    text-indent: 0;
+
+    & + .source-note {
+        padding: 0;
+    }
+}
+
+.epigraph-poetry {
+    @include blockquote();
+
+    p {
+        margin-bottom: $text-spacing;
+        text-indent: 0;
+    }
+
+    & + .source-note {
+        @include blockquote();
+
+        margin-top: -($text-spacing);
+        padding-top: 0!important;
+    }
+}

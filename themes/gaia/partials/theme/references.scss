@@ -1,0 +1,27 @@
+// We include `div` in the selector here because
+// 'references' is commonly used in custom designs
+// for other book features. Specifying `div` may
+// reduce the chance of collisions.
+
+div.references {
+    break-before: page;
+    font-size: $font-size-default-small;
+
+    h3, h4, h5, h6 {
+
+        & + ul,
+        & + ol {
+            margin-top: 0;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        margin-left: 0;
+
+        li {
+            margin-left: $text-indent;
+            text-indent: -($text-indent);
+        }
+    }
+}

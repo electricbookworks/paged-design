@@ -1,0 +1,68 @@
+// _variables.scss
+
+// Set your own variables here. These override
+// the defaults in themes/_defaults/_variables.scss.
+// For brevity, we don't repeat all supported variables here.
+// Copy the ones you want to change from defaults.scss
+// to here, and remove `!default` from each one.
+
+// Theme custom variable
+$baseline-grid-unit: 19px; // roughly 14pt
+
+// When paged.js is your rendering target,
+// use px rather than pt for accurate rendering.
+$page-width: 216mm;
+$page-height: 280mm;
+$margin-top: $baseline-grid-unit * 4;
+$margin-bottom: $baseline-grid-unit * 5;
+$margin-inside: 25mm;
+$margin-outside: 0mm;
+$sidebar-width: 50mm;
+$sidebar-position: outside;
+$sidebar-gap: 5mm;
+// $bleed: 3mm;
+
+// Since we can't yet control `page-1` in Ketida HTML
+// we rather just give all frontmatter decimal page numbering.
+$frontmatter-page-numbers: decimal;
+
+// Type
+$font-text-main: "Crimson Pro", serif;
+$font-text-secondary: "Inter", sans-serif;
+$font-display-main: "Crimson Pro", sans-serif;
+$font-display-secondary: "Inter", serif;
+$font-size-default: 13px; // roughly 10pt
+$font-size-default-small: 10px; // custom theme variable
+$line-height-default: $baseline-grid-unit;
+$text-align-default: start;
+
+// Paragraphs
+$paragraphs: indented;
+$text-indent: $font-size-default;
+
+// Start position
+$start-depth: 0;
+
+// Note: $text-spacing that isn't derived from
+// $line-height-default will break the baseline grid,
+// and therefore line alignment across spreads.
+$text-spacing: $line-height-default / 2;
+
+// Variables specific to this theme
+$margin-outside-sidebar: 0mm;
+$pages-with-centred-text: none;
+$box-padding: $line-height-default / 2;
+$theme-circle-size: 78mm;
+
+// Runners
+$verso-top-frontmatter: normal;
+$verso-bottom-frontmatter: element(ketida-running);
+
+$recto-top-frontmatter: normal;
+$recto-bottom-frontmatter: element(ketida-running);
+
+$verso-top: normal;
+$verso-bottom: element(ketida-running);
+
+$recto-top: normal;
+$recto-bottom: element(ketida-running);

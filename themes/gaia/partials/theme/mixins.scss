@@ -1,0 +1,240 @@
+// Mixins intended for reuse in various partials.
+// Mixins created only for use in a specific partial
+// should be created in that partial, not here.
+
+@mixin extend-to-right-sidebar() {
+    margin-right: -($sidebar-width);
+    width: $page-width - $margin-inside - $margin-outside;
+}
+
+@mixin extend-to-left-sidebar() {
+    margin-left: -($sidebar-width);
+    width: $page-width - $margin-inside - $margin-outside;
+}
+
+@mixin undo-extend-to-right-sidebar() {
+    margin-right: 0;
+    width: $page-width - $margin-inside - $margin-outside - $sidebar-width;
+}
+
+@mixin undo-extend-to-left-sidebar() {
+    margin-left: 0;
+    width: $page-width - $margin-inside - $margin-outside - $sidebar-width;
+}
+
+@mixin heading-1($font-size: 42px) {
+    font-family: $font-display-main;
+    font-size: $font-size;
+    line-height: $font-size;
+    text-align: left;
+}
+
+@mixin heading-2() {
+    color: $theme-color-accent;
+    font-family: $font-display-main;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: $line-height-default;
+    margin-bottom: 0;
+    margin-top: $line-height-default * 2;
+    text-align: left;
+}
+
+@mixin heading-3() {
+    @include small-caps();
+
+    font-family: $font-display-secondary;
+    font-size: $font-size-default;
+    font-weight: 500;
+    line-height: $line-height-default;
+    margin-bottom: 0;
+    margin-top: $line-height-default;
+    text-align: left;
+}
+
+@mixin heading-4() {
+    font-family: $font-display-main;
+    text-align: left;
+}
+
+@mixin heading-5() {
+    font-family: $font-display-main;
+    font-style: italic;
+    font-weight: bold;
+    text-align: left;
+}
+
+@mixin heading-6() {
+    font-family: $font-display-main;
+    font-style: italic;
+    text-align: left;
+}
+
+@mixin subtitle($location: chapter) {
+    color: $theme-color-accent;
+    font-family: $font-display-main;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+
+    em {
+        font-style: italic;
+    }
+
+    @if $location == titlepage {
+        font-size: 30px;
+        line-height: 1;
+    } @else {
+        // chapter subtitle
+    }
+}
+
+@mixin boxes-common($background: $theme-color-accent-light, $color: $color-text-main) {
+    background-color: $background;
+    color: $color;
+    font-family: $font-text-secondary;
+    font-size: $font-size-default-small;
+    margin: $line-height-default 0;
+    padding: $box-padding;
+
+    h2, h3, h4, h5, h6 {
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        & + h3,
+        & + h4,
+        & + h5,
+        & + h6 {
+            margin-top: 0;
+        }
+    }
+
+    p, ol, ul, dl {
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// In dark boxes, reverse font colors
+$theme-dark-boxes: tip, reminder, warning, "note.short", review-activity;
+
+@each $box in $theme-dark-boxes {
+    .#{$box} {
+
+        h2, h3, h4, h5, h6,
+        .key-term {
+            color: inherit;
+        }
+    }
+}
+
+@mixin top-and-bottom-box-border() {
+
+    border-top: 5px solid $theme-color-accent;
+    border-bottom: 5px solid $theme-color-accent;
+
+    &[data-split-to] {
+        border-bottom: 0;
+
+        // paged.js wants to remove padding here,
+        // which I think is wrong. So we put it back.
+        padding-bottom: $box-padding!important;
+        margin-bottom: $box-padding!important;
+    }
+
+    &[data-split-from] {
+
+        // paged.js wants to remove padding here,
+        // which I think is wrong. So we put it back.
+        padding-top: $box-padding!important;
+        margin-top: $box-padding!important;
+    }
+}
+
+// Adds to the _defaults mixin move-to-sidebar()
+@mixin extend-move-to-sidebar($selector, $side: left, $bleed: 3mm) {
+    #{$selector} {
+        padding-#{$side}: ($sidebar-gap * 2) + $bleed;
+        width: $sidebar-width - $sidebar-gap + $text-indent;
+    }
+}
+
+@mixin theme-sidenotes($selector) {
+
+    $theme-sidenote-bleed: 3mm;
+
+    #{$selector} {
+        @include boxes-common();
+        break-inside: avoid;
+        line-height: 16px;
+    }
+
+    // Since we `break-inside: avoid`, if one of these does
+    // split over a page, the original doesn't contain content,
+    // and leaves behind a little background color. So let's hide that,
+    // and ensure the remaining sidebar element has padding-top.
+    #{$selector}[data-split-to][data-split-original="true"] {
+        display: none;
+    }
+
+    #{$selector}[data-split-from] {
+        padding-top: $line-height-default * 0.5!important;
+    }
+    
+    @include move-to-sidebar("#{$selector}", $theme-sidenote-bleed);
+    
+    .pagedjs_left_page .pagedjs_area {
+        @include extend-move-to-sidebar("#{$selector}", left);
+    }
+    
+    .pagedjs_right_page .pagedjs_area {
+        @include extend-move-to-sidebar("#{$selector}", right);
+    }
+    
+    // When this is in a box of some kind,
+    // adjust its margin-outside.
+    
+    $boxes-that-contain-these-sidenotes: box, self-reflection-activities, worked-example;
+    
+    @each $box in $boxes-that-contain-these-sidenotes {
+        @include move-to-sidebar(".#{$box} #{$selector}", ($box-padding + $theme-sidenote-bleed));
+
+        .pagedjs_left_page .pagedjs_area {
+            @include extend-move-to-sidebar(".#{$box} #{$selector}", left);
+        }
+        
+        .pagedjs_right_page .pagedjs_area {
+            @include extend-move-to-sidebar(".#{$box} #{$selector}", right);
+        }
+    }    
+}
+
+@mixin circle-above-header($side: left, $color: $theme-color-accent-light) {
+
+    &::before {
+
+        // Position
+        position: absolute;
+        top: -($margin-top + $theme-circle-size * 0.4);
+        z-index: -1;
+
+        @if $side == left {
+            left: $sidebar-gap - $sidebar-width;
+        } @else {
+            left: $sidebar-gap - $margin-inside;
+        }
+
+        // Design
+        content: "";
+        display: block;
+        width: $theme-circle-size;
+        height: $theme-circle-size;
+        border-radius: $theme-circle-size;
+        background-color: $color;
+    }
+}

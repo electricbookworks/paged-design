@@ -1,0 +1,21 @@
+// Pages with a centered text area
+@each $page in $pages-with-centred-text {
+
+    .pagedjs_#{$page}_page {
+
+        .pagedjs_area {
+            padding-left: $sidebar-width / 2;
+            padding-right: $sidebar-width / 2;
+        }
+    }
+}
+
+// Cover page.
+// Bleed not required, since this is only
+// used in screen-PDF output without bleed.
+.pagedjs_cover_page {
+
+    .pagedjs_area {
+        padding: 0;
+    }
+}

@@ -1,0 +1,43 @@
+#{$page-toc} {
+
+    h1 {
+        @include heading-1(42px);
+    }
+
+    nav {
+        font-family: $font-text-main;
+
+        ol {
+
+            li {
+                margin-bottom: $line-height-default / 2;
+
+                &.toc-front {}
+
+                &.toc-part,
+                &.toc-unit {
+                    font-size: 22px;
+                }
+                
+                &.toc-level-one {
+                    color: $theme-color-accent;
+                    font-size: 18px;
+
+                    & ~ .toc-level-two {}
+                }
+
+                &.toc-level-two {
+
+                    & ~ .toc-level-three {}
+                }
+
+                &.toc-level-three {}
+
+                &.toc-section {
+                    font-family: $font-text-main;
+                    font-size: $font-size-default;
+                }
+            }
+        }
+    }
+}

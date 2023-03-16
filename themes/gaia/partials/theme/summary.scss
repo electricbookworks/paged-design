@@ -1,0 +1,16 @@
+// We include `div` in the selector here because
+// 'summary' is commonly used in custom designs
+// for other book features. Specifying `div` may
+// reduce the chance of collisions.
+
+div.summary {
+    @include boxes-common();
+    break-before: page;
+
+    h2, h3 {
+        
+        &:first-of-type {
+            margin-bottom: $line-height-default;
+        }
+    }
+}

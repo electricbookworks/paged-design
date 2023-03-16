@@ -1,0 +1,55 @@
+// _styles.scss
+
+// Add your own custom CSS or Sass styles here,
+// or import your own partials.
+// They will be included by main.scss,
+// after default/_styles.scss
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;700&display=swap');
+
+// Partials for all platform (e.g. Ketida) HTML
+@import "partials/platform/mixins.scss";
+@import "partials/platform/typography.scss";
+@import "partials/platform/margin-boxes.scss";
+@import "partials/platform/copyright-page.scss";
+@import "partials/platform/cover.scss";
+@import "partials/platform/titlepage.scss";
+@import "partials/platform/contents.scss";
+@import "partials/platform/sections.scss";
+@import "partials/platform/key-terms.scss";
+@import "partials/platform/page-setup.scss";
+
+// Partials specifically for this design
+@import "partials/theme/colors.scss";
+@import "partials/theme/mixins.scss";
+@import "partials/theme/typography.scss";
+@import "partials/theme/tables.scss";
+@import "partials/theme/layout.scss";
+@import "partials/theme/titlepage.scss";
+@import "partials/theme/contents.scss";
+@import "partials/theme/frontmatter.scss";
+@import "partials/theme/blanks.scss";
+@import "partials/theme/openers.scss";
+@import "partials/theme/part-page.scss";
+@import "partials/theme/figures.scss";
+@import "partials/theme/focus-questions.scss";
+@import "partials/theme/notes.scss";
+@import "partials/theme/worked-example.scss";
+@import "partials/theme/self-reflection-activities.scss";
+@import "partials/theme/reminder.scss";
+@import "partials/theme/warning.scss";
+@import "partials/theme/epigraphs.scss";
+@import "partials/theme/poetry.scss";
+@import "partials/theme/source-note.scss";
+@import "partials/theme/tip.scss";
+@import "partials/theme/case-study.scss";
+@import "partials/theme/biography.scss";
+@import "partials/theme/extract-prose.scss";
+@import "partials/theme/key-terms.scss";
+@import "partials/theme/summary.scss";
+@import "partials/theme/review-activity.scss";
+@import "partials/theme/references.scss";
+@import "partials/theme/further-reading.scss";
+@import "partials/theme/running.scss";
+@import "partials/theme/copyright-page.scss";
