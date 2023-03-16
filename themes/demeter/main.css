@@ -161,7 +161,7 @@ img {
   size: 178mm 254mm;
   padding: 0;
   marks: crop;
-  bleed: 3mm;
+  bleed: 0;
   trim: 0;
   pdf-page-colorspace: rgb; }
 
@@ -3997,10 +3997,10 @@ section.cover {
   margin: 0;
   padding: 0;
   position: absolute;
-  top: -3mm;
-  right: -3mm;
-  bottom: -3mm;
-  left: -3mm;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   break-after: recto;
   break-before: recto; }
   section.cover img, section.cover img:only-child {
