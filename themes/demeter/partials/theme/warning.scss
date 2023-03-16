@@ -1,23 +1,26 @@
-aside.warning {
-    @include boxes-common($theme-color-accent, white);
-    line-height: 16px;
-}
+@include theme-sidenotes("aside.warning");
 
-@include move-to-sidebar("aside.warning");
+// aside.warning {
+//     @include boxes-common($theme-color-accent, white);
+//     break-inside: avoid;
+//     line-height: 16px;
+// }
 
-.pagedjs_left_page {
-    @include extend-move-to-sidebar("aside.warning", left);
-}
+// @include move-to-sidebar("aside.warning", 3mm);
 
-.pagedjs_right_page {
-    @include extend-move-to-sidebar("aside.warning", right);
-}
+// .pagedjs_left_page .pagedjs_area {
+//     @include extend-move-to-sidebar("aside.warning", left);
+// }
 
-// When this is in a box of some kind,
-// adjust its margin-outside.
+// .pagedjs_right_page .pagedjs_area {
+//     @include extend-move-to-sidebar("aside.warning", right);
+// }
 
-$boxes-that-contain-short-warnings: box, self-reflection-activities, worked-example;
+// // When this is in a box of some kind,
+// // adjust its margin-outside.
 
-@each $box in $boxes-that-contain-short-warnings {
-    @include move-to-sidebar(".#{$box} aside.warning", $box-padding);
-}
+// $boxes-that-contain-short-warnings: box, self-reflection-activities, worked-example;
+
+// @each $box in $boxes-that-contain-short-warnings {
+//     @include move-to-sidebar(".#{$box} aside.warning", ($box-padding + 3mm));
+// }

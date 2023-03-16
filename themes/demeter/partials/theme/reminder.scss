@@ -1,23 +1,30 @@
 aside.reminder {
     @include boxes-common($theme-color-accent, white);
-    line-height: 16px;
 }
 
-@include move-to-sidebar("aside.reminder.short");
+@include theme-sidenotes("aside.reminder.short");
 
-.pagedjs_left_page {
-    @include extend-move-to-sidebar("aside.reminder", left);
-}
+// aside.reminder {
+//     @include boxes-common($theme-color-accent, white);
+//     break-inside: avoid;
+//     line-height: 16px;
+// }
 
-.pagedjs_right_page {
-    @include extend-move-to-sidebar("aside.reminder", right);
-}
+// @include move-to-sidebar("aside.reminder.short", 3mm);
 
-// When this is in a box of some kind,
-// adjust its margin-outside.
+// .pagedjs_left_page .pagedjs_area {
+//     @include extend-move-to-sidebar("aside.reminder.short", left);
+// }
 
-$boxes-that-contain-short-reminders: box, self-reflection-activities, worked-example;
+// .pagedjs_right_page .pagedjs_area {
+//     @include extend-move-to-sidebar("aside.reminder.short", right);
+// }
 
-@each $box in $boxes-that-contain-short-reminders {
-    @include move-to-sidebar(".#{$box} aside.reminder.short", $box-padding);
-}
+// // When this is in a box of some kind,
+// // adjust its margin-outside.
+
+// $boxes-that-contain-short-reminders: box, self-reflection-activities, worked-example;
+
+// @each $box in $boxes-that-contain-short-reminders {
+//     @include move-to-sidebar(".#{$box} aside.reminder.short", ($box-padding + 3mm));
+// }

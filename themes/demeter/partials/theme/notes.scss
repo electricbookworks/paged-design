@@ -1,23 +1,24 @@
-aside.short.note {
+aside.note {
     @include boxes-common($theme-color-accent, white);
-    line-height: 16px;
 }
 
-@include move-to-sidebar("aside.short.note");
+@include theme-sidenotes("aside.short.note");
 
-.pagedjs_left_page {
-    @include extend-move-to-sidebar("aside.short.note", left);
-}
+// @include move-to-sidebar("aside.short.note", 3mm);
 
-.pagedjs_right_page {
-    @include extend-move-to-sidebar("aside.short.note", right);
-}
+// .pagedjs_left_page .pagedjs_area {
+//     @include extend-move-to-sidebar("aside.short.note", left);
+// }
 
-// When this is in a box of some kind,
-// adjust its margin-outside.
+// .pagedjs_right_page .pagedjs_area {
+//     @include extend-move-to-sidebar("aside.short.note", right);
+// }
 
-$boxes-that-contain-short-notes: box, self-reflection-activities, worked-example;
+// // When this is in a box of some kind,
+// // adjust its margin-outside.
 
-@each $box in $boxes-that-contain-short-notes {
-    @include move-to-sidebar(".#{$box} aside.note.short", $box-padding);
-}
+// $boxes-that-contain-short-notes: box, self-reflection-activities, worked-example;
+
+// @each $box in $boxes-that-contain-short-notes {
+//     @include move-to-sidebar(".#{$box} aside.note.short", ($box-padding + 3mm));
+// }

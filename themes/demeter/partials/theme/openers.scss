@@ -1,9 +1,9 @@
-.component-body {
+// Requires that margin-top and line-height-default
+// are defined with the same units, e.g. px.
+$opener-image-height: $margin-top + ($line-height-default * 16);
+$opener-image-bleed: 3mm;
 
-    // Requires that margin-top and line-height-default
-    // are defined with the same units, e.g. px.
-    $opener-image-height: $margin-top + ($line-height-default * 16);
-    $opener-image-bleed: 3mm;
+.component-body {
 
     // The heading below the image
     header {
@@ -13,15 +13,11 @@
             margin-top: calc(#{$opener-image-height} - #{$line-height-default} * 1);
         }
 
-        & + .cst {
-            @include extend-to-right-sidebar();
-        }
-
         & ~ p.author {
-            @include extend-to-right-sidebar();
             @include small-caps();
             font-family: $font-text-secondary;
             font-size: $font-size-default-small;
+            line-height: $line-height-default;
             margin-bottom: $line-height-default * 1.5;
         }
     }
@@ -30,11 +26,11 @@
     // in the chapter that it's on the first page.
     // And these only display big on .component-body.
     .content-opener-image {
-    
+
         figure {
             display: contents;
             margin: 0;
-            
+
             img {
                 position: absolute;
 
@@ -44,14 +40,14 @@
                 // We use calc where variables might be defined with
                 // different units, e.g. mm or pt.
                 top: -($margin-top + $opener-image-bleed);
-                left: 0;
-
+                left: -($margin-inside + $opener-image-bleed);
                 right: calc((#{$margin-outside} + #{$sidebar-width} + $opener-image-bleed) * -1);
+
                 height: $opener-image-height + $opener-image-bleed;
                 margin: 0;
                 max-width: none;
                 object-fit: cover;
-                width: $page-width - $margin-inside + $opener-image-bleed;
+                width: $page-width + ($opener-image-bleed * 2);
             }
 
             figcaption {
@@ -59,8 +55,8 @@
                 // Position
                 position: absolute;
                 bottom: 0;
-                right: -($sidebar-width + $sidebar-gap);
-                width: $sidebar-width - $sidebar-gap;
+                right: -($sidebar-width - $sidebar-gap);
+                width: $sidebar-width - ($sidebar-gap * 2);
 
                 // Appearance
                 border-top: $rule-thickness solid $theme-color-accent;
@@ -79,7 +75,11 @@
             figure {
 
                 img {
-                    height: $opener-image-height * 1.5 + $opener-image-bleed;
+                    min-height: $page-height + ($opener-image-bleed * 2);
+                    width: ($page-width - $sidebar-width) + $opener-image-bleed;
+                    top: -($margin-top + $opener-image-bleed);
+                    left: -($margin-inside + $opener-image-bleed);
+                    z-index: -1;
                 }
             }
         }
@@ -91,14 +91,72 @@
             }
 
             h1 {
+                // To do: add bleed to edge of header
+                // probably by adding a border-top to the
+                // header and the strong:first-of-type.
+
+                // Position
+                position: absolute;
+                top: -($sidebar-width + $margin-top + $opener-image-bleed);
+                right: -($page-height + ($opener-image-bleed * 2));
+                transform: rotate(90deg);
+                transform-origin: 0 100%;
+                margin: 0;
+
+                // Layout
+                display: flex;
+                align-items: center;
+                height: $sidebar-width + $opener-image-bleed;
+                width: $page-height + ($opener-image-bleed * 2);
+                padding-top: $opener-image-bleed;
+
+                // Type
+                background-color: $theme-color-accent;
+                color: white;
+                font-size: 38px;
+                letter-spacing: 0.075em;
+                text-transform: uppercase;
 
                 strong:first-of-type {
-                    @include small-caps();
-                    color: $theme-color-accent;
-                    font-size: 42px;
-                    font-weight: normal;
-                    line-height: 48px;
+
+                    // Position
+                    position: relative;
+                    top: 0;
+                    left: -($opener-image-bleed);
+
+                    // Layout
+                    display: inline-flex;
+                    align-items: center;
+                    height: $sidebar-width + $opener-image-bleed;
+                    padding-left: $sidebar-gap + $text-indent + $opener-image-bleed;
+                    padding-right: $sidebar-gap;
+                    padding-top: $opener-image-bleed;
+                    margin-right: $sidebar-gap;
+                    margin-top: -($opener-image-bleed);
+
+                    // Type
+                    background-color: white;
+                    color: black;
+                    font-weight: 300;
+                    line-height: inherit;
                 }
+            }
+        }
+
+        p {
+            background-color: white;
+            padding-top: ($line-height-default * 0.5);
+            padding-bottom: ($line-height-default * 0.5);
+            padding-right: $text-indent;
+            padding-left: $text-indent;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: ($page-width - $sidebar-width) * 0.5;
+            z-index: 0;
+
+            &:nth-of-type(2) {
+                break-before: page;
             }
         }
     }
@@ -114,25 +172,34 @@
 // So instead, we'll add a design where the chapter number
 // sits to the left of the header text.
 
-$chapter-number-has-text: false;
-
 .chapter-number {
-    color: $theme-color-grey;
+
+    // Type
+    @include heading-1(24px);
+    background-color: $theme-color-accent;
+    color: white;
     font-family: $font-display-main;
     font-weight: 500;
-    text-transform: uppercase;
     letter-spacing: 0.05em;
+    padding: 2mm 2mm 2mm (2mm + $opener-image-bleed + ($line-height-default * 2));
+    text-transform: uppercase;
 
-    @if $chapter-number-has-text == true {
-        font-size: 21px;
-    } @else {
-        float: left;
+    // Position
+    height: $line-height-default * 2;
+    min-width: 50mm;
+    position: absolute;
+    text-align: right;
 
-        // Size and line-height matches h1
-        font-size: 64px;
-        line-height: $line-height-default * 3;
-        margin-right: $text-indent;
-    }
+    transform-origin: left;
+    transform: rotate(90deg);
+    z-index: 1;
+
+    // When element rotates from the left,
+    // it effectively moves down and left
+    // by a multiple of the element height.
+    // Relates to padding-left above.
+    top: -($margin-top + $opener-image-bleed + ($line-height-default * 2));
+    left: $line-height-default;
 
     & + h1 {
         margin-top: 0;
@@ -150,7 +217,7 @@ $chapter-number-has-text: false;
 // Opening boxes
 
 .learning-objectives {
-    @include boxes-common();
+    @include boxes-common($theme-color-accent, white);
 
     // Assumes there will be an element with margin-top
     // after this, like a heading. This way, the box
@@ -177,7 +244,7 @@ $chapter-number-has-text: false;
 }
 
 .outline {
-    @include boxes-common();
+    @include boxes-common($theme-color-accent, white);
 
     // Assumes there will be an element with margin-top
     // after this, like a heading. This way, the box
@@ -201,5 +268,4 @@ $chapter-number-has-text: false;
         // because of how paged.js rewrites CSS here.
         margin: 0 0 $line-height-default 0!important;
     }
-
 }

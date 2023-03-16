@@ -5,78 +5,132 @@
 
 div.summary {
     break-before: page;
-    page: summary;
-
+    
     // First page of summary
     &[data-split-original="true"] {
-
+        
         h2, h3 {
             
             &:first-child {
-                color: white; // reversed on coloured strip
-            }
-        }
-    }
-
-    // Following pages of summary
-    &[data-split-from] {
-        padding-top: $line-height-default * 2!important;
-    }
-}
-
-.pagedjs_summary_page {
-
-    .pagedjs_area {
-
-        &::before {
-            content: "";
-            display: block;
-            height: 5mm;
-            background-color: $theme-color-accent;
-            position: absolute;
-            top: $margin-top;
-            z-index: 0;
-        }
-        &::after {
-            content: "";
-            display: block;
-            height: $page-height + 6mm;
-            background-color: $theme-color-grey-light;
-            position: absolute;
-            top: -3mm;
-            bottom: -3mm;
-            width: $sidebar-width + 3mm - 5mm;
-            z-index: -1;
-        }
-    }
-
-    &.pagedjs_left_page {
-
-        .pagedjs_area {
-
-            &::before {
-                left: -($margin-outside + 3mm);
-                right: -($margin-inside)
-            }
-
-            &::after {
-                left: -($margin-outside + 3mm);
-            }
-        }
-    }
-
-    &.pagedjs_right_page {
-
-        .pagedjs_area {
-
-            &::before {
-                left: -($margin-outside);
-                right: -($margin-inside + 3mm)
-            }
-
-            &::after {
-                right: -($margin-outside + 3mm);
+                background-color: black;
+                width: $page-width + (3mm * 2); // 3mm for bleed
             }
         }
     }
 }
+
+.pagedjs_left_page {
+
+    div.summary {
+
+        &[data-split-original="true"] {
+
+            h2, h3 {
+
+                &:first-child {
+                    margin-left: -($sidebar-width + 3mm);
+                    padding-left: $sidebar-width + 3mm;
+                }
+            }
+        }
+    }
+}
+
+.pagedjs_right_page {
+
+    div.summary {
+
+        &[data-split-original="true"] {
+
+            h2, h3 {
+
+                &:first-child {
+                    margin-left: -($margin-inside + 3mm);
+                    padding-left: $margin-inside + 3mm;
+                }
+            }
+        }
+    }
+}
+
+
+// The spec design called for a thick rule
+// across the top of each summary page.
+// The only way to do that is to create a named
+// page (`page: summary`). However, this causes
+// a page break after the summary where we might
+// not want one. E.g. if followed by a .review-activity
+// intended to be part of the chapter summary.
+// So I have removed the below code that added
+// the rule on every page. Instead, I've made the
+// first h2/h3's background extend to the page edge
+// so we have this effect on only the first page
+// of the chapter summary. ALso black, to differentiate
+// it from other normal headings.
+// Code left here, commented out, for future reference.
+
+// div.summary {
+//     page: summary;
+
+//    // Following pages of summary
+//     &[data-split-from] {
+//         padding-top: $line-height-default * 2!important;
+//     }
+// }
+
+// .pagedjs_summary_page {
+
+//     .pagedjs_area {
+
+//         &::before {
+//             content: "";
+//             display: block;
+//             height: 25px; // magic number, matches computed height of h2 background
+//             background-color: $theme-color-accent;
+//             position: absolute;
+//             top: $margin-top;
+//             z-index: 0;
+//         }
+//         &::after {
+//             content: "";
+//             display: block;
+//             height: $page-height + 6mm;
+//             background-color: $theme-color-grey-light;
+//             position: absolute;
+//             top: -3mm;
+//             bottom: -3mm;
+//             width: $sidebar-width + 3mm - 5mm;
+//             z-index: -1;
+//         }
+//     }
+
+//     &.pagedjs_left_page {
+
+//         .pagedjs_area {
+
+//             &::before {
+//                 left: -($margin-outside + 3mm);
+//                 right: -($margin-inside)
+//             }
+
+//             &::after {
+//                 left: -($margin-outside + 3mm);
+//             }
+//         }
+//     }
+
+//     &.pagedjs_right_page {
+
+//         .pagedjs_area {
+
+//             &::before {
+//                 left: -($margin-outside);
+//                 right: -($margin-inside + 3mm)
+//             }
+
+//             &::after {
+//                 right: -($margin-outside + 3mm);
+//             }
+//         }
+//     }
+// }
