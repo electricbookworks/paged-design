@@ -1,0 +1,56 @@
+#{$page-toc} {
+
+    nav {
+
+        ol {
+
+            li {
+
+                a {
+
+                    &:after {
+                        font-family: $font-text-main;
+                        font-size: $font-size-default;
+                    }
+                }
+
+                &.toc-front {}
+
+                &.toc-part, &.toc-unit {}
+
+                &.toc-level-one {
+
+                    & ~ .toc-level-two {
+                        margin-left: $text-indent;
+                    }
+                }
+
+                &.toc-level-two {
+
+                    & ~ .toc-level-three {
+                        margin-left: $text-indent * 2;
+                    }
+                }
+
+                &.toc-level-three {}
+
+                &.toc-section {
+                    margin-left: $text-indent * 2;
+                }
+
+                // Add space between TOC sections
+                &.toc-front + .toc-body,
+                &.toc-body + .toc-unnumbered,
+                &.toc-body + .toc-back,
+                &.toc-unnumbered + .toc-back {
+
+                    // We have to !important this because
+                    // paged.js rewrites this CSS rule as a
+                    // [data-following] attribute only, so
+                    // it loses its CSS specificity.
+                    margin-top: $line-height-default!important;
+                }
+            }
+        }
+    }
+}

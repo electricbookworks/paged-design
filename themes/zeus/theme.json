@@ -1,0 +1,7 @@
+{
+  "name": "Gaia",
+  "scripts": {
+    "prelayout": ["headers.js"],
+    "postlayout": ["baseline-grid.js"]
+  }
+}

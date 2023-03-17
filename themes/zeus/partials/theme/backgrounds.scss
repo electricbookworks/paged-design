@@ -1,0 +1,10 @@
+// This file is for mixins providing SVG backgrounds.
+// Ensure colours are passed as *almost opaque* rgba(),
+// and not as rgb() or hex values, or as CSS custom properties/variables.
+// This avoids Sass turning colours into hexes, which break SVG.
+// And custom props don't work when the SVG is inside the CSS like this.
+
+@mixin zeus-blocks($line-color: $theme-color-accent-rgba, $background-color: $theme-color-accent-light-rgba) {
+    background-size: cover;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 566.9 566.9" style="enable-background:new 0 0 566.9 566.9" xml:space="preserve"><path style="fill:#{$background-color}" d="M0 0h567v567H0z"/><path style="fill:none;stroke:#{$line-color};stroke-width:.25;stroke-miterlimit:10" d="M.5 76.5h566M115 76v491M72 411h495M208 76l336 336M208 76v335M544 412v155M442 411v156M362 0v567M0 230h567M144 0v567M0 305h144M72 567V305M257 125h309M362 230l104.5-104.5M257 125v442M362 412 256.5 517.5M72 517h472M0 243h362M115 332h247M238 567V244M144 55h422M466 125V0M495 125v238"/><path style="fill:#{$line-color}" d="M115 332h29v79h-29zM257 230h105v13H257zM144 55h218v21H144zM238 517h19v50h-19zM466 76h100v49H466zM362 411h80v106h-80zM0 230h115v13H0z"/></svg>');
+}

@@ -1,0 +1,4 @@
+@page :blank {
+    @include zeus-blocks();
+    background-color: $theme-color-accent-light;
+}

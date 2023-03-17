@@ -1,0 +1,5 @@
+aside.note {
+    @include boxes-common($theme-color-accent, white);
+}
+
+@include theme-sidenotes("aside.short.note");

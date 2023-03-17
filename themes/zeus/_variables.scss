@@ -1,0 +1,67 @@
+// _variables.scss
+
+// Set your own variables here. These override
+// the defaults in themes/_defaults/_variables.scss.
+// For brevity, we don't repeat all supported variables here.
+// Copy the ones you want to change from defaults.scss
+// to here, and remove `!default` from each one.
+
+// Theme custom variable
+$baseline-grid-unit: 19px; // roughly 14pt
+
+// When paged.js is your rendering target,
+// use px rather than pt for accurate rendering.
+$page-width: 189mm;
+$page-height: 246mm;
+$margin-top: $baseline-grid-unit * 6;
+$margin-bottom: $baseline-grid-unit * 4;
+$margin-inside: 25mm;
+$margin-outside: 0mm;
+$sidebar-width: 50mm;
+$sidebar-position: outside;
+$sidebar-gap: 5mm;
+$bleed: 3mm;
+
+// Since we can't yet control `page-1` in Ketida HTML
+// we rather just give all frontmatter decimal page numbering.
+$frontmatter-page-numbers: decimal;
+
+// Type
+$font-text-main: "Barlow", serif;
+$font-text-secondary: "Barlow", sans-serif;
+$font-display-main: "Barlow", sans-serif;
+$font-display-secondary: "Barlow", serif;
+$font-size-default: 12px; // roughly 9pt
+$font-size-default-small: 10px; // custom theme variable
+$line-height-default: $baseline-grid-unit;
+$text-align-default: start;
+
+// Paragraphs
+$paragraphs: indented;
+$text-indent: $font-size-default;
+
+// Start position
+$start-depth: 0;
+
+// Note: $text-spacing that isn't derived from
+// $line-height-default will break the baseline grid,
+// and therefore line alignment across spreads.
+$text-spacing: $line-height-default / 2;
+
+// Variables specific to this theme
+$margin-outside-sidebar: 0mm;
+$pages-with-centred-text: none;
+$box-padding: ($line-height-default / 2) $text-indent;
+$box-padding-horizontal: $text-indent;
+$box-padding-vertical: ($line-height-default / 2);
+
+// Runners
+$verso-top-frontmatter: normal;
+$verso-top-left-frontmatter: counter(page);
+$verso-top-right-frontmatter: element(ketida-running);
+$verso-bottom-frontmatter: normal;
+
+$recto-top-frontmatter: normal;
+$recto-top-left-frontmatter: element(ketida-running);
+$recto-top-right-frontmatter: counter(page);
+$recto-bottom-frontmatter: normal;

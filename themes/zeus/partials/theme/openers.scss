@@ -1,0 +1,242 @@
+// Requires that margin-top and line-height-default
+// are defined with the same units, e.g. px.
+$opener-image-height: $margin-top + ($line-height-default * 14);
+$opener-image-bleed: 3mm;
+
+.component-body {
+
+    // The heading below the image
+    header {
+
+        &:first-of-type {
+            margin-top: calc(#{$opener-image-height} - #{$line-height-default} * 5);
+        }
+
+        & ~ p.author {
+            font-style: italic;
+            line-height: $line-height-default;
+            margin-bottom: $line-height-default * 1.5;
+            margin-top: $line-height-default * 0.5;
+            max-width: 80%;
+            text-indent: 0;
+
+            em {
+                font-style: normal;
+            }
+        }
+    }
+
+    // Depends on this image being early enough
+    // in the chapter that it's on the first page.
+    // And these only display big on .component-body.
+    .content-opener-image {
+
+        figure {
+            display: contents;
+            margin: 0;
+
+            img {
+                position: absolute;
+
+                // We set the bleed directly here rather than using $bleed
+                // because we want the image to appear the same in
+                // screen PDF (where bleed is 0) and print PDF (with bleed).
+                // We use calc where variables might be defined with
+                // different units, e.g. mm or pt.
+                top: -($margin-top + $opener-image-bleed);
+                left: -($margin-inside);
+                width: $page-width - ($sidebar-width * 0.5);
+                border-radius: 0 0 ($opener-image-height * 0.5) 0;
+                height: $opener-image-height + $opener-image-bleed;
+                margin: 0;
+                max-width: none;
+                object-fit: cover;
+            }
+
+            figcaption {
+
+                // Position
+                position: absolute;
+                bottom: 0;
+                right: -($sidebar-width - $sidebar-gap);
+                width: $sidebar-width - ($sidebar-gap * 2);
+
+                // Appearance
+                border-top: $rule-thickness solid $theme-color-accent;
+                font-family: $font-text-secondary;
+                font-size: $font-size-default-small;
+                padding-top: $line-height-default / 2;
+            }
+        }
+    }
+
+    // Also see part-page.scss
+    &.part {
+
+        .content-opener-image {
+
+            figure {
+
+                img {
+                    background-color: $theme-color-accent;
+                    z-index: -1;
+                }
+            }
+        }
+
+        header {
+
+            &:first-of-type {
+
+                // Override non-.part header
+                margin-top: 0;
+            }
+
+            h1 {
+
+                // Position
+                position: absolute;
+                top: ($page-height - $margin-top - $margin-bottom) * 0.5;
+                left: 90mm;
+                transform: translatey(-50%);
+                margin: 0;
+                width: $page-width -$margin-inside - 90mm - ($sidebar-gap * 2);
+
+                // Type
+                color: black;
+                font-size: 64px;
+
+                strong:first-of-type {
+
+                    // Position
+                    position: absolute;
+                    left: -90mm;
+                    display: block;
+                    text-align: right;
+                    width: 70mm;
+
+                    // Type
+                    color: white;
+                    font-family: $font-display-secondary;
+                    font-size: 64px;
+                    font-weight: bold;
+                    line-height: inherit;
+                }
+            }
+        }
+
+        p {
+            position: absolute;
+            bottom: 0;
+            right: -($sidebar-width - ($sidebar-gap * 2));
+            left: 90mm;
+            z-index: 1;
+
+            &:nth-of-type(2) {
+                break-before: page;
+            }
+        }
+    }
+}
+
+
+// Chapter numbers
+
+// The spec design used the word 'chapter'
+// before the number, but Ketida only inserts
+// a number. We don't want to add generated content
+// in CSS, because the book might not be in English.
+// So instead, we'll add a design where the chapter number
+// sits to the left of the header text.
+
+.chapter-number {
+
+    // Appearance
+    @include heading-1();
+    background-color: $theme-color-accent;
+    border-radius: 20mm;
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+
+    // Position
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20mm;
+    height: 20mm;
+    margin-top: -20px;
+    margin-left: -10mm;
+    position: relative;
+    z-index: 1;
+
+    & + .component-title {
+        margin-top: 0;
+    }
+}
+
+
+// Component/chapter subtitles
+
+.cst {
+    @include subtitle();
+}
+
+
+// Opening boxes
+
+.learning-objectives {
+    @include boxes-common();
+
+    // Assumes there will be an element with margin-top
+    // after this, like a heading. This way, the box
+    // can merge visually with, say, .outline.
+    margin-bottom: 0;
+
+    & > p {
+        @include small-caps();
+        color: $theme-color-accent;
+        font-size: $font-size-default-small;
+        margin-bottom: 0;
+    }
+
+    ul, ol {
+        margin: 0 0 0 $line-height-default; // not sure why LHD
+        padding: 0;
+    }
+
+    & + .outline {
+
+        // Need to override specificity here,
+        // because of how paged.js rewrites CSS here.
+        margin: 0 0 $line-height-default 0!important;
+    }
+}
+
+.outline {
+    @include boxes-common();
+
+    // Assumes there will be an element with margin-top
+    // after this, like a heading. This way, the box
+    // can merge visually with, say, .learning-objectives.
+    margin-bottom: 0;
+
+    & > p {
+        @include small-caps();
+        color: $theme-color-accent;
+        font-size: $font-size-default-small;
+        margin-bottom: 0;
+    }
+
+    ul, ol {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    & + .learning-objectives {
+        // Need to override specificity here,
+        // because of how paged.js rewrites CSS here.
+        margin: 0 0 $line-height-default 0!important;
+    }
+}

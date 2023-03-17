@@ -1,0 +1,16 @@
+.review-activity {
+    @include boxes-common();
+
+    border-left: $text-indent solid $theme-color-accent;
+    border-radius: 0;
+    font-family: $font-text-main;
+    font-size: $font-size-default;
+
+    h2, h3, h4, h5, h6 {
+        @include small-caps();
+        color: black;
+        font-family: $font-display-secondary;
+        font-size: $font-size-default;
+        margin-bottom: 0;
+    }
+}

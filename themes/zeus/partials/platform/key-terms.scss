@@ -1,0 +1,7 @@
+.key-terms {}
+
+// Not nested in .key-terms because
+// .key-term can be used in any text block.
+.key-term {
+    font-weight: bold;
+}

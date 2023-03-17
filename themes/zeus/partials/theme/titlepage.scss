@@ -1,0 +1,53 @@
+$theme-title-page-max-width: 90mm;
+
+@mixin title-pages-common() {
+    display: flex;
+    flex-direction: column;
+    height: $page-height - $margin-top - $margin-bottom;
+    justify-content: center;
+    text-align: right;
+
+    h1 {
+        color: $theme-color-accent;
+        font-size: 38px;
+        font-weight: bold;
+        line-height: 1;
+        margin-top: 0;
+        text-align: right;
+        text-transform: uppercase;
+        letter-spacing: 0.075em;
+
+        &::before {
+            content: normal;
+        }
+    }
+
+    // Subtitle
+    .cst {
+        @include subtitle(titlepage);
+
+        text-align: right;
+    }
+
+    h2 {
+        @include heading-3();
+
+        text-align: right;
+    }
+
+    p, ul, ol, dl {
+        text-align: right;
+    }
+}
+
+#{$page-half-title-page} {
+    @include title-pages-common();
+
+    h1 {}
+}
+
+#{$page-title-page} {
+    @include title-pages-common();
+
+    h1 {}
+}

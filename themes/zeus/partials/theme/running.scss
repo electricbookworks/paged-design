@@ -1,0 +1,54 @@
+@mixin runner-text-common($side: left) {
+    @include small-caps();
+    font-family: $font-text-secondary;
+    margin-top: $line-height-default * 2;
+    text-align: $side;
+}
+
+@mixin runner-number-common($side: left) {
+    font-family: $font-text-secondary;
+    font-size: $font-size-default-small;
+    text-align: $side;
+}
+
+.pagedjs_margin-top {
+    grid-template-columns: #{$sidebar-width} 1fr #{$sidebar-width}!important;
+}
+
+.pagedjs_margin-bottom {
+    grid-template-columns: #{$sidebar-width} 1fr #{$sidebar-width}!important;
+}
+
+@page :left {
+
+    @top-center {
+        @include runner-text-common(left);
+    }
+    @bottom-center {
+        @include runner-number-common(left);
+    }
+}
+
+@page :right {
+
+    @top-center {
+        @include runner-text-common(right);
+    }
+    @bottom-center {
+        @include runner-number-common(right)
+    }
+}
+
+// // Remove runner borders from certain pages
+// $page-types-without-runners: cover, half-title-page, title-page, copyright, part;
+
+// @each $page-type in $page-types-without-runners {
+//     @page #{$page-type} {
+//         @top-left {
+//             content: normal;
+//         }
+//         @top-right {
+//             content: normal;
+//         }
+//     }
+// }

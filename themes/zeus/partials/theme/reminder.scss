@@ -1,0 +1,5 @@
+aside.reminder {
+    @include boxes-common($theme-color-accent, white);
+}
+
+@include theme-sidenotes("aside.reminder.short");

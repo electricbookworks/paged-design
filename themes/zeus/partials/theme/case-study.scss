@@ -1,0 +1,12 @@
+aside.case-study {
+    @include boxes-common();
+    border-radius: 0;
+    font-family: $font-text-main;
+    font-size: $font-size-default;
+    padding-top: $line-height-default;
+    padding-bottom: $line-height-default;
+
+    @include retain-padding-at-page-break();
+}
+
+@include full-width-box("aside.case-study");

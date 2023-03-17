@@ -1,0 +1,50 @@
+#{$page-toc} {
+
+    h1 {
+        @include heading-1(42px);
+
+        // No block above
+        &::before {
+            content: normal;
+        }
+    }
+
+    nav {
+        font-family: $font-text-main;
+
+        ol {
+
+            li {
+                margin-bottom: $line-height-default / 2;
+
+                &.toc-front {}
+
+                &.toc-part,
+                &.toc-unit {
+                    color: $theme-color-accent;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+                
+                &.toc-level-one {
+                    font-size: 16px;
+                    font-weight: 600;
+
+                    & ~ .toc-level-two {}
+                }
+
+                &.toc-level-two {
+
+                    & ~ .toc-level-three {}
+                }
+
+                &.toc-level-three {}
+
+                &.toc-section {
+                    font-family: $font-text-main;
+                    font-size: $font-size-default;
+                }
+            }
+        }
+    }
+}
