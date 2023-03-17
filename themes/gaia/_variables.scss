@@ -51,7 +51,9 @@ $text-spacing: $line-height-default / 2;
 // Variables specific to this theme
 $margin-outside-sidebar: 0mm;
 $pages-with-centred-text: none;
-$box-padding: $line-height-default / 2;
+$box-padding: ($line-height-default / 2) $text-indent;
+$box-padding-horizontal: $text-indent;
+$box-padding-vertical: ($line-height-default / 2);
 $theme-circle-size: 78mm;
 
 // Runners

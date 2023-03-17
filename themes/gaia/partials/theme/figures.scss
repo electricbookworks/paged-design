@@ -1,4 +1,10 @@
-figure {}
+figure {
+
+    figcaption {
+        font-family: $font-text-secondary;
+        font-size: $font-size-default - 2; // sans-serif slightly bigger visually
+    }
+}
 
 $boxes-that-might-contain-figures: case-study, worked-example, self-reflection-activities, biography;
 

@@ -3,28 +3,3 @@ aside.reminder {
 }
 
 @include theme-sidenotes("aside.reminder.short");
-
-// aside.reminder {
-//     @include boxes-common($theme-color-accent, white);
-//     break-inside: avoid;
-//     line-height: 16px;
-// }
-
-// @include move-to-sidebar("aside.reminder.short", 3mm);
-
-// .pagedjs_left_page .pagedjs_area {
-//     @include extend-move-to-sidebar("aside.reminder.short", left);
-// }
-
-// .pagedjs_right_page .pagedjs_area {
-//     @include extend-move-to-sidebar("aside.reminder.short", right);
-// }
-
-// // When this is in a box of some kind,
-// // adjust its margin-outside.
-
-// $boxes-that-contain-short-reminders: box, self-reflection-activities, worked-example;
-
-// @each $box in $boxes-that-contain-short-reminders {
-//     @include move-to-sidebar(".#{$box} aside.reminder.short", ($box-padding + 3mm));
-// }

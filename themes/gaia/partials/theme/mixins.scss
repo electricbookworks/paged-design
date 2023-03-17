@@ -22,7 +22,7 @@
     width: $page-width - $margin-inside - $margin-outside - $sidebar-width;
 }
 
-@mixin heading-1($font-size: 42px) {
+@mixin heading-1($font-size: 54px) {
     font-family: $font-display-main;
     font-size: $font-size;
     line-height: $font-size;
@@ -33,9 +33,9 @@
     color: $theme-color-accent;
     font-family: $font-display-main;
     font-weight: 500;
-    font-size: 19px;
+    font-size: 22px;
     line-height: $line-height-default;
-    margin-bottom: 0;
+    margin-bottom: $line-height-default * 0.5;
     margin-top: $line-height-default * 2;
     text-align: left;
 }
@@ -73,7 +73,7 @@
 @mixin subtitle($location: chapter) {
     color: $theme-color-accent;
     font-family: $font-display-main;
-    font-size: 18px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 500;
     line-height: 28px;
@@ -92,6 +92,7 @@
 
 @mixin boxes-common($background: $theme-color-accent-light, $color: $color-text-main) {
     background-color: $background;
+    border-radius: 0 5mm 5mm 5mm;
     color: $color;
     font-family: $font-text-secondary;
     font-size: $font-size-default-small;
@@ -117,42 +118,6 @@
         &:last-child {
             margin-bottom: 0;
         }
-    }
-}
-
-// In dark boxes, reverse font colors
-$theme-dark-boxes: tip, reminder, warning, "note.short", review-activity;
-
-@each $box in $theme-dark-boxes {
-    .#{$box} {
-
-        h2, h3, h4, h5, h6,
-        .key-term {
-            color: inherit;
-        }
-    }
-}
-
-@mixin top-and-bottom-box-border() {
-
-    border-top: 5px solid $theme-color-accent;
-    border-bottom: 5px solid $theme-color-accent;
-
-    &[data-split-to] {
-        border-bottom: 0;
-
-        // paged.js wants to remove padding here,
-        // which I think is wrong. So we put it back.
-        padding-bottom: $box-padding!important;
-        margin-bottom: $box-padding!important;
-    }
-
-    &[data-split-from] {
-
-        // paged.js wants to remove padding here,
-        // which I think is wrong. So we put it back.
-        padding-top: $box-padding!important;
-        margin-top: $box-padding!important;
     }
 }
 
@@ -202,7 +167,7 @@ $theme-dark-boxes: tip, reminder, warning, "note.short", review-activity;
     $boxes-that-contain-these-sidenotes: box, self-reflection-activities, worked-example;
     
     @each $box in $boxes-that-contain-these-sidenotes {
-        @include move-to-sidebar(".#{$box} #{$selector}", ($box-padding + $theme-sidenote-bleed));
+        @include move-to-sidebar(".#{$box} #{$selector}", ($text-indent + $theme-sidenote-bleed));
 
         .pagedjs_left_page .pagedjs_area {
             @include extend-move-to-sidebar(".#{$box} #{$selector}", left);
@@ -237,4 +202,56 @@ $theme-dark-boxes: tip, reminder, warning, "note.short", review-activity;
         border-radius: $theme-circle-size;
         background-color: $color;
     }
+}
+
+@mixin retain-padding-at-page-break() {
+    &[data-split-to] {
+        border-bottom: 0;
+
+        // paged.js wants to remove padding here,
+        // which I think is wrong. So we put it back.
+        padding-bottom: $box-padding-vertical!important;
+        margin-bottom: $box-padding-vertical!important;
+    }
+
+    &[data-split-from] {
+
+        // paged.js wants to remove padding here,
+        // which I think is wrong. So we put it back.
+        padding-top: $box-padding-vertical!important;
+        margin-top: $box-padding-vertical!important;
+    }
+}
+
+@mixin full-width-box($selector) {
+
+    .pagedjs_left_page {
+
+        #{$selector} {
+            width: $page-width - $margin-inside + $sidebar-gap + 3mm;
+    
+            margin-left: -($sidebar-width + $margin-outside + 3mm);
+            padding-left: $sidebar-width + $margin-outside + 3mm;
+    
+            margin-right: -($sidebar-gap);
+            padding-right: $sidebar-gap;
+
+            border-radius: 0 ($sidebar-gap) ($sidebar-gap) 0;
+        }
+    }
+    
+    .pagedjs_right_page {
+    
+        #{$selector} {
+            width: $page-width - $margin-inside + $sidebar-gap + 3mm;
+    
+            margin-right: -($sidebar-width + $margin-outside + 3mm);
+            padding-right: $sidebar-width + $margin-outside + 3mm;
+    
+            margin-left: -($sidebar-gap);
+            padding-left: $sidebar-gap;
+
+            border-radius: ($sidebar-gap) 0 0 ($sidebar-gap);
+        }
+    }    
 }

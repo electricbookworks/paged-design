@@ -1,7 +1,8 @@
 // Requires that margin-top and line-height-default
 // are defined with the same units, e.g. px.
-$opener-image-height: $margin-top + ($line-height-default * 16);
+$opener-image-height: $margin-top + ($line-height-default * 14);
 $opener-image-bleed: 3mm;
+$part-page-circular-image-height: 400mm;
 
 $pages-with-light-circle-device: frontmatter, unnumbered, introduction, endmatter;
 
@@ -30,18 +31,22 @@ $pages-with-light-circle-device: frontmatter, unnumbered, introduction, endmatte
 
     // The heading below the image
     header {
-        @include extend-to-right-sidebar();
 
         &:first-of-type {
-            margin-top: calc(#{$opener-image-height} - #{$line-height-default} * 1);
+            margin-top: calc(#{$opener-image-height} - #{$line-height-default} * 5);
         }
 
         & ~ p.author {
-            @include small-caps();
-            font-family: $font-text-secondary;
-            font-size: $font-size-default-small;
+            font-style: italic;
             line-height: $line-height-default;
             margin-bottom: $line-height-default * 1.5;
+            margin-top: $line-height-default * 0.5;
+            max-width: 80%;
+            text-indent: 0;
+
+            em {
+                font-style: normal;
+            }
         }
     }
 
@@ -63,14 +68,13 @@ $pages-with-light-circle-device: frontmatter, unnumbered, introduction, endmatte
                 // We use calc where variables might be defined with
                 // different units, e.g. mm or pt.
                 top: -($margin-top + $opener-image-bleed);
-                left: -($margin-inside + $opener-image-bleed);
-                right: calc((#{$margin-outside} + #{$sidebar-width} + $opener-image-bleed) * -1);
-
+                left: -($margin-inside);
+                width: $page-width - ($sidebar-width * 0.5);
+                border-radius: 0 0 ($opener-image-height * 0.5) 0;
                 height: $opener-image-height + $opener-image-bleed;
                 margin: 0;
                 max-width: none;
                 object-fit: cover;
-                width: $page-width + ($opener-image-bleed * 2);
             }
 
             figcaption {
@@ -98,10 +102,12 @@ $pages-with-light-circle-device: frontmatter, unnumbered, introduction, endmatte
             figure {
 
                 img {
-                    min-height: $page-height + ($opener-image-bleed * 2);
-                    width: ($page-width - $sidebar-width) + $opener-image-bleed;
-                    top: -($margin-top + $opener-image-bleed);
-                    left: -($margin-inside + $opener-image-bleed);
+                    background-color: $theme-color-accent;
+                    clip-path: circle(($part-page-circular-image-height * 0.5) at center);
+                    min-height: $part-page-circular-image-height;
+                    width: $part-page-circular-image-height;
+                    top: -($margin-top + 225px); // magic number?
+                    left: -($part-page-circular-image-height * 0.8);
                     z-index: -1;
                 }
             }
@@ -110,73 +116,50 @@ $pages-with-light-circle-device: frontmatter, unnumbered, introduction, endmatte
         header {
 
             &:first-of-type {
-                margin-top: $opener-image-height * 1.5 - $line-height-default;
+
+                // Override non-.part header
+                margin-top: 0;
             }
 
             h1 {
-                // To do: add bleed to edge of header
-                // probably by adding a border-top to the
-                // header and the strong:first-of-type.
 
                 // Position
                 position: absolute;
-                top: -($sidebar-width + $margin-top + $opener-image-bleed);
-                right: -($page-height + ($opener-image-bleed * 2));
-                transform: rotate(90deg);
-                transform-origin: 0 100%;
+                top: ($page-height - $margin-top - $margin-bottom) * 0.5;
+                left: 90mm;
+                transform: translatey(-50%);
                 margin: 0;
-
-                // Layout
-                display: flex;
-                align-items: center;
-                height: $sidebar-width + $opener-image-bleed;
-                width: $page-height + ($opener-image-bleed * 2);
-                padding-top: $opener-image-bleed;
+                width: $page-width -$margin-inside - 90mm - ($sidebar-gap * 2);
 
                 // Type
-                background-color: $theme-color-accent;
-                color: white;
-                font-size: 38px;
-                letter-spacing: 0.075em;
-                text-transform: uppercase;
+                color: black;
+                font-size: 64px;
 
                 strong:first-of-type {
 
                     // Position
-                    position: relative;
-                    top: 0;
-                    left: -($opener-image-bleed);
-
-                    // Layout
-                    display: inline-flex;
-                    align-items: center;
-                    height: $sidebar-width + $opener-image-bleed;
-                    padding-left: $sidebar-gap + $text-indent + $opener-image-bleed;
-                    padding-right: $sidebar-gap;
-                    padding-top: $opener-image-bleed;
-                    margin-right: $sidebar-gap;
-                    margin-top: -($opener-image-bleed);
+                    position: absolute;
+                    left: -90mm;
+                    display: block;
+                    text-align: right;
+                    width: 70mm;
 
                     // Type
-                    background-color: white;
-                    color: black;
-                    font-weight: 300;
+                    color: white;
+                    font-family: $font-display-secondary;
+                    font-size: 64px;
+                    font-weight: bold;
                     line-height: inherit;
                 }
             }
         }
 
         p {
-            background-color: white;
-            padding-top: ($line-height-default * 0.5);
-            padding-bottom: ($line-height-default * 0.5);
-            padding-right: $text-indent;
-            padding-left: $text-indent;
             position: absolute;
             bottom: 0;
-            right: 0;
-            width: ($page-width - $sidebar-width) * 0.5;
-            z-index: 0;
+            right: -($sidebar-width - ($sidebar-gap * 2));
+            left: 90mm;
+            z-index: 1;
 
             &:nth-of-type(2) {
                 break-before: page;
@@ -197,34 +180,26 @@ $pages-with-light-circle-device: frontmatter, unnumbered, introduction, endmatte
 
 .chapter-number {
 
-    // Type
-    @include heading-1(24px);
+    // Appearance
+    @include heading-1();
     background-color: $theme-color-accent;
+    border-radius: 20mm;
     color: white;
-    font-family: $font-display-main;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    padding: 2mm 2mm 2mm (2mm + $opener-image-bleed + ($line-height-default * 2));
-    text-transform: uppercase;
+    font-style: italic;
+    font-weight: bold;
 
     // Position
-    height: $line-height-default * 2;
-    min-width: 50mm;
-    position: absolute;
-    text-align: right;
-
-    transform-origin: left;
-    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20mm;
+    height: 20mm;
+    margin-top: -20px;
+    margin-left: -10mm;
+    position: relative;
     z-index: 1;
 
-    // When element rotates from the left,
-    // it effectively moves down and left
-    // by a multiple of the element height.
-    // Relates to padding-left above.
-    top: -($margin-top + $opener-image-bleed + ($line-height-default * 2));
-    left: $line-height-default;
-
-    & + h1 {
+    & + .component-title {
         margin-top: 0;
     }
 }
@@ -240,7 +215,7 @@ $pages-with-light-circle-device: frontmatter, unnumbered, introduction, endmatte
 // Opening boxes
 
 .learning-objectives {
-    @include boxes-common($theme-color-accent, white);
+    @include boxes-common();
 
     // Assumes there will be an element with margin-top
     // after this, like a heading. This way, the box
@@ -249,6 +224,7 @@ $pages-with-light-circle-device: frontmatter, unnumbered, introduction, endmatte
 
     & > p {
         @include small-caps();
+        color: $theme-color-accent;
         font-size: $font-size-default-small;
         margin-bottom: 0;
     }
@@ -267,7 +243,7 @@ $pages-with-light-circle-device: frontmatter, unnumbered, introduction, endmatte
 }
 
 .outline {
-    @include boxes-common($theme-color-accent, white);
+    @include boxes-common();
 
     // Assumes there will be an element with margin-top
     // after this, like a heading. This way, the box
@@ -276,6 +252,7 @@ $pages-with-light-circle-device: frontmatter, unnumbered, introduction, endmatte
 
     & > p {
         @include small-caps();
+        color: $theme-color-accent;
         font-size: $font-size-default-small;
         margin-bottom: 0;
     }

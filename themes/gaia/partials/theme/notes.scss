@@ -3,22 +3,3 @@ aside.note {
 }
 
 @include theme-sidenotes("aside.short.note");
-
-// @include move-to-sidebar("aside.short.note", 3mm);
-
-// .pagedjs_left_page .pagedjs_area {
-//     @include extend-move-to-sidebar("aside.short.note", left);
-// }
-
-// .pagedjs_right_page .pagedjs_area {
-//     @include extend-move-to-sidebar("aside.short.note", right);
-// }
-
-// // When this is in a box of some kind,
-// // adjust its margin-outside.
-
-// $boxes-that-contain-short-notes: box, self-reflection-activities, worked-example;
-
-// @each $box in $boxes-that-contain-short-notes {
-//     @include move-to-sidebar(".#{$box} aside.note.short", ($box-padding + 3mm));
-// }

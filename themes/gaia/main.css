@@ -4568,39 +4568,19 @@ div.introduction {
   --theme-color-accent-light: rgb(252, 247, 243);
   --theme-color-grey-light: rgb(224, 228, 228); }
 
-.tip h2, .tip h3, .tip h4, .tip h5, .tip h6,
-.tip .key-term {
-  color: inherit; }
-
-.reminder h2, .reminder h3, .reminder h4, .reminder h5, .reminder h6,
-.reminder .key-term {
-  color: inherit; }
-
-.warning h2, .warning h3, .warning h4, .warning h5, .warning h6,
-.warning .key-term {
-  color: inherit; }
-
-.note.short h2, .note.short h3, .note.short h4, .note.short h5, .note.short h6,
-.note.short .key-term {
-  color: inherit; }
-
-.review-activity h2, .review-activity h3, .review-activity h4, .review-activity h5, .review-activity h6,
-.review-activity .key-term {
-  color: inherit; }
-
 h1 {
   font-family: "Crimson Pro", sans-serif;
-  font-size: 42px;
-  line-height: 42px;
+  font-size: 54px;
+  line-height: 54px;
   text-align: left; }
 
 h2 {
   color: var(--theme-color-accent);
   font-family: "Crimson Pro", sans-serif;
   font-weight: 500;
-  font-size: 19px;
+  font-size: 22px;
   line-height: 19px;
-  margin-bottom: 0;
+  margin-bottom: 9.5px;
   margin-top: 38px;
   text-align: left; }
 
@@ -4672,7 +4652,7 @@ section.component-front.halftitle h1 {
 section.component-front.halftitle .cst {
   color: var(--theme-color-accent);
   font-family: "Crimson Pro", sans-serif;
-  font-size: 18px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 500;
   line-height: 28px;
@@ -4707,6 +4687,8 @@ section.component-front.halftitle p, section.component-front.halftitle ul, secti
 section.component-front.halftitle::before {
   position: absolute;
   display: block;
+  background-size: cover;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 566.9 566.9" style="enable-background:new 0 0 566.9 566.9" xml:space="preserve"><path style="fill:rgba(252, 247, 243, 0.99)" d="M0 0h567v567H0z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M119 93c24.3 0 44 19.7 44 44s-19.7 44-44 44-44-19.7-44-44 19.7-44 44-44m0-1c-24.9 0-45 20.1-45 45s20.1 45 45 45 45-20.1 45-45-20.1-45-45-45zM268 160c41.4 0 80.3 16.1 109.6 45.4C406.9 234.7 423 273.6 423 315s-16.1 80.3-45.4 109.6C348.3 453.9 309.4 470 268 470s-80.3-16.1-109.6-45.4C129.1 395.3 113 356.4 113 315s16.1-80.3 45.4-109.6S226.6 160 268 160m0-1c-86.2 0-156 69.8-156 156s69.8 156 156 156 156-69.8 156-156-69.8-156-156-156z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M187 43c40.6 0 78.8 15.8 107.5 44.5C323.2 116.2 339 154.4 339 195s-15.8 78.8-44.5 107.5C265.8 331.2 227.6 347 187 347s-78.8-15.8-107.5-44.5C50.8 273.8 35 235.6 35 195s15.8-78.8 44.5-107.5S146.4 43 187 43m0-1c-84.5 0-153 68.5-153 153s68.5 153 153 153 153-68.5 153-153S271.5 42 187 42z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M348 238c38.1 0 75 7.5 109.8 22.2 33.6 14.2 63.7 34.5 89.6 60.4 25.9 25.9 46.2 56.1 60.4 89.6C622.5 445 630 481.9 630 520s-7.5 75-22.2 109.8c-14.2 33.6-34.5 63.7-60.4 89.6s-56.1 46.2-89.6 60.4C423 794.5 386.1 802 348 802s-75-7.5-109.8-22.2c-33.6-14.2-63.7-34.5-89.6-60.4-25.9-25.9-46.2-56.1-60.4-89.6C73.5 595 66 558.1 66 520s7.5-75 22.2-109.8c14.2-33.6 34.5-63.7 60.4-89.6 25.9-25.9 56.1-46.2 89.6-60.4C273 245.5 309.9 238 348 238m0-1C191.7 237 65 363.7 65 520s126.7 283 283 283 283-126.7 283-283-126.7-283-283-283z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M450.5 423c22.3 0 40.5 18.2 40.5 40.5S472.8 504 450.5 504 410 485.8 410 463.5s18.2-40.5 40.5-40.5m0-1c-22.9 0-41.5 18.6-41.5 41.5s18.6 41.5 41.5 41.5 41.5-18.6 41.5-41.5-18.6-41.5-41.5-41.5z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M365 408c30.7 0 59.6 12 81.3 33.7C468 463.4 480 492.3 480 523s-12 59.6-33.7 81.3C424.6 626 395.7 638 365 638s-59.6-12-81.3-33.7C262 582.6 250 553.7 250 523s12-59.6 33.7-81.3C305.4 420 334.3 408 365 408m0-1c-64.1 0-116 51.9-116 116s51.9 116 116 116 116-51.9 116-116-51.9-116-116-116z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M121 228c45.7 0 88.6 17.8 120.9 50.1S292 353.3 292 399s-17.8 88.6-50.1 120.9S166.7 570 121 570 32.4 552.2.1 519.9-50 444.7-50 399-32.2 310.4.1 278.1 75.3 228 121 228m0-1c-95 0-172 77-172 172s77 172 172 172 172-77 172-172-77-172-172-172zM386.5 117c57.6 0 104.5 46.9 104.5 104.5S444.1 326 386.5 326 282 279.1 282 221.5 328.9 117 386.5 117m0-1C328.2 116 281 163.2 281 221.5S328.2 327 386.5 327 492 279.8 492 221.5 444.8 116 386.5 116z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M307.5 93c49.9 0 90.5 40.6 90.5 90.5S357.4 274 307.5 274 217 233.4 217 183.5 257.6 93 307.5 93m0-1C257 92 216 133 216 183.5s41 91.5 91.5 91.5 91.5-41 91.5-91.5S358 92 307.5 92z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M410-24c45.1 0 87.6 17.6 119.5 49.5C561.4 57.4 579 99.9 579 145s-17.6 87.6-49.5 119.5C497.6 296.4 455.1 314 410 314s-87.6-17.6-119.5-49.5C258.6 232.6 241 190.1 241 145s17.6-87.6 49.5-119.5C322.4-6.4 364.9-24 410-24m0-1c-93.9 0-170 76.1-170 170s76.1 170 170 170 170-76.1 170-170S503.9-25 410-25zM87-13c29.9 0 58 11.7 79.2 32.8S199 69.1 199 99s-11.7 58-32.8 79.2S116.9 211 87 211s-58-11.7-79.2-32.8S-25 128.9-25 99s11.7-58 32.8-79.2S57.1-13 87-13m0-1C24.6-14-26 36.6-26 99S24.6 212 87 212s113-50.6 113-113S149.4-14 87-14z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M454-97c39 0 76.9 7.6 112.5 22.7 34.4 14.6 65.3 35.4 91.9 61.9 26.5 26.5 47.4 57.4 61.9 91.9C735.4 115.1 743 153 743 192s-7.6 76.9-22.7 112.5c-14.6 34.4-35.4 65.3-61.9 91.9-26.5 26.5-57.4 47.4-91.9 61.9C530.9 473.4 493 481 454 481s-76.9-7.6-112.5-22.7c-34.4-14.6-65.3-35.4-91.9-61.9-26.5-26.5-47.4-57.4-61.9-91.9C172.6 268.9 165 231 165 192s7.6-76.9 22.7-112.5c14.6-34.4 35.4-65.3 61.9-91.9s57.4-47.4 91.9-61.9C377.1-89.4 415-97 454-97m0-1C293.8-98 164 31.8 164 192s129.8 290 290 290 290-129.8 290-290S614.2-98 454-98z"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="119" cy="355" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="99" cy="385" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="67" cy="484" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="277" cy="471" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="412" cy="479" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="23" cy="444" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="34" cy="198" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="164" cy="180" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="298" cy="164" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="240" cy="162" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="424" cy="313" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="431" cy="427" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="208" cy="345" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="478" cy="109" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="457" cy="143" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="227" cy="265" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="379" cy="240" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="261" cy="62" r="5"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M31.5 443c33.8 0 65.6 13.2 89.4 37.1 23.9 23.9 37.1 55.7 37.1 89.4s-13.2 65.6-37.1 89.4C97.1 682.8 65.3 696 31.5 696s-65.6-13.2-89.4-37.1C-81.8 635.1-95 603.3-95 569.5s13.2-65.6 37.1-89.4C-34.1 456.2-2.3 443 31.5 443m0-1C-38.9 442-96 499.1-96 569.5S-38.9 697 31.5 697 159 639.9 159 569.5 101.9 442 31.5 442z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M75 379c29.2 0 53 23.8 53 53s-23.8 53-53 53-53-23.8-53-53 23.8-53 53-53m0-1c-29.8 0-54 24.2-54 54s24.2 54 54 54 54-24.2 54-54-24.2-54-54-54zM513.5-56c47.7 0 86.5 38.8 86.5 86.5S561.2 117 513.5 117 427 78.2 427 30.5 465.8-56 513.5-56m0-1C465.2-57 426-17.8 426 30.5s39.2 87.5 87.5 87.5S601 78.8 601 30.5 561.8-57 513.5-57z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M554.5 75C611.6 75 658 121.4 658 178.5S611.6 282 554.5 282 451 235.6 451 178.5 497.4 75 554.5 75m0-1C496.8 74 450 120.8 450 178.5S496.8 283 554.5 283 659 236.2 659 178.5 612.2 74 554.5 74zM630.5 285c27.7 0 54.7 5.4 80 16.1 24.5 10.4 46.4 25.2 65.3 44 18.9 18.9 33.7 40.9 44 65.3 10.7 25.3 16.1 52.2 16.1 80s-5.4 54.7-16.1 80c-10.4 24.5-25.2 46.4-44 65.3-18.9 18.9-40.9 33.7-65.3 44-25.3 10.7-52.2 16.1-80 16.1s-54.7-5.4-80-16.1c-24.5-10.4-46.4-25.2-65.3-44-18.9-18.9-33.7-40.9-44-65.3-10.7-25.3-16.1-52.2-16.1-80s5.4-54.7 16.1-80c10.4-24.5 25.2-46.4 44-65.3 18.9-18.9 40.9-33.7 65.3-44 25.3-10.7 52.3-16.1 80-16.1m0-1c-114 0-206.5 92.5-206.5 206.5S516.5 697 630.5 697 837 604.5 837 490.5 744.5 284 630.5 284z"/></svg>');
   background-color: var(--theme-color-accent);
   border-radius: 78mm;
   content: "";
@@ -4717,6 +4699,8 @@ section.component-front.halftitle::before {
 section.component-front.halftitle::after {
   position: absolute;
   display: block;
+  background-size: cover;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 566.9 566.9" style="enable-background:new 0 0 566.9 566.9" xml:space="preserve"><path style="fill:rgba(252, 247, 243, 0.99)" d="M0 0h567v567H0z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M119 93c24.3 0 44 19.7 44 44s-19.7 44-44 44-44-19.7-44-44 19.7-44 44-44m0-1c-24.9 0-45 20.1-45 45s20.1 45 45 45 45-20.1 45-45-20.1-45-45-45zM268 160c41.4 0 80.3 16.1 109.6 45.4C406.9 234.7 423 273.6 423 315s-16.1 80.3-45.4 109.6C348.3 453.9 309.4 470 268 470s-80.3-16.1-109.6-45.4C129.1 395.3 113 356.4 113 315s16.1-80.3 45.4-109.6S226.6 160 268 160m0-1c-86.2 0-156 69.8-156 156s69.8 156 156 156 156-69.8 156-156-69.8-156-156-156z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M187 43c40.6 0 78.8 15.8 107.5 44.5C323.2 116.2 339 154.4 339 195s-15.8 78.8-44.5 107.5C265.8 331.2 227.6 347 187 347s-78.8-15.8-107.5-44.5C50.8 273.8 35 235.6 35 195s15.8-78.8 44.5-107.5S146.4 43 187 43m0-1c-84.5 0-153 68.5-153 153s68.5 153 153 153 153-68.5 153-153S271.5 42 187 42z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M348 238c38.1 0 75 7.5 109.8 22.2 33.6 14.2 63.7 34.5 89.6 60.4 25.9 25.9 46.2 56.1 60.4 89.6C622.5 445 630 481.9 630 520s-7.5 75-22.2 109.8c-14.2 33.6-34.5 63.7-60.4 89.6s-56.1 46.2-89.6 60.4C423 794.5 386.1 802 348 802s-75-7.5-109.8-22.2c-33.6-14.2-63.7-34.5-89.6-60.4-25.9-25.9-46.2-56.1-60.4-89.6C73.5 595 66 558.1 66 520s7.5-75 22.2-109.8c14.2-33.6 34.5-63.7 60.4-89.6 25.9-25.9 56.1-46.2 89.6-60.4C273 245.5 309.9 238 348 238m0-1C191.7 237 65 363.7 65 520s126.7 283 283 283 283-126.7 283-283-126.7-283-283-283z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M450.5 423c22.3 0 40.5 18.2 40.5 40.5S472.8 504 450.5 504 410 485.8 410 463.5s18.2-40.5 40.5-40.5m0-1c-22.9 0-41.5 18.6-41.5 41.5s18.6 41.5 41.5 41.5 41.5-18.6 41.5-41.5-18.6-41.5-41.5-41.5z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M365 408c30.7 0 59.6 12 81.3 33.7C468 463.4 480 492.3 480 523s-12 59.6-33.7 81.3C424.6 626 395.7 638 365 638s-59.6-12-81.3-33.7C262 582.6 250 553.7 250 523s12-59.6 33.7-81.3C305.4 420 334.3 408 365 408m0-1c-64.1 0-116 51.9-116 116s51.9 116 116 116 116-51.9 116-116-51.9-116-116-116z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M121 228c45.7 0 88.6 17.8 120.9 50.1S292 353.3 292 399s-17.8 88.6-50.1 120.9S166.7 570 121 570 32.4 552.2.1 519.9-50 444.7-50 399-32.2 310.4.1 278.1 75.3 228 121 228m0-1c-95 0-172 77-172 172s77 172 172 172 172-77 172-172-77-172-172-172zM386.5 117c57.6 0 104.5 46.9 104.5 104.5S444.1 326 386.5 326 282 279.1 282 221.5 328.9 117 386.5 117m0-1C328.2 116 281 163.2 281 221.5S328.2 327 386.5 327 492 279.8 492 221.5 444.8 116 386.5 116z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M307.5 93c49.9 0 90.5 40.6 90.5 90.5S357.4 274 307.5 274 217 233.4 217 183.5 257.6 93 307.5 93m0-1C257 92 216 133 216 183.5s41 91.5 91.5 91.5 91.5-41 91.5-91.5S358 92 307.5 92z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M410-24c45.1 0 87.6 17.6 119.5 49.5C561.4 57.4 579 99.9 579 145s-17.6 87.6-49.5 119.5C497.6 296.4 455.1 314 410 314s-87.6-17.6-119.5-49.5C258.6 232.6 241 190.1 241 145s17.6-87.6 49.5-119.5C322.4-6.4 364.9-24 410-24m0-1c-93.9 0-170 76.1-170 170s76.1 170 170 170 170-76.1 170-170S503.9-25 410-25zM87-13c29.9 0 58 11.7 79.2 32.8S199 69.1 199 99s-11.7 58-32.8 79.2S116.9 211 87 211s-58-11.7-79.2-32.8S-25 128.9-25 99s11.7-58 32.8-79.2S57.1-13 87-13m0-1C24.6-14-26 36.6-26 99S24.6 212 87 212s113-50.6 113-113S149.4-14 87-14z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M454-97c39 0 76.9 7.6 112.5 22.7 34.4 14.6 65.3 35.4 91.9 61.9 26.5 26.5 47.4 57.4 61.9 91.9C735.4 115.1 743 153 743 192s-7.6 76.9-22.7 112.5c-14.6 34.4-35.4 65.3-61.9 91.9-26.5 26.5-57.4 47.4-91.9 61.9C530.9 473.4 493 481 454 481s-76.9-7.6-112.5-22.7c-34.4-14.6-65.3-35.4-91.9-61.9-26.5-26.5-47.4-57.4-61.9-91.9C172.6 268.9 165 231 165 192s7.6-76.9 22.7-112.5c14.6-34.4 35.4-65.3 61.9-91.9s57.4-47.4 91.9-61.9C377.1-89.4 415-97 454-97m0-1C293.8-98 164 31.8 164 192s129.8 290 290 290 290-129.8 290-290S614.2-98 454-98z"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="119" cy="355" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="99" cy="385" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="67" cy="484" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="277" cy="471" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="412" cy="479" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="23" cy="444" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="34" cy="198" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="164" cy="180" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="298" cy="164" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="240" cy="162" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="424" cy="313" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="431" cy="427" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="208" cy="345" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="478" cy="109" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="457" cy="143" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="227" cy="265" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="379" cy="240" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="261" cy="62" r="5"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M31.5 443c33.8 0 65.6 13.2 89.4 37.1 23.9 23.9 37.1 55.7 37.1 89.4s-13.2 65.6-37.1 89.4C97.1 682.8 65.3 696 31.5 696s-65.6-13.2-89.4-37.1C-81.8 635.1-95 603.3-95 569.5s13.2-65.6 37.1-89.4C-34.1 456.2-2.3 443 31.5 443m0-1C-38.9 442-96 499.1-96 569.5S-38.9 697 31.5 697 159 639.9 159 569.5 101.9 442 31.5 442z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M75 379c29.2 0 53 23.8 53 53s-23.8 53-53 53-53-23.8-53-53 23.8-53 53-53m0-1c-29.8 0-54 24.2-54 54s24.2 54 54 54 54-24.2 54-54-24.2-54-54-54zM513.5-56c47.7 0 86.5 38.8 86.5 86.5S561.2 117 513.5 117 427 78.2 427 30.5 465.8-56 513.5-56m0-1C465.2-57 426-17.8 426 30.5s39.2 87.5 87.5 87.5S601 78.8 601 30.5 561.8-57 513.5-57z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M554.5 75C611.6 75 658 121.4 658 178.5S611.6 282 554.5 282 451 235.6 451 178.5 497.4 75 554.5 75m0-1C496.8 74 450 120.8 450 178.5S496.8 283 554.5 283 659 236.2 659 178.5 612.2 74 554.5 74zM630.5 285c27.7 0 54.7 5.4 80 16.1 24.5 10.4 46.4 25.2 65.3 44 18.9 18.9 33.7 40.9 44 65.3 10.7 25.3 16.1 52.2 16.1 80s-5.4 54.7-16.1 80c-10.4 24.5-25.2 46.4-44 65.3-18.9 18.9-40.9 33.7-65.3 44-25.3 10.7-52.2 16.1-80 16.1s-54.7-5.4-80-16.1c-24.5-10.4-46.4-25.2-65.3-44-18.9-18.9-33.7-40.9-44-65.3-10.7-25.3-16.1-52.2-16.1-80s5.4-54.7 16.1-80c10.4-24.5 25.2-46.4 44-65.3 18.9-18.9 40.9-33.7 65.3-44 25.3-10.7 52.3-16.1 80-16.1m0-1c-114 0-206.5 92.5-206.5 206.5S516.5 697 630.5 697 837 604.5 837 490.5 744.5 284 630.5 284z"/></svg>');
   background-color: var(--theme-color-accent);
   border-radius: 78mm;
   content: "";
@@ -4730,6 +4714,8 @@ section.component-front.halftitle h1 {
   section.component-front.halftitle h1::before {
     position: absolute;
     display: block;
+    background-size: cover;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 566.9 566.9" style="enable-background:new 0 0 566.9 566.9" xml:space="preserve"><path style="fill:rgba(252, 247, 243, 0.99)" d="M0 0h567v567H0z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M119 93c24.3 0 44 19.7 44 44s-19.7 44-44 44-44-19.7-44-44 19.7-44 44-44m0-1c-24.9 0-45 20.1-45 45s20.1 45 45 45 45-20.1 45-45-20.1-45-45-45zM268 160c41.4 0 80.3 16.1 109.6 45.4C406.9 234.7 423 273.6 423 315s-16.1 80.3-45.4 109.6C348.3 453.9 309.4 470 268 470s-80.3-16.1-109.6-45.4C129.1 395.3 113 356.4 113 315s16.1-80.3 45.4-109.6S226.6 160 268 160m0-1c-86.2 0-156 69.8-156 156s69.8 156 156 156 156-69.8 156-156-69.8-156-156-156z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M187 43c40.6 0 78.8 15.8 107.5 44.5C323.2 116.2 339 154.4 339 195s-15.8 78.8-44.5 107.5C265.8 331.2 227.6 347 187 347s-78.8-15.8-107.5-44.5C50.8 273.8 35 235.6 35 195s15.8-78.8 44.5-107.5S146.4 43 187 43m0-1c-84.5 0-153 68.5-153 153s68.5 153 153 153 153-68.5 153-153S271.5 42 187 42z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M348 238c38.1 0 75 7.5 109.8 22.2 33.6 14.2 63.7 34.5 89.6 60.4 25.9 25.9 46.2 56.1 60.4 89.6C622.5 445 630 481.9 630 520s-7.5 75-22.2 109.8c-14.2 33.6-34.5 63.7-60.4 89.6s-56.1 46.2-89.6 60.4C423 794.5 386.1 802 348 802s-75-7.5-109.8-22.2c-33.6-14.2-63.7-34.5-89.6-60.4-25.9-25.9-46.2-56.1-60.4-89.6C73.5 595 66 558.1 66 520s7.5-75 22.2-109.8c14.2-33.6 34.5-63.7 60.4-89.6 25.9-25.9 56.1-46.2 89.6-60.4C273 245.5 309.9 238 348 238m0-1C191.7 237 65 363.7 65 520s126.7 283 283 283 283-126.7 283-283-126.7-283-283-283z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M450.5 423c22.3 0 40.5 18.2 40.5 40.5S472.8 504 450.5 504 410 485.8 410 463.5s18.2-40.5 40.5-40.5m0-1c-22.9 0-41.5 18.6-41.5 41.5s18.6 41.5 41.5 41.5 41.5-18.6 41.5-41.5-18.6-41.5-41.5-41.5z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M365 408c30.7 0 59.6 12 81.3 33.7C468 463.4 480 492.3 480 523s-12 59.6-33.7 81.3C424.6 626 395.7 638 365 638s-59.6-12-81.3-33.7C262 582.6 250 553.7 250 523s12-59.6 33.7-81.3C305.4 420 334.3 408 365 408m0-1c-64.1 0-116 51.9-116 116s51.9 116 116 116 116-51.9 116-116-51.9-116-116-116z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M121 228c45.7 0 88.6 17.8 120.9 50.1S292 353.3 292 399s-17.8 88.6-50.1 120.9S166.7 570 121 570 32.4 552.2.1 519.9-50 444.7-50 399-32.2 310.4.1 278.1 75.3 228 121 228m0-1c-95 0-172 77-172 172s77 172 172 172 172-77 172-172-77-172-172-172zM386.5 117c57.6 0 104.5 46.9 104.5 104.5S444.1 326 386.5 326 282 279.1 282 221.5 328.9 117 386.5 117m0-1C328.2 116 281 163.2 281 221.5S328.2 327 386.5 327 492 279.8 492 221.5 444.8 116 386.5 116z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M307.5 93c49.9 0 90.5 40.6 90.5 90.5S357.4 274 307.5 274 217 233.4 217 183.5 257.6 93 307.5 93m0-1C257 92 216 133 216 183.5s41 91.5 91.5 91.5 91.5-41 91.5-91.5S358 92 307.5 92z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M410-24c45.1 0 87.6 17.6 119.5 49.5C561.4 57.4 579 99.9 579 145s-17.6 87.6-49.5 119.5C497.6 296.4 455.1 314 410 314s-87.6-17.6-119.5-49.5C258.6 232.6 241 190.1 241 145s17.6-87.6 49.5-119.5C322.4-6.4 364.9-24 410-24m0-1c-93.9 0-170 76.1-170 170s76.1 170 170 170 170-76.1 170-170S503.9-25 410-25zM87-13c29.9 0 58 11.7 79.2 32.8S199 69.1 199 99s-11.7 58-32.8 79.2S116.9 211 87 211s-58-11.7-79.2-32.8S-25 128.9-25 99s11.7-58 32.8-79.2S57.1-13 87-13m0-1C24.6-14-26 36.6-26 99S24.6 212 87 212s113-50.6 113-113S149.4-14 87-14z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M454-97c39 0 76.9 7.6 112.5 22.7 34.4 14.6 65.3 35.4 91.9 61.9 26.5 26.5 47.4 57.4 61.9 91.9C735.4 115.1 743 153 743 192s-7.6 76.9-22.7 112.5c-14.6 34.4-35.4 65.3-61.9 91.9-26.5 26.5-57.4 47.4-91.9 61.9C530.9 473.4 493 481 454 481s-76.9-7.6-112.5-22.7c-34.4-14.6-65.3-35.4-91.9-61.9-26.5-26.5-47.4-57.4-61.9-91.9C172.6 268.9 165 231 165 192s7.6-76.9 22.7-112.5c14.6-34.4 35.4-65.3 61.9-91.9s57.4-47.4 91.9-61.9C377.1-89.4 415-97 454-97m0-1C293.8-98 164 31.8 164 192s129.8 290 290 290 290-129.8 290-290S614.2-98 454-98z"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="119" cy="355" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="99" cy="385" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="67" cy="484" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="277" cy="471" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="412" cy="479" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="23" cy="444" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="34" cy="198" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="164" cy="180" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="298" cy="164" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="240" cy="162" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="424" cy="313" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="431" cy="427" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="208" cy="345" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="478" cy="109" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="457" cy="143" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="227" cy="265" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="379" cy="240" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="261" cy="62" r="5"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M31.5 443c33.8 0 65.6 13.2 89.4 37.1 23.9 23.9 37.1 55.7 37.1 89.4s-13.2 65.6-37.1 89.4C97.1 682.8 65.3 696 31.5 696s-65.6-13.2-89.4-37.1C-81.8 635.1-95 603.3-95 569.5s13.2-65.6 37.1-89.4C-34.1 456.2-2.3 443 31.5 443m0-1C-38.9 442-96 499.1-96 569.5S-38.9 697 31.5 697 159 639.9 159 569.5 101.9 442 31.5 442z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M75 379c29.2 0 53 23.8 53 53s-23.8 53-53 53-53-23.8-53-53 23.8-53 53-53m0-1c-29.8 0-54 24.2-54 54s24.2 54 54 54 54-24.2 54-54-24.2-54-54-54zM513.5-56c47.7 0 86.5 38.8 86.5 86.5S561.2 117 513.5 117 427 78.2 427 30.5 465.8-56 513.5-56m0-1C465.2-57 426-17.8 426 30.5s39.2 87.5 87.5 87.5S601 78.8 601 30.5 561.8-57 513.5-57z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M554.5 75C611.6 75 658 121.4 658 178.5S611.6 282 554.5 282 451 235.6 451 178.5 497.4 75 554.5 75m0-1C496.8 74 450 120.8 450 178.5S496.8 283 554.5 283 659 236.2 659 178.5 612.2 74 554.5 74zM630.5 285c27.7 0 54.7 5.4 80 16.1 24.5 10.4 46.4 25.2 65.3 44 18.9 18.9 33.7 40.9 44 65.3 10.7 25.3 16.1 52.2 16.1 80s-5.4 54.7-16.1 80c-10.4 24.5-25.2 46.4-44 65.3-18.9 18.9-40.9 33.7-65.3 44-25.3 10.7-52.2 16.1-80 16.1s-54.7-5.4-80-16.1c-24.5-10.4-46.4-25.2-65.3-44-18.9-18.9-33.7-40.9-44-65.3-10.7-25.3-16.1-52.2-16.1-80s5.4-54.7 16.1-80c10.4-24.5 25.2-46.4 44-65.3 18.9-18.9 40.9-33.7 65.3-44 25.3-10.7 52.3-16.1 80-16.1m0-1c-114 0-206.5 92.5-206.5 206.5S516.5 697 630.5 697 837 604.5 837 490.5 744.5 284 630.5 284z"/></svg>');
     background-color: var(--theme-color-accent);
     border-radius: 78mm;
     content: "";
@@ -4750,7 +4736,7 @@ section.component-front.titlepage {
   section.component-front.titlepage .cst {
     color: var(--theme-color-accent);
     font-family: "Crimson Pro", sans-serif;
-    font-size: 18px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 500;
     line-height: 28px;
@@ -4784,6 +4770,8 @@ section.component-front.titlepage {
     display: block;
     right: -145mm;
     top: 24.89167mm;
+    background-size: cover;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 566.9 566.9" style="enable-background:new 0 0 566.9 566.9" xml:space="preserve"><path style="fill:rgba(252, 247, 243, 0.99)" d="M0 0h567v567H0z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M119 93c24.3 0 44 19.7 44 44s-19.7 44-44 44-44-19.7-44-44 19.7-44 44-44m0-1c-24.9 0-45 20.1-45 45s20.1 45 45 45 45-20.1 45-45-20.1-45-45-45zM268 160c41.4 0 80.3 16.1 109.6 45.4C406.9 234.7 423 273.6 423 315s-16.1 80.3-45.4 109.6C348.3 453.9 309.4 470 268 470s-80.3-16.1-109.6-45.4C129.1 395.3 113 356.4 113 315s16.1-80.3 45.4-109.6S226.6 160 268 160m0-1c-86.2 0-156 69.8-156 156s69.8 156 156 156 156-69.8 156-156-69.8-156-156-156z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M187 43c40.6 0 78.8 15.8 107.5 44.5C323.2 116.2 339 154.4 339 195s-15.8 78.8-44.5 107.5C265.8 331.2 227.6 347 187 347s-78.8-15.8-107.5-44.5C50.8 273.8 35 235.6 35 195s15.8-78.8 44.5-107.5S146.4 43 187 43m0-1c-84.5 0-153 68.5-153 153s68.5 153 153 153 153-68.5 153-153S271.5 42 187 42z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M348 238c38.1 0 75 7.5 109.8 22.2 33.6 14.2 63.7 34.5 89.6 60.4 25.9 25.9 46.2 56.1 60.4 89.6C622.5 445 630 481.9 630 520s-7.5 75-22.2 109.8c-14.2 33.6-34.5 63.7-60.4 89.6s-56.1 46.2-89.6 60.4C423 794.5 386.1 802 348 802s-75-7.5-109.8-22.2c-33.6-14.2-63.7-34.5-89.6-60.4-25.9-25.9-46.2-56.1-60.4-89.6C73.5 595 66 558.1 66 520s7.5-75 22.2-109.8c14.2-33.6 34.5-63.7 60.4-89.6 25.9-25.9 56.1-46.2 89.6-60.4C273 245.5 309.9 238 348 238m0-1C191.7 237 65 363.7 65 520s126.7 283 283 283 283-126.7 283-283-126.7-283-283-283z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M450.5 423c22.3 0 40.5 18.2 40.5 40.5S472.8 504 450.5 504 410 485.8 410 463.5s18.2-40.5 40.5-40.5m0-1c-22.9 0-41.5 18.6-41.5 41.5s18.6 41.5 41.5 41.5 41.5-18.6 41.5-41.5-18.6-41.5-41.5-41.5z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M365 408c30.7 0 59.6 12 81.3 33.7C468 463.4 480 492.3 480 523s-12 59.6-33.7 81.3C424.6 626 395.7 638 365 638s-59.6-12-81.3-33.7C262 582.6 250 553.7 250 523s12-59.6 33.7-81.3C305.4 420 334.3 408 365 408m0-1c-64.1 0-116 51.9-116 116s51.9 116 116 116 116-51.9 116-116-51.9-116-116-116z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M121 228c45.7 0 88.6 17.8 120.9 50.1S292 353.3 292 399s-17.8 88.6-50.1 120.9S166.7 570 121 570 32.4 552.2.1 519.9-50 444.7-50 399-32.2 310.4.1 278.1 75.3 228 121 228m0-1c-95 0-172 77-172 172s77 172 172 172 172-77 172-172-77-172-172-172zM386.5 117c57.6 0 104.5 46.9 104.5 104.5S444.1 326 386.5 326 282 279.1 282 221.5 328.9 117 386.5 117m0-1C328.2 116 281 163.2 281 221.5S328.2 327 386.5 327 492 279.8 492 221.5 444.8 116 386.5 116z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M307.5 93c49.9 0 90.5 40.6 90.5 90.5S357.4 274 307.5 274 217 233.4 217 183.5 257.6 93 307.5 93m0-1C257 92 216 133 216 183.5s41 91.5 91.5 91.5 91.5-41 91.5-91.5S358 92 307.5 92z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M410-24c45.1 0 87.6 17.6 119.5 49.5C561.4 57.4 579 99.9 579 145s-17.6 87.6-49.5 119.5C497.6 296.4 455.1 314 410 314s-87.6-17.6-119.5-49.5C258.6 232.6 241 190.1 241 145s17.6-87.6 49.5-119.5C322.4-6.4 364.9-24 410-24m0-1c-93.9 0-170 76.1-170 170s76.1 170 170 170 170-76.1 170-170S503.9-25 410-25zM87-13c29.9 0 58 11.7 79.2 32.8S199 69.1 199 99s-11.7 58-32.8 79.2S116.9 211 87 211s-58-11.7-79.2-32.8S-25 128.9-25 99s11.7-58 32.8-79.2S57.1-13 87-13m0-1C24.6-14-26 36.6-26 99S24.6 212 87 212s113-50.6 113-113S149.4-14 87-14z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M454-97c39 0 76.9 7.6 112.5 22.7 34.4 14.6 65.3 35.4 91.9 61.9 26.5 26.5 47.4 57.4 61.9 91.9C735.4 115.1 743 153 743 192s-7.6 76.9-22.7 112.5c-14.6 34.4-35.4 65.3-61.9 91.9-26.5 26.5-57.4 47.4-91.9 61.9C530.9 473.4 493 481 454 481s-76.9-7.6-112.5-22.7c-34.4-14.6-65.3-35.4-91.9-61.9-26.5-26.5-47.4-57.4-61.9-91.9C172.6 268.9 165 231 165 192s7.6-76.9 22.7-112.5c14.6-34.4 35.4-65.3 61.9-91.9s57.4-47.4 91.9-61.9C377.1-89.4 415-97 454-97m0-1C293.8-98 164 31.8 164 192s129.8 290 290 290 290-129.8 290-290S614.2-98 454-98z"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="119" cy="355" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="99" cy="385" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="67" cy="484" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="277" cy="471" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="412" cy="479" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="23" cy="444" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="34" cy="198" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="164" cy="180" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="298" cy="164" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="240" cy="162" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="424" cy="313" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="431" cy="427" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="208" cy="345" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="478" cy="109" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="457" cy="143" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="227" cy="265" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="379" cy="240" r="5"/><circle style="fill:rgba(177, 95, 34, 0.99)" cx="261" cy="62" r="5"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M31.5 443c33.8 0 65.6 13.2 89.4 37.1 23.9 23.9 37.1 55.7 37.1 89.4s-13.2 65.6-37.1 89.4C97.1 682.8 65.3 696 31.5 696s-65.6-13.2-89.4-37.1C-81.8 635.1-95 603.3-95 569.5s13.2-65.6 37.1-89.4C-34.1 456.2-2.3 443 31.5 443m0-1C-38.9 442-96 499.1-96 569.5S-38.9 697 31.5 697 159 639.9 159 569.5 101.9 442 31.5 442z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M75 379c29.2 0 53 23.8 53 53s-23.8 53-53 53-53-23.8-53-53 23.8-53 53-53m0-1c-29.8 0-54 24.2-54 54s24.2 54 54 54 54-24.2 54-54-24.2-54-54-54zM513.5-56c47.7 0 86.5 38.8 86.5 86.5S561.2 117 513.5 117 427 78.2 427 30.5 465.8-56 513.5-56m0-1C465.2-57 426-17.8 426 30.5s39.2 87.5 87.5 87.5S601 78.8 601 30.5 561.8-57 513.5-57z"/><path style="fill:rgba(177, 95, 34, 0.99)" d="M554.5 75C611.6 75 658 121.4 658 178.5S611.6 282 554.5 282 451 235.6 451 178.5 497.4 75 554.5 75m0-1C496.8 74 450 120.8 450 178.5S496.8 283 554.5 283 659 236.2 659 178.5 612.2 74 554.5 74zM630.5 285c27.7 0 54.7 5.4 80 16.1 24.5 10.4 46.4 25.2 65.3 44 18.9 18.9 33.7 40.9 44 65.3 10.7 25.3 16.1 52.2 16.1 80s-5.4 54.7-16.1 80c-10.4 24.5-25.2 46.4-44 65.3-18.9 18.9-40.9 33.7-65.3 44-25.3 10.7-52.2 16.1-80 16.1s-54.7-5.4-80-16.1c-24.5-10.4-46.4-25.2-65.3-44-18.9-18.9-33.7-40.9-44-65.3-10.7-25.3-16.1-52.2-16.1-80s5.4-54.7 16.1-80c10.4-24.5 25.2-46.4 44-65.3 18.9-18.9 40.9-33.7 65.3-44 25.3-10.7 52.3-16.1 80-16.1m0-1c-114 0-206.5 92.5-206.5 206.5S516.5 697 630.5 697 837 604.5 837 490.5 744.5 284 630.5 284z"/></svg>');
     background-color: var(--theme-color-accent);
     border-radius: 190mm;
     content: "";
@@ -4815,7 +4803,10 @@ section.component-front h1 {
   line-height: 38px;
   text-align: left; }
 
-@page :blank {}.pagedjs_frontmatter_page.pagedjs_left_page h1 {
+@page :blank {
+  background-color: var(--theme-color-accent); }
+
+.pagedjs_frontmatter_page.pagedjs_left_page h1 {
   margin-bottom: 95px; }
   .pagedjs_frontmatter_page.pagedjs_left_page h1::before {
     position: absolute;
@@ -4927,19 +4918,18 @@ section.component-front h1 {
     border-radius: 78mm;
     background-color: var(--theme-color-accent-light); }
 
-.component-body header {
-  margin-right: -50mm;
-  width: 191mm; }
-  .component-body header:first-of-type {
-    margin-top: calc(380px - 19px * 1); }
-  .component-body header ~ p.author {
-    text-transform: uppercase;
-    font-size: 0.7em;
-    letter-spacing: 0.07em;
-    font-family: "Inter", sans-serif;
-    font-size: 10px;
-    line-height: 19px;
-    margin-bottom: 28.5px; }
+.component-body header:first-of-type {
+  margin-top: calc(342px - 19px * 5); }
+
+.component-body header ~ p.author {
+  font-style: italic;
+  line-height: 19px;
+  margin-bottom: 28.5px;
+  margin-top: 9.5px;
+  max-width: 80%;
+  text-indent: 0; }
+  .component-body header ~ p.author em {
+    font-style: normal; }
 
 .component-body .content-opener-image figure {
   display: contents;
@@ -4947,13 +4937,13 @@ section.component-front h1 {
   .component-body .content-opener-image figure img {
     position: absolute;
     top: -87.33858px;
-    left: -28mm;
-    right: calc((0mm + 50mm + $opener-image-bleed) * -1);
-    height: 391.33858px;
+    left: -25mm;
+    width: 191mm;
+    border-radius: 0 0 171px 0;
+    height: 353.33858px;
     margin: 0;
     max-width: none;
-    object-fit: cover;
-    width: 222mm; }
+    object-fit: cover; }
   .component-body .content-opener-image figure figcaption {
     position: absolute;
     bottom: 0;
@@ -4965,91 +4955,73 @@ section.component-front h1 {
     padding-top: 9.5px; }
 
 .component-body.part .content-opener-image figure img {
-  min-height: 286mm;
-  width: 169mm;
-  top: -87.33858px;
-  left: -28mm;
+  background-color: var(--theme-color-accent);
+  clip-path: circle(200mm at center);
+  min-height: 400mm;
+  width: 400mm;
+  top: -301px;
+  left: -320mm;
   z-index: -1; }
 
 .component-body.part header:first-of-type {
-  margin-top: 551px; }
+  margin-top: 0; }
 
 .component-body.part header h1 {
   position: absolute;
-  top: -73.10833mm;
-  right: -286mm;
-  transform: rotate(90deg);
-  transform-origin: 0 100%;
+  top: 117.37812mm;
+  left: 90mm;
+  transform: translatey(-50%);
   margin: 0;
-  display: flex;
-  align-items: center;
-  height: 53mm;
-  width: 286mm;
-  padding-top: 3mm;
-  background-color: var(--theme-color-accent);
-  color: white;
-  font-size: 38px;
-  letter-spacing: 0.075em;
-  text-transform: uppercase; }
+  width: 91mm;
+  color: black;
+  font-size: 64px; }
   .component-body.part header h1 strong:first-of-type {
-    position: relative;
-    top: 0;
-    left: -3mm;
-    display: inline-flex;
-    align-items: center;
-    height: 53mm;
-    padding-left: 11.43958mm;
-    padding-right: 5mm;
-    padding-top: 3mm;
-    margin-right: 5mm;
-    margin-top: -3mm;
-    background-color: white;
-    color: black;
-    font-weight: 300;
+    position: absolute;
+    left: -90mm;
+    display: block;
+    text-align: right;
+    width: 70mm;
+    color: white;
+    font-family: "Inter", serif;
+    font-size: 64px;
+    font-weight: bold;
     line-height: inherit; }
 
 .component-body.part p {
-  background-color: white;
-  padding-top: 9.5px;
-  padding-bottom: 9.5px;
-  padding-right: 13px;
-  padding-left: 13px;
   position: absolute;
   bottom: 0;
-  right: 0;
-  width: 83mm;
-  z-index: 0; }
+  right: -40mm;
+  left: 90mm;
+  z-index: 1; }
   .component-body.part p:nth-of-type(2) {
     break-before: page; }
 
 .chapter-number {
   font-family: "Crimson Pro", sans-serif;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 54px;
+  line-height: 54px;
   text-align: left;
   background-color: var(--theme-color-accent);
+  border-radius: 20mm;
   color: white;
-  font-family: "Crimson Pro", sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  padding: 2mm 2mm 2mm 15.05417mm;
-  text-transform: uppercase;
-  height: 38px;
-  min-width: 50mm;
-  position: absolute;
-  text-align: right;
-  transform-origin: left;
-  transform: rotate(90deg);
-  z-index: 1;
-  top: -125.33858px;
-  left: 19px; }
-  .chapter-number + h1 {
+  font-style: italic;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20mm;
+  height: 20mm;
+  margin-top: -20px;
+  margin-left: -10mm;
+  position: relative;
+  z-index: 1; }
+  .chapter-number + .component-title {
     margin-top: 0; }
 
 .cst {
   color: var(--theme-color-accent);
   font-family: "Crimson Pro", sans-serif;
-  font-size: 18px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 500;
   line-height: 28px; }
@@ -5057,12 +5029,13 @@ section.component-front h1 {
     font-style: italic; }
 
 .learning-objectives {
-  background-color: var(--theme-color-accent);
-  color: white;
+  background-color: var(--theme-color-accent-light);
+  border-radius: 0 5mm 5mm 5mm;
+  color: black;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px;
+  padding: 9.5px 13px;
   margin-bottom: 0; }
   .learning-objectives h2:first-child, .learning-objectives h3:first-child, .learning-objectives h4:first-child, .learning-objectives h5:first-child, .learning-objectives h6:first-child {
     margin-top: 0; }
@@ -5089,6 +5062,7 @@ section.component-front h1 {
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 0.07em;
+    color: var(--theme-color-accent);
     font-size: 10px;
     margin-bottom: 0; }
   .learning-objectives ul, .learning-objectives ol {
@@ -5098,12 +5072,13 @@ section.component-front h1 {
     margin: 0 0 19px 0 !important; }
 
 .outline {
-  background-color: var(--theme-color-accent);
-  color: white;
+  background-color: var(--theme-color-accent-light);
+  border-radius: 0 5mm 5mm 5mm;
+  color: black;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px;
+  padding: 9.5px 13px;
   margin-bottom: 0; }
   .outline h2:first-child, .outline h3:first-child, .outline h4:first-child, .outline h5:first-child, .outline h6:first-child {
     margin-top: 0; }
@@ -5130,6 +5105,7 @@ section.component-front h1 {
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 0.07em;
+    color: var(--theme-color-accent);
     font-size: 10px;
     margin-bottom: 0; }
   .outline ul, .outline ol {
@@ -5141,6 +5117,10 @@ section.component-front h1 {
 
 section.part .part-number {
   display: none; }
+
+figure figcaption {
+  font-family: "Inter", sans-serif;
+  font-size: 11px; }
 
 .case-study figure {
   clear: none; }
@@ -5156,11 +5136,12 @@ section.part .part-number {
 
 .focus-questions {
   background-color: var(--theme-color-accent-light);
+  border-radius: 0 5mm 5mm 5mm;
   color: black;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px; }
+  padding: 9.5px 13px; }
   .focus-questions h2:first-child, .focus-questions h3:first-child, .focus-questions h4:first-child, .focus-questions h5:first-child, .focus-questions h6:first-child {
     margin-top: 0; }
   .focus-questions h2 + h3,
@@ -5185,11 +5166,12 @@ section.part .part-number {
 
 aside.note {
   background-color: var(--theme-color-accent);
+  border-radius: 0 5mm 5mm 5mm;
   color: white;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px; }
+  padding: 9.5px 13px; }
   aside.note h2:first-child, aside.note h3:first-child, aside.note h4:first-child, aside.note h5:first-child, aside.note h6:first-child {
     margin-top: 0; }
   aside.note h2 + h3,
@@ -5214,11 +5196,12 @@ aside.note {
 
 aside.short.note {
   background-color: var(--theme-color-accent-light);
+  border-radius: 0 5mm 5mm 5mm;
   color: black;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px;
+  padding: 9.5px 13px;
   break-inside: avoid;
   line-height: 16px; }
   aside.short.note h2:first-child, aside.short.note h3:first-child, aside.short.note h4:first-child, aside.short.note h5:first-child, aside.short.note h6:first-child {
@@ -5271,13 +5254,13 @@ aside.short.note[data-split-from] {
 
 .pagedjs_right_page .pagedjs_area .box aside.short.note {
   float: right;
-  margin-right: calc(-1 * (50mm + 20.83858px));
+  margin-right: calc(-1 * (50mm + 24.33858px));
   margin-left: 5mm;
   width: 45mm; }
 
 .pagedjs_left_page .pagedjs_area .box aside.short.note {
   float: left;
-  margin-left: calc(-1 * (50mm + 20.83858px));
+  margin-left: calc(-1 * (50mm + 24.33858px));
   margin-right: 5mm;
   width: 45mm; }
 
@@ -5291,13 +5274,13 @@ aside.short.note[data-split-from] {
 
 .pagedjs_right_page .pagedjs_area .self-reflection-activities aside.short.note {
   float: right;
-  margin-right: calc(-1 * (50mm + 20.83858px));
+  margin-right: calc(-1 * (50mm + 24.33858px));
   margin-left: 5mm;
   width: 45mm; }
 
 .pagedjs_left_page .pagedjs_area .self-reflection-activities aside.short.note {
   float: left;
-  margin-left: calc(-1 * (50mm + 20.83858px));
+  margin-left: calc(-1 * (50mm + 24.33858px));
   margin-right: 5mm;
   width: 45mm; }
 
@@ -5311,13 +5294,13 @@ aside.short.note[data-split-from] {
 
 .pagedjs_right_page .pagedjs_area .worked-example aside.short.note {
   float: right;
-  margin-right: calc(-1 * (50mm + 20.83858px));
+  margin-right: calc(-1 * (50mm + 24.33858px));
   margin-left: 5mm;
   width: 45mm; }
 
 .pagedjs_left_page .pagedjs_area .worked-example aside.short.note {
   float: left;
-  margin-left: calc(-1 * (50mm + 20.83858px));
+  margin-left: calc(-1 * (50mm + 24.33858px));
   margin-right: 5mm;
   width: 45mm; }
 
@@ -5331,13 +5314,17 @@ aside.short.note[data-split-from] {
 
 aside.worked-example {
   background-color: var(--theme-color-accent-light);
+  border-radius: 0 5mm 5mm 5mm;
   color: black;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px;
+  padding: 9.5px 13px;
   font-family: "Crimson Pro", serif;
-  font-size: 13px; }
+  font-size: 13px;
+  background-color: white;
+  border-left: 2px dotted var(--theme-color-accent);
+  border-radius: 0; }
   aside.worked-example h2:first-child, aside.worked-example h3:first-child, aside.worked-example h4:first-child, aside.worked-example h5:first-child, aside.worked-example h6:first-child {
     margin-top: 0; }
   aside.worked-example h2 + h3,
@@ -5359,16 +5346,27 @@ aside.worked-example {
     margin-top: 0; }
   aside.worked-example p:last-child, aside.worked-example ol:last-child, aside.worked-example ul:last-child, aside.worked-example dl:last-child {
     margin-bottom: 0; }
+  aside.worked-example p {
+    margin-bottom: 9.5px; }
+    aside.worked-example p + p {
+      text-indent: 0; }
+  aside.worked-example + .self-reflection-activities,
+  aside.worked-example + aside.worked-example {
+    margin-top: -17px !important; }
 
 .self-reflection-activities {
   background-color: var(--theme-color-accent-light);
+  border-radius: 0 5mm 5mm 5mm;
   color: black;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px;
+  padding: 9.5px 13px;
   font-family: "Crimson Pro", serif;
-  font-size: 13px; }
+  font-size: 13px;
+  background-color: white;
+  border-left: 2px dotted var(--theme-color-accent);
+  border-radius: 0; }
   .self-reflection-activities h2:first-child, .self-reflection-activities h3:first-child, .self-reflection-activities h4:first-child, .self-reflection-activities h5:first-child, .self-reflection-activities h6:first-child {
     margin-top: 0; }
   .self-reflection-activities h2 + h3,
@@ -5390,14 +5388,19 @@ aside.worked-example {
     margin-top: 0; }
   .self-reflection-activities p:last-child, .self-reflection-activities ol:last-child, .self-reflection-activities ul:last-child, .self-reflection-activities dl:last-child {
     margin-bottom: 0; }
+  .self-reflection-activities p {
+    margin-bottom: 9.5px; }
+    .self-reflection-activities p + p {
+      text-indent: 0; }
 
 aside.reminder {
   background-color: var(--theme-color-accent);
+  border-radius: 0 5mm 5mm 5mm;
   color: white;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px; }
+  padding: 9.5px 13px; }
   aside.reminder h2:first-child, aside.reminder h3:first-child, aside.reminder h4:first-child, aside.reminder h5:first-child, aside.reminder h6:first-child {
     margin-top: 0; }
   aside.reminder h2 + h3,
@@ -5422,11 +5425,12 @@ aside.reminder {
 
 aside.reminder.short {
   background-color: var(--theme-color-accent-light);
+  border-radius: 0 5mm 5mm 5mm;
   color: black;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px;
+  padding: 9.5px 13px;
   break-inside: avoid;
   line-height: 16px; }
   aside.reminder.short h2:first-child, aside.reminder.short h3:first-child, aside.reminder.short h4:first-child, aside.reminder.short h5:first-child, aside.reminder.short h6:first-child {
@@ -5479,13 +5483,13 @@ aside.reminder.short[data-split-from] {
 
 .pagedjs_right_page .pagedjs_area .box aside.reminder.short {
   float: right;
-  margin-right: calc(-1 * (50mm + 20.83858px));
+  margin-right: calc(-1 * (50mm + 24.33858px));
   margin-left: 5mm;
   width: 45mm; }
 
 .pagedjs_left_page .pagedjs_area .box aside.reminder.short {
   float: left;
-  margin-left: calc(-1 * (50mm + 20.83858px));
+  margin-left: calc(-1 * (50mm + 24.33858px));
   margin-right: 5mm;
   width: 45mm; }
 
@@ -5499,13 +5503,13 @@ aside.reminder.short[data-split-from] {
 
 .pagedjs_right_page .pagedjs_area .self-reflection-activities aside.reminder.short {
   float: right;
-  margin-right: calc(-1 * (50mm + 20.83858px));
+  margin-right: calc(-1 * (50mm + 24.33858px));
   margin-left: 5mm;
   width: 45mm; }
 
 .pagedjs_left_page .pagedjs_area .self-reflection-activities aside.reminder.short {
   float: left;
-  margin-left: calc(-1 * (50mm + 20.83858px));
+  margin-left: calc(-1 * (50mm + 24.33858px));
   margin-right: 5mm;
   width: 45mm; }
 
@@ -5519,13 +5523,13 @@ aside.reminder.short[data-split-from] {
 
 .pagedjs_right_page .pagedjs_area .worked-example aside.reminder.short {
   float: right;
-  margin-right: calc(-1 * (50mm + 20.83858px));
+  margin-right: calc(-1 * (50mm + 24.33858px));
   margin-left: 5mm;
   width: 45mm; }
 
 .pagedjs_left_page .pagedjs_area .worked-example aside.reminder.short {
   float: left;
-  margin-left: calc(-1 * (50mm + 20.83858px));
+  margin-left: calc(-1 * (50mm + 24.33858px));
   margin-right: 5mm;
   width: 45mm; }
 
@@ -5539,11 +5543,12 @@ aside.reminder.short[data-split-from] {
 
 aside.warning {
   background-color: var(--theme-color-accent-light);
+  border-radius: 0 5mm 5mm 5mm;
   color: black;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px;
+  padding: 9.5px 13px;
   break-inside: avoid;
   line-height: 16px; }
   aside.warning h2:first-child, aside.warning h3:first-child, aside.warning h4:first-child, aside.warning h5:first-child, aside.warning h6:first-child {
@@ -5596,13 +5601,13 @@ aside.warning[data-split-from] {
 
 .pagedjs_right_page .pagedjs_area .box aside.warning {
   float: right;
-  margin-right: calc(-1 * (50mm + 20.83858px));
+  margin-right: calc(-1 * (50mm + 24.33858px));
   margin-left: 5mm;
   width: 45mm; }
 
 .pagedjs_left_page .pagedjs_area .box aside.warning {
   float: left;
-  margin-left: calc(-1 * (50mm + 20.83858px));
+  margin-left: calc(-1 * (50mm + 24.33858px));
   margin-right: 5mm;
   width: 45mm; }
 
@@ -5616,13 +5621,13 @@ aside.warning[data-split-from] {
 
 .pagedjs_right_page .pagedjs_area .self-reflection-activities aside.warning {
   float: right;
-  margin-right: calc(-1 * (50mm + 20.83858px));
+  margin-right: calc(-1 * (50mm + 24.33858px));
   margin-left: 5mm;
   width: 45mm; }
 
 .pagedjs_left_page .pagedjs_area .self-reflection-activities aside.warning {
   float: left;
-  margin-left: calc(-1 * (50mm + 20.83858px));
+  margin-left: calc(-1 * (50mm + 24.33858px));
   margin-right: 5mm;
   width: 45mm; }
 
@@ -5636,13 +5641,13 @@ aside.warning[data-split-from] {
 
 .pagedjs_right_page .pagedjs_area .worked-example aside.warning {
   float: right;
-  margin-right: calc(-1 * (50mm + 20.83858px));
+  margin-right: calc(-1 * (50mm + 24.33858px));
   margin-left: 5mm;
   width: 45mm; }
 
 .pagedjs_left_page .pagedjs_area .worked-example aside.warning {
   float: left;
-  margin-left: calc(-1 * (50mm + 20.83858px));
+  margin-left: calc(-1 * (50mm + 24.33858px));
   margin-right: 5mm;
   width: 45mm; }
 
@@ -5707,6 +5712,7 @@ aside.warning[data-split-from] {
 
 .source-note {
   font-style: italic;
+  text-indent: 0;
   margin-top: 0;
   padding-top: 0; }
   .source-note em {
@@ -5714,11 +5720,12 @@ aside.warning[data-split-from] {
 
 aside.tip {
   background-color: var(--theme-color-accent-light);
+  border-radius: 0 5mm 5mm 5mm;
   color: black;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px;
+  padding: 9.5px 13px;
   break-inside: avoid;
   line-height: 16px; }
   aside.tip h2:first-child, aside.tip h3:first-child, aside.tip h4:first-child, aside.tip h5:first-child, aside.tip h6:first-child {
@@ -5771,13 +5778,13 @@ aside.tip[data-split-from] {
 
 .pagedjs_right_page .pagedjs_area .box aside.tip {
   float: right;
-  margin-right: calc(-1 * (50mm + 20.83858px));
+  margin-right: calc(-1 * (50mm + 24.33858px));
   margin-left: 5mm;
   width: 45mm; }
 
 .pagedjs_left_page .pagedjs_area .box aside.tip {
   float: left;
-  margin-left: calc(-1 * (50mm + 20.83858px));
+  margin-left: calc(-1 * (50mm + 24.33858px));
   margin-right: 5mm;
   width: 45mm; }
 
@@ -5791,13 +5798,13 @@ aside.tip[data-split-from] {
 
 .pagedjs_right_page .pagedjs_area .self-reflection-activities aside.tip {
   float: right;
-  margin-right: calc(-1 * (50mm + 20.83858px));
+  margin-right: calc(-1 * (50mm + 24.33858px));
   margin-left: 5mm;
   width: 45mm; }
 
 .pagedjs_left_page .pagedjs_area .self-reflection-activities aside.tip {
   float: left;
-  margin-left: calc(-1 * (50mm + 20.83858px));
+  margin-left: calc(-1 * (50mm + 24.33858px));
   margin-right: 5mm;
   width: 45mm; }
 
@@ -5811,13 +5818,13 @@ aside.tip[data-split-from] {
 
 .pagedjs_right_page .pagedjs_area .worked-example aside.tip {
   float: right;
-  margin-right: calc(-1 * (50mm + 20.83858px));
+  margin-right: calc(-1 * (50mm + 24.33858px));
   margin-left: 5mm;
   width: 45mm; }
 
 .pagedjs_left_page .pagedjs_area .worked-example aside.tip {
   float: left;
-  margin-left: calc(-1 * (50mm + 20.83858px));
+  margin-left: calc(-1 * (50mm + 24.33858px));
   margin-right: 5mm;
   width: 45mm; }
 
@@ -5830,14 +5837,18 @@ aside.tip[data-split-from] {
   width: 48.43958mm; }
 
 aside.case-study {
-  background-color: var(--theme-color-accent);
-  color: white;
+  background-color: var(--theme-color-accent-light);
+  border-radius: 0 5mm 5mm 5mm;
+  color: black;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px;
+  padding: 9.5px 13px;
+  border-radius: 0;
   font-family: "Crimson Pro", serif;
-  font-size: 13px; }
+  font-size: 13px;
+  padding-top: 19px;
+  padding-bottom: 19px; }
   aside.case-study h2:first-child, aside.case-study h3:first-child, aside.case-study h4:first-child, aside.case-study h5:first-child, aside.case-study h6:first-child {
     margin-top: 0; }
   aside.case-study h2 + h3,
@@ -5859,16 +5870,43 @@ aside.case-study {
     margin-top: 0; }
   aside.case-study p:last-child, aside.case-study ol:last-child, aside.case-study ul:last-child, aside.case-study dl:last-child {
     margin-bottom: 0; }
+  aside.case-study[data-split-to] {
+    border-bottom: 0;
+    padding-bottom: 9.5px !important;
+    margin-bottom: 9.5px !important; }
+  aside.case-study[data-split-from] {
+    padding-top: 9.5px !important;
+    margin-top: 9.5px !important; }
+
+.pagedjs_left_page aside.case-study {
+  width: 199mm;
+  margin-left: -53mm;
+  padding-left: 53mm;
+  margin-right: -5mm;
+  padding-right: 5mm;
+  border-radius: 0 5mm 5mm 0; }
+
+.pagedjs_right_page aside.case-study {
+  width: 199mm;
+  margin-right: -53mm;
+  padding-right: 53mm;
+  margin-left: -5mm;
+  padding-left: 5mm;
+  border-radius: 5mm 0 0 5mm; }
 
 aside.biography {
   background-color: var(--theme-color-accent-light);
+  border-radius: 0 5mm 5mm 5mm;
   color: black;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px;
+  padding: 9.5px 13px;
+  border-radius: 0;
   font-family: "Crimson Pro", serif;
-  font-size: 13px; }
+  font-size: 13px;
+  padding-top: 19px;
+  padding-bottom: 19px; }
   aside.biography h2:first-child, aside.biography h3:first-child, aside.biography h4:first-child, aside.biography h5:first-child, aside.biography h6:first-child {
     margin-top: 0; }
   aside.biography h2 + h3,
@@ -5890,6 +5928,29 @@ aside.biography {
     margin-top: 0; }
   aside.biography p:last-child, aside.biography ol:last-child, aside.biography ul:last-child, aside.biography dl:last-child {
     margin-bottom: 0; }
+  aside.biography[data-split-to] {
+    border-bottom: 0;
+    padding-bottom: 9.5px !important;
+    margin-bottom: 9.5px !important; }
+  aside.biography[data-split-from] {
+    padding-top: 9.5px !important;
+    margin-top: 9.5px !important; }
+
+.pagedjs_left_page aside.biography {
+  width: 199mm;
+  margin-left: -53mm;
+  padding-left: 53mm;
+  margin-right: -5mm;
+  padding-right: 5mm;
+  border-radius: 0 5mm 5mm 0; }
+
+.pagedjs_right_page aside.biography {
+  width: 199mm;
+  margin-right: -53mm;
+  padding-right: 53mm;
+  margin-left: -5mm;
+  padding-left: 5mm;
+  border-radius: 5mm 0 0 5mm; }
 
 .extract-prose {
   padding: 9.5px 13px; }
@@ -5914,18 +5975,26 @@ aside.biography {
 
 .key-terms {
   break-before: page; }
+  .key-terms p {
+    margin-bottom: 9.5px; }
+    .key-terms p + p {
+      text-indent: 0; }
 
 .key-term {
   color: var(--theme-color-accent); }
 
 div.summary {
   background-color: var(--theme-color-accent-light);
+  border-radius: 0 5mm 5mm 5mm;
   color: black;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px;
-  break-before: page; }
+  padding: 9.5px 13px;
+  border-radius: 0 5mm 0 0;
+  break-before: page;
+  font-family: "Crimson Pro", serif;
+  font-size: 13px; }
   div.summary h2:first-child, div.summary h3:first-child, div.summary h4:first-child, div.summary h5:first-child, div.summary h6:first-child {
     margin-top: 0; }
   div.summary h2 + h3,
@@ -5947,16 +6016,28 @@ div.summary {
     margin-top: 0; }
   div.summary p:last-child, div.summary ol:last-child, div.summary ul:last-child, div.summary dl:last-child {
     margin-bottom: 0; }
+  div.summary[data-split-to] {
+    border-bottom: 0;
+    padding-bottom: 9.5px !important;
+    margin-bottom: 9.5px !important; }
+  div.summary[data-split-from] {
+    padding-top: 9.5px !important;
+    margin-top: 9.5px !important; }
   div.summary h2:first-of-type, div.summary h3:first-of-type {
     margin-bottom: 19px; }
+  div.summary + .review-activity {
+    margin-top: -19px !important; }
 
 .review-activity {
-  background-color: var(--theme-color-accent);
-  color: white;
+  background-color: var(--theme-color-accent-light);
+  border-radius: 0 5mm 5mm 5mm;
+  color: black;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px;
+  padding: 9.5px 13px;
+  border-left: 13px solid var(--theme-color-accent);
+  border-radius: 0;
   font-family: "Crimson Pro", serif;
   font-size: 13px; }
   .review-activity h2:first-child, .review-activity h3:first-child, .review-activity h4:first-child, .review-activity h5:first-child, .review-activity h6:first-child {
@@ -5980,6 +6061,14 @@ div.summary {
     margin-top: 0; }
   .review-activity p:last-child, .review-activity ol:last-child, .review-activity ul:last-child, .review-activity dl:last-child {
     margin-bottom: 0; }
+  .review-activity h2, .review-activity h3, .review-activity h4, .review-activity h5, .review-activity h6 {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.07em;
+    color: black;
+    font-family: "Inter", serif;
+    font-size: 13px;
+    margin-bottom: 0; }
 
 div.references {
   break-before: page;
@@ -5999,7 +6088,6 @@ div.references {
 
 div.further-reading {
   break-before: page;
-  font-family: "Inter", sans-serif;
   font-size: 10px; }
   div.further-reading h3 + ul,
   div.further-reading h3 + ol, div.further-reading h4 + ul,

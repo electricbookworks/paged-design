@@ -42,6 +42,7 @@ $theme-title-page-max-width: 90mm;
     display: block;
 
     // Design
+    @include gaia-network();
     background-color: $theme-color-accent;
     border-radius: $theme-circle-size;
     content: "";
@@ -99,6 +100,7 @@ $theme-title-page-max-width: 90mm;
         top: ($page-height * 0.5) - (190mm * 0.5) - ($margin-top); 
 
         // Design
+        @include gaia-network();
         background-color: $theme-color-accent;
         border-radius: 190mm;
         content: "";

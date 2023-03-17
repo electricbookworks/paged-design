@@ -3,4 +3,15 @@
 
     font-family: $font-text-main;
     font-size: $font-size-default;
+    background-color: white;
+    border-left: 2px dotted $theme-color-accent;
+    border-radius: 0;
+
+    p {
+        margin-bottom: $line-height-default * 0.5;
+
+        & + p {
+            text-indent: 0;
+        }
+    }
 }

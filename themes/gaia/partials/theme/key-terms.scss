@@ -1,5 +1,13 @@
 .key-terms {
     break-before: page;
+
+    p {
+        margin-bottom: $line-height-default * 0.5;
+
+        & + p {
+            text-indent: 0;
+        }
+    }
 }
 
 // Not nested in .key-terms because
