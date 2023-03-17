@@ -1,54 +1,76 @@
-@mixin runner-text-common($side: left) {
-    @include small-caps();
+@mixin runner-text-common($side: left, $opposite: right) {
+    color: $theme-color-accent;
     font-family: $font-text-secondary;
-    margin-top: $line-height-default * 2;
+    font-size: $font-size-default-small - 1;
+    letter-spacing: 0.075em;
     text-align: $side;
+    text-transform: uppercase;
 }
 
-@mixin runner-number-common($side: left) {
-    font-family: $font-text-secondary;
+@mixin runner-number-common($side: left, $opposite: right) {
+    font-family: $font-text-main;
     font-size: $font-size-default-small;
+    text-align: $opposite;
+    margin-#{$opposite}: 3mm;
+}
+
+@mixin runner-text-divider($side: left, $opposite: right) {
+    color: $theme-color-accent;
+    font-weight: bold;
+    margin-top: -2px; // align bullet with text
     text-align: $side;
 }
 
-.pagedjs_margin-top {
-    grid-template-columns: #{$sidebar-width} 1fr #{$sidebar-width}!important;
+.pagedjs_left_page {
+
+    .pagedjs_margin-bottom {
+        grid-template-columns: #{$sidebar-width} #{$sidebar-gap} 1fr!important;
+    }
 }
 
-.pagedjs_margin-bottom {
-    grid-template-columns: #{$sidebar-width} 1fr #{$sidebar-width}!important;
+.pagedjs_right_page {
+
+    .pagedjs_margin-bottom {
+        grid-template-columns: 1fr #{$sidebar-gap} #{$sidebar-width}!important;
+    }
+}
+
+
+.running-left {
+    @include runner-text-common(left, right);
+}
+
+.running-right {
+    @include runner-text-common(right, left);
 }
 
 @page :left {
 
-    @top-center {
-        @include runner-text-common(left);
+    @bottom-left {
+        @include runner-number-common(left, right);
     }
+
+    @bottom-right {
+        @include runner-text-common(left, right);
+    }
+
     @bottom-center {
-        @include runner-number-common(left);
+        @include runner-text-divider(left, right);
     }
 }
 
 @page :right {
 
-    @top-center {
-        @include runner-text-common(right);
+    @bottom-left {
+        @include runner-text-common(right, left)
     }
+
+    @bottom-right {
+        @include runner-number-common(right, left);
+    }
+
+    
     @bottom-center {
-        @include runner-number-common(right)
+        @include runner-text-divider(right, left);
     }
 }
-
-// // Remove runner borders from certain pages
-// $page-types-without-runners: cover, half-title-page, title-page, copyright, part;
-
-// @each $page-type in $page-types-without-runners {
-//     @page #{$page-type} {
-//         @top-left {
-//             content: normal;
-//         }
-//         @top-right {
-//             content: normal;
-//         }
-//     }
-// }

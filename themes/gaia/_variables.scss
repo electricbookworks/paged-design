@@ -57,14 +57,18 @@ $box-padding-vertical: ($line-height-default / 2);
 $theme-circle-size: 78mm;
 
 // Runners
-$verso-top-frontmatter: normal;
-$verso-bottom-frontmatter: element(ketida-running);
+$verso-bottom-frontmatter: " • ";
+$verso-bottom-left-frontmatter: counter(page);
+$verso-bottom-right-frontmatter: element(runningLeft);
 
-$recto-top-frontmatter: normal;
-$recto-bottom-frontmatter: element(ketida-running);
+$recto-bottom-frontmatter: " • ";
+$recto-bottom-left-frontmatter: element(runningRight);
+$recto-bottom-right-frontmatter: counter(page);
 
-$verso-top: normal;
-$verso-bottom: element(ketida-running);
+$verso-bottom: " • ";
+$verso-bottom-left: counter(page);
+$verso-bottom-right: element(runningLeft);
 
-$recto-top: normal;
-$recto-bottom: element(ketida-running);
+$recto-bottom: " • ";
+$recto-bottom-left: element(runningRight);
+$recto-bottom-right: counter(page);
