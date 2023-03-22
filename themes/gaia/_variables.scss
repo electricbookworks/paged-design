@@ -59,16 +59,16 @@ $theme-circle-size: 78mm;
 // Runners
 $verso-bottom-frontmatter: " • ";
 $verso-bottom-left-frontmatter: counter(page);
-$verso-bottom-right-frontmatter: element(runningLeft);
+$verso-bottom-right-frontmatter: string(h1-text, last);
 
 $recto-bottom-frontmatter: " • ";
-$recto-bottom-left-frontmatter: element(runningRight);
+$recto-bottom-left-frontmatter: string(h1-text, last);
 $recto-bottom-right-frontmatter: counter(page);
 
 $verso-bottom: " • ";
 $verso-bottom-left: counter(page);
-$verso-bottom-right: element(runningLeft);
+$verso-bottom-right: string(h1-text, last);
 
 $recto-bottom: " • ";
-$recto-bottom-left: element(runningRight);
+$recto-bottom-left: string(h1-text, last);
 $recto-bottom-right: counter(page);

@@ -339,7 +339,7 @@ h6 {
   @bottom-left {
     content: counter(page); }
   @bottom-right {
-    content: element(runningLeft); }
+    content: string(h1-text, last); }
   @bottom-left-corner {
     content: normal; }
   @bottom-right-corner {
@@ -359,7 +359,7 @@ h6 {
   @bottom-center {
     content: " • "; }
   @bottom-left {
-    content: element(runningRight); }
+    content: string(h1-text, last); }
   @bottom-right {
     content: counter(page); }
   @bottom-left-corner {
@@ -417,7 +417,7 @@ h6 {
   @bottom-left {
     content: counter(page); }
   @bottom-right {
-    content: element(runningLeft); }
+    content: string(h1-text, last); }
   @bottom-left-corner {
     content: normal; }
   @bottom-right-corner {
@@ -437,7 +437,7 @@ h6 {
   @bottom-center {
     content: " • "; }
   @bottom-left {
-    content: element(runningRight); }
+    content: string(h1-text, last); }
   @bottom-right {
     content: counter(page); }
   @bottom-left-corner {
