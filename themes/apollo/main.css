@@ -4487,6 +4487,9 @@ ul li p, ol li p {
 span.math-node {
   line-height: 1; }
 
+.source-note {
+  break-before: avoid; }
+
 .running-left {
   position: running(runningLeft); }
 
