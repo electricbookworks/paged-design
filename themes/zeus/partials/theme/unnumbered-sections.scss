@@ -1,0 +1,6 @@
+section.component-body.unnumbered {
+
+    h1 {
+        @include heading-1($line-height-default * 2);
+    }
+}

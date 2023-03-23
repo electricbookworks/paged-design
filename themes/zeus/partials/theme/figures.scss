@@ -1,6 +1,7 @@
 figure {
 
     figcaption {
+        color: $theme-color-accent;
         font-family: $font-text-secondary;
         font-size: $font-size-default - 2; // sans-serif slightly bigger visually
     }

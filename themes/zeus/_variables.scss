@@ -20,7 +20,7 @@ $margin-outside: 0mm;
 $sidebar-width: 50mm;
 $sidebar-position: outside;
 $sidebar-gap: 5mm;
-$bleed: 3mm;
+// $bleed: 3mm;
 
 // Since we can't yet control `page-1` in Ketida HTML
 // we rather just give all frontmatter decimal page numbering.
@@ -58,10 +58,20 @@ $box-padding-vertical: ($line-height-default / 2);
 // Runners
 $verso-top-frontmatter: normal;
 $verso-top-left-frontmatter: counter(page);
-$verso-top-right-frontmatter: element(ketida-running);
+$verso-top-right-frontmatter: string(h1-text, last);
 $verso-bottom-frontmatter: normal;
 
 $recto-top-frontmatter: normal;
-$recto-top-left-frontmatter: element(ketida-running);
+$recto-top-left-frontmatter: string(h1-text, last);
 $recto-top-right-frontmatter: counter(page);
 $recto-bottom-frontmatter: normal;
+
+$verso-top: normal;
+$verso-top-left: counter(page);
+$verso-top-right: string(h1-text, last);
+$verso-bottom: normal;
+
+$recto-top: normal;
+$recto-top-left: string(h1-text, last);
+$recto-top-right: counter(page);
+$recto-bottom: normal;

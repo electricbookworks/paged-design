@@ -93,13 +93,15 @@
     font-weight: 500;
     line-height: $line-height-default;
 
-    em {
-        font-style: italic;
-    }
-
     @if $location == titlepage {
+        font-style: normal;
         font-weight: 600;
         line-height: 1;
+
+        em {
+            font-style: italic;
+        }
+
     } @else {
         font-size: 16px;
         font-style: italic;
@@ -113,7 +115,6 @@
 
 @mixin boxes-common($background: $theme-color-accent-light, $color: $color-text-main) {
     background-color: $background;
-    border-radius: 0 5mm 5mm 5mm;
     color: $color;
     font-family: $font-text-secondary;
     font-size: $font-size-default-small;
@@ -135,7 +136,7 @@
     }
 
     p, ol, ul, dl {
-        
+
         &:last-child {
             margin-bottom: 0;
         }
@@ -145,7 +146,8 @@
 // Adds to the _defaults mixin move-to-sidebar()
 @mixin extend-move-to-sidebar($selector, $side: left, $bleed: 3mm) {
     #{$selector} {
-        padding-#{$side}: ($sidebar-gap * 2) + $bleed;
+        border-#{$side}: (($sidebar-gap) + $bleed) solid $theme-color-accent;
+        padding-#{$side}: $text-indent;
         width: $sidebar-width - $sidebar-gap + $text-indent;
     }
 }
@@ -156,6 +158,7 @@
 
     #{$selector} {
         @include boxes-common();
+        background-color: white;
         break-inside: avoid;
         line-height: 16px;
     }
@@ -171,33 +174,33 @@
     #{$selector}[data-split-from] {
         padding-top: $line-height-default * 0.5!important;
     }
-    
+
     @include move-to-sidebar("#{$selector}", $theme-sidenote-bleed);
-    
+
     .pagedjs_left_page .pagedjs_area {
         @include extend-move-to-sidebar("#{$selector}", left);
     }
-    
+
     .pagedjs_right_page .pagedjs_area {
         @include extend-move-to-sidebar("#{$selector}", right);
     }
-    
+
     // When this is in a box of some kind,
     // adjust its margin-outside.
-    
+
     $boxes-that-contain-these-sidenotes: box, self-reflection-activities, worked-example;
-    
+
     @each $box in $boxes-that-contain-these-sidenotes {
         @include move-to-sidebar(".#{$box} #{$selector}", ($text-indent + $theme-sidenote-bleed));
 
         .pagedjs_left_page .pagedjs_area {
             @include extend-move-to-sidebar(".#{$box} #{$selector}", left);
         }
-        
+
         .pagedjs_right_page .pagedjs_area {
             @include extend-move-to-sidebar(".#{$box} #{$selector}", right);
         }
-    }    
+    }
 }
 
 @mixin retain-padding-at-page-break() {
@@ -225,29 +228,62 @@
 
         #{$selector} {
             width: $page-width - $margin-inside + $sidebar-gap + 3mm;
-    
+
             margin-left: -($sidebar-width + $margin-outside + 3mm);
             padding-left: $sidebar-width + $margin-outside + 3mm;
-    
+
             margin-right: -($sidebar-gap);
             padding-right: $sidebar-gap;
 
             border-radius: 0 ($sidebar-gap) ($sidebar-gap) 0;
         }
     }
-    
+
     .pagedjs_right_page {
-    
+
         #{$selector} {
             width: $page-width - $margin-inside + $sidebar-gap + 3mm;
-    
+
             margin-right: -($sidebar-width + $margin-outside + 3mm);
             padding-right: $sidebar-width + $margin-outside + 3mm;
-    
+
             margin-left: -($sidebar-gap);
             padding-left: $sidebar-gap;
 
             border-radius: ($sidebar-gap) 0 0 ($sidebar-gap);
         }
-    }    
+    }
+}
+
+$sidebar-boxes-in-outside-border-boxes: "note.short", "reminder.short", warning, tip;
+
+@mixin outside-border-box($selector) {
+
+    .pagedjs_left_page {
+
+        #{$selector} {
+            border-left: $sidebar-gap solid $theme-color-accent;
+            padding-right: 0;
+        }
+
+        @each $box in $sidebar-boxes-in-outside-border-boxes {
+            .#{box} {
+                border-color: white;
+            }
+        }
+    }
+
+    .pagedjs_right_page {
+
+        #{$selector} {
+            border-right: $sidebar-gap solid $theme-color-accent;
+            padding-left: 0;
+        }
+
+        @each $box in $sidebar-boxes-in-outside-border-boxes {
+            .#{box} {
+                border-color: white;
+            }
+        }
+    }
 }

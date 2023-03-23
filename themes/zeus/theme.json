@@ -1,5 +1,5 @@
 {
-  "name": "Gaia",
+  "name": "Zeus",
   "scripts": {
     "prelayout": ["headers.js"],
     "postlayout": ["baseline-grid.js"]

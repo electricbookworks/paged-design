@@ -1,54 +1,70 @@
-@mixin runner-text-common($side: left) {
+@mixin runner-text-common($side: left, $opposite: right) {
     @include small-caps();
     font-family: $font-text-secondary;
-    margin-top: $line-height-default * 2;
-    text-align: $side;
+    margin-top: $line-height-default * 2.5;
+    text-align: $opposite;
+    vertical-align: bottom;
+    height: $line-height-default * 1.5;
 }
 
 @mixin runner-number-common($side: left) {
     font-family: $font-text-secondary;
     font-size: $font-size-default-small;
+    margin-top: $line-height-default * 2.5;
     text-align: $side;
+    vertical-align: bottom;
+    height: $line-height-default * 1.5;
 }
 
-.pagedjs_margin-top {
-    grid-template-columns: #{$sidebar-width} 1fr #{$sidebar-width}!important;
-}
-
-.pagedjs_margin-bottom {
-    grid-template-columns: #{$sidebar-width} 1fr #{$sidebar-width}!important;
+@mixin running-header-border() {
+    border-bottom: 2px solid $theme-color-accent;
+    margin-top: $line-height-default * 2.5;
+    padding-bottom: $line-height-default * 0.25;
+    height: $line-height-default * 1.5;
+    vertical-align: bottom;
 }
 
 @page :left {
 
-    @top-center {
-        @include runner-text-common(left);
-    }
-    @bottom-center {
+    @top-left {
         @include runner-number-common(left);
+        @include running-header-border();
+        margin-left: $sidebar-width;
+    }
+    @top-right {
+        @include runner-text-common(left, right);
+        @include running-header-border();
+    }
+    @top-center {
+        content: "";
+        @include running-header-border();
     }
 }
 
 @page :right {
 
-    @top-center {
-        @include runner-text-common(right);
+    @top-right {
+        @include runner-number-common(right);
+        @include running-header-border();
+        margin-right: $sidebar-width;
     }
-    @bottom-center {
-        @include runner-number-common(right)
+    @top-left {
+        @include runner-text-common(right, left);
+        @include running-header-border();
+    }
+    @top-center {
+        content: "";
+        @include running-header-border();
     }
 }
 
-// // Remove runner borders from certain pages
-// $page-types-without-runners: cover, half-title-page, title-page, copyright, part;
+// Remove runner borders from certain pages
+// and all first pages.
+$page-types-without-runners: cover, half-title-page, title-page, copyright, contents-page, part, blank;
 
-// @each $page-type in $page-types-without-runners {
-//     @page #{$page-type} {
-//         @top-left {
-//             content: normal;
-//         }
-//         @top-right {
-//             content: normal;
-//         }
-//     }
-// }
+@each $page-type in $page-types-without-runners {
+    [class*="_first_page"] .pagedjs_margin,
+    .pagedjs_#{$page-type}_page .pagedjs_margin {
+        border-bottom: 0!important;
+    }
+}

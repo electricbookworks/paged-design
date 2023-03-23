@@ -1,15 +1,25 @@
 // Requires that margin-top and line-height-default
 // are defined with the same units, e.g. px.
-$opener-image-height: $margin-top + ($line-height-default * 14);
+$opener-image-height: $margin-top + ($line-height-default * 15);
 $opener-image-bleed: 3mm;
 
 .component-body {
 
     // The heading below the image
     header {
+        position: relative;
+        z-index: 1;
 
         &:first-of-type {
-            margin-top: calc(#{$opener-image-height} - #{$line-height-default} * 5);
+            margin-top: calc(#{$opener-image-height} - #{$margin-top} + $line-height-default * 2);
+        }
+
+        h1 {
+            
+            // Override heading()
+            &::before {
+                content: normal;
+            }
         }
 
         & ~ p.author {
@@ -45,8 +55,7 @@ $opener-image-bleed: 3mm;
                 // different units, e.g. mm or pt.
                 top: -($margin-top + $opener-image-bleed);
                 left: -($margin-inside);
-                width: $page-width - ($sidebar-width * 0.5);
-                border-radius: 0 0 ($opener-image-height * 0.5) 0;
+                width: $page-width + $opener-image-bleed;
                 height: $opener-image-height + $opener-image-bleed;
                 margin: 0;
                 max-width: none;
@@ -60,12 +69,11 @@ $opener-image-bleed: 3mm;
                 bottom: 0;
                 right: -($sidebar-width - $sidebar-gap);
                 width: $sidebar-width - ($sidebar-gap * 2);
+                padding-right: $sidebar-gap;
 
                 // Appearance
-                border-top: $rule-thickness solid $theme-color-accent;
                 font-family: $font-text-secondary;
                 font-size: $font-size-default-small;
-                padding-top: $line-height-default / 2;
             }
         }
     }
@@ -78,7 +86,9 @@ $opener-image-bleed: 3mm;
             figure {
 
                 img {
-                    background-color: $theme-color-accent;
+                    background-color: white;
+                    bottom: -($margin-bottom + $opener-image-bleed);
+                    min-height: $page-height + ($opener-image-bleed * 2);
                     z-index: -1;
                 }
             }
@@ -87,49 +97,44 @@ $opener-image-bleed: 3mm;
         header {
 
             &:first-of-type {
-
-                // Override non-.part header
-                margin-top: 0;
+                width: 94mm;
+                height: $line-height-default * 28;
+                display: flex;
+                align-items: flex-end;
+                background-color: $theme-color-accent;
+                margin-top: -($margin-top + $opener-image-bleed);
             }
 
             h1 {
-
-                // Position
-                position: absolute;
-                top: ($page-height - $margin-top - $margin-bottom) * 0.5;
-                left: 90mm;
-                transform: translatey(-50%);
+                color: white;
+                font-size: 38px;
+                line-height: 1.2;
                 margin: 0;
-                width: $page-width -$margin-inside - 90mm - ($sidebar-gap * 2);
-
-                // Type
-                color: black;
-                font-size: 64px;
+                padding-top: $margin-top + $opener-image-bleed;
+                padding-right: $box-padding-horizontal;
+                padding-left: $box-padding-horizontal;
+                padding-bottom: $box-padding-vertical * 2;
 
                 strong:first-of-type {
-
-                    // Position
-                    position: absolute;
-                    left: -90mm;
-                    display: block;
-                    text-align: right;
-                    width: 70mm;
-
-                    // Type
-                    color: white;
-                    font-family: $font-display-secondary;
-                    font-size: 64px;
-                    font-weight: bold;
+                    color: black;
+                    font-size: 56px;
+                    font-weight: normal;
                     line-height: inherit;
+                    margin-bottom: $line-height-default * 0.5;
                 }
             }
         }
 
         p {
+            color: white;
+            background-color: $theme-color-accent;
+            padding-top: $box-padding-vertical;
+            padding-right: $box-padding-horizontal;
+            padding-left: $box-padding-horizontal;
+            padding-bottom: $margin-bottom + $opener-image-bleed;
             position: absolute;
-            bottom: 0;
-            right: -($sidebar-width - ($sidebar-gap * 2));
-            left: 90mm;
+            bottom: -($margin-bottom + $opener-image-bleed);
+            width: 94mm;
             z-index: 1;
 
             &:nth-of-type(2) {
@@ -154,20 +159,22 @@ $opener-image-bleed: 3mm;
     // Appearance
     @include heading-1();
     background-color: $theme-color-accent;
-    border-radius: 20mm;
     color: white;
-    font-style: italic;
     font-weight: bold;
 
+    // Override heading()
+    &::before {
+        content: normal;
+    }
+
     // Position
-    display: flex;
-    align-items: center;
+    display: inline-flex;
+    align-items: flex-end;
     justify-content: center;
-    width: 20mm;
-    height: 20mm;
-    margin-top: -20px;
-    margin-left: -10mm;
-    position: relative;
+    height: $opener-image-height + ($line-height-default * 4);
+    margin-top: -($margin-top + $opener-image-bleed);
+    margin-right: $text-indent;
+    padding: $box-padding;
     z-index: 1;
 
     & + .component-title {
@@ -197,6 +204,7 @@ $opener-image-bleed: 3mm;
         @include small-caps();
         color: $theme-color-accent;
         font-size: $font-size-default-small;
+        font-weight: 600;
         margin-bottom: 0;
     }
 
@@ -225,6 +233,7 @@ $opener-image-bleed: 3mm;
         @include small-caps();
         color: $theme-color-accent;
         font-size: $font-size-default-small;
+        font-weight: 600;
         margin-bottom: 0;
     }
 
