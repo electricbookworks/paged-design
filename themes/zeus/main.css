@@ -5927,12 +5927,10 @@ aside.biography {
     .extract-prose + .source-note p:last-child, .extract-prose + .source-note ul:last-child, .extract-prose + .source-note ol:last-child, .extract-prose + .source-note dl:last-child {
       margin-bottom: 0; }
 
-.key-terms {
-  break-before: page; }
-  .key-terms p {
-    margin-bottom: 9.5px; }
-    .key-terms p + p {
-      text-indent: 0; }
+.key-terms p {
+  margin-bottom: 9.5px; }
+  .key-terms p + p {
+    text-indent: 0; }
 
 .key-term {
   color: var(--theme-color-accent); }
@@ -5947,6 +5945,7 @@ div.summary {
   font-size: 10px;
   margin: 19px 0;
   padding: 9.5px 12px;
+  break-inside: avoid;
   font-family: "Barlow", serif;
   font-size: 12px; }
   .review-activity h2:first-child, .review-activity h3:first-child, .review-activity h4:first-child, .review-activity h5:first-child, .review-activity h6:first-child {

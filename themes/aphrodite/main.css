@@ -4927,6 +4927,9 @@ section.component-back h1:before {
   width: 50mm;
   z-index: 1; }
 
+.component-body.part header:first-of-type {
+  margin-top: 180.375mm; }
+
 .component-body.part header::before {
   content: normal; }
 
@@ -4946,20 +4949,6 @@ section.component-back h1:before {
     font-size: 42px;
     font-weight: 500;
     line-height: 1; }
-
-.component-body.part p {
-  background-color: var(--theme-color-accent-light);
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 20mm;
-  padding-left: 30mm;
-  position: absolute;
-  bottom: 0;
-  right: -20mm;
-  width: 132mm;
-  z-index: 0; }
-  .component-body.part p:nth-of-type(2) {
-    break-before: page; }
 
 .chapter-number {
   color: var(--theme-color-accent);
@@ -5518,14 +5507,13 @@ aside.biography {
     .extract-prose + .source-note p:last-child, .extract-prose + .source-note ul:last-child, .extract-prose + .source-note ol:last-child, .extract-prose + .source-note dl:last-child {
       margin-bottom: 0; }
 
-.key-terms {
-  break-before: page; }
-  .key-terms h2:first-child {
-    margin-bottom: 10px; }
-  .key-terms p {
-    margin-bottom: 10px; }
-    .key-terms p + p {
-      text-indent: 0; }
+.key-terms h2:first-child {
+  margin-bottom: 10px; }
+
+.key-terms p {
+  margin-bottom: 10px; }
+  .key-terms p + p {
+    text-indent: 0; }
 
 .key-term {
   color: var(--theme-color-accent); }
@@ -5576,6 +5564,7 @@ div.summary {
   padding: 10px;
   border-left: 1px solid var(--theme-color-accent);
   background-color: white;
+  break-inside: avoid;
   font-family: "Gelasio", serif;
   font-size: 12px; }
   .review-activity h2, .review-activity h3, .review-activity h4, .review-activity h5, .review-activity h6 {

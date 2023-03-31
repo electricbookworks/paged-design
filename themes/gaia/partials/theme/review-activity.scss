@@ -2,7 +2,8 @@
     @include boxes-common();
 
     border-left: $text-indent solid $theme-color-accent;
-    border-radius: 0;
+    border-radius: 0 0 5mm 0;
+    break-inside: avoid;
     font-family: $font-text-main;
     font-size: $font-size-default;
 

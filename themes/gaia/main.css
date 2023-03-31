@@ -4967,7 +4967,7 @@ section.component-front h1 {
   z-index: -1; }
 
 .component-body.part header:first-of-type {
-  margin-top: 0; }
+  margin-top: 229.72917mm; }
 
 .component-body.part header h1 {
   position: absolute;
@@ -4989,15 +4989,6 @@ section.component-front h1 {
     font-size: 64px;
     font-weight: bold;
     line-height: inherit; }
-
-.component-body.part p {
-  position: absolute;
-  bottom: 0;
-  right: -40mm;
-  left: 90mm;
-  z-index: 1; }
-  .component-body.part p:nth-of-type(2) {
-    break-before: page; }
 
 .chapter-number {
   font-family: "Crimson Pro", sans-serif;
@@ -5038,8 +5029,7 @@ section.component-front h1 {
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px 13px;
-  margin-bottom: 0; }
+  padding: 9.5px 13px; }
   .learning-objectives h2:first-child, .learning-objectives h3:first-child, .learning-objectives h4:first-child, .learning-objectives h5:first-child, .learning-objectives h6:first-child {
     margin-top: 0; }
   .learning-objectives h2 + h3,
@@ -5071,8 +5061,6 @@ section.component-front h1 {
   .learning-objectives ul, .learning-objectives ol {
     margin: 0 0 0 19px;
     padding: 0; }
-  .learning-objectives + .outline {
-    margin: 0 0 19px 0 !important; }
 
 .outline {
   background-color: var(--theme-color-accent-light);
@@ -5081,8 +5069,7 @@ section.component-front h1 {
   font-family: "Inter", sans-serif;
   font-size: 10px;
   margin: 19px 0;
-  padding: 9.5px 13px;
-  margin-bottom: 0; }
+  padding: 9.5px 13px; }
   .outline h2:first-child, .outline h3:first-child, .outline h4:first-child, .outline h5:first-child, .outline h6:first-child {
     margin-top: 0; }
   .outline h2 + h3,
@@ -5115,8 +5102,6 @@ section.component-front h1 {
     list-style-type: none;
     margin: 0;
     padding: 0; }
-  .outline + .learning-objectives {
-    margin: 0 0 19px 0 !important; }
 
 section.part .part-number {
   display: none; }
@@ -5976,12 +5961,10 @@ aside.biography {
     .extract-prose + .source-note p:last-child, .extract-prose + .source-note ul:last-child, .extract-prose + .source-note ol:last-child, .extract-prose + .source-note dl:last-child {
       margin-bottom: 0; }
 
-.key-terms {
-  break-before: page; }
-  .key-terms p {
-    margin-bottom: 9.5px; }
-    .key-terms p + p {
-      text-indent: 0; }
+.key-terms p {
+  margin-bottom: 9.5px; }
+  .key-terms p + p {
+    text-indent: 0; }
 
 .key-term {
   color: var(--theme-color-accent); }
@@ -6040,7 +6023,8 @@ div.summary {
   margin: 19px 0;
   padding: 9.5px 13px;
   border-left: 13px solid var(--theme-color-accent);
-  border-radius: 0;
+  border-radius: 0 0 5mm 0;
+  break-inside: avoid;
   font-family: "Crimson Pro", serif;
   font-size: 13px; }
   .review-activity h2:first-child, .review-activity h3:first-child, .review-activity h4:first-child, .review-activity h5:first-child, .review-activity h6:first-child {

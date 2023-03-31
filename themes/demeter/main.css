@@ -4851,11 +4851,11 @@ section.component-front h1 {
   z-index: -1; }
 
 .component-body.part header:first-of-type {
-  margin-top: 551px; }
+  margin-top: 208.75625mm; }
 
 .component-body.part header h1 {
   position: absolute;
-  top: -63.10833mm;
+  top: -66.10833mm;
   right: -260mm;
   transform: rotate(90deg);
   transform-origin: 0 100%;
@@ -4864,6 +4864,7 @@ section.component-front h1 {
   align-items: center;
   height: 43mm;
   width: 260mm;
+  padding-left: 11mm;
   padding-top: 3mm;
   background-color: var(--theme-color-accent);
   color: white;
@@ -4882,24 +4883,11 @@ section.component-front h1 {
     padding-top: 3mm;
     margin-right: 5mm;
     margin-top: -3mm;
+    margin-left: -8mm;
     background-color: white;
     color: black;
     font-weight: 300;
     line-height: inherit; }
-
-.component-body.part p {
-  background-color: white;
-  padding-top: 9.5px;
-  padding-bottom: 9.5px;
-  padding-right: 13px;
-  padding-left: 13px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 69mm;
-  z-index: 0; }
-  .component-body.part p:nth-of-type(2) {
-    break-before: page; }
 
 .chapter-number {
   font-family: "Jost", sans-serif;
@@ -5791,9 +5779,6 @@ aside.biography {
     .extract-prose + .source-note p:last-child, .extract-prose + .source-note ul:last-child, .extract-prose + .source-note ol:last-child, .extract-prose + .source-note dl:last-child {
       margin-bottom: 0; }
 
-.key-terms {
-  break-before: page; }
-
 .key-term {
   color: var(--theme-color-accent); }
 
@@ -5818,6 +5803,7 @@ div.summary {
   font-size: 10px;
   margin: 19px 0;
   padding: 9.5px;
+  break-inside: avoid;
   font-family: "Crimson Pro", serif;
   font-size: 13px; }
   .review-activity h2:first-child, .review-activity h3:first-child, .review-activity h4:first-child, .review-activity h5:first-child, .review-activity h6:first-child {

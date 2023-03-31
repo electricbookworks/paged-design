@@ -4924,8 +4924,7 @@ section.component-front h1 {
     font-size: 10px;
     margin-bottom: 0; }
   .outline ul, .outline ol {
-    list-style-type: none;
-    margin: 0;
+    margin: 0 0 0 19px;
     padding: 0; }
   .outline + .learning-objectives {
     margin: 0 0 19px 0 !important; }
@@ -5462,20 +5461,6 @@ aside.biography {
     .extract-prose + .source-note p:last-child, .extract-prose + .source-note ul:last-child, .extract-prose + .source-note ol:last-child, .extract-prose + .source-note dl:last-child {
       margin-bottom: 0; }
 
-.pagedjs_right_page .key-terms {
-  margin-right: -50mm;
-  width: 175mm; }
-
-.pagedjs_left_page .key-terms {
-  margin-left: -50mm;
-  width: 175mm; }
-
-.key-terms {
-  column-count: 2;
-  break-before: page; }
-  .key-terms h2 {
-    column-span: all; }
-
 .key-term {
   color: var(--theme-color-accent); }
 
@@ -5501,6 +5486,7 @@ div.summary {
   padding: 9.5px;
   border-top: 5px solid var(--theme-color-accent);
   border-bottom: 5px solid var(--theme-color-accent);
+  break-inside: avoid;
   font-family: "Crimson Pro", serif;
   font-size: 13px; }
   .review-activity h2:first-child, .review-activity h3:first-child, .review-activity h4:first-child, .review-activity h5:first-child, .review-activity h6:first-child {
@@ -5531,14 +5517,6 @@ div.summary {
   .review-activity[data-split-from] {
     padding-top: 9.5px !important;
     margin-top: 9.5px !important; }
-
-.pagedjs_right_page .review-activity {
-  margin-right: -50mm;
-  width: 175mm; }
-
-.pagedjs_left_page .review-activity {
-  margin-left: -50mm;
-  width: 175mm; }
 
 .pagedjs_right_page.pagedjs_references-page_page {
   background-color: var(--theme-color-accent-light); }

@@ -45,11 +45,11 @@
     // in the chapter that it's on the first page.
     // And these only display big on .component-body.
     .content-opener-image {
-    
+
         figure {
             display: contents;
             margin: 0;
-            
+
             img {
                 position: absolute;
 
@@ -95,7 +95,7 @@
         .content-opener-image {
 
             figure {
-                
+
                 img {
                     min-height: $page-height + ($opener-image-bleed * 2);
                     min-width: $page-height + ($opener-image-bleed * 2);
@@ -121,11 +121,18 @@
         }
 
         header {
-            
+
+            // Header fills page so that
+            // any other items on the part page
+            // appear on the next page.
+            &:first-of-type {
+                margin-top: $page-height - $margin-top - $margin-bottom - $line-height-default;
+            }
+
             &::before {
                 content: normal;
             }
-            
+
             h1:first-of-type {
 
                 // Typography
@@ -148,23 +155,6 @@
                     font-weight: 500;
                     line-height: 1;
                 }
-            }
-        }
-
-        p {
-            background-color: $theme-color-accent-light;
-            padding-top: ($line-height-default * 0.5);
-            padding-bottom: ($line-height-default * 0.5);
-            padding-right: $margin-outside;
-            padding-left: 30mm;
-            position: absolute;
-            bottom: 0;
-            right: -($margin-outside);
-            width: $page-width - 20mm;
-            z-index: 0;
-
-            &:nth-of-type(2) {
-                break-before: page;
             }
         }
     }

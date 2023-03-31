@@ -222,8 +222,7 @@ $chapter-number-has-text: false;
     }
 
     ul, ol {
-        list-style-type: none;
-        margin: 0;
+        margin: 0 0 0 $line-height-default; // not sure why LHD
         padding: 0;
     }
 
