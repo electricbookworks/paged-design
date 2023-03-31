@@ -180,10 +180,10 @@ img {
   margin-right: 24mm; }
 
 .pagedjs_right_page .pagedjs_area {
-  padding-right: 45mm; }
+  padding-right: 0; }
 
 .pagedjs_left_page .pagedjs_area {
-  padding-left: 45mm; }
+  padding-left: 0; }
 
 .frontmatter {
   page: frontmatter;
