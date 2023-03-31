@@ -13,11 +13,15 @@
 
     <p class="tagline">Customisable themes for book design with&nbsp;CSS</p>
 
-    <p>Are you creating books with HTML and CSS? Stylesheets for books can be long and complicated to write. Our themes give you a head start: pick a theme, add it to your project, and customise it.</p>
+    <p>Are you creating books with HTML and CSS? Stylesheets for books can be long and complicated to write. Paged Design is a framework for creating and adapting themes.</p>
 
     <p>Note that these demos only work in a Chrome browser, and that <a href="https://gitlab.pagedmedia.org/tools/pagedjs"><code>paged.js</code></a> and this project are in development, so expect bugs,  workarounds, and exciting possibilities, and <a href="https://github.com/electricbookworks/paged-design">contribute</a> if you can.</p>
 
     <h2>Themes</h2>
+
+    <p>
+        Some themes work (or work best) with specific content, because a theme must be created for a particular HTML structure. Click 'Preview' below for each theme to see it with its most appropriate content.
+    </p>
 
     <ul class="gallery">
         <li>
@@ -28,7 +32,6 @@
             <p>Named for Ms Potter, a classic children's book theme for simple stories. Goes well with <a href="content/alice-in-wonderland/index.html?theme=beatrix"><em>Alice in Wonderland</em></a>.</p>
             <p>
                 <a class="button" href="content/alice-in-wonderland/index.html?theme=beatrix">Preview</a>
-                <a class="button" href="packaged/beatrix.zip">Download</a>
             </p>
         </li>
         <li>
@@ -40,7 +43,6 @@
             </p>
             <p>
                 <a class="button" href="content/the-future-of-ideas/index.html?theme=density">Preview</a>
-                <a class="button" href="packaged/density.zip">Download</a>
             </p>
         </li>
         <li>
@@ -51,7 +53,6 @@
             <p>A wild and wonky look for grabbing attention. Goes well with <a href="content/little-brother/index.html?theme=plastered"><em>Little Brother,</em> by Cory Doctorow</a>.</p>
             <p>
                 <a class="button" href="content/little-brother/index.html?theme=plastered">Preview</a>
-                <a class="button" href="packaged/plastered.zip">Download</a>
             </p>
         </li>
         <li>
@@ -62,7 +63,6 @@
             <p>An elegant, conservative A4 textbook design for the Ketida platform. Works with our <a href="content/ketida-sample-with-parts/index.html?theme=apollo">Ketida sample content</a>.</p>
             <p>
                 <a class="button" href="content/ketida-sample-with-parts/index.html?theme=apollo">Preview</a>
-                <a class="button" href="packaged/apollo.zip">Download</a>
             </p>
         </li>
         <li>
@@ -73,7 +73,6 @@
             <p>A bright and wavy textbook design for the Ketida platform. Works with our <a href="content/ketida-sample-with-parts/index.html?theme=aphrodite">Ketida sample content</a>.</p>
             <p>
                 <a class="button" href="content/ketida-sample-with-parts/index.html?theme=aphrodite">Preview</a>
-                <a class="button" href="packaged/aphrodite.zip">Download</a>
             </p>
         </li>
         <li>
@@ -84,7 +83,6 @@
             <p>A smart, sleek textbook design for the Ketida platform. Works with our <a href="content/ketida-sample-with-parts/index.html?theme=demeter">Ketida sample content</a>.</p>
             <p>
                 <a class="button" href="content/ketida-sample-with-parts/index.html?theme=demeter">Preview</a>
-                <a class="button" href="packaged/demeter.zip">Download</a>
             </p>
         </li>
         <li>
@@ -95,7 +93,6 @@
             <p>A gentle, quirky textbook design for the Ketida platform. Works with our <a href="content/ketida-sample-with-parts/index.html?theme=gaia">Ketida sample content</a>.</p>
             <p>
                 <a class="button" href="content/ketida-sample-with-parts/index.html?theme=gaia">Preview</a>
-                <a class="button" href="packaged/gaia.zip">Download</a>
             </p>
         </li>
         <li>
@@ -106,7 +103,6 @@
             <p>A gentle, quirky textbook design for the Ketida platform. Works with our <a href="content/ketida-sample-with-parts/index.html?theme=zeus">Ketida sample content</a>.</p>
             <p>
                 <a class="button" href="content/ketida-sample-with-parts/index.html?theme=zeus">Preview</a>
-                <a class="button" href="packaged/zeus.zip">Download</a>
             </p>
         </li>
         <li>
@@ -117,7 +113,6 @@
             <p>A plain template with very few opinions, and the starting place for creating brand new themes. Goes well with <a href="content/samples/index.html?theme=template">our typography samples</a>.</p>
             <p>
                 <a class="button" href="content/samples/index.html?theme=template">Preview</a>
-                <a class="button" href="packaged/template.zip">Download</a>
             </p>
         </li>
     </ul>
@@ -136,55 +131,11 @@
         <li><a href="content/ketida-sample-with-parts/index.html?theme=apollo">Sample content from the Coko Foundation's Ketida platform, derived from an OpenStax textbook</a>.</li>
     </ul>
 
-    <p>For each one, use the theme-selector dropdown to see the browser lay out the book before your eyes. (Only Chrome can get this right currently.)</p>
+    <p>For each one, use the theme-selector dropdown to see the browser lay out the book in a new design before your eyes. (Only Chrome can get this right currently.)</p>
 
-    <h2>How to use a theme</h2>
+    <h2>How to use this framework</h2>
 
-    <h3>Adding a theme to your project</h3>
-
-    <p>Once you have created a theme that fits your project's HTML structure:</p>
-
-    <ol>
-        <li>Copy the theme's `main.css` file to your project.</li>
-        <li>In the <code>head</code> of your HTML (the content of your book), link to that CSS file. For example with <pre><code>&lt;link rel="stylesheet" type="text/css" href="../css/beatrix/main.css"&gt;</code></pre>
-        </li>
-        <li>To use `paged.js`, in the <code>head</code> of your HTML, link to the <code>paged.js</code> script, which will lay out your pages in Chrome. For instance, if you want to always link to the latest official version:
-            <pre><code>&lt;script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"&gt;&lt;/script&gt;</code></pre>
-        </li>
-        <li>Serve your HTML. For example, if you're using Node and have http-server installed, you can run <code>npm run http-server -p 4000</code> in your project root folder, and visit your site at <a href="http://localhost:4000">http://localhost:4000</a>.</li>
-    </ol>
-
-    <h3>Creating a theme</h3>
-
-    <ol>
-        <li>
-            <p>Install dependencies. To do this, from the command line (in the same directory as <code>package.json</code>), enter:</p>
-
-            <p><code>npm install</code></p>
-
-            <p>which will install dependencies to <code>node_modules</code>.</p>
-        </li>
-        <li>
-            <p>Add a single <code>index.html</code> file of your content to a directory in <code>content</code>. E.g. <code>content/example/index.html</code>. Your theme will need to match your HTML structure, which is likely to be different to the example content we have here already.</p>
-        </li>
-        <li>
-            Make a copy of one of the theme folders (one closest to what you're after) and give it a unique directory name. In its <code>theme.json</code> file, enter its name.
-        </li>
-        <li>
-            <p>To serve your content and watch for changes to your styles, in the project root, at the command line, enter:</p>
-
-            <p><code>npm start</code></p>
-
-            <p>You can now visit your content at <a href="http://localhost:5000/content/example?theme=yourtheme">http://localhost:5000/content/example?theme=yourtheme</a> (where 'example' is the name of the folder yout HTML is in, and 'yourtheme' is the name of your theme directory). Node Sass will be watching for changes to your styles. Every time you change a file in your theme's Sass files, your compiled CSS will automatically update and you only need to refresh your browser to see your new styles. You may need to hard refresh (Ctrl+F5 or Cmd+R).</p>
-
-            <p>Tip: to quickly scroll to where you were last, enter <code>scrollToLastPosition()</code> in the dev tools console.</p>
-        </li>
-        <li>Define the selectors for your HTML in <code>/themes/yourtheme/_selectors.scss</code> (where <code>yourtheme</code> is the name of the theme you’re working on).</li>
-        <li>Define any new values for design variables in <code>/themes/yourtheme/_variables.scss</code>. See the <code>_defaults</code> theme for the existing variables you can define.</li>
-        <li>Add your own Sass/CSS styles to <code>/themes/yourtheme/_styles.scss</code>. We recommend doing these as partials (see the Apollo theme for a good example.)</li>
-    </ol>
-
-    <p>There are some <a href="https://github.com/electricbookworks/paged-design#readme">technical docs</a> on GitHub.</p>
+    <p>See the <a href="https://github.com/electricbookworks/paged-design#readme">guidance</a> on GitHub.</p>
 
     <h2>About</h2>
 
