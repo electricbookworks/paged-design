@@ -4957,38 +4957,38 @@ section.component-front h1 {
     font-size: 10px;
     padding-top: 9.5px; }
 
-.component-body.part .content-opener-image figure img {
-  background-color: var(--theme-color-accent);
-  clip-path: circle(200mm at center);
-  min-height: 400mm;
-  width: 400mm;
-  top: -301px;
-  left: -320mm;
-  z-index: -1; }
-
-.component-body.part header:first-of-type {
-  margin-top: 229.72917mm; }
-
-.component-body.part header h1 {
-  position: absolute;
-  top: 117.37812mm;
-  left: 90mm;
-  transform: translatey(-50%);
-  margin: 0;
-  width: 91mm;
-  color: black;
-  font-size: 64px; }
-  .component-body.part header h1 strong:first-of-type {
+.component-body.part {
+  padding-left: 90mm; }
+  .component-body.part .content-opener-image figure img {
+    background-color: var(--theme-color-accent);
+    clip-path: circle(200mm at center);
+    min-height: 400mm;
+    width: 400mm;
+    top: -301px;
+    left: -320mm;
+    z-index: -1; }
+  .component-body.part header:first-of-type {
+    margin-top: 164.32937mm; }
+  .component-body.part header h1 {
     position: absolute;
-    left: -90mm;
-    display: block;
-    text-align: right;
-    width: 70mm;
-    color: white;
-    font-family: "Inter", serif;
-    font-size: 64px;
-    font-weight: bold;
-    line-height: inherit; }
+    top: 117.37812mm;
+    left: 90mm;
+    transform: translatey(-50%);
+    margin: 0;
+    width: 91mm;
+    color: black;
+    font-size: 64px; }
+    .component-body.part header h1 strong:first-of-type {
+      position: absolute;
+      left: -90mm;
+      display: block;
+      text-align: right;
+      width: 70mm;
+      color: white;
+      font-family: "Inter", serif;
+      font-size: 64px;
+      font-weight: bold;
+      line-height: inherit; }
 
 .chapter-number {
   font-family: "Crimson Pro", sans-serif;
@@ -5099,8 +5099,7 @@ section.component-front h1 {
     font-size: 10px;
     margin-bottom: 0; }
   .outline ul, .outline ol {
-    list-style-type: none;
-    margin: 0;
+    margin: 0 0 0 19px;
     padding: 0; }
 
 section.part .part-number {

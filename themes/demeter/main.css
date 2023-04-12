@@ -5000,8 +5000,7 @@ section.component-front h1 {
     font-size: 10px;
     margin-bottom: 0; }
   .outline ul, .outline ol {
-    list-style-type: none;
-    margin: 0;
+    margin: 0 0 0 19px;
     padding: 0; }
   .outline + .learning-objectives {
     margin: 0 0 19px 0 !important; }

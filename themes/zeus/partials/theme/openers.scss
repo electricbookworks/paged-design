@@ -81,6 +81,10 @@ $opener-image-bleed: 3mm;
     // Also see part-page.scss
     &.part {
 
+        // Content on this page should align
+        // with the header-containing colour block.
+        padding-right: 20mm;
+
         .content-opener-image {
 
             figure {
@@ -103,6 +107,7 @@ $opener-image-bleed: 3mm;
                 align-items: flex-end;
                 background-color: $theme-color-accent;
                 margin-top: -($margin-top + $opener-image-bleed);
+                margin-bottom: $line-height-default * 10;
             }
 
             h1 {
@@ -122,23 +127,6 @@ $opener-image-bleed: 3mm;
                     line-height: inherit;
                     margin-bottom: $line-height-default * 0.5;
                 }
-            }
-        }
-
-        p {
-            color: white;
-            background-color: $theme-color-accent;
-            padding-top: $box-padding-vertical;
-            padding-right: $box-padding-horizontal;
-            padding-left: $box-padding-horizontal;
-            padding-bottom: $margin-bottom + $opener-image-bleed;
-            position: absolute;
-            bottom: -($margin-bottom + $opener-image-bleed);
-            width: 94mm;
-            z-index: 1;
-
-            &:nth-of-type(2) {
-                break-before: page;
             }
         }
     }
@@ -238,8 +226,7 @@ $opener-image-bleed: 3mm;
     }
 
     ul, ol {
-        list-style-type: none;
-        margin: 0;
+        margin: 0 0 0 $line-height-default; // not sure why LHD
         padding: 0;
     }
 

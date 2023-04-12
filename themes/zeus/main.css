@@ -4849,49 +4849,36 @@ section.component-front h1 {
     font-family: "Barlow", sans-serif;
     font-size: 10px; }
 
-.component-body.part .content-opener-image figure img {
-  background-color: white;
-  bottom: -87.33858px;
-  min-height: 252mm;
-  z-index: -1; }
-
-.component-body.part header:first-of-type {
-  width: 94mm;
-  height: 532px;
-  display: flex;
-  align-items: flex-end;
-  background-color: var(--theme-color-accent);
-  margin-top: -125.33858px; }
-
-.component-body.part header h1 {
-  color: white;
-  font-size: 38px;
-  line-height: 1.2;
-  margin: 0;
-  padding-top: 125.33858px;
-  padding-right: 12px;
-  padding-left: 12px;
-  padding-bottom: 19px; }
-  .component-body.part header h1 strong:first-of-type {
-    color: black;
-    font-size: 56px;
-    font-weight: normal;
-    line-height: inherit;
-    margin-bottom: 9.5px; }
-
-.component-body.part p {
-  color: white;
-  background-color: var(--theme-color-accent);
-  padding-top: 9.5px;
-  padding-right: 12px;
-  padding-left: 12px;
-  padding-bottom: 87.33858px;
-  position: absolute;
-  bottom: -87.33858px;
-  width: 94mm;
-  z-index: 1; }
-  .component-body.part p:nth-of-type(2) {
-    break-before: page; }
+.component-body.part {
+  padding-right: 20mm; }
+  .component-body.part .content-opener-image figure img {
+    background-color: white;
+    bottom: -87.33858px;
+    min-height: 252mm;
+    z-index: -1; }
+  .component-body.part header:first-of-type {
+    width: 94mm;
+    height: 532px;
+    display: flex;
+    align-items: flex-end;
+    background-color: var(--theme-color-accent);
+    margin-top: -125.33858px;
+    margin-bottom: 190px; }
+  .component-body.part header h1 {
+    color: white;
+    font-size: 38px;
+    line-height: 1.2;
+    margin: 0;
+    padding-top: 125.33858px;
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-bottom: 19px; }
+    .component-body.part header h1 strong:first-of-type {
+      color: black;
+      font-size: 56px;
+      font-weight: normal;
+      line-height: inherit;
+      margin-bottom: 9.5px; }
 
 .chapter-number {
   color: var(--theme-color-accent);
@@ -5021,8 +5008,7 @@ section.component-front h1 {
     font-weight: 600;
     margin-bottom: 0; }
   .outline ul, .outline ol {
-    list-style-type: none;
-    margin: 0;
+    margin: 0 0 0 19px;
     padding: 0; }
   .outline + .learning-objectives {
     margin: 0 0 19px 0 !important; }

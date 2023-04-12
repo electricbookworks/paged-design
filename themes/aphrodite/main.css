@@ -4902,53 +4902,51 @@ section.component-back h1:before {
     font-family: "Inter", sans-serif;
     font-size: 11px; }
 
-.component-body.part .content-opener-image figure img {
-  min-height: 234mm;
-  min-width: 234mm;
-  position: absolute;
-  top: -91.33858px;
-  bottom: -91.33858px;
-  left: -23mm;
-  right: -23mm;
-  z-index: -1; }
-
-.component-body.part::before {
-  background-color: var(--theme-color-accent);
-  --mask:
+.component-body.part {
+  padding-left: 30mm; }
+  .component-body.part .content-opener-image figure img {
+    min-height: 234mm;
+    min-width: 234mm;
+    position: absolute;
+    top: -91.33858px;
+    bottom: -91.33858px;
+    left: -23mm;
+    right: -23mm;
+    z-index: -1; }
+  .component-body.part::before {
+    background-color: var(--theme-color-accent);
+    --mask:
         radial-gradient(19.69px at calc(100% - 27.75px) 50%,#000 99%,#0000 101%) 0 calc(50% - 30px)/100% 60px,
         radial-gradient(19.69px at calc(100% + 12.75px) 50%,#0000 99%,#000 101%) calc(100% - 15px) 50%/100% 60px repeat-y;
-  -webkit-mask: var(--mask);
-  mask: var(--mask);
-  content: "";
-  position: absolute;
-  left: -23mm;
-  top: -91.33858px;
-  bottom: -91.33858px;
-  width: 50mm;
-  z-index: 1; }
-
-.component-body.part header:first-of-type {
-  margin-top: 180.375mm; }
-
-.component-body.part header::before {
-  content: normal; }
-
-.component-body.part header h1:first-of-type {
-  color: white;
-  font-size: 30pt;
-  width: 228mm;
-  transform-origin: left;
-  transform: rotate(270deg);
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 2; }
-  .component-body.part header h1:first-of-type strong:first-of-type {
-    color: black;
-    display: inline-block;
-    font-size: 42px;
-    font-weight: 500;
-    line-height: 1; }
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    content: "";
+    position: absolute;
+    left: -23mm;
+    top: -91.33858px;
+    bottom: -91.33858px;
+    width: 50mm;
+    z-index: 1; }
+  .component-body.part header:first-of-type {
+    margin-top: 129.96667mm; }
+  .component-body.part header::before {
+    content: normal; }
+  .component-body.part header h1:first-of-type {
+    color: white;
+    font-size: 30pt;
+    width: 228mm;
+    transform-origin: left;
+    transform: rotate(270deg);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2; }
+    .component-body.part header h1:first-of-type strong:first-of-type {
+      color: black;
+      display: inline-block;
+      font-size: 42px;
+      font-weight: 500;
+      line-height: 1; }
 
 .chapter-number {
   color: var(--theme-color-accent);
@@ -5064,8 +5062,7 @@ section.component-back h1:before {
     font-size: 11px;
     margin-bottom: 0; }
   .outline ul, .outline ol {
-    list-style-type: none;
-    margin: 0;
+    margin: 0 0 0 20px;
     padding: 0; }
   .outline + .learning-objectives {
     margin: 0 0 20px 0 !important; }

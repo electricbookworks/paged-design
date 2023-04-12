@@ -92,6 +92,10 @@
     // Also see part-page.scss
     &.part {
 
+        // Content on this page should not
+        // disappear behind the left-hand wavy box.
+        padding-left: 30mm;
+
         .content-opener-image {
 
             figure {
@@ -122,11 +126,15 @@
 
         header {
 
-            // Header fills page so that
+            // Header fills half of page so that
             // any other items on the part page
-            // appear on the next page.
+            // appear low down on the page, allowing
+            // space for image. Text might be unreadable
+            // over a given image. But this is unavoidable
+            // if we want users to be able to put content
+            // on par pages.
             &:first-of-type {
-                margin-top: $page-height - $margin-top - $margin-bottom - $line-height-default;
+                margin-top: ($page-height - $margin-top - $margin-bottom) * 0.7;
             }
 
             &::before {
@@ -250,8 +258,7 @@ $chapter-number-has-text: false;
     }
 
     ul, ol {
-        list-style-type: none;
-        margin: 0;
+        margin: 0 0 0 $line-height-default; // not sure why LHD
         padding: 0;
     }
 
